@@ -1,0 +1,123 @@
+body, html {
+    max-width: 360px;
+    margin: 0 auto;
+    font-family: Vazir !important;
+    direction: rtl !important;
+    text-align: right !important;
+    scroll-behavior: smooth;
+    background-color: lightgray;
+}
+
+/*h1,h2,h3,h4,h5,h6{*/
+/*    font-family: 'MjAramcoLight' !important;*/
+/*}*/
+.main_title {
+    font-family: 'MjAramcoLight' !important;
+
+}
+
+#app {
+    background-color: white;
+    min-height: 100vh;
+}
+
+* {
+    transition: all 0.5s ease !important;
+}
+
+/*.sectionsWrapper{*/
+/*    overflow-y: scroll !important;*/
+/*    scroll-snap-type: y mandatory !important;*/
+/*}*/
+
+::-webkit-scrollbar {
+    width: 5px;
+    cursor: pointer !important;
+    background-color: gray !important;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    /*box-shadow: inset 0 0 5px grery;*/
+    /*border-radius: 10px;*/
+    cursor: pointer !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: dimgray;
+    border-radius: 5px;
+    cursor: pointer !important;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darkgray;
+    cursor: pointer !important;
+
+}
+
+body {
+
+    overflow-x: hidden;
+    /*max-width: 1600px !important;*/
+    margin: 0 auto;
+}
+
+.btn-orange {
+    background: url("/img/btnback.png") bottom left no-repeat;
+    background-color: #F7941D;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+
+}
+
+.btn-black-rect {
+    background: url("/img/btnback2.png") bottom left no-repeat;
+    color: #F7941D;
+    background-color: black;
+    width: 150px;
+    height: 50px;
+    border-radius: 16px;
+    border: none;
+}
+
+.btn-black {
+    background: url("/img/btnback2.png") bottom left no-repeat;
+    color: #F7941D;
+    background-color: black;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+
+}
+
+.my-border {
+    border: 1px solid #F7941D !important;
+}
+
+.my-color {
+    color: #F7941D !important;
+}
+
+p {
+    text-align: justify;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F7941D'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F7941D'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(-180deg);
+}
+.pointer{
+    cursor: pointer;
+}
+
