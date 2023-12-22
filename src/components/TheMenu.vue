@@ -1,11 +1,11 @@
 <template>
-  <div style="position: relative">
+  <div style="position: relative;">
     <nav class="d-flex justify-content-between" style="height: 50px;position: relative; color: #F7941D">
       <div @click = "menuToggle" class="pointer"><img src="/img/Burgerbutton.png" class="m-3" style="width: 46px" alt=""></div>
       <img src="/img/logo.png" style="width: 110px ; position: absolute; left: 0; top: 0;" alt="">
     </nav>
 
-    <div id="menuContent" class="w-100 vh-100 p-3" style="background-color:  #F7941D; color: black; position: absolute;opacity: 0; right: -100%; top:0; transition: 1s ease">
+    <div id="menuContent" class="w-100 vh-100 p-3" style="background: url('/img/Hive.png')center center no-repeat; background-size: cover; background-color:  #F7941D; color: black; position: absolute;opacity: 0; right: -100%; top:0; transition: 1s ease">
 
       <div class="d-flex justify-content-between">
         <div class="d-flex pointer"  @click = "menuToggle">

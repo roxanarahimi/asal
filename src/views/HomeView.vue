@@ -1,9 +1,6 @@
 <template>
   <div class="home">
     <div class="bg-black text-white">
-
-      <the-menu />
-
       <div class="px-3">
         <h1 class="w-75 my-4 main_title" style="color: #F7941D">
           به عسل لذیذ
@@ -22,7 +19,8 @@
           <button class="btn-orange">بیشتر بدانید</button>
         </div>
 
-        <div style=" min-height: 280px; background-image: url('/img/bee.png'); border-radius: 90px; box-shadow: 0 0 30px 30px black inset;">
+        <div
+            style=" min-height: 280px; background-image: url('/img/bee.png'); border-radius: 90px; box-shadow: 0 0 30px 30px black inset;">
 
         </div>
       </div>
@@ -179,44 +177,56 @@
         <div class="accordion bg-transparent" id="accordionExample">
           <div class="accordion-item bg-transparent my-border text-white rounded-0">
             <h2 class="accordion-header ">
-              <button style="font-size: 12px !important;"  class="accordion-button  bg-transparent text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <button style="font-size: 12px !important;" class="accordion-button  bg-transparent text-white collapsed"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                      aria-controls="collapseOne">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <p>
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها
+                  و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+                  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
                 </p>
               </div>
             </div>
           </div>
           <div class="accordion-item bg-transparent my-border text-white rounded-0">
             <h2 class="accordion-header">
-              <button style="font-size: 12px !important;" class="accordion-button bg-transparent text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <button style="font-size: 12px !important;" class="accordion-button bg-transparent text-white collapsed"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                      aria-controls="collapseTwo">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <p>
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها
+                  و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+                  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
                 </p>
               </div>
             </div>
           </div>
           <div class="accordion-item bg-transparent my-border text-white rounded-0">
             <h2 class="accordion-header">
-              <button style="font-size: 12px !important;" class="accordion-button bg-transparent text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <button style="font-size: 12px !important;" class="accordion-button bg-transparent text-white collapsed"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                      aria-controls="collapseThree">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
               </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <p>
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها
+                  و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+                  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
                 </p>
-                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -229,11 +239,13 @@
       <div class="p-4 py-5" style="background: url('/img/bg3.png') center center no-repeat; background-size: cover; ">
         <div class="py-5 rounded" style="backdrop-filter: blur(15px); font-size: 14px;">
           <h3 class="mb-5">درباره ما بیشتر بدانید</h3>
-          <p style="font-weight: bolder ; font-size:12px; padding-right: 70px; padding-left: 70px">  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
-          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
-          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
-          متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ
-          پیشرو در زبان فارسی</p>
+          <p style="font-weight: bolder ; font-size:12px; padding-right: 70px; padding-left: 70px"> لورم ایپسوم متن
+            ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+            با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+            و
+            متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ
+            پیشرو در زبان فارسی</p>
           <div class="text-center  mt-5">
             <button class="btn-black">بیشتر بدانید</button>
 
@@ -246,16 +258,14 @@
 
     </div>
 
-    <the-footer />
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import theMenu from '@/components/TheMenu.vue'
-import theFooter from "@/components/TheFooter";
+
 export default {
   name: 'HomeView',
-  components: {theFooter, theMenu}
 }
 </script>

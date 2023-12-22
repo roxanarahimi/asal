@@ -104,6 +104,9 @@ body {
 .my-color {
     color: #F7941D !important;
 }
+.my-bg {
+    background-color: #F7941D !important;
+}
 
 p {
     text-align: justify;
@@ -121,3 +124,8 @@ p {
     cursor: pointer;
 }
 
+.dot_container{
+    width: 25px;
+    height: 25px;
+    text-align: right !important;
+}
