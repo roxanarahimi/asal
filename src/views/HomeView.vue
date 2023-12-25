@@ -15,7 +15,7 @@
         </p>
 
 
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end mb-3">
           <button class="btn-orange">بیشتر بدانید</button>
         </div>
 
@@ -26,7 +26,7 @@
     </div>
 
     <div class="bg-light ">
-      <div class="product-section" style="">
+      <div class="product-section text-center pt-3" style="">
 
         <img src="/img/product.png" alt="">
       </div>

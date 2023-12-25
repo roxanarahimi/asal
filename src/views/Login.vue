@@ -14,8 +14,8 @@
         <input id="mobile" type="number" maxlength="11" minlength="11" class="en form-control bg-transparent border-0">
       </div>
     </div>
-<!--    -->
-    <div id="codeForm" class="row pb-4 d-none">
+<!--  d-none  -->
+    <div id="codeForm" class="row pb-4 ">
       <p class="text-light mt-5">کد تایید را وارد نمایید</p>
       <div class="d-flex justify-content-center" dir="ltr">
         <div class="d-flex justify-content-center" style=" display: grid; width: 100px; height: 120px;background: url('/img/input.png') top center no-repeat; background-size: cover ">

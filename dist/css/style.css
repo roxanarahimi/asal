@@ -1,5 +1,5 @@
 body, html {
-    max-width: 360px;
+    max-width: 405px;
     margin: 0 auto;
     font-family: IranSans !important;
     direction: rtl !important;
@@ -78,7 +78,7 @@ body {
 
 }
 
-btn-orange {
+.btn-orange {
     background: url("/img/btnback.png") bottom left no-repeat;
     background-color: #F7941D;
     width: 150px;
