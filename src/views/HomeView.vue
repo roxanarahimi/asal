@@ -2,13 +2,13 @@
   <div class="home">
     <div class="bg-black text-white">
       <div class="px-3">
-        <h1 class="w-75 my-4 main_title" style="color: #F7941D">
+        <h1 class="w-75 my-4 main_title my-color" >
           به عسل لذیذ
           <br>
           خوش آمدید
         </h1>
 
-        <p class="col-8" style="font-size: 12px">
+        <p class="col-8 font-size-12">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
           بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
           با هدف بهبود ابزارهای کاربردی می باشد.
@@ -19,15 +19,14 @@
           <button class="btn-orange">بیشتر بدانید</button>
         </div>
 
-        <div
-            style=" min-height: 280px; background-image: url('/img/bee.png'); border-radius: 90px; box-shadow: 0 0 30px 30px black inset;">
+        <div  class="main-slider">
 
         </div>
       </div>
     </div>
 
     <div class="bg-light ">
-      <div class=" " style="background: url('/img/flybee.png') center center no-repeat; background-size: 100%">
+      <div class="product-section" style="">
 
         <img src="/img/product.png" alt="">
       </div>
