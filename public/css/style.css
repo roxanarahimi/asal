@@ -231,7 +231,7 @@ a, a:hover {
     cursor: pointer;
 }
 
-.productRadio, .productSizeRadio {
+.productRadio, .productSizeRadio, .registerRadio {
     width: 18px;
     height: 18px;
     border: 1px solid #FFB571;
@@ -239,7 +239,7 @@ a, a:hover {
     margin: 3px;
     cursor: pointer;
 }
-.activeProductRadio,.activeProductSizeRadio {
+.activeProductRadio,.activeProductSizeRadio, .activeRegisterRadio {
     background-color: #F7941D;
 }
 

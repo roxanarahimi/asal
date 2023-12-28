@@ -56,20 +56,20 @@
     </div>
 
 
-    <div class="d-flex justify-content-start mt-4">
-      <div class="d-flex pe-4">
-        <p class="me-2">1 کیلو</p>
+    <div class="d-flex justify-content-between mt-4">
+      <div class="d-flex pe-2">
+        <p class="me-2">1 کیلویی</p>
         <div class="productSizeRadio"></div>
       </div>
-      <div class="d-flex pe-4">
-        <p class="me-2">3 کیلو</p>
+      <div class="d-flex pe-2">
+        <p class="me-2">3 کیلویی</p>
         <div class="productSizeRadio activeProductSizeRadio"></div>
       </div>
-      <div class="d-flex pe-4">
-        <p class="me-2">5 کیلو</p>
+      <div class="d-flex pe-2">
+        <p class="me-2">5 کیلویی</p>
         <div class="productSizeRadio"></div>
       </div>
-      <div class="d-flex pe-4">
+      <div class="d-flex pe-2">
         <p class="me-2">فله</p>
         <div class="productSizeRadio"></div>
       </div>

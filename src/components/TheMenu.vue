@@ -42,13 +42,17 @@ export default {
     const links = [
       { title: 'خانه', link: '/', name: 'home' },
       { title: 'محصول', link: '/product', name: 'product' },
-      { title: 'ورود', link: '/login', name: 'login' },
+
       // { title: 'دریافت پیش فاکتور', link: '/factor', name: 'factor' },
       // { title: 'نمایندگی های فعال', link: '/subs', name: 'subs' },
       { title: 'درباره ما', link: '/about', name: 'about' },
       // { title: 'شرکای ما', link: '/colabs', name: 'colabs' },
       { title: 'سوالات متداول', link: '/faq', name: 'faq' },
       // { title: 'ارتباط با ما', link: '/contact', name: 'contact' },
+      { title: 'ورود', link: '/login', name: 'login' },
+      { title: 'ثبت نام', link: '/register', name: 'register' },
+      { title: 'پروفایل', link: '/profile', name: 'profile' },
+      { title: 'خروج', link: '/', name: 'logout' },
     ];
     const menuToggle = ()=>{
       if(flag.value){
