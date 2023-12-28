@@ -3,7 +3,7 @@
 
     <h2 class="my-color mt-5 text-center">سبد خرید</h2>
 
-   <div class="px-4 mt-5">
+   <div class="px-4 mt-5" style="font-family: 'MjFlow' !important">
      <div class="mb-3">
        <div class="d-flex justify-content-between">
          <h4>خمیر ساده 3 کیلو 5 بسته</h4>
