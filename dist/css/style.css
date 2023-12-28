@@ -242,3 +242,7 @@ a, a:hover {
 .activeProductRadio,.activeProductSizeRadio {
     background-color: #F7941D;
 }
+
+.my-font{
+    font-family: 'MjFlow' !important;
+}

@@ -1,9 +1,9 @@
 <template>
-  <div class="w-100 px-4 text-light" style=" font-family: 'MjFlow' !important;background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
+  <div class="w-100 px-4 text-light my-font" style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
 
     <h2 class="my-color mt-5 text-center">سبد خرید</h2>
 
-   <div class="px-4 mt-5" style="font-family: 'MjFlow' !important">
+   <div class="px-4 mt-5" style="">
      <div class="mb-3">
        <div class="d-flex justify-content-between">
          <h4>خمیر ساده 3 کیلو 5 بسته</h4>
