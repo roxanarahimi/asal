@@ -14,29 +14,30 @@
         <input id="mobile" type="number" maxlength="11" minlength="11" class="en form-control bg-transparent border-0">
       </div>
     </div>
-<!--  d-none  -->
+    <div class="text-start">
+    <li class="text-danger" v-for="item in message"><small >{{ item }}</small></li>
+  </div>
+
+    <!--  d-none  -->
     <div id="codeForm" class="row pb-4 ">
       <p class="text-light mt-5">کد تایید را وارد نمایید</p>
-      <div class="d-flex justify-content-center" dir="ltr">
-        <div class="d-flex justify-content-center" style=" display: grid; width: 100px; height: 120px;background: url('/img/input.png') top center no-repeat; background-size: cover ">
+      <div class="d-flex justify-content-center mb-3" dir="ltr">
+        <div class="d-flex justify-content-center" style=" display: grid; width: 93px; height: 85px;background: url('/img/input.png') top center no-repeat; background-size: 100% ">
           <input type="text" id="code1" @input="autoTab($event)" class="w-100 align-self-center text-center bg-transparent border-0 text-light form-control" minLength="1" maxLength="1" min="0" max="9">
         </div>
-        <div class="d-flex justify-content-center" style=" display: grid; width: 100px; height: 120px;background: url('/img/input.png') top center no-repeat; background-size: cover ">
+        <div class="d-flex justify-content-center" style=" display: grid; width: 93px; height: 85px;background: url('/img/input.png') top center no-repeat; background-size: 100% ">
           <input type="text" id="code2" @input="autoTab($event)" class="w-100 align-self-center text-center bg-transparent border-0 text-light form-control"  minLength="1" maxLength="1" min="0" max="9">
         </div>
-        <div class="d-flex justify-content-center" style=" display: grid; width: 100px; height: 120px;background: url('/img/input.png') top center no-repeat; background-size: cover ">
+        <div class="d-flex justify-content-center" style=" display: grid; width: 93px; height: 85px;background: url('/img/input.png') top center no-repeat; background-size: 100% ">
           <input type="text" id="code3" @input="autoTab($event)" class="w-100 align-self-center text-center bg-transparent border-0 text-light form-control" minLength="1" maxLength="1" min="0" max="9">
         </div>
-        <div class="d-flex justify-content-center" style=" display: grid; width: 100px; height: 120px;background: url('/img/input.png') top center no-repeat; background-size: cover ">
+        <div class="d-flex justify-content-center" style=" display: grid; width: 93px; height: 85px;background: url('/img/input.png') top center no-repeat; background-size: 100% ">
           <input type="text" id="code4" @input="autoTab($event)" class="w-100 align-self-center text-center bg-transparent border-0 text-light form-control" minLength="1" maxLength="1" min="0" max="9">
         </div>
       </div>
       <small >دریافت مجدد کد در<span class="my-color time">00:30</span></small>
     </div>
 
-    <div class="text-start">
-      <li v-for="item in message"><small>{{ item }}</small></li>
-    </div>
 
     <p class="mt-5">در صورت عدم ثبت  اطلاعات خود، از راه های ارتباطی زیر اقدام نمایید</p>
     <div dir="ltr">

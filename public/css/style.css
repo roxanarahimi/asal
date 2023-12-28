@@ -108,6 +108,27 @@ body {
     border: none;
 
 }
+.btn-orange2 {
+    background: url("/img/btnback.png") bottom left no-repeat;
+    background-color: #F7941D;
+    width: 150px;
+    height: 50px;
+    border-radius: 16px;
+    border: none;
+    font-family: MjAramcoLight !important;
+
+}
+.btn-black2 {
+    background: url("/img/btnback2.png") bottom left no-repeat;
+    color: #F7941D;
+    background-color: black;
+    width: 150px;
+    height: 50px;
+    border-radius: 16px;
+    border: 2px solid #F7941D;
+    font-family: MjAramcoLight !important;
+
+}
 
 .my-border {
     border: 1px solid #F7941D !important;
@@ -139,8 +160,7 @@ p {
 }
 
 .dot_container {
-    width: 25px;
-    height: 25px;
+
     text-align: right !important;
 }
 
@@ -175,7 +195,50 @@ input[type=number] {
     background: url('/img/flybee.png') center center no-repeat;
     background-size: 100%
 }
-.en{
+
+.en {
     direction: ltr;
     text-align: left;
+}
+
+a, a:hover {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.productCat {
+    font-size: 13px;
+    border: 1px solid #FFB571;
+    border-radius: 3px;
+    margin-left: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+.activeProductCat {
+    border: 1px solid #FFB571;
+    background-color: #F7941D;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-left: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+.productRadio, .productSizeRadio {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #FFB571;
+    border-radius: 50%;
+    margin: 3px;
+    cursor: pointer;
+}
+.activeProductRadio,.activeProductSizeRadio {
+    background-color: #F7941D;
 }
