@@ -48,7 +48,7 @@ export default {
       // { title: 'دریافت پیش فاکتور', link: '/factor', name: 'factor' },
       // { title: 'نمایندگی های فعال', link: '/subs', name: 'subs' },
       { title: 'درباره ما', link: '/about', name: 'about' },
-      // { title: 'شرکای ما', link: '/colabs', name: 'colabs' },
+      { title: 'شرکای ما', link: '/collaboration', name: 'collaboration' },
       { title: 'سوالات متداول', link: '/faq', name: 'faq' },
       // { title: 'ارتباط با ما', link: '/contact', name: 'contact' },
       { title: 'ورود', link: '/login', name: 'login' },
