@@ -2,7 +2,7 @@
   <div style="position: relative;">
     <nav class="d-flex justify-content-between" style="height: 50px;position: relative; color: #F7941D">
       <div @click = "menuToggle" class="pointer"><img src="/img/Burgerbutton.png" class="m-3" style="width: 46px" alt=""></div>
-      <img v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'" src="/img/BeeLogo.png" class="m-3" width="56px" height="18px" alt="">
+      <img v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'" src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">
       <img v-else src="/img/logo.png" style="width: 110px ; position: absolute; left: 0; top: 0;" alt="">
 
     </nav>
@@ -15,7 +15,7 @@
           <small>بازگشت</small>
         </div>
         <div>
-          <img src="/img/BeeLogoBlack.png" width="56px" alt="">
+          <img src="/img/BeelogoBlack.png" width="56px" alt="">
         </div>
       </div>
 

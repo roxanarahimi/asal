@@ -2,7 +2,7 @@
   <div class="w-100 px-3 text-light" style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
 
     <div class="text-center">
-      <img src="/img/BeeLogo.png" style="width: 160px" class="my-5" alt="">
+      <img src="/img/Beelogo.png" style="width: 160px" class="my-5" alt="">
     </div>
     <h3 class="my-color my-3">ورود</h3>
 
