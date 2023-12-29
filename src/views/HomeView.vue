@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="bg-black text-white">
-      <div class="px-3">
+      <div class="my-padding">
         <h1 class="w-75 my-4 main_title my-color" >
           به عسل لذیذ
           <br>
@@ -19,9 +19,7 @@
           <button class="btn-orange">بیشتر بدانید</button>
         </div>
 
-        <div  class="main-slider">
-
-        </div>
+        <div class="main-slider"></div>
       </div>
     </div>
 
@@ -30,8 +28,6 @@
 
         <img src="/img/product.png" alt="">
       </div>
-
-
       <div class="p-4">
         <div class="" style="background: url('/img/frame.png') center center no-repeat; background-size: 100%">
           <div class="d-flex p-4">
@@ -63,15 +59,25 @@
       </div>
     </div>
 
-    <div class="bg-black text-white pt-5 px-3">
+    <div class="bg-black text-white pt-5 my-padding">
 
       <h1 class="mb-4" style="color: #F7941D">نمایندگی های فعال </h1>
 
-      <label for="province">استان</label>
-      <select id="province" class="form-select rounded-0" style="height: 50px; width: 150px">
-        <option>تهران</option>
+      <div class="row mb-3">
+        <div class="col-6">
+          <label for="province">استان</label>
+          <select id="province" class="form-select rounded-0" style="height: 50px;">
+            <option>تهران</option>
+          </select>
+        </div>
+      <div class="col-6">
+          <label for="city">شهر</label>
+          <select id="city" class="form-select rounded-0" style="height: 50px;">
+            <option>تهران</option>
 
-      </select>
+          </select>
+        </div>
+      </div>
 
       <div class="text-center w-100">
         <img src="/img/iran.png" class="img-fluid w-100" style="" alt="">
@@ -93,7 +99,7 @@
 
     <div class="bg-black ">
 
-      <div class="py-5 px-3" style="background-color: #F7941D; border-radius: 24px">
+      <div class="py-5 my-padding" style="background-color: #F7941D; border-radius: 24px">
 
         <h1 class="mb-4">با ما در ارتباط باشید</h1>
 

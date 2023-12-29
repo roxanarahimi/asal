@@ -1,6 +1,6 @@
 <template>
 <footer>
-  <div style="font-size: 12px; background: url('/img/Hive.svg') right bottom no-repeat; background-size: cover" class="bg-black text-white py-5 px-3">
+  <div style="font-size: 12px; background: url('/img/Hive.svg') right bottom no-repeat; background-size: cover" class="bg-black text-white py-5 my-padding">
     <p>شبکه های اجتماعی</p>
 
     <div class="d-flex justify-content-around mb-4">

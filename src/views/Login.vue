@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 px-3 text-light" style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
+  <div class="w-100 my-padding text-light" style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
 
     <div class="text-center">
       <img src="/img/Beelogo.png" style="width: 160px" class="my-5" alt="">

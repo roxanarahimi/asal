@@ -186,7 +186,7 @@ input[type=number] {
     font-size: 12px
 }
 
-.main_title {
+.main-slider {
     min-height: 280px;
     background-image: url('/img/bee.png');
     border-radius: 90px;
@@ -195,7 +195,8 @@ input[type=number] {
 
 .product-section {
     background: url('/img/flybee.png') center center no-repeat;
-    background-size: 100%
+    background-size: 100%;
+
 }
 
 .en {
@@ -278,4 +279,8 @@ a, a:hover {
 }
 button, router-link{
     font-weight: bold !important;
+}
+.my-padding{
+    padding-left: 20px;
+    padding-right: 20px;
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black text-white">
-    <div class="px-3">
+    <div class="my-padding">
       <h2 class=" my-5 my-color">
         خمیر شیرین چیست؟
       </h2>

@@ -1,7 +1,7 @@
 <template>
   <div class="bg-black text-white">
 
-    <div class="px-3">
+    <div class="my-padding">
       <h1 class="w-75 my-4 my-color">
         تغذیه سالم
       </h1>
