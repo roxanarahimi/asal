@@ -46,32 +46,32 @@
 
     <div class="d-flex justify-content-start mt-5">
       <div class="d-flex pe-4">
-        <p class="me-2">ساده</p>
-        <div class="productRadio"></div>
+        <p class="me-2 pointer" @click="productToggle(1)">ساده</p>
+        <div class="productRadio" :id="'product'+1" @click="productToggle(1)"></div>
       </div>
       <div class="d-flex pe-4">
-        <p class="me-2">اولترا</p>
-        <div class="productRadio activeProductRadio"></div>
+        <p class="me-2 pointer" @click="productToggle(2)">اولترا</p>
+        <div class="productRadio activeProductRadio" :id="'product'+2" @click="productToggle(2)"></div>
       </div>
     </div>
 
 
     <div class="d-flex justify-content-between mt-4">
       <div class="d-flex pe-2">
-        <p class="me-2">1 کیلویی</p>
-        <div class="productSizeRadio"></div>
+        <p class="me-2 pointer" @click="productSizeToggle(1)">1 کیلویی</p>
+        <div class="productSizeRadio" :id="'size'+1" @click="productSizeToggle(1)"></div>
       </div>
       <div class="d-flex pe-2">
-        <p class="me-2">3 کیلویی</p>
-        <div class="productSizeRadio activeProductSizeRadio"></div>
+        <p class="me-2 pointer" @click="productSizeToggle(2)">3 کیلویی</p>
+        <div class="productSizeRadio activeProductSizeRadio" :id="'size'+2" @click="productSizeToggle(2)"></div>
       </div>
       <div class="d-flex pe-2">
-        <p class="me-2">5 کیلویی</p>
-        <div class="productSizeRadio"></div>
+        <p class="me-2 pointer" @click="productSizeToggle(3)">5 کیلویی</p>
+        <div class="productSizeRadio"  :id="'size'+3" @click="productSizeToggle(3)"></div>
       </div>
       <div class="d-flex pe-2">
-        <p class="me-2">فله</p>
-        <div class="productSizeRadio"></div>
+        <p class="me-2 pointer" @click="productSizeToggle(4)">فله</p>
+        <div class="productSizeRadio" :id="'size'+4" @click="productSizeToggle(4)"></div>
       </div>
     </div>
 
@@ -105,15 +105,26 @@ export default {
   name: "Products",
   setup() {
 
-    const categoryToggle = (index)=>{
-
+    const categoryToggle = (index,id)=>{
       document.querySelectorAll('.productCat').forEach((element)=>{
         element.classList.remove('activeProductCat');
       })
-
       document.querySelector('#category'+index).classList.add('activeProductCat');
     }
-    return {categoryToggle}
+    const productToggle = (index,id)=>{
+      document.querySelectorAll('.productRadio').forEach((element)=>{
+        element.classList.remove('activeProductRadio');
+      })
+      document.querySelector('#product'+index).classList.add('activeProductRadio');
+    }
+   const productSizeToggle = (index,id)=>{
+      document.querySelectorAll('.productSizeRadio').forEach((element)=>{
+        element.classList.remove('activeProductSizeRadio');
+      })
+      document.querySelector('#size'+index).classList.add('activeProductSizeRadio');
+    }
+
+    return {categoryToggle, productToggle, productSizeToggle}
   }
 
 }

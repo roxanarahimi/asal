@@ -2,7 +2,9 @@
   <div style="position: relative;">
     <nav class="d-flex justify-content-between" style="height: 50px;position: relative; color: #F7941D">
       <div @click = "menuToggle" class="pointer"><img src="/img/Burgerbutton.png" class="m-3" style="width: 46px" alt=""></div>
-      <img src="/img/logo.png" style="width: 110px ; position: absolute; left: 0; top: 0;" alt="">
+      <img v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'" src="/img/BeeLogo.png" class="m-3" width="56px" height="18px" alt="">
+      <img v-else src="/img/logo.png" style="width: 110px ; position: absolute; left: 0; top: 0;" alt="">
+
     </nav>
 
     <div id="menuContent" class="w-100 vh-100 p-3" style="background: url('/img/Hive.png')center center no-repeat; background-size: cover; background-color:  #F7941D; color: black; position: absolute;opacity: 0; right: -100%; top:0; transition: 1s ease">
@@ -52,6 +54,7 @@ export default {
       { title: 'ورود', link: '/login', name: 'login' },
       { title: 'ثبت نام', link: '/register', name: 'register' },
       { title: 'پروفایل', link: '/profile', name: 'profile' },
+      { title: 'سبد خرید', link: '/cart', name: 'cart' },
       { title: 'خروج', link: '/', name: 'logout' },
     ];
     const menuToggle = ()=>{
