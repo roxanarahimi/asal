@@ -8,7 +8,7 @@
 
 
       <div class="text-center">
-        <img src="/img/product.png" alt="">
+        <img src="/img/p2.png" alt="">
       </div>
 
       <div class="text-center my-5">
