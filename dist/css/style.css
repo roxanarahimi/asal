@@ -245,6 +245,22 @@ a, a:hover {
 .activeProductRadio, .activeProductSizeRadio, .activeRegisterRadio {
     background-color: #F7941D;
 }
+.paymentRadio {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #F7941D;
+    color: #F7941D;
+    background-color: black;
+    border-radius: 16px;
+    height: 40px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.activePaymentRadio {
+    background-color: #F7941D;
+    color: black
+}
 
 .my-font {
     font-family: 'MjFlow' !important;

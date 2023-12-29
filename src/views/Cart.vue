@@ -57,8 +57,8 @@
       <p class="mb-0 my-color mt-2">نحوه تسویه</p>
 
       <div class="d-flex">
-        <button class="btn-black2 me-3" style="width: 80px !important">نقدی</button>
-        <button class="btn-orange2" style="width: 80px !important">چک</button>
+        <button @click="paymentToggle(1)" id="cash" class="paymentRadio activePaymentRadio me-3" style="width: 80px !important">نقدی</button>
+        <button @click="paymentToggle(2)" id="check" class="paymentRadio" style="width: 80px !important">چک</button>
       </div>
     </div>
 
@@ -76,8 +76,28 @@ import {useStore} from "vuex";
 export default {
   name: "Profile",
   setup() {
+    const pay = ref();
+    onMounted(()=>{
+      pay.value = 'cash';
+    })
+    const paymentToggle = (index)=>{
+      if (pay.value == 'cash' && index == 2){
+        document.querySelectorAll('.paymentRadio').forEach((element)=>{
+          element.classList.remove('activePaymentRadio');
+        })
+        document.querySelector('#check').classList.add('activePaymentRadio');
+        pay.value = 'check'
+      }else if(pay.value== 'check' && index == 1){
+        document.querySelectorAll('.paymentRadio').forEach((element)=>{
+          element.classList.remove('activePaymentRadio');
+        })
+        document.querySelector('#cash').classList.add('activePaymentRadio');
+        pay.value = 'cash'
+      }
 
-    return {}
+    }
+
+    return { paymentToggle}
   }
 
 }
