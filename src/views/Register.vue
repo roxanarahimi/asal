@@ -20,134 +20,131 @@
     </div>
 
 
-    <form v-if="type=='real'">
+    <form>
       <div class="row">
-        <div class="col-12">
+        <div v-if="type=='real'" class="col-12">
           <label>نام و نام خانوادگی</label>
-          <input type="text" class="form-control form-control-sm">
+          <input id="name" type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
         </div>
-        <div class="col-12">
+        <div v-if="type=='real'" class="col-12">
           <label>کد ملی</label>
-          <input type="text" class="form-control form-control-sm">
+          <input id="nationalCode" type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
         </div>
+
+        <div v-if="type=='legal'" class="col-12">
+          <label>نام شرکت</label>
+          <input id="name" type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+        </div>
+        <div id="operator" v-if="type=='legal'" class="col-12">
+          <label>نام و نام خانوادگی نماینده</label>
+          <input type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+        </div>
+        <div v-if="type=='legal'" class="col-6">
+          <label>شناسه ملی</label>
+          <input id="nationalCode" type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+        </div>
+        <div v-if="type=='legal'" class="col-6">
+          <label>شماره ثبت</label>
+          <input id="registration_number" type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+        </div>
+
+
         <div class="col-6">
           <label>شماره تلفن</label>
-          <input type="text" class="form-control form-control-sm">
+          <input id="phone" type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
         </div>
         <div class="col-6">
           <label>شماره موبایل</label>
-          <input type="text" class="form-control form-control-sm">
+          <input id="mobile" type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
         </div>
 
 
         <div class="col-6">
           <label>استان</label>
-          <select class="form-select form-select-sm">
+          <select id="province_id" class="form-select form-select-sm" required>
             <option></option>
           </select>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
         </div>
         <div class="col-6">
           <label>شهر</label>
-          <select class="form-select form-select-sm">
+          <select id="city_id" class="form-select form-select-sm" required>
             <option></option>
           </select>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
         </div>
 
         <div class="col-12">
           <label>آدرس</label>
-          <input type="text" class="form-control form-control-sm">
+          <input id="address" type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
         </div>
         <div class="col-12">
           <label>کد پستی</label>
-          <input type="text" class="form-control form-control-sm">
+          <input id="postal_code" type="text" class="form-control form-control-sm" required>
+          <div id="priceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
         </div>
       </div>
 
-      <div class=" d-flex justify-content-center mt-5">
-        <button class="btn-orange my-font">ثبت</button>
+      <div v-if="type=='legal'" class="row">
+        <div  class="col-6">
+         <drop-zone id="dropZone1" :title="'تصویر آخرین روزنامه رسمی'" :index="1" :has-error="img1Error"  required/>
+          <div ></div>
+
+        </div>
+        <div  class="col-6">
+         <drop-zone id="dropZone2" :title="'تصویر  '" :index="2" :has-error="img2Error"  required/>
+          <div ></div>
+
+        </div>
+      </div>
+
+      <div class=" d-flex justify-content-center mt-4">
+        <button @click.prevent = "submit" class="btn-orange my-font">ثبت</button>
       </div>
     </form>
-    <form v-else>
-      <div class="row">
-        <div class="col-12">
-          <label>نام شرکت</label>
-          <input type="text" class="form-control form-control-sm">
-        </div>
-        <div class="col-12">
-          <label>نام و نام خانوادگی نماینده</label>
-          <input type="text" class="form-control form-control-sm">
-        </div>
-        <div class="col-6">
-          <label>شناسه ملی</label>
-          <input type="text" class="form-control form-control-sm">
-        </div>
-        <div class="col-6">
-          <label>شماره ثبت</label>
-          <input type="text" class="form-control form-control-sm">
-        </div>
-        <div class="col-6">
-          <label>شماره تلفن</label>
-          <input type="text" class="form-control form-control-sm">
-        </div>
-        <div class="col-6">
-          <label>شماره موبایل</label>
-          <input type="text" class="form-control form-control-sm">
-        </div>
-
-
-        <div class="col-6">
-          <label>استان</label>
-          <select class="form-select form-select-sm">
-            <option></option>
-          </select>
-        </div>
-        <div class="col-6">
-          <label>شهر</label>
-          <select class="form-select form-select-sm">
-            <option></option>
-          </select>
-        </div>
-
-        <div class="col-12">
-          <label>آدرس</label>
-          <input type="text" class="form-control form-control-sm">
-        </div>
-        <div class="col-12">
-          <label>کد پستی</label>
-          <input type="text" class="form-control form-control-sm">
-        </div>
-
-        <div class="col-6">
-          <label>تصویر آخرین روزنامه رسمی</label>
-          <div class="dropAreaContainer"><div class="dropArea"></div></div>
-
-        </div>
-        <div class="col-6">
-          <label>تصویر</label>
-          <div class="dropAreaContainer"><div class="dropArea"></div></div>
-
-        </div>
-
-
-      <div class=" d-flex justify-content-center mt-5">
-        <button class="btn-orange my-font">ثبت</button>
-      </div>
-</div>
-  </form>
   </div>
 </template>
 
 
 <script>
-import {onMounted, ref} from "vue";
-import {useStore} from "vuex";
+import {onMounted, ref, watch} from "vue";
+import dropZone from "../components/DropZone";
 
 export default {
   name: "Profile",
+  components: { dropZone},
   setup() {
 
+    const errors = ref([])
     const type = ref();
+    const img1Error = ref(false)
+    const img2Error = ref(false)
     const typeToggle = (index)=>{
+      let req = document.querySelectorAll('[required]');
+      req.forEach((element) => {
+        element.classList.remove('hasError');
+      })
       if (type.value == 'real' && index == 2){
         document.querySelectorAll('.registerRadio').forEach((element)=>{
           element.classList.remove('activeRegisterRadio');
@@ -160,15 +157,49 @@ export default {
         })
         document.querySelector('#real').classList.add('activeRegisterRadio');
         type.value = 'real'
+
       }
 
     }
+    const submit = ()=>{
+      errors.value = [];
+      let emptyFieldsCount = 0;
+      let req = document.querySelectorAll('[required]');
+      req.forEach((element) => {
+        if (element.value === "") {
+          element.classList.add('hasError');
+          element.nextSibling.innerHTML = "فیلد اجباری";
+          emptyFieldsCount++;
+        } else {
+          element.classList.remove('hasError');
+          element.nextSibling.innerHTML = "";
+        }
+
+        if(document.querySelector('#img1')?.classList.contains('hasError')){
+          img1Error.value = true;
+        }else{
+          img1Error.value = false;
+
+        }
+        if(document.querySelector('#img2')?.classList.contains('hasError')){
+          img2Error.value = true;
+        }else{
+          img2Error.value = false;
+
+        }
+      });
+      if (emptyFieldsCount === 0) {
+
+      }
+
+    }
+
 
     onMounted(()=>{
       type.value = 'real'
     })
     return {
-      type, typeToggle
+      type, typeToggle, submit, errors, img1Error,img2Error
     }
   }
 
@@ -181,4 +212,5 @@ label {
   font-size: 13px;
   margin: 5px;
 }
+
 </style>

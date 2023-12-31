@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunkcopa_bee"]=self["webpackChunkcopa_bee"]||[]).push([[486],{4213:function(e,n,r){r.r(n),r.d(n,{default:function(){return i}});var t=r(3396);const c={class:"w-100 px-4 text-light",style:{background:"url('/img/loginBack.svg') top center no-repeat","background-size":"cover"}};function u(e,n,r,u,a,o){return(0,t.wg)(),(0,t.iD)("div",c)}var a={name:"Profile",setup(){return{}}},o=r(89);const s=(0,o.Z)(a,[["render",u]]);var i=s}}]);
-//# sourceMappingURL=orders.575be115.js.map
+//# sourceMappingURL=orders.919161bd.js.map
