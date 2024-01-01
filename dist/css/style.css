@@ -131,7 +131,17 @@ body {
     font-family: MjFlowBold !important;
 
 }
+.btn-orangePill {
+    background: url("/img/btnback.png") bottom left no-repeat;
+    background-color: #F7941D;
+    width: 140px;
+    height: 32px;
+    border-radius: 25px;
+    border: none;
+    padding-top: 5px;
+    font-family: MjFlowBold !important;
 
+}
 .my-border {
     border: 1px solid #F7941D !important;
 }

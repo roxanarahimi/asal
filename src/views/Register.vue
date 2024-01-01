@@ -113,7 +113,7 @@
 
         </div>
         <div  class="col-6">
-         <drop-zone id="dropZone2" :title="'تصویر  '" :index="2" :has-error="img2Error"  required/>
+         <drop-zone id="dropZone2" :title="'تصویر اساسنامه'" :index="2" :has-error="img2Error"  required/>
           <div></div>
 
         </div>

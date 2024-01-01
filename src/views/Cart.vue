@@ -41,12 +41,11 @@
 
 
     <div class="d-flex justify-content-center my-font">
-      <router-link to="/products" class="btn-orange2 text-black pt-3">
-        <i class="bi bi-plus"></i>
-        افزودن محصول</router-link>
+      <router-link to="/products" class="btn-orangePill text-black">
+        <i class="bi bi-plus"></i>افزودن محصول</router-link>
     </div>
 
-    <div class="my-border mt-5 p-3 text-center">
+    <div class="my-border mt-5 p-3 text-center ">
       <h4> مبلغ نهایی: 500.000.000</h4>
       <h4> تخفیف ریالی: 5.000.000</h4>
     </div>
