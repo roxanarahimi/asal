@@ -14,12 +14,10 @@
         <input id="mobile" type="number" maxlength="11" minlength="11" class="en form-control bg-transparent border-0">
       </div>
     </div>
-    <div class="text-start">
-    <li class="text-danger" v-for="item in message"><small >{{ item }}</small></li>
-  </div>
 
-    <!--  d-none  -->
-    <div id="codeForm" class="row pb-4 ">
+
+    <!--    -->
+    <div id="codeForm" class="row pb-4 d-none">
       <p class="text-light mt-5">کد تایید را وارد نمایید</p>
       <div class="d-flex justify-content-center mb-3" dir="ltr">
         <div class="d-flex justify-content-center" style=" display: grid; width: 93px; height: 85px;background: url('/img/input.png') top center no-repeat; background-size: 100% ">
@@ -35,25 +33,32 @@
           <input type="text" id="code4" @input="autoTab($event)" class="w-100 align-self-center text-center bg-transparent border-0 text-light form-control" minLength="1" maxLength="1" min="0" max="9">
         </div>
       </div>
-      <small >دریافت مجدد کد در<span class="my-color time">00:30</span></small>
+      <small class="d-flex">
+        <span id="resend">دریافت مجدد کد در</span>
+        <span id="time" style="width: 35px !important; text-align: center" class="my-color time"></span>
+        ثانیه
+      </small>
+
+    </div>
+    <div class="text-start">
+      <li class="error" v-for="item in message"><span >{{ item }}</span></li>
     </div>
 
-
-    <p class="mt-5">در صورت عدم ثبت  اطلاعات خود، از راه های ارتباطی زیر اقدام نمایید</p>
-    <div dir="ltr">
-      <div class="d-flex mb-2">
-        <img src="/img/phoneLogo.png" class="mx-2" width="20px" alt="">
-        <small>09300432833</small>
-      </div>
-      <div class="d-flex mb-2">
-        <img src="/img/emailLogo.png" class="mx-2" width="20px" alt="">
-        <small>copabee.example@gmail.com</small>
-      </div>
-      <div class="d-flex mb-2">
-        <img src="/img/whatsappLogo.png" class="mx-2" width="20px" alt="">
-        <small>09300432833</small>
-      </div>
-    </div>
+    <p class="mt-5">در صورت عدم ثبت اطلاعات خود، لطفا اینجا <router-link to="/register" class="text-info">ثبت نام</router-link> کنید</p>
+<!--    <div dir="ltr">-->
+<!--      <div class="d-flex mb-2">-->
+<!--        <img src="/img/phoneLogo.png" class="mx-2" width="20px" alt="">-->
+<!--        <small>09300432833</small>-->
+<!--      </div>-->
+<!--      <div class="d-flex mb-2">-->
+<!--        <img src="/img/emailLogo.png" class="mx-2" width="20px" alt="">-->
+<!--        <small>copabee.example@gmail.com</small>-->
+<!--      </div>-->
+<!--      <div class="d-flex mb-2">-->
+<!--        <img src="/img/whatsappLogo.png" class="mx-2" width="20px" alt="">-->
+<!--        <small>09300432833</small>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -66,7 +71,7 @@ export default {
   name: "Login",
   setup() {
     onMounted(()=>{
-      localStorage.clear();
+      // localStorage.clear();
     });
     const store = useStore();
     const scope= ref('user');
@@ -81,7 +86,6 @@ export default {
       document.getElementById("code4").value = '';
     });
     const getCode = () => {
-
       message.value = [];
       mobile.value = document.getElementById('mobile').value;
       if(mobile.value.length === 0){
@@ -98,7 +102,7 @@ export default {
 
       if(mobile.value.length === 11 && mobile.value.startsWith('09')){
         message.value = [];
-        axios.post('/api/otp/mobile', {
+        axios.post('https://panel.asal.webagent.ir/api/otp/mobile', {
           mobile: document.getElementById('mobile').value,
           scope: 'user'
         }, {progress: false})
@@ -119,6 +123,7 @@ export default {
               },60000)
             })
             .catch((err) => {
+              console.error(err)
               message.value = err.response.data.message;
             })
       }
@@ -170,7 +175,7 @@ export default {
 
       if (code.length === 4) {
 
-        axios.post('/api/mobile/login', {
+        axios.post('https://panel.asal.webagent.ir/api/mobile/login', {
           mobile: document.getElementById('mobile').value,
           scope: 'user',
           password: document.getElementById("code1").value + document.getElementById("code2").value + document.getElementById("code3").value + document.getElementById("code4").value
@@ -179,10 +184,8 @@ export default {
               if (res.status === 200) {
                 localStorage.setItem('user',JSON.stringify(res.data.user))
                 localStorage.setItem('token',JSON.stringify(res.data.access_token))
-                localStorage.setItem('scope',JSON.stringify(res.data.scope))
                 localStorage.setItem('expire',JSON.stringify(res.data.expire));
-                console.log(localStorage)
-                window.location = '/';
+                window.location = '/profile';
               }else{
                 console.log(res)
               }
@@ -197,6 +200,10 @@ export default {
       }
     }
 
+    onMounted(()=>{
+      console.log(localStorage);
+
+    })
     return {
       autoTab, getCode, scope, message, mobile, counter, time, resend, editNumber, errors, store,
     }

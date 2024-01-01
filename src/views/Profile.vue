@@ -40,12 +40,55 @@
 <script>
 import {onMounted, ref} from "vue";
 import {useStore} from "vuex";
+import App from "@/App";
 
 export default {
   name: "Profile",
   setup() {
+onMounted(()=>{
+  console.log(localStorage);
+updateUserInfo();
+})
+    const updateUserInfo=()=> {
+      if (localStorage.getItem('user')) {
+        axios.get(App.setup().url+'/api/user/' + JSON.parse(localStorage.getItem('user')).id)
+            .then(async (response) => {
 
-    return {}
+              if (response.status === 200 && response.data.scope === 'user') {
+                await localStorage.setItem('user', JSON.stringify(response.data));
+                this.user = response.data;
+
+              }
+            })
+            .then(() => {
+              // if(this.user?.cart?.items?.length) {
+              // document.getElementById('cart_count').classList.remove('d-none')
+              if (this.user?.cart?.items?.length === undefined || this.user?.cart?.items?.length === 0) {
+                document.getElementById('cart_count').innerHTML = '';
+              } else {
+                document.getElementById('cart_count').innerHTML = this.user?.cart?.items?.length;
+
+              }
+              // }  // }else{
+              //     document.getElementById('cart_count').classList.add('d-none')
+              // }
+              // if (this.user){
+              //     console.log(this.user);
+              //     console.log(this.user.cart);
+              //     console.log(this.user.cart.items);
+              //     console.log(this.user.cart.items?.length);
+              //     console.log(this.user.cart-items-count);
+              // }
+            })
+            .catch((error) => {
+              console.log(error);
+            })
+      }
+
+    }
+    return {
+  updateUserInfo
+    }
   }
 
 }

@@ -25,53 +25,53 @@
         <div v-if="type=='real'" class="col-12">
           <label>نام و نام خانوادگی</label>
           <input id="name" type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="nameHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.name">{{ e }}</p>
         </div>
         <div v-if="type=='real'" class="col-12">
           <label>کد ملی</label>
-          <input id="nationalCode" type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <input id="national_code" type="text" class="form-control form-control-sm" required>
+          <div id="national_codeHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.national_code">{{ e }}</p>
         </div>
 
         <div v-if="type=='legal'" class="col-12">
           <label>نام شرکت</label>
           <input id="name" type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="nameHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.name">{{ e }}</p>
         </div>
         <div id="operator" v-if="type=='legal'" class="col-12">
           <label>نام و نام خانوادگی نماینده</label>
           <input type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="operatorHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.operator">{{ e }}</p>
         </div>
         <div v-if="type=='legal'" class="col-6">
           <label>شناسه ملی</label>
-          <input id="nationalCode" type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <input id="national_code" type="text" class="form-control form-control-sm" required>
+          <div id="national_codeHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.national_code">{{ e }}</p>
         </div>
         <div v-if="type=='legal'" class="col-6">
           <label>شماره ثبت</label>
           <input id="registration_number" type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="registration_numberHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.registration_number">{{ e }}</p>
         </div>
 
 
         <div class="col-6">
           <label>شماره تلفن</label>
           <input id="phone" type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="phoneHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.phone">{{ e }}</p>
         </div>
         <div class="col-6">
           <label>شماره موبایل</label>
           <input id="mobile" type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="mobileHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.mobile">{{ e }}</p>
         </div>
 
 
@@ -80,41 +80,41 @@
           <select id="province_id" class="form-select form-select-sm" required>
             <option></option>
           </select>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="province_idHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>
         </div>
         <div class="col-6">
           <label>شهر</label>
           <select id="city_id" class="form-select form-select-sm" required>
             <option></option>
           </select>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="city_idHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
         </div>
 
         <div class="col-12">
           <label>آدرس</label>
           <input id="address" type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="addressHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.address">{{ e }}</p>
         </div>
         <div class="col-12">
           <label>کد پستی</label>
           <input id="postal_code" type="text" class="form-control form-control-sm" required>
-          <div id="priceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.price">{{ e }}</p>
+          <div id="postal_codeHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.postal_code">{{ e }}</p>
         </div>
       </div>
 
       <div v-if="type=='legal'" class="row">
         <div  class="col-6">
          <drop-zone id="dropZone1" :title="'تصویر آخرین روزنامه رسمی'" :index="1" :has-error="img1Error"  required/>
-          <div ></div>
+          <div></div>
 
         </div>
         <div  class="col-6">
          <drop-zone id="dropZone2" :title="'تصویر  '" :index="2" :has-error="img2Error"  required/>
-          <div ></div>
+          <div></div>
 
         </div>
       </div>
@@ -144,6 +144,9 @@ export default {
       let req = document.querySelectorAll('[required]');
       req.forEach((element) => {
         element.classList.remove('hasError');
+        element.nextSibling.innerHTML = "";
+        img1Error.value = false;
+        img2Error.value = false;
       })
       if (type.value == 'real' && index == 2){
         document.querySelectorAll('.registerRadio').forEach((element)=>{
