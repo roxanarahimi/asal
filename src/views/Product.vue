@@ -6,9 +6,23 @@
       <h3 class="my-font my-color mt-3">تغذیه ساده</h3>
 
 
-      <div class="text-center">
-        <img src="/img/p2.png" alt="">
-      </div>
+     <div class="d-flex p-0 m-0  font-size-12" >
+       <div class=" text-center pt-3" style="width: 30% !important">
+         <img src="/img/vectorright.png" class="w-100 mb-3" alt="">
+         <p>آماده مصرف و بدون نیاز به آماده سازی</p>
+       </div>
+       <div class="  text-center p-0 m-0"  style="width: 40% !important">
+         <img src="/img/p2.png" class="w-100" alt="">
+       </div>
+       <div class=" text-center p-0 m-0" style="width: 30% !important">
+         <div class="d-grid h-100 pb-3">
+           <div class="align-self-end" >
+             <p class="mb-2">عدم استفاده از مواد تراریخته در ترکیبات محصول</p>
+             <img src="/img/vectorleft.png"  class="w-100" alt="">
+           </div>
+         </div>
+       </div>
+     </div>
 
       <div class="text-center my-5">
         <router-link to="/products" class="btn-orange" style="padding-top: 12px">خرید عمده</router-link>
