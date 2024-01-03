@@ -1,12 +1,13 @@
 <template>
   <div class="bg-black text-white">
 
-    <div class="my-padding">
+    <div class="">
 
       <h3 class="my-font my-color mt-3">تغذیه ساده</h3>
 
 
-     <div class="d-flex p-0 m-0  font-size-12" >
+     <div class="d-flex my-padding font-size-12" style="background: url('/img/pback.svg')left bottom no-repeat;
+      background-size: 80%;margin-top: -20px; padding-top: 70px;" >
        <div class=" text-center pt-3" style="width: 30% !important">
          <img src="/img/vectorright.png" class="w-100 mb-3" alt="">
          <p>آماده مصرف و بدون نیاز به آماده سازی</p>
@@ -28,8 +29,10 @@
         <router-link to="/products" class="btn-orange" style="padding-top: 12px">خرید عمده</router-link>
       </div>
 
+</div>
+    <div class="my-padding">
 
-      <h3 class="my-color mb-0"></h3>
+    <h3 class="my-color mb-0"></h3>
       <h3 class="my-font my-color mt-3">ویژگی های خمیر</h3>
 
       <div class="d-flex">
