@@ -108,6 +108,9 @@ body {
     border: none;
 
 }
+.btn-black:hover, .btn-black-rect:hover {
+    color: #F7941D;
+}
 
 .btn-orange2 {
     background: url("/img/btnback.png") bottom left no-repeat;
@@ -131,6 +134,7 @@ body {
     font-family: MjFlowBold !important;
 
 }
+
 .btn-orangePill {
     background: url("/img/btnback.png") bottom left no-repeat;
     background-color: #F7941D;
@@ -142,6 +146,7 @@ body {
     font-family: MjFlowBold !important;
 
 }
+
 .my-border {
     border: 1px solid #F7941D !important;
 }
@@ -256,6 +261,7 @@ a, a:hover {
 .activeProductRadio, .activeProductSizeRadio, .activeRegisterRadio {
     background-color: #F7941D;
 }
+
 .paymentRadio {
     width: 18px;
     height: 18px;
@@ -277,7 +283,7 @@ a, a:hover {
     font-family: 'MjFlow' !important;
 }
 
-.dropAreaContainer{
+.dropAreaContainer {
     border: 3px dashed #F7941D;
     border-radius: 25px
 
@@ -288,16 +294,20 @@ a, a:hover {
     background-color: rgba(255, 181, 113, 0.71);
     border-radius: 20px
 }
-.dropAreaContainerHasError{
-     border: 3px dashed #ff7575;
- }
-.dropAreaHasError{
+
+.dropAreaContainerHasError {
+    border: 3px dashed #ff7575;
+}
+
+.dropAreaHasError {
     background-color: rgba(240, 128, 128, 0.71);
 }
-button, router-link{
+
+button, router-link {
     font-weight: bold !important;
 }
-.my-padding{
+
+.my-padding {
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -311,4 +321,13 @@ button, router-link{
     border: 2px solid lightcoral !important;
     box-shadow: none !important;
     font-size: 11px;
+}
+
+.check-box {
+    font-size: 19px;
+    line-height: 7px;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1.5px solid black;
 }

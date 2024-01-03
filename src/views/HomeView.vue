@@ -16,7 +16,7 @@
 
 
         <div class="d-flex justify-content-end mb-3">
-          <button class="btn-orange">بیشتر بدانید</button>
+          <router-link to="/about" class="btn-orange" style="padding-top: 12px">بیشتر بدانید</router-link>
         </div>
 
         <div class="main-slider"></div>
@@ -45,7 +45,7 @@
       </div>
 
       <div class="d-flex justify-content-center">
-        <button class="btn-orange mb-5">بیشتر بدانید</button>
+        <router-link to="/product" class="btn-orange mb-5" style="padding-top: 12px">بیشتر بدانید</router-link>
       </div>
     </div>
 
@@ -97,7 +97,7 @@
       </div>
     </div>
 
-    <div class="bg-black ">
+    <div class="bg-black my-padding">
 
       <div class="py-5 my-padding" style="background-color: #F7941D; border-radius: 24px">
 
@@ -112,23 +112,15 @@
         <div class="d-flex justify-content-between">
           <div class="d-flex justify-content-start">
 
-            <div class="me-3" style="width: 20px; height: 20px; border-radius: 2px; border: 1.5px solid black">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2"
-                   viewBox="0 0 16 16">
-                <path
-                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-              </svg>
+            <div class="me-3 check-box" >
+              <i class="bi bi-check-lg"></i>
             </div>
             <p>سوال</p>
           </div>
           <div class="d-flex justify-content-start">
 
-            <div class="me-3" style="width: 20px; height: 20px; border-radius: 2px; border: 1.5px solid black">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2"
-                   viewBox="0 0 16 16">
-                <path
-                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-              </svg>
+            <div class="me-3 check-box" >
+              <i class="bi bi-check-lg"></i>
             </div>
             <p>انتقاد و پیشنهاد</p>
           </div>
@@ -140,12 +132,8 @@
         </div>
 
         <div class="d-flex justify-content-start">
-          <div class="me-3" style="width: 20px; height: 20px; border-radius: 2px; border: 1.5px solid black">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2"
-                 viewBox="0 0 16 16">
-              <path
-                  d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-            </svg>
+          <div class="me-3 check-box" >
+            <i class="bi bi-check-lg"></i>
           </div>
           <p>ناشناس</p>
 
@@ -252,7 +240,7 @@
             متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ
             پیشرو در زبان فارسی</p>
           <div class="text-center  mt-5">
-            <button class="btn-black">بیشتر بدانید</button>
+            <router-link to="/about" class="btn-black" style="padding-top: 12px">بیشتر بدانید</router-link>
 
           </div>
         </div>

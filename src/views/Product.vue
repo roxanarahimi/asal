@@ -2,9 +2,8 @@
   <div class="bg-black text-white">
 
     <div class="my-padding">
-      <h1 class="w-75 my-4 my-color">
-        تغذیه سالم
-      </h1>
+
+      <h3 class="my-font my-color mt-3">تغذیه ساده</h3>
 
 
       <div class="text-center">
@@ -12,13 +11,16 @@
       </div>
 
       <div class="text-center my-5">
-        <button class="btn-orange">خرید عمده</button>
+        <router-link to="/products" class="btn-orange" style="padding-top: 12px">خرید عمده</router-link>
       </div>
 
 
-      <h3 class="my-color mb-0">ویژگی های خمیر</h3>
+      <h3 class="my-color mb-0"></h3>
+      <h3 class="my-font my-color mt-3">ویژگی های خمیر</h3>
+
       <div class="d-flex">
-        <h3 class="my-color mb-0">تولید شده</h3>
+        <h3 class="my-font my-color ">تولید شده</h3>
+
         <div class="d-grid">
           <img class="align-self-center mx-2" src="/img/Beelogo.png" width="80px" alt="">
         </div>
@@ -100,7 +102,8 @@
 
       <img src="/img/beee.png" alt="">
 
-      <h3 class="my-color mb-0">دلایل استفاده از خمیر شیرین</h3>
+      <h3 class="my-font my-color mt-3">دلایل استفاده از خمیر شیرین</h3>
+
 
       <ul class="px-2 " style="list-style: none; align-self: center">
         <li class="d-flex">
@@ -167,7 +170,8 @@
       </ul>
 
 
-      <div class="my-bg rounded-3 p-5 text-black text-center">
+      <div class="my-bg rounded-3 p-5 text-black text-center position-relative">
+        <img src="/img/b2.png" width="150px"  class="position-absolute " style="left:10px; top: 30px" alt="">
        <h5 class="text-center"> کوپابی را از اینجا تهیه کنید.</h5>
 
         <button class="btn-black mt-5">نمایندگی های فعال</button>

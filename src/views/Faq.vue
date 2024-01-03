@@ -1,9 +1,8 @@
 <template>
   <div class="bg-black text-white">
     <div class="my-padding">
-      <h2 class=" my-5 my-color">
-        خمیر شیرین چیست؟
-      </h2>
+
+      <h3 class="my-font my-color mt-5 mb-3">خمیر شیرین چیست؟</h3>
 
       <p>
         زنبورهای عسل از طریق گرده افشانی، نقش مهمی در تامین منابع غذایی برای انسان ها، حیوانات و همچنین گوناگونی زیستی
@@ -23,7 +22,7 @@
 
 
 
-      <h3 class="my-color mb-0">چرا کوپابی را جایگزین شربت شهد کنیم؟</h3>
+      <h3 class="my-font my-color my-3">چرا کوپابی را جایگزین شربت شهد کنیم؟</h3>
 
 
       <p>
