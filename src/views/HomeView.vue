@@ -26,9 +26,9 @@
     <div class="bg-light ">
       <div class="product-section text-center pt-3" style="">
 
-        <img src="/img/product.png" alt="">
+        <img src="/img/p2.png" alt="">
       </div>
-      <div class="p-4">
+      <div class="p-4 px-5">
         <div class="" style="background: url('/img/frame.png') center center no-repeat; background-size: 100%">
           <div class="d-flex p-4">
 
@@ -61,7 +61,7 @@
 
     <div class="bg-black text-white pt-5 my-padding">
 
-      <h1 class="mb-4" style="color: #F7941D">نمایندگی های فعال </h1>
+      <h1 class="mb-4 my-font my-color" >نمایندگی های فعال </h1>
 
       <div class="row mb-3">
         <div class="col-6">
@@ -101,7 +101,7 @@
 
       <div class="py-5 my-padding" style="background-color: #F7941D; border-radius: 24px">
 
-        <h1 class="mb-4">با ما در ارتباط باشید</h1>
+        <h1 class="mb-4 my-font">با ما در ارتباط باشید</h1>
 
 
         <p>ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
@@ -164,7 +164,7 @@
 
     <div class="bg-black text-white py-5 px-4">
 
-      <h2 class="mb-4 my-color">سوالات متداول شما</h2>
+      <h2 class="mb-4 my-color my-font">سوالات متداول شما</h2>
       <div style="font-size: 12px !important; color: white" class="mb-3">
 
         <div class="accordion bg-transparent" id="accordionExample">
@@ -231,7 +231,7 @@
     <div class="text-center">
       <div class="p-4 py-5" style="background: url('/img/bg3.png') center center no-repeat; background-size: cover; ">
         <div class="py-5 rounded" style="backdrop-filter: blur(15px); font-size: 14px;">
-          <h3 class="mb-5">درباره ما بیشتر بدانید</h3>
+          <h3 class="mb-5 my-font">درباره ما بیشتر بدانید</h3>
           <p style="font-weight: bolder ; font-size:12px; padding-right: 70px; padding-left: 70px"> لورم ایپسوم متن
             ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
             بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
