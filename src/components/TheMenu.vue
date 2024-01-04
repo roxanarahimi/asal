@@ -56,41 +56,24 @@ export default {
     const flag = ref(0);
     const links = ref([])
     onBeforeMount(() => {
-      if (JSON.parse(localStorage.getItem('user')) != null) {
         links.value = [
           {title: 'خانه', link: '/', name: 'home'},
           {title: 'محصول', link: '/product', name: 'product'},
-          // { title: 'دریافت پیش فاکتور', link: '/factor', name: 'factor' },
           // { title: 'نمایندگی های فعال', link: '/subs', name: 'subs' },
           {title: 'درباره ما', link: '/about', name: 'about'},
           {title: 'شرکای ما', link: '/collaboration', name: 'collaboration'},
           {title: 'سوالات متداول', link: '/faq', name: 'faq'},
-          // { title: 'ارتباط با ما', link: '/contact', name: 'contact' },
-          {title: 'پروفایل', link: '/profile', name: 'profile'},
-          {title: 'سبد خرید', link: '/cart', name: 'cart'},
-          {title: 'خروج', link: '/', name: 'logout'},
+          {title: 'حساب کاربری', link: '/login', name: 'login'},
+          // {title: 'خروج', link: '/', name: 'logout'},
         ];
-      } else {
-        links.value = [
-          {title: 'خانه', link: '/', name: 'home'},
-          {title: 'محصول', link: '/product', name: 'product'},
-          // { title: 'دریافت پیش فاکتور', link: '/factor', name: 'factor' },
-          // { title: 'نمایندگی های فعال', link: '/subs', name: 'subs' },
-          {title: 'درباره ما', link: '/about', name: 'about'},
-          {title: 'شرکای ما', link: '/collaboration', name: 'collaboration'},
-          {title: 'سوالات متداول', link: '/faq', name: 'faq'},
-          // { title: 'ارتباط با ما', link: '/contact', name: 'contact' },
-          {title: 'ورود', link: '/login', name: 'login'},
-          {title: 'ثبت نام', link: '/register', name: 'register'},
-        ];
-      }
+
     });
     onMounted(() => {
-      if (JSON.parse(localStorage.getItem('user')) != null) {
-        document.querySelector('#logout').addEventListener('click', () => {
-          logout();
-        })
-      }
+      // if (JSON.parse(localStorage.getItem('user')) != null) {
+      //   document.querySelector('#logout').addEventListener('click', () => {
+      //     logout();
+      //   })
+      // }
     })
 
     const menuToggle = () => {

@@ -40,7 +40,7 @@
 
     </div>
 
-    <div class="mb-4" style="height: 110px">
+    <div class="" style="height: 110px">
 
       <div v-if="selectedCategory" class="d-flex justify-content-start ">
         <div v-for="item in selectedCategory.products" :key="item.id" class="d-flex pe-4">
@@ -58,20 +58,19 @@
         </div>
       </div>
     </div>
+    <div style="height: 82px">
+      <div v-if="selectedSize" class="d-flex" style="font-size: 13px">
+      <small class="my-color">قیمت: </small>
+      <small>{{ selectedSize.price }}</small>
+      <small>ریال </small>
+    </div>
 
-
-<!--    <div class="d-flex my-3" style="font-size: 13px">-->
-<!--      <small class="my-color">قیمت واحد: </small>-->
-<!--      <small>500.000 </small>-->
-<!--      <small>ریال </small>-->
-<!--    </div>-->
-    <div style="height: 62px">
       <div v-if="selectedSize" class="row">
         <label v-if="selectedSize.size == 'فله'">وزن</label>
         <label v-else>تعداد</label>
         <div class="col-6 d-flex">
           <input v-model="quantity" type="number" class="form-control me-3">
-          <p v-if="selectedSize.size == 'فله'" class="mb-0">کیلو</p>
+          <p v-if="selectedSize.size == 'فله'" class="mb-0">کیلویی</p>
           <p v-else class="mb-0">بسته</p>
         </div>
 
@@ -81,6 +80,26 @@
     <div class="d-flex justify-content-between mt-5">
       <button class="btn-orange2" @click="addToCart">افزودن به سبد</button>
       <router-link to="/cart" class="btn-black2 pt-2">سبد خرید</router-link>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div v-if="quantity" class="modal fade"  id="add-to-cart-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!--          <button type="button" class="btn-close m-2 me-auto" data-bs-dismiss="modal" aria-label="Close"></button>-->
+        <div class="modal-body ">
+
+          <p v-if="quantity && selectedSize?.size!='فله'" class="text-center">{{ quantity }} بسته {{ selectedCategory?.title }} {{ selectedProduct?.title }} {{ selectedSize?.size }}</p>
+          <p v-if="quantity && selectedSize?.size=='فله'" class="text-center">{{ quantity }} کیلو {{ selectedCategory?.title }} {{ selectedProduct?.title }} {{ selectedSize?.size }}</p>
+          <img src="/img/check.png" alt="">
+          <p class="text-center">با موفقیت به سبد خرید افزوده شد</p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn-black-rect my-3" @click="clearSelection" style="width: 100px; height:40px" data-bs-dismiss="modal">تائید</button>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -154,7 +173,28 @@ export default {
     }
     const addToCart = ()=>{
       if (quantity.value != null){
-        alert('محصول با موفقیت به سبد خرید افزوده شد');
+        axios.post(store.state.panelUrl+'/api/order',{
+          user_id: JSON.parse(localStorage.getItem('user')).id,
+          product_id: selectedProduct.value.id,
+          product_size_id: selectedSize.value.id,
+          price: selectedSize.value.price,
+          quantity: quantity.value
+        })
+        .then((response)=>{
+          let myModal = new bootstrap.Modal(document.getElementById('add-to-cart-modal'))
+          myModal.show();
+
+        }).catch((error)=>{console.error(error)})
+
+
+
+
+      }else{
+        alert('لطفا مراحل سفارش را کامل کنید')
+      }
+    }
+
+    const clearSelection = ()=>{
         document.querySelectorAll('.productCat').forEach((element)=>{
           element.classList.remove('activeProductCat');
         })
@@ -167,13 +207,8 @@ export default {
         selectedCategory.value = null;
         selectedProduct.value = null;
         selectedSize.value = null;
-
-      }else{
-        alert('لطفا مراحل سفارش را کامل کنید')
-      }
     }
-
-    return {categoryToggle, productToggle, productSizeToggle, getData,addToCart, store,panelUrl,
+    return {categoryToggle, productToggle, productSizeToggle, getData,addToCart, store,panelUrl, clearSelection,
       data: computed(()=>store.state.productsCats),
       selectedCategory , selectedProduct, selectedSize, quantity
     }
@@ -183,5 +218,11 @@ export default {
 </script>
 
 <style scoped>
+
+.modal-dialog{
+  width: 350px !important;
+  margin: 0 auto !important;
+  text-align: center;
+}
 
 </style>

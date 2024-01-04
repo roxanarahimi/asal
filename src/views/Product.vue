@@ -3,7 +3,7 @@
 
     <div class="">
 
-      <h3 class="my-font my-color mt-3">تغذیه ساده</h3>
+      <h3 class="my-font my-color mt-3 my-padding">تغذیه ساده</h3>
 
 
      <div class="d-flex my-padding font-size-12" style="background: url('/img/pback.svg')left bottom no-repeat;
@@ -44,7 +44,7 @@
       </div>
 
 
-      <ul class="px-2 " style="list-style: none; align-self: center">
+      <ul class="px-0 pe-2 " style="list-style: none; align-self: center">
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
@@ -122,7 +122,7 @@
       <h3 class="my-font my-color mt-3">دلایل استفاده از خمیر شیرین</h3>
 
 
-      <ul class="px-2 " style="list-style: none; align-self: center">
+      <ul class="px-0 pe-2 " style="list-style: none; align-self: center">
         <li class="d-flex">
           <div class="text-start" style="width: 15px; height: 15px; "><i class="bi bi-dash my-color"></i></div>
           <p>
@@ -191,7 +191,7 @@
         <img src="/img/b2.png" width="150px"  class="position-absolute " style="left:10px; top: 30px" alt="">
        <h5 class="text-center"> کوپابی را از اینجا تهیه کنید.</h5>
 
-        <button class="btn-black mt-5">نمایندگی های فعال</button>
+        <router-link to="/?topic=agency" class="btn-black mt-5" style="padding-top: 12px">نمایندگی های فعال</router-link>
 
       </div>
 

@@ -284,23 +284,33 @@ a, a:hover {
 }
 
 .dropAreaContainer {
-    border: 3px dashed #F7941D;
-    border-radius: 25px
+    border: 1px solid #F7941D;
+    border-radius: 16px
 
 }
 
 .dropArea {
-    height: 220px;
-    background-color: rgba(255, 181, 113, 0.71);
-    border-radius: 20px
+    min-height: 30px;
+    /*max-height: 220px;*/
+    /*background-color: rgba(255, 181, 113, 0.71);*/
+    border-radius: 16px
 }
-
+.label {
+    /*color: #FFB571 !important;*/
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px;
+    color: #F7941D;
+}
 .dropAreaContainerHasError {
-    border: 3px dashed #ff7575;
+    border: 1px solid #ff7575;
 }
 
 .dropAreaHasError {
-    background-color: rgba(240, 128, 128, 0.71);
+    background-color: rgba(240, 128, 128, 0.46);
+}
+.dropAreaHasError .label{
+    color: #ff5858 !important;
 }
 
 button, router-link {
@@ -330,4 +340,7 @@ button, router-link {
     height: 20px;
     border-radius: 2px;
     border: 1.5px solid black;
+}
+xo{
+    color: #dcdde7;
 }

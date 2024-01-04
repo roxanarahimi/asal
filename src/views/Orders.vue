@@ -3,8 +3,8 @@
 
     <h2 class="my-color mt-5 text-center my-font">سفارشات اخیر</h2>
 
-   <div class="px-4 mt-5 my-font" style="">
-     <div v-for="item in 3" class="mb-3">
+   <div v-if="data.length" class="px-4 mt-5 my-font" style="">
+     <div v-for="item in data" class="mb-3">
        <div class="d-flex justify-content-between">
          <div>
            <h4>15-425868</h4>
@@ -15,7 +15,7 @@
          <div class="d-grid text-end">
            <h4 class="align-self-start">1402/10/02</h4>
 
-           <small class="align-self-end my-color mx-auto">درحال بررسی</small>
+           <small class="align-self-end my-color mx-auto">{{ item.status }}</small>
          </div>
        </div>
        <div class="text-center">
@@ -44,28 +44,25 @@ import {useStore} from "vuex";
 export default {
   name: "Orders",
   setup() {
-    const pay = ref();
+    const store = useStore()
+    const data = ref([]);
     onMounted(()=>{
-      pay.value = 'cash';
+     getData();
     })
-    const paymentToggle = (index)=>{
-      if (pay.value == 'cash' && index == 2){
-        document.querySelectorAll('.paymentRadio').forEach((element)=>{
-          element.classList.remove('activePaymentRadio');
-        })
-        document.querySelector('#check').classList.add('activePaymentRadio');
-        pay.value = 'check'
-      }else if(pay.value== 'check' && index == 1){
-        document.querySelectorAll('.paymentRadio').forEach((element)=>{
-          element.classList.remove('activePaymentRadio');
-        })
-        document.querySelector('#cash').classList.add('activePaymentRadio');
-        pay.value = 'cash'
-      }
 
+
+    // /userOrders/{user}
+    const getData = () => {
+      axios.get(store.state.panelUrl + '/api/userOrders/' + JSON.parse(localStorage.getItem('user')).id)
+          .then((response) => {
+            data.value = response.data;
+            console.log(response.data)
+          }).catch((error) => {
+        console.error(error)
+      })
     }
 
-    return { paymentToggle}
+    return { getData, store, data }
   }
 
 }

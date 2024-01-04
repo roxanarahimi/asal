@@ -30,7 +30,7 @@
         </div>
         <div v-if="type=='real'" class="col-12">
           <label>کد ملی</label>
-          <input id="national_code" type="text" class="form-control form-control-sm" required>
+          <input id="national_code" type="text" class="en form-control form-control-sm" required>
           <div id="national_codeHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.national_code">{{ e }}</p>
         </div>
@@ -49,13 +49,13 @@
         </div>
         <div v-if="type=='legal'" class="col-6">
           <label>شناسه ملی</label>
-          <input id="national_code" type="text" class="form-control form-control-sm" required>
+          <input id="national_code" type="text" class="en form-control form-control-sm" required>
           <div id="national_codeHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.national_code">{{ e }}</p>
         </div>
         <div v-if="type=='legal'" class="col-6">
           <label>شماره ثبت</label>
-          <input id="registration_number" type="text" class="form-control form-control-sm" required>
+          <input id="registration_number" type="text" class="en form-control form-control-sm" required>
           <div id="registration_numberHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.registration_number">{{ e }}</p>
         </div>
@@ -63,13 +63,13 @@
 
         <div class="col-6">
           <label>شماره تلفن</label>
-          <input id="phone" type="text" class="form-control form-control-sm" required>
+          <input id="phone" type="text" class="en form-control form-control-sm" required>
           <div id="phoneHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.phone">{{ e }}</p>
         </div>
         <div class="col-6">
           <label>شماره موبایل</label>
-          <input id="mobile" type="text" class="form-control form-control-sm" required>
+          <input id="mobile" type="number" class="form-control form-control-sm en" maxLength="11" required>
           <div id="mobileHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.mobile">{{ e }}</p>
         </div>
@@ -78,7 +78,7 @@
         <div class="col-6">
           <label>استان</label>
           <select id="province_id" class="form-select form-select-sm" required>
-            <option></option>
+            <option value="1">تهران</option>
           </select>
           <div id="province_idHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>
@@ -86,7 +86,7 @@
         <div class="col-6">
           <label>شهر</label>
           <select id="city_id" class="form-select form-select-sm" required>
-            <option></option>
+            <option value="1">تهران</option>
           </select>
           <div id="city_idHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
@@ -100,29 +100,48 @@
         </div>
         <div class="col-12">
           <label>کد پستی</label>
-          <input id="postal_code" type="text" class="form-control form-control-sm" required>
+          <input id="postal_code" type="text" class="en form-control form-control-sm" required>
           <div id="postal_codeHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.postal_code">{{ e }}</p>
         </div>
       </div>
 
       <div v-if="type=='legal'" class="row">
-        <div  class="col-6">
-         <drop-zone id="dropZone1" :title="'تصویر آخرین روزنامه رسمی'" :index="1" :has-error="img1Error"  required/>
+        <div class="col-12 mt-5">
+          <drop-zone id="dropZone1" :title="'تصویر آخرین روزنامه رسمی'" :index="1" :has-error="img1Error" required/>
           <div></div>
 
         </div>
-        <div  class="col-6">
-         <drop-zone id="dropZone2" :title="'تصویر اساسنامه'" :index="2" :has-error="img2Error"  required/>
+        <div class="col-12">
+          <drop-zone id="dropZone2" :title="'تصویر اساسنامه'" :index="2" :has-error="img2Error" required/>
           <div></div>
 
         </div>
       </div>
 
       <div class=" d-flex justify-content-center mt-4">
-        <button @click.prevent = "submit" class="btn-orange my-font">ثبت</button>
+        <button @click.prevent="submit" class="btn-orange my-font">ثبت</button>
       </div>
     </form>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade"  id="register-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+<!--          <button type="button" class="btn-close m-2 me-auto" data-bs-dismiss="modal" aria-label="Close"></button>-->
+        <div class="modal-body ">
+
+          <p class="text-center">اطلاعات شما با موفقیت ثبت شد</p>
+          <img src="/img/check.png" alt="">
+          <p class="text-center">فعال شدن حساب کاربری شما تا 24 ساعت آینده، از طریق پیامک اطلاع رسانی می شود</p>
+        </div>
+        <div class="d-flex justify-content-center">
+        <button type="button" class="btn-black-rect my-3" @click="reload" style="width: 100px; height:40px" data-bs-dismiss="modal">تائید</button>
+
+      </div>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -130,32 +149,36 @@
 <script>
 import {onMounted, ref, watch} from "vue";
 import dropZone from "../components/DropZone";
+import {useStore} from "vuex";
 
 export default {
   name: "Profile",
-  components: { dropZone},
+  components: {dropZone},
   setup() {
 
+    const store = useStore()
     const errors = ref([])
     const type = ref();
     const img1Error = ref(false)
     const img2Error = ref(false)
-    const typeToggle = (index)=>{
+    const typeToggle = (index) => {
+      errors.value= [];
       let req = document.querySelectorAll('[required]');
       req.forEach((element) => {
         element.classList.remove('hasError');
-        element.nextSibling.innerHTML = "";
+        element.value = ""
+        // element.nextSibling.innerHTML = "";
         img1Error.value = false;
         img2Error.value = false;
       })
-      if (type.value == 'real' && index == 2){
-        document.querySelectorAll('.registerRadio').forEach((element)=>{
+      if (type.value == 'real' && index == 2) {
+        document.querySelectorAll('.registerRadio').forEach((element) => {
           element.classList.remove('activeRegisterRadio');
         })
         document.querySelector('#legal').classList.add('activeRegisterRadio');
         type.value = 'legal'
-      }else if(type.value== 'legal' && index == 1){
-        document.querySelectorAll('.registerRadio').forEach((element)=>{
+      } else if (type.value == 'legal' && index == 1) {
+        document.querySelectorAll('.registerRadio').forEach((element) => {
           element.classList.remove('activeRegisterRadio');
         })
         document.querySelector('#real').classList.add('activeRegisterRadio');
@@ -164,45 +187,111 @@ export default {
       }
 
     }
-    const submit = ()=>{
+    const submit = () => {
       errors.value = [];
       let emptyFieldsCount = 0;
       let req = document.querySelectorAll('[required]');
       req.forEach((element) => {
         if (element.value === "") {
           element.classList.add('hasError');
-          element.nextSibling.innerHTML = "فیلد اجباری";
+          // element.nextSibling.innerHTML = "فیلد اجباری";
           emptyFieldsCount++;
         } else {
           element.classList.remove('hasError');
-          element.nextSibling.innerHTML = "";
+          // element.nextSibling.innerHTML = "";
         }
 
-        if(document.querySelector('#img1')?.classList.contains('hasError')){
+        if (document.querySelector('#img1')?.classList.contains('hasError')) {
           img1Error.value = true;
-        }else{
+        } else {
           img1Error.value = false;
 
         }
-        if(document.querySelector('#img2')?.classList.contains('hasError')){
+        if (document.querySelector('#img2')?.classList.contains('hasError')) {
           img2Error.value = true;
-        }else{
+        } else {
           img2Error.value = false;
 
         }
       });
+      errors.value['mobile'] = [];
+      errors.value['national_code'] = [];
+      errors.value['postal_code'] = [];
+
+      if(document.querySelector('#national_code').value != ''){
+        let x , y ;
+      type.value == 'real'?  (x = 10, y='کد ملی') :  (x = 11, y='شناسه ملی');
+        if (document.querySelector('#national_code').value.length != x) {
+          errors.value.national_code.push(y +' باید ' + x +' رقم باشد.');
+        }
+      }
+      if(document.querySelector('#postal_code').value != ''){
+        if (document.querySelector('#postal_code').value.length != 10) {
+          errors.value.postal_code.push('کد پستی باید 10 رقم باشد')
+        }
+      }
+      if(document.querySelector('#mobile').value != ''){
+        if (!document.querySelector('#mobile').value.startsWith('09')) {
+          errors.value.mobile.push('شماره موبایل باید با 09 شروع شود')
+        }
+        if (document.querySelector('#mobile').value.length != 11) {
+          errors.value.mobile.push('شماره موبایل باید 11 رقم باشد')
+        }
+      }
+
+
+
       if (emptyFieldsCount === 0) {
 
+        let info = {
+          name: document.querySelector('#name').value,
+          national_code: document.querySelector('#national_code').value,
+          phone: document.querySelector('#phone').value,
+          mobile: document.querySelector('#mobile').value,
+          city_id: document.querySelector('#city_id').value,
+          address: document.querySelector('#address').value,
+          postal_code: document.querySelector('#postal_code').value,
+          scope: 'user',
+          type: type.value,
+        };
+        if (type.value == 'legal') {
+          info['registration_number'] = document.querySelector('#registration_number').value;
+          info['operator'] = document.querySelector('#operator').value;
+          info['img1'] = document.querySelector('#img1').value;
+          info['img2'] = document.querySelector('#img2').value;
+        }
+
+        axios.post(store.state.panelUrl + '/api/user/register', info)
+            .then((response) => {
+                let myModal = new bootstrap.Modal(document.getElementById('register-modal'))
+                myModal.show();
+            })
+            .catch((error) => {
+              errors.value['mobile'] = [];
+
+              if(error.response.status === 422){
+               errors.value['mobile'] = error.response.data.mobile;
+               errors.value['national_code'] = error.response.data.national_code;
+               errors.value['registration_number'] = error.response.data.registration_number;
+             }
+              console.error(error)
+            });
+
       }
+
 
     }
 
 
-    onMounted(()=>{
+    onMounted(() => {
       type.value = 'real'
     })
+
+    const reload = ()=>{
+      window.location.reload();
+    }
     return {
-      type, typeToggle, submit, errors, img1Error,img2Error
+      type, typeToggle, submit, errors, img1Error, img2Error, store,reload
     }
   }
 
@@ -214,6 +303,11 @@ label {
   color: #FFB571 !important;
   font-size: 13px;
   margin: 5px;
+}
+.modal-dialog{
+  width: 350px !important;
+  margin: 0 auto !important;
+  text-align: center;
 }
 
 </style>
