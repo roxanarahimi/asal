@@ -2,7 +2,7 @@
 
  <div class="bg-black">
    <the-menu />
-  <div class="">
+  <div class="" style="min-height: 500px">
     <router-view/>
   </div>
    <the-footer />

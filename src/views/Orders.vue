@@ -1,7 +1,7 @@
 <template>
   <div class="w-100 px-4 text-light " style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
 
-    <h2 class="my-color mt-5 text-center my-font">سفارشات اخیر</h2>
+    <h2 class="my-color mt-5 text-center my-font">سفارشات</h2>
 
    <div v-if="data.length" class="px-4 mt-5 my-font" style="">
      <div v-for="item in data" class="mb-3">
@@ -25,8 +25,9 @@
 
    </div>
 
+    <div v-else class="my-5">سفارشی وجود ندارد</div>
 
-    <div class="d-flex justify-content-center my-font">
+    <div class="d-flex justify-content-center my-font mb-5">
       <router-link to="/products" class="btn-orangePill text-black">
 <!--        <i class="bi bi-plus"></i>-->
         سفارش جدید

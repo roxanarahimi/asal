@@ -77,17 +77,31 @@
 
         <div class="col-6">
           <label>استان</label>
-          <select id="province_id" class="form-select form-select-sm" required>
-            <option value="1">تهران</option>
-          </select>
+          <Multiselect
+              v-model="selectedProvince" @change="getCities"
+              placeholder=""
+              dir="rtl"
+              :mode="'single'"
+              :options="provinces"
+              :searchable="true"
+              :create-option="true"
+          />
           <div id="province_idHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>
         </div>
-        <div class="col-6">
+
+
+        <div  class="col-6">
           <label>شهر</label>
-          <select id="city_id" class="form-select form-select-sm" required>
-            <option value="1">تهران</option>
-          </select>
+          <Multiselect
+              v-model="selectedCity"
+              placeholder=""
+              dir="rtl"
+              :mode="'single'"
+              :options="cities"
+              :searchable="true"
+              :create-option="true"
+          />
           <div id="city_idHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
         </div>
@@ -147,13 +161,16 @@
 
 
 <script>
-import {onMounted, ref, watch} from "vue";
+import {onMounted, ref} from "vue";
 import dropZone from "../components/DropZone";
 import {useStore} from "vuex";
+import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
+
+
 
 export default {
   name: "Profile",
-  components: {dropZone},
+  components: {dropZone, Multiselect},
   setup() {
 
     const store = useStore()
@@ -161,6 +178,10 @@ export default {
     const type = ref();
     const img1Error = ref(false)
     const img2Error = ref(false)
+    const cities = ref([])
+    const provinces = ref([])
+    const selectedProvince = ref({})
+    const selectedCity = ref({})
     const typeToggle = (index) => {
       errors.value= [];
       let req = document.querySelectorAll('[required]');
@@ -248,7 +269,7 @@ export default {
           national_code: document.querySelector('#national_code').value,
           phone: document.querySelector('#phone').value,
           mobile: document.querySelector('#mobile').value,
-          city_id: document.querySelector('#city_id').value,
+          city_id: selectedProvince.value.id,
           address: document.querySelector('#address').value,
           postal_code: document.querySelector('#postal_code').value,
           scope: 'user',
@@ -284,19 +305,51 @@ export default {
 
 
     onMounted(() => {
-      type.value = 'real'
+      type.value = 'real';
+      getProvinces();
+      // getCities();
     })
 
     const reload = ()=>{
       window.location.reload();
     }
+    const getProvinces = ()=>{
+      axios.get(store.state.panelUrl + '/api/province')
+          .then((response) => {
+            provinces.value = response.data;
+            provinces.value.forEach((element)=>{
+              element.value = {id: element.id, name: element.title, cities: element.cities};
+              element.label = element.title;
+            })
+
+            selectedProvince.value = provinces.value[0]
+          }).then(() => {
+        getCities();
+      }).catch((error) => {
+        console.error(error)
+      })
+    }
+    const getCities = ()=>{
+      setTimeout(()=>{
+        let x = selectedProvince.value.cities;
+         x.forEach((element)=>{
+           element.value = {id: element.id, name: element.title};
+           element.label = element.title;
+         })
+         cities.value = x;
+      },1000)
+
+
+    }
     return {
-      type, typeToggle, submit, errors, img1Error, img2Error, store,reload
+      type, typeToggle, submit,errors, img1Error, img2Error, store, reload,
+      cities, provinces,selectedProvince,selectedCity, getCities, getProvinces,
     }
   }
 
 }
 </script>
+<style src="@vueform/multiselect/themes/default.css"></style>
 
 <style scoped>
 label {
@@ -309,5 +362,6 @@ label {
   margin: 0 auto !important;
   text-align: center;
 }
+
 
 </style>

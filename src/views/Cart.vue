@@ -4,7 +4,7 @@
 
     <h2 class="my-color mt-5 text-center my-font">سبد خرید</h2>
 
-    <div v-if="data?.items" class="px-4 mt-5 my-font" style="">
+    <div v-if="data?.items?.length" class="px-4 mt-5 my-font" style="">
       <div v-for="item in data.items" class="mb-3">
         <div class="d-flex justify-content-between">
           <h5>{{ item.product.category.title }}
@@ -15,7 +15,7 @@
             <span v-else>بسته</span>
           </h5>
           <div>
-            <img src="/img/minus.png" alt="">
+            <img @click="showRemoveItemModal(item)" src="/img/minus.png" alt="">
           </div>
         </div>
         <div class="text-center">
@@ -34,8 +34,7 @@
 
 
 
-    <div v-if="data?.items">
-
+    <div v-if="data?.items?.length">
       <div class="my-border mt-5 p-3 text-center ">
       <h4> مبلغ نهایی: {{ data?.amount }} ریال</h4>
       <h4> تخفیف ریالی: {{ data?.off || 0 }} ریال</h4>
@@ -62,24 +61,34 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade"  id="confirm-order-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div  class="modal fade"  id="remove-order-item-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <!--          <button type="button" class="btn-close m-2 me-auto" data-bs-dismiss="modal" aria-label="Close"></button>-->
         <div class="modal-body text-center">
 
-          <p  class="text-center">سفارش شما با موفقیت ثبت شد</p>
-          <img src="/img/check.png" alt="">
-          <p class="text-center">مراحل سفارش بوسیله پیام کوتاه به اطلاع شما خواهد رسید.</p>
+          <p  class="text-center" >
+            (
+            {{ remove?.product?.category.title }}
+            {{ remove?.product?.title }}
+            {{ remove?.size?.size }}
+            {{ remove?.quantity }}
+            <span v-if="remove?.size?.size == 'فله'">کیلو</span>
+            <span v-else>بسته</span>
+            )
+          </p>
+<!--          <img src="/img/check.png" alt="">-->
+          <p class="text-center">حذف شود؟</p>
         </div>
-        <div class="d-flex justify-content-center">
-          <button type="button" class="btn-black-rect my-3" @click="reload" style="width: 100px; height:40px" data-bs-dismiss="modal">تائید</button>
-
+        <div class="d-flex justify-content-around">
+          <button type="button" class="btn-orange-rect my-3" style="width: 100px; height:40px" data-bs-dismiss="modal">انصراف</button>
+          <button type="button" class="btn-black-rect my-3" @click="removeOrderItem(remove?.id)" style="width: 100px; height:40px" data-bs-dismiss="modal">تائید</button>
         </div>
       </div>
 
     </div>
   </div>
+
 </template>
 
 
@@ -93,6 +102,8 @@ export default {
     const store = useStore()
     const pay = ref();
     const data = ref([]);
+    const remove = ref({});
+
     onMounted(() => {
       getData();
 
@@ -118,7 +129,6 @@ export default {
       }).catch((error) => console.error(error));
 
     }
-
     const getData = () => {
       axios.get(store.state.panelUrl + '/api/cart/' + JSON.parse(localStorage.getItem('user')).id)
           .then((response) => {
@@ -145,7 +155,23 @@ export default {
     const reload = ()=>{
       window.location = '/orders';
     }
-    return {paymentToggle, pay, store, getData, data, confirmOrder, reload}
+    const showRemoveItemModal = (item)=>{
+      remove.value = item;
+      console.log(item)
+        let myModal = new bootstrap.Modal(document.getElementById('remove-order-item-modal'))
+        myModal.show();
+
+    }
+    const removeOrderItem = (id)=>{
+      axios.post(store.state.panelUrl+'/api/item/remove',{
+        order_item_id: id
+      })
+      .then((response)=>{
+        getData();
+      }).catch((error)=>{console.error(error)})
+
+    }
+    return {paymentToggle, pay, store, getData, data, confirmOrder, reload , remove,showRemoveItemModal, removeOrderItem }
   }
 
 }

@@ -64,6 +64,7 @@ export default {
           {title: 'شرکای ما', link: '/collaboration', name: 'collaboration'},
           {title: 'سوالات متداول', link: '/faq', name: 'faq'},
           {title: 'حساب کاربری', link: '/login', name: 'login'},
+          {title: 'سفارشات', link: '/orders', name: 'orders'},
           // {title: 'خروج', link: '/', name: 'logout'},
         ];
 

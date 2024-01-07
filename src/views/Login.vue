@@ -13,6 +13,13 @@
         <button class="btn-code" @click="getCode">دریافت کد</button>
         <input id="mobile" type="number" maxlength="11" minlength="11" class="en form-control bg-transparent border-0">
       </div>
+      <div class="text-start mt-2">
+        <li class="error" v-for="item in message"><span >{{ item }}</span></li>
+      </div>
+      <p class="my-5 text-center py-5">حساب کاربری ندارید؟
+        <br>
+        <router-link to="/register" class="my-color">ثبت نام</router-link> کنید</p>
+
     </div>
 
 
@@ -33,19 +40,24 @@
           <input type="text" id="code4" @input="autoTab($event)" class="w-100 align-self-center text-center bg-transparent border-0 text-light form-control" minLength="1" maxLength="1" min="0" max="9">
         </div>
       </div>
-      <small class="d-flex">
+
+      <div class="text-start my-2">
+        <li class="error" v-for="item in message"><span >{{ item }}</span></li>
+      </div>
+
+      <small id="time-section" v-show="time != '00'" class="d-flex">
         <span id="resend">دریافت مجدد کد در</span>
-        <span id="time" style="width: 35px !important; text-align: center" class="my-color time"></span>
-        ثانیه
+        <span id="time" style="width: 30px !important; text-align: left" class="my-color time"></span>
+        :00
       </small>
+      <div v-if="time == '00'" class="d-flex justify-content-center">
+        <button class="btn-orange2">دریافت مجدد کد</button>
+      </div>
 
     </div>
-    <div class="text-start">
-      <li class="error" v-for="item in message"><span >{{ item }}</span></li>
-    </div>
 
-    <p class="mt-5">در صورت عدم ثبت اطلاعات خود، لطفا اینجا <router-link to="/register" class="text-info">ثبت نام</router-link> کنید</p>
-<!--    <div dir="ltr">-->
+
+   <!--    <div dir="ltr">-->
 <!--      <div class="d-flex mb-2">-->
 <!--        <img src="/img/phoneLogo.png" class="mx-2" width="20px" alt="">-->
 <!--        <small>09300432833</small>-->

@@ -98,6 +98,16 @@ body {
     border: none;
 }
 
+.btn-orange-rect {
+    background: url("/img/btnback.png") bottom left no-repeat;
+    color: black;
+    background-color: #F7941D;
+    width: 150px;
+    height: 50px;
+    border-radius: 16px;
+    border: none;
+}
+
 .btn-black {
     background: url("/img/btnback2.png") bottom left no-repeat;
     color: #F7941D;
@@ -341,6 +351,51 @@ button, router-link {
     border-radius: 2px;
     border: 1.5px solid black;
 }
-xo{
-    color: #dcdde7;
+
+
+.vpd-input-group label{
+    display: none !important;
+}
+.vpd-input-group input{
+    background-color: transparent !important;
+    border:none !important;
+
+}
+.multiselect-search{
+    border-radius: 5px !important;
+
+}
+.multiselect-wrapper{
+    border-radius: 5px !important;
+    overflow: hidden !important;
+
+}
+
+.multiselect-option, .multiselect-single-label {
+    background: white !important;
+    color: black !important;
+    font-size: 14px !important;
+}
+.multiselect-option.is-pointed {
+    background: #FFB571 !important;
+    color: black !important;
+}
+.multiselect{
+    border:none !important;
+    border-radius: 3px !important;
+
+   height: 30px !important;
+    /*max-height: 30px !important;*/
+}
+.multiselect-search{
+    background: #F8F9FA !important;
+}
+.multiselect:focus, .multiselect-search:focus, .multiselect-wrapper:focus, select, input{
+    outline-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.is-active {
+    /*border: none !important;*/
+    box-shadow: none !important;
 }
