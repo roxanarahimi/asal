@@ -269,7 +269,7 @@ export default {
           national_code: document.querySelector('#national_code').value,
           phone: document.querySelector('#phone').value,
           mobile: document.querySelector('#mobile').value,
-          city_id: selectedProvince.value.id,
+          city_id: selectedCity.value.id,
           address: document.querySelector('#address').value,
           postal_code: document.querySelector('#postal_code').value,
           scope: 'user',
