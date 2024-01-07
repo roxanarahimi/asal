@@ -340,7 +340,7 @@ button, router-link {
 .hasError {
     border: 2px solid lightcoral !important;
     box-shadow: none !important;
-    font-size: 11px;
+    /*font-size: 11px;*/
 }
 
 .check-box {
@@ -366,8 +366,9 @@ button, router-link {
 
 }
 .multiselect-wrapper{
-    border-radius: 5px !important;
+    border-radius: 7px !important;
     overflow: hidden !important;
+    min-height: 31px !important;
 
 }
 
@@ -383,9 +384,7 @@ button, router-link {
 .multiselect{
     border:none !important;
     border-radius: 3px !important;
-
-   height: 30px !important;
-    /*max-height: 30px !important;*/
+    min-height: 30px !important;
 }
 .multiselect-search{
     background: #F8F9FA !important;

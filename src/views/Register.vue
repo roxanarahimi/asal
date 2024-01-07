@@ -331,14 +331,16 @@ export default {
     }
     const getCities = ()=>{
       setTimeout(()=>{
-        let x = selectedProvince.value.cities;
-         x.forEach((element)=>{
-           element.value = {id: element.id, name: element.title};
-           element.label = element.title;
-         })
-         cities.value = x;
+        cities.value = [];
+        if (selectedProvince.value){
+          let x = selectedProvince.value.cities;
+          x.forEach((element)=>{
+            element.value = {id: element.id, name: element.title};
+            element.label = element.title;
+          })
+          cities.value = x;
+        }
       },1000)
-
 
     }
     return {
