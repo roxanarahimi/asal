@@ -2,7 +2,7 @@
   <div class="home">
     <div class="bg-black text-white">
       <div class="my-padding">
-        <h1 class="w-75 my-4 main_title my-color" >
+        <h1 class="w-75 my-4 main_title my-color">
           به عسل لذیذ
           <br>
           خوش آمدید
@@ -23,10 +23,10 @@
       </div>
     </div>
 
-    <div class="bg-light ">
+    <div class="bg-light " style="border-radius: 250px 250px 0 0; padding-top: 100px">
       <div class="product-section text-center pt-3" style="">
 
-        <img src="/img/p2.png" alt="">
+        <img src="/img/p2.png" width="150px" alt="">
       </div>
       <div class="p-4 px-5">
         <div class="" style="background: url('/img/frame.png') center center no-repeat; background-size: 100%">
@@ -61,105 +61,19 @@
 
     <div class="bg-black text-white pt-5 my-padding">
 
-      <h1 class="mb-4 my-font my-color" >نمایندگی های فعال </h1>
+      <h1 class="mb-4 my-font my-color">نمایندگی های فعال </h1>
 
-      <div class="row mb-3">
-        <div class="col-6">
-          <label for="province">استان</label>
-          <select id="province" class="form-select rounded-0" style="height: 50px;">
-            <option>تهران</option>
-          </select>
-        </div>
-      <div class="col-6">
-          <label for="city">شهر</label>
-          <select id="city" class="form-select rounded-0" style="height: 50px;">
-            <option>تهران</option>
 
-          </select>
-        </div>
+      <div class=" w-100">
+        <!--        <img src="/img/iran.png" class="img-fluid w-100" style="" alt="">-->
+        <iran-map/>
       </div>
 
-      <div class="text-center w-100">
-        <img src="/img/iran.png" class="img-fluid w-100" style="" alt="">
-      </div>
 
-      <div>
-        <div class="d-flex">
-
-
-          <div>
-            <img class="mt-3 p-1" src="/img/dot.png" alt="">
-          </div>
-          <p class="mt-3" style="font-size: 12px">
-            ایران، تهران، گیشا، خیابان هشتم، پلاک 58
-          </p>
-        </div>
-      </div>
     </div>
 
-    <div class="bg-black my-padding">
-
-      <div class="py-5 my-padding" style="background-color: #F7941D; border-radius: 24px">
-
-        <h1 class="mb-4 my-font">با ما در ارتباط باشید</h1>
-
-
-        <p>ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
-          بلکه روزنامه و مجله در ستون.
-        </p>
-
-
-        <div class="d-flex justify-content-between">
-          <div class="d-flex justify-content-start">
-
-            <div class="me-3 check-box" >
-              <i class="bi bi-check-lg"></i>
-            </div>
-            <p>سوال</p>
-          </div>
-          <div class="d-flex justify-content-start">
-
-            <div class="me-3 check-box" >
-              <i class="bi bi-check-lg"></i>
-            </div>
-            <p>انتقاد و پیشنهاد</p>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="message">پیام</label>
-          <textarea id="message" class="form-control rounded-0"></textarea>
-        </div>
-
-        <div class="d-flex justify-content-start">
-          <div class="me-3 check-box" >
-            <i class="bi bi-check-lg"></i>
-          </div>
-          <p>ناشناس</p>
-
-        </div>
-        <div class="row">
-          <div class="col-12 mb-3">
-            <label for="name">نام و نام خانوادگی</label>
-            <input type="text" id="name" class="form-control rounded-0">
-          </div>
-          <div class="col-6">
-            <label for="province_2">استان</label>
-            <select id="province_2" class="form-select rounded-0">
-              <option>تهران</option>
-            </select>
-          </div>
-          <div class="col-6 mb-3">
-            <label for="phone">تلفن</label>
-            <input type="number" id="phone" class="form-control rounded-0">
-          </div>
-        </div>
-
-
-        <div class="text-center">
-          <button class="btn-black-rect">ثبت</button>
-        </div>
-      </div>
+    <div class="bg-black ">
+      <contact-form/>
     </div>
 
     <div class="bg-black text-white py-5 px-4">
@@ -231,16 +145,17 @@
     <div class="text-center">
       <div class="p-4 py-5" style="background: url('/img/bg3.png') center center no-repeat; background-size: cover; ">
         <div class="py-5 rounded" style="backdrop-filter: blur(15px); font-size: 14px;">
-          <h3 class="mb-5 my-font">درباره ما بیشتر بدانید</h3>
-          <p style="font-weight: bolder ; font-size:12px; padding-right: 70px; padding-left: 70px"> لورم ایپسوم متن
-            ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
-            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
-            با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
-            و
-            متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ
-            پیشرو در زبان فارسی</p>
+          <h3 class="mb-5 my-font">شرکای عسل لذیذ</h3>
+          <p style="font-weight: bolder ; font-size:12px; padding-right: 90px; padding-left: 90px">
+            شرکت عسل لذیذ با تکیه به دانش فنی ،عملیاتی گروه معظم آماده لذیذ و نیز دانش تحقیقاتی ،علمی پژوهشکده گیاهان و
+            مواد اولیه دارویی دانشگاه شهید بهشتی کار تولید نیمه صنعتی خود را آغاز کرد.
+            در ادامه جهت دریافت بازخوردهای صحیح از محصولات تحقیقاتی ،بر آن شدیم تا با اتحادیه زنبورداران ایران زمین
+            تفاهم نامه همکاری امضا و سپس زنبورستان علمی تحقیقاتی عسل لذیذ در محل دانشگاه شهید بهشتی احداث گردید تا
+            بتوانیم پس از آن تمامی تولیدات نیمه صنعتی خود را با کمک هر دو بخش به بهترین نحو ممکن به دست زنبورداران
+            برسانیم
+          </p>
           <div class="text-center  mt-5">
-            <router-link to="/about" class="btn-black" style="padding-top: 12px">بیشتر بدانید</router-link>
+            <router-link to="/collaboration" class="btn-black my-font " style="padding-top: 12px">شرکای ما</router-link>
 
           </div>
         </div>
@@ -257,8 +172,11 @@
 
 <script>
 // @ is an alias to /src
+import iranMap from '../components/Map'
+import ContactForm from "@/components/ContactForm";
 
 export default {
+  components: {ContactForm, iranMap},
   name: 'HomeView',
 }
 </script>

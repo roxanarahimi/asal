@@ -6,8 +6,8 @@
       <h3 class="my-font my-color mt-3 my-padding">تغذیه ساده</h3>
 
 
-     <div class="d-flex my-padding font-size-12" style="background: url('/img/pback.svg')left bottom no-repeat;
-      background-size: 80%;margin-top: -20px; padding-top: 70px;" >
+     <div class="d-flex my-padding font-size-12" style="background: url('/img/pback.svg')right top no-repeat;
+      background-size: 100%; margin-top: -18px; padding-top: 50px; padding-bottom: 100px" >
        <div class=" text-center pt-3" style="width: 30% !important">
          <img src="/img/vectorright.png" class="w-100 mb-3" alt="">
          <p>آماده مصرف و بدون نیاز به آماده سازی</p>
@@ -25,7 +25,7 @@
        </div>
      </div>
 
-      <div class="text-center my-5">
+      <div class="text-center mb-5">
         <router-link to="/products" class="btn-orange" style="padding-top: 12px">خرید عمده</router-link>
       </div>
 

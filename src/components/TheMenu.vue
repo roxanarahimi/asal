@@ -11,7 +11,7 @@
     </nav>
 
     <div id="menuContent" class="w-100 vh-100 p-3"
-         style="background: url('/img/Hive.png')center center no-repeat; background-size: cover; background-color:  #F7941D; color: black; position: absolute;opacity: 0; right: -100%; top:0; transition: 1s ease">
+         style="z-index: 2000; background: url('/img/menub.svg')center center no-repeat; background-size: 100%; background-color:  #F7941D; color: black; position: absolute;opacity: 0; right: -100%; top:0; transition: 1s ease">
 
       <div class="d-flex justify-content-between">
         <div class="d-flex pointer" @click="menuToggle">
@@ -58,13 +58,13 @@ export default {
     onBeforeMount(() => {
         links.value = [
           {title: 'خانه', link: '/', name: 'home'},
-          {title: 'محصول', link: '/product', name: 'product'},
+          // {title: 'محصول', link: '/product', name: 'product'},
           // { title: 'نمایندگی های فعال', link: '/subs', name: 'subs' },
           {title: 'درباره ما', link: '/about', name: 'about'},
           {title: 'شرکای ما', link: '/collaboration', name: 'collaboration'},
           {title: 'سوالات متداول', link: '/faq', name: 'faq'},
-          {title: 'حساب کاربری', link: '/login', name: 'login'},
-          {title: 'سفارشات', link: '/orders', name: 'orders'},
+          // {title: 'حساب کاربری', link: '/login', name: 'login'},
+          // {title: 'سفارشات', link: '/orders', name: 'orders'},
           // {title: 'خروج', link: '/', name: 'logout'},
         ];
 
