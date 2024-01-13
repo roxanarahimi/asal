@@ -337,13 +337,18 @@ export default {
     const getCities = ()=>{
       document.querySelector('.activeProvince')?.classList?.remove('activeProvince');
       document.querySelector('#province_'+document.querySelector('#province_id').value).classList?.add('activeProvince');
-      axios.get(store.state.panelUrl + '/api/cities/province/'+document.querySelector('#province_id').value)
-          .then((response) => {
-            cities.value = response.data;
-            document.querySelector('#city_id').value = '';
-          }).catch((error) => {
-        console.error(error)
+      provinceBranches.value = [];
+      provinceBranches.value = branches.filter((element)=>{
+        return element.province_id == document.getElementById('province_id').value;
       });
+
+      // axios.get(store.state.panelUrl + '/api/cities/province/'+document.querySelector('#province_id').value)
+      //     .then((response) => {
+      //       cities.value = response.data;
+      //       document.querySelector('#city_id').value = '';
+      //     }).catch((error) => {
+      //   console.error(error)
+      // });
     }
     const provinceBranches = ref([]);
     const branches = [
@@ -603,7 +608,7 @@ export default {
 #IranMap .map .island path:hover,
 #IranMap .map .province path.hover,
 #IranMap .map .island path.hover {
-  fill: #F7941D !important;
+  fill: whitesmoke ;
   cursor: pointer;
 }
 
