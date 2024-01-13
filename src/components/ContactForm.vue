@@ -51,8 +51,9 @@
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
-            <div class="accordion-body  border border-black">
-              <p>
+            <div class="accordion-body p-0 border border-black">
+              <img src="/img/sery.png" class="w-100" alt="">
+              <p class="p-2" style="font-size: 13px">
                 سری ساخت، کدی است که در پشت جلد محصول درج شده است
               </p>
             </div>
