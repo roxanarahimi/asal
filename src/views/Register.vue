@@ -124,12 +124,6 @@
         <div class="col-12 mt-5">
           <drop-zone id="dropZone1" :title="'تصویر آخرین روزنامه رسمی'" :index="1" :has-error="img1Error" required/>
           <div></div>
-
-        </div>
-        <div class="col-12">
-          <drop-zone id="dropZone2" :title="'تصویر اساسنامه'" :index="2" :has-error="img2Error" required/>
-          <div></div>
-
         </div>
       </div>
 
@@ -279,7 +273,7 @@ export default {
           info['registration_number'] = document.querySelector('#registration_number').value;
           info['operator'] = document.querySelector('#operator').value;
           info['img1'] = document.querySelector('#img1').value;
-          info['img2'] = document.querySelector('#img2').value;
+          // info['img2'] = document.querySelector('#img2').value;
         }
 
         axios.post(store.state.panelUrl + '/api/user/register', info)

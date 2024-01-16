@@ -2,18 +2,18 @@
   <div class="mb-3">
 
   <div class="row ">
-        <div class="col-6">
-          <label>استان</label>
-          <Multiselect
-              v-model="selectedProvince" @change ="getCities"
-              placeholder=""
-              dir="rtl"
-              :mode="'single'"
-              :options="provinces"
-              :searchable="true"
-              :create-option="true"
-          />
-<!--        </div>-->
+    <!--    <div class="col-6">-->
+    <!--      <label>استان</label>-->
+    <!--      <Multiselect-->
+    <!--          v-model="selectedProvince" @change="getCities"-->
+    <!--          placeholder=""-->
+    <!--          dir="rtl"-->
+    <!--          :mode="'single'"-->
+    <!--          :options="provinces"-->
+    <!--          :searchable="true"-->
+    <!--          :create-option="true"-->
+    <!--      />-->
+    <!--    </div>-->
     <!--    <div  class="col-6">-->
     <!--      <label>شهر</label>-->
     <!--      <Multiselect-->
@@ -27,14 +27,14 @@
     <!--      />-->
     <!--      </div>-->
 
-<!--    <div class="row p-0 m-0 mb-3">-->
-<!--      <div class="col-6 px-1">-->
-<!--        <label for="province_id">استان</label>-->
-<!--        <select @change="getCities" id="province_id" class="form-select rounded-0" style="height: 50px;">-->
-<!--          <option value=""></option>-->
-<!--          <option v-for="item in provinces" :value="item.id">{{ item.title }}</option>-->
-<!--        </select>-->
-<!--      </div>-->
+    <div class="row p-0 m-0 mb-3">
+      <div class="col-6 px-1">
+        <label for="province_id">استان</label>
+        <select @change="getCities" id="province_id" class="form-select rounded-0" style="height: 50px;">
+          <option value=""></option>
+          <option v-for="item in provinces" :value="item.id">{{ item.title }}</option>
+        </select>
+      </div>
 <!--      <div class="col-6 px-1">-->
 <!--        <label for="city_id">شهر</label>-->
 <!--        <select id="city_id" class="form-select rounded-0" style="height: 50px;">-->
@@ -307,9 +307,7 @@ export default {
       provinceBranches.value = [];
       document.querySelector('.activeProvince')?.classList?.remove('activeProvince');
       document.querySelector('.'+className).classList?.add('activeProvince');
-      let element = provinces.value.find((x)=>{ return x.id == id});
-      console.log(element.value);
-      selectedProvince.value = element.value;
+      document.querySelector('#province_id').value = id;
       // getCities();
 
 
@@ -327,32 +325,25 @@ export default {
       axios.get(store.state.panelUrl + '/api/province')
           .then((response) => {
             provinces.value = response.data;
-            provinces.value.forEach((element)=>{
-              element.value = element.id;
-              element.label = element.title;
-            })
+            // provinces.value.forEach((element)=>{
+            //   element.value = {id: element.id, name: element.title, cities: element.cities};
+            //   element.label = element.title;
+            // })
 
-            selectedProvince.value = null;
+            // selectedProvince.value = null;
           }).catch((error) => {
         console.error(error)
       })
     }
     const getCities = ()=>{
-      setTimeout(()=>{
-        if(selectedProvince.value){
+      document.querySelector('.activeProvince')?.classList?.remove('activeProvince');
+      document.querySelector('#province_'+document.querySelector('#province_id').value).classList?.add('activeProvince');
+      provinceBranches.value = [];
+      provinceBranches.value = branches.filter((element)=>{
+        return element.province_id == document.getElementById('province_id').value;
+      });
 
-          document.querySelector('.activeProvince')?.classList?.remove('activeProvince');
-          document.querySelector('#province_'+selectedProvince.value).classList?.add('activeProvince');
-          provinceBranches.value = [];
-          provinceBranches.value = branches.filter((element)=>{
-            return element.province_id == selectedProvince.value;
-          });
-        }
-
-    },500)
-
-
-      // axios.get(store.state.panelUrl + '/api/cities/province/'+selectedProvince.value)
+      // axios.get(store.state.panelUrl + '/api/cities/province/'+document.querySelector('#province_id').value)
       //     .then((response) => {
       //       cities.value = response.data;
       //       document.querySelector('#city_id').value = '';

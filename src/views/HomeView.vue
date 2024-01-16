@@ -9,9 +9,9 @@
         </h1>
 
         <p class="col-8 font-size-12">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
-          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
-          با هدف بهبود ابزارهای کاربردی می باشد.
+          عسل لذیذ با هدف تولید خوراک کامل زنبور عسل و با چشم انداز ارتقای کیفیت محصولات صنعت زنبورداری کشور همکاری خود
+          را با شتابدهنده اکتوتک و طرح تحقیقاتی ،صنعتی تولید غذای کامل زنبور عسل ،مشابه نمونه محصول وارداتی در دستور کار
+          خود قرار داد.
         </p>
 
 
@@ -87,15 +87,20 @@
               <button style="font-size: 12px !important;" class="accordion-button  bg-transparent text-white collapsed"
                       type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                       aria-controls="collapseOne">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                خمیر شیرین چیست؟
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <p>
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها
-                  و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
-                  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                  زنبورهای عسل از طریق گرده افشانی، نقش مهمی در تامین منابع غذایی برای انسان ها، حیوانات و همچنین
+                  گوناگونی زیستی در اکوسیستم های طبیعی و کشاورزی را برعهده دارند. همچنین عسل، ژل رویال، گرده گل، موم
+                  زنبور عسل، بره موم و زهر زنبور عسل از فرآورده های ارزشمند زنبور عسل بشمار می روند.
+                  این حشره مانند سایر میکروارگانیسم ها نیازمند آب و منابع غذایی بوده و شهد و گرده گل از جمله منابع غذایی
+                  مورد علاقه زنبور عسل هستند. شهد گل ها و عسل ذخیره شده در کندو، کربوهیدرات ها را برای این حشره فراهم می
+                  کنند، در حالی که که گرده گل، پروتئین، لیپید، ویتامین ها و اجزای معدنی رژیم غذایی آن ها چرا کوپابی
+                  جایگزین شربت شهد کنیم؟ تامین می کند. زنبورهای عسل انرژی لازم جهت پرواز را از شکستن کربوهیدرات ها بدست
+                  می آورند و باید همیشه مقداری کربوهیدرات های ذخیره شده داشته باشند.
                 </p>
               </div>
             </div>
@@ -105,33 +110,18 @@
               <button style="font-size: 12px !important;" class="accordion-button bg-transparent text-white collapsed"
                       type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
                       aria-controls="collapseTwo">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                چرا کوپابی را جیگزین شهد شیرین کنیم؟
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <p>
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها
-                  و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
-                  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item bg-transparent my-border text-white rounded-0">
-            <h2 class="accordion-header">
-              <button style="font-size: 12px !important;" class="accordion-button bg-transparent text-white collapsed"
-                      type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                      aria-controls="collapseThree">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها
-                  و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
-                  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                  خمیر شیرین کوپابی نسبت به شربت های دست ساز زنبورداران مزیت های زیر را دارا میباشد: خمیرشیرین در روند
+                  تولید با کنترل رطوبت،دما ،اندازه ذره ای بلورها و مقدار شکر و نیز غلظت قندها باعث عاری شدن محصول از
+                  هرگونه تولید سم های مضر ،آلودگی میکروبی و مقرون به صرفه بودن برای زنبورداران و نیز در نهایت کیفیت
+                  نهایی عسل میگردد. ما در کوپابی با در نظر گرفتن ژنوتیپ،آناتومی و مقدار مورد نیازبرای تیپیک غالب
+                  زنبورهای مناطق مختلف کشور و دنیا به فرمولاسیون خاص و کاربردی رسیده ایم تا بهترین و با کیفیت ترین غذای
+                  زنبورعسل را ارائه کنیم.
                 </p>
               </div>
             </div>
@@ -145,7 +135,7 @@
     <div class="text-center">
       <div class="p-4 py-5" style="background: url('/img/bg3.png') center center no-repeat; background-size: cover; ">
         <div class="py-5 rounded" style="backdrop-filter: blur(15px); font-size: 14px;">
-          <h3 class="mb-5 my-font">شرکای عسل لذیذ</h3>
+          <h3 class="mb-5 my-font fw-bold">شرکای عسل لذیذ</h3>
           <p style="font-weight: bolder ; font-size:12px; padding-right: 90px; padding-left: 90px">
             شرکت عسل لذیذ با تکیه به دانش فنی ،عملیاتی گروه معظم آماده لذیذ و نیز دانش تحقیقاتی ،علمی پژوهشکده گیاهان و
             مواد اولیه دارویی دانشگاه شهید بهشتی کار تولید نیمه صنعتی خود را آغاز کرد.
@@ -155,7 +145,7 @@
             برسانیم
           </p>
           <div class="text-center  mt-5">
-            <router-link to="/collaboration" class="btn-black my-font " style="padding-top: 12px">شرکای ما</router-link>
+            <router-link to="/collaboration" class="btn-black my-font fw-bold" style="padding-top: 12px">شرکای ما</router-link>
 
           </div>
         </div>

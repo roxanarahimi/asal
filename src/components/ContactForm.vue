@@ -80,7 +80,7 @@
         <input type="text" id="name" class="form-control rounded-0">
       </div>
       <div class="col-6">
-        <label for="province_2">استان</label>
+        <label for="province_2">شهر</label>
         <select id="province_2" class="form-select rounded-0">
           <option>تهران</option>
         </select>

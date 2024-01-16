@@ -408,3 +408,7 @@ button:focus {
     opacity: 0.8 !important;
     transform: scale(1.1,1.1);
 }
+
+.accordion-button:not(.collapsed) {
+    box-shadow: none !important;
+}
