@@ -9,9 +9,8 @@
         </h1>
 
         <p class="col-8 font-size-12">
-          عسل لذیذ با هدف تولید خوراک کامل زنبور عسل و با چشم انداز ارتقای کیفیت محصولات صنعت زنبورداری کشور همکاری خود
-          را با شتابدهنده اکتوتک و طرح تحقیقاتی ،صنعتی تولید غذای کامل زنبور عسل ،مشابه نمونه محصول وارداتی در دستور کار
-          خود قرار داد.
+          عسل لذیذ با هدف تولید تغذیه کامل زنبور عسل مشابه نمونه محصول اسپانیایی و با چشم انداز ارتقای کیفیت محصولات
+          صنعت زنبورداری کشور ، همکاری خود را با تکیه بر تحقیقات علمی دانشگاه شهید بهشتی آغار نمود.
         </p>
 
 
@@ -23,7 +22,7 @@
       </div>
     </div>
 
-    <div class="bg-light " style="border-radius: 250px 250px 0 0; padding-top: 100px">
+    <div class=" " style="border-radius: 250px 250px 0 0; padding-top: 100px; background-color: #D9D6D2">
       <div class="product-section text-center pt-3" style="">
 
         <img src="/img/p2.png" width="150px" alt="">
@@ -145,7 +144,8 @@
             برسانیم
           </p>
           <div class="text-center  mt-5">
-            <router-link to="/collaboration" class="btn-black my-font fw-bold" style="padding-top: 12px">شرکای ما</router-link>
+            <router-link to="/collaboration" class="btn-black my-font fw-bold" style="padding-top: 12px">شرکای ما
+            </router-link>
 
           </div>
         </div>

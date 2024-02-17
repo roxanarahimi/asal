@@ -10,7 +10,7 @@
       background-size: 100%; margin-top: -18px; padding-top: 50px; padding-bottom: 100px" >
        <div class=" text-center pt-3" style="width: 30% !important">
          <img src="/img/vectorright.png" class="w-100 mb-3" alt="">
-         <p>آماده مصرف و بدون نیاز به آماده سازی</p>
+         <p>بدون زحمت آماده سازی</p>
        </div>
        <div class="  text-center p-0 m-0"  style="width: 40% !important">
          <img src="/img/p2.png" class="w-100" alt="">
@@ -33,14 +33,11 @@
     <div class="my-padding">
 
     <h3 class="my-color mb-0"></h3>
-      <h3 class="my-font my-color mt-3">ویژگی های خمیر</h3>
 
       <div class="d-flex">
-        <h3 class="my-font my-color ">تولید شده</h3>
+        <h3 class="my-font my-color mt-3">ویژگی های  تغذیه کامل</h3>
+        <img class="align-self-center mx-2 mt-3" src="/img/Beelogo.png" width="100px" alt="">
 
-        <div class="d-grid">
-          <img class="align-self-center mx-2" src="/img/Beelogo.png" width="80px" alt="">
-        </div>
       </div>
 
 
@@ -48,70 +45,61 @@
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            غذای زنبورعسل آماده مصرف است و بدون نیاز به آماده سازی (افزودن آب یا هر افزودنی دیگری)، قابل استفاده می
-            باشد.
+            بدون هیچ گونه باقیمانده ذرات قندی در کندو پس از مصرف
           </p>
         </li>
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            به دلیل وجود ترکیبات طبیعی گیاهی، جذب کننده عالی برای زنبورهای عسل می باشد.
-            *شامل حداقل مقدار ساکارز نسب به محصولات بازار، قندهای ساده و بافت مناسب به منظور هضم آسان توسط زنبورعسل است.
+            عاری از ترکیبات شیمیایی سمی(HMF)
           </p>
         </li>
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            باقیمانده ای در کندو بجا نمی گذارد و بنابراین عسل موجود در کندو را آلوده نمی کند.
+            افزایش تخم ریزی و جمعیت کلنی
           </p>
         </li>
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            غذای زنبورعسل آماده مصرف است و بدون نیاز به آماده سازی (افزودن آب یا هر افزودنی دیگری)، قابل استفاده می
-            باشد.
+            کاهش استرس زنبور عسل
           </p>
         </li>
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            ترکیب شیمایی با سمیت بالای 5-هیدروکسی متیل فورفورال (HMF) بسیار پایینی داشته که خطری برای زنبورعسل ندارد.
+            جذاب برای زنبورهای عسل
           </p>
         </li>
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            سبب تقویت زنبورهای عسل، افزایش جمعیت کلنی، تخم ریزی و کاهش استرس کندو می شود و انرژی مورد نیاز زنبورها را تامین می کند.
+            با کمترین مقدار ساکاروز نسبت به نمونه اسپانیایی
           </p>
         </li>
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            ماندگاری بالا و قابل توجهی برخوردار است.
+            حاوی قندهای ساده و بافت مناسب به منظور هضم آسان و مصرف سریع تر زنبور عسل
           </p>
         </li>
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            تنوع محصول تولیدی؛ در حال حاضر محصول پایه، بهاره (پیشگیری از بیماری ها و افزایش برداشت عسل) و زمستانه (افزایش تخم ریزی و آمادگی شروع فصل تولید عسل)
+            محصول کوپابی  آماده مصرف و بدون نیاز به   آماده سازی(بدون نیاز به اضافه نمودن آب و یا هر ماده دیگری)
           </p>
         </li>
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            پروبیتیک‌ها برای ایمنی و تقویت زنبورعسل استفاده می‌شود و خاصیت دارویی دارد
+            افزایش انرژی زنبورها
           </p>
         </li>
         <li class="d-flex">
           <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
           <p class="px-1 text_start">
-            تغذیه تحریکی ملکه
-          </p>
-        </li>
-        <li class="d-flex">
-          <div class="dot_container" ><img src="/img/dot.png" width="10px" alt=""></div>
-          <p class="px-1 text_start">
-            مقرون به صرفه و اقتصادی می باشد.
+            ماندگاری بالا و قیمت مناسب
           </p>
         </li>
       </ul>
@@ -119,10 +107,16 @@
 
       <img src="/img/beee.png" alt="">
 
-      <h3 class="my-font my-color mt-3">دلایل استفاده از خمیر شیرین</h3>
+      <h3 class="my-font my-color mt-3">دلایل استفاده از تغذیه کامل کوپابی</h3>
 
 
       <ul class="px-0 pe-2 " style="list-style: none; align-self: center">
+        <li class="d-flex">
+          <div class="text-start" style="width: 15px; height: 15px; "><i class="bi bi-dash my-color"></i></div>
+          <p>
+            جلوگیری از رفتار غارت در زنبورستان
+          </p>
+        </li>
         <li class="d-flex">
           <div class="text-start" style="width: 15px; height: 15px; "><i class="bi bi-dash my-color"></i></div>
           <p>
@@ -132,19 +126,7 @@
         <li class="d-flex">
           <div class="text-start" style="width: 15px; height: 15px; "><i class="bi bi-dash my-color"></i></div>
           <p>
-            رساندن جمعیت کلنی به حد طبیعی و مطلوب برای انجام عمل گرده افشانی به نحو مناسب.
-          </p>
-        </li>
-        <li class="d-flex">
-          <div class="text-start" style="width: 15px; height: 15px; "><i class="bi bi-dash my-color"></i></div>
-          <p>
-            افزایش جمعیت کلنی ها در زمان هایی که با کمبود شهد و گرده مواجه هستند.
-          </p>
-        </li>
-        <li class="d-flex">
-          <div class="text-start" style="width: 15px; height: 15px; "><i class="bi bi-dash my-color"></i></div>
-          <p>
-            حمایت از پرورش نوزادان و تداوم تخم ریزی در مواقعی که هوا طوفانی و نامناسب است.
+            افزایش جمعیت کلنی ها در زمان هایی که با کمبود شهد مواجه هستند.
           </p>
         </li>
         <li class="d-flex">
@@ -162,12 +144,6 @@
         <li class="d-flex">
           <div class="text-start" style="width: 15px; height: 15px; "><i class="bi bi-dash my-color"></i></div>
           <p>
-            برای جبران جمعیت کلنی هایی که در سمپاشی گیاهان آسیب دیده اند.
-          </p>
-        </li>
-        <li class="d-flex">
-          <div class="text-start" style="width: 15px; height: 15px; "><i class="bi bi-dash my-color"></i></div>
-          <p>
             تامین ذخیره غذایی به اندازه کافی برای زمستان گذرانی کلنی ها.
           </p>
         </li>
@@ -180,7 +156,7 @@
         <li class="d-flex">
           <div class="text-start" style="width: 15px; height: 15px; "><i class="bi bi-dash my-color"></i></div>
           <p>
-            داروهای ضروری به کمک خمیر به زنبور داده میشود.
+            عاری از هرگونه آلودگی میکروبی و قارچ با کنترل رطوبت ،دما ،اندازه ذره‌ای بلورها و نیز غلظت قندها
           </p>
         </li>
 

@@ -28,10 +28,10 @@
 
 
     <div class="d-flex justify-content-between mt-5">
-      <div class="d-grid img-footer bg-white p-1 rounded"><a target="_blank" href="https://www.actotechaccelerator.com/"><img src="/img/actotek.png" class="align-self-center" width="70px" alt=""></a></div>
-      <div class="d-grid img-footer bg-white p-1 rounded"><a target="_blank" href="https://mpdri.sbu.ac.ir/"><img src="/img/beheshti.png" class="align-self-center" width="70px" alt=""></a></div>
-      <div class="d-grid img-footer bg-white p-1 rounded"><a target="_blank" href="https://amadehlaziz.com/index.html"><img src="/img/laziz.png" class="align-self-center" width="70px" alt=""></a></div>
-      <div class="d-grid img-footer bg-white p-1 rounded"><a target="_blank" href="http://iranianbee.ir/"><img src="/img/zanboordaran.png" class="align-self-center" width="70px" alt=""></a></div>
+      <div class="d-grid img-footer"><a target="_blank" href="https://amadehlaziz.com/index.html"><img src="/img/f1.png" class="align-self-center" width="85px" alt=""></a></div>
+      <div class="d-grid img-footer"><a target="_blank" href="https://www.actotechaccelerator.com/"><img src="/img/f2.png" class="align-self-center" width="85px" alt=""></a></div>
+      <div class="d-grid img-footer"><a target="_blank" href="https://mpdri.sbu.ac.ir/"><img src="/img/f3.png" class="align-self-center" width="85px" alt=""></a></div>
+      <div class="d-grid img-footer"><a target="_blank" href="http://iranianbee.ir/"><img src="/img/f4.png" class="align-self-center" width="85px" alt=""></a></div>
     </div>
 
   </div>

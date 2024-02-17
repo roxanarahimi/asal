@@ -214,6 +214,7 @@ input[type=number] {
 .main-slider {
     min-height: 280px;
     background-image: url('/img/bee.png');
+    background-size: 100%;
     border-radius: 90px;
     box-shadow: 0 0 30px 30px black inset;
 }

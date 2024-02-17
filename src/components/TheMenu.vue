@@ -1,5 +1,5 @@
 <template>
-  <div style="position: relative;">
+  <div class="my-font fw-bold" style="position: relative; font-size: 16px !important">
     <nav class="d-flex justify-content-between" style="height: 50px;position: relative; color: #F7941D">
       <div @click="menuToggle" class="pointer"><img src="/img/Burgerbutton.png" class="m-3" style="width: 46px" alt="">
       </div>
@@ -24,18 +24,27 @@
       </div>
 
 
-      <div style="display: grid; height: calc(100vh - 50px); font-size: 16px">
-        <ul style="list-style: none; align-self: center">
-          <li :id="item.name" v-for="item in links" class="d-flex">
-            <div class="text-start" style="width: 15px; height: 15px; "><img v-if="$route.name == item.name"
-                                                                             src="/img/dotBlack.png" style="" alt="">
+      <div style="display: grid; height: calc(100vh - 50px);">
+        <ul style="list-style: none; align-self: center" class="mt-5">
+          <li :id="item.name" v-for="item in links" style="font-size: 18px !important"
+              class="d-flex my-font fw-bolder mb-4">
+            <div class="text-start" style="width: 15px; height: 15px; ">
+              <img v-if="$route.name == item.name" src="/img/dotBlack.png" style="" alt="">
             </div>
             <router-link @click="menuToggle" :to="item.link">{{ item.title }}</router-link>
           </li>
         </ul>
+
+        <div style="font-size: 18px !important; align-self: end" class="d-flex my-font fw-bolder mb-5 mx-auto">
+          <div class="text-start" style="width: 15px; height: 15px; ">
+            <img v-if="$route.name == 'register'" src="/img/dotBlack.png" style="" alt="">
+          </div>
+          <router-link @click="menuToggle" to="register">ایجاد حساب کاربری</router-link>
+        </div>
       </div>
+      </div>
+
     </div>
-  </div>
 
 
 </template>
@@ -56,17 +65,17 @@ export default {
     const flag = ref(0);
     const links = ref([])
     onBeforeMount(() => {
-        links.value = [
-          {title: 'خانه', link: '/', name: 'home'},
-          // {title: 'محصول', link: '/product', name: 'product'},
-          // { title: 'نمایندگی های فعال', link: '/subs', name: 'subs' },
-          {title: 'درباره ما', link: '/about', name: 'about'},
-          {title: 'شرکای ما', link: '/collaboration', name: 'collaboration'},
-          {title: 'سوالات متداول', link: '/faq', name: 'faq'},
-          // {title: 'حساب کاربری', link: '/login', name: 'login'},
-          // {title: 'سفارشات', link: '/orders', name: 'orders'},
-          // {title: 'خروج', link: '/', name: 'logout'},
-        ];
+      links.value = [
+        {title: 'خانه', link: '/', name: 'home'},
+        {title: 'محصول', link: '/product', name: 'product'},
+        {title: 'نمایندگی های فعال', link: '/subs', name: 'subs'},
+        {title: 'درباره ما', link: '/about', name: 'about'},
+        {title: 'شرکای ما', link: '/collaboration', name: 'collaboration'},
+        {title: 'سوالات متداول', link: '/faq', name: 'faq'},
+        {title: 'حساب کاربری', link: '/login', name: 'login'},
+        {title: 'سفارشات', link: '/orders', name: 'orders'},
+        // {title: 'خروج', link: '/', name: 'logout'},
+      ];
 
     });
     onMounted(() => {
@@ -108,8 +117,8 @@ export default {
     checkUser() {
       if (JSON.parse(localStorage.getItem('user')) != null) {
         let date = new Date().toJSON();
-         date = date.split('.')[0].toString();
-         date = date.replace('T',' ');
+        date = date.split('.')[0].toString();
+        date = date.replace('T', ' ');
         let now = Date.parse(date);
         let expire = Date.parse(localStorage.getItem('expire'))
         if (now > expire) {
@@ -120,7 +129,7 @@ export default {
             time: date
           })
               .then((response) => {
-                localStorage.setItem('expire',response.data.expire)
+                localStorage.setItem('expire', response.data.expire)
                 // console.log(localStorage.getItem('expire'))
               }).catch((error) => console.error(error));
 
