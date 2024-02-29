@@ -7,7 +7,7 @@
 
 
      <div class="d-flex my-padding font-size-12" style="background: url('/img/pback.svg')right top no-repeat;
-      background-size: 100%; margin-top: -18px; padding-top: 50px; padding-bottom: 100px" >
+      background-size: 100%; margin-top: -16px; padding-top: 50px; padding-bottom: 100px" >
        <div class=" text-center pt-3" style="width: 30% !important">
          <img src="/img/vectorright.png" class="w-100 mb-3" alt="">
          <p>بدون زحمت آماده سازی</p>
@@ -26,7 +26,7 @@
      </div>
 
       <div class="text-center mb-5">
-        <router-link to="/products" class="btn-orange" style="padding-top: 12px">خرید عمده</router-link>
+<!--        <router-link to="/products" class="btn-orange" style="padding-top: 12px">خرید عمده</router-link>-->
       </div>
 
 </div>

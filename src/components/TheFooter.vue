@@ -1,6 +1,6 @@
 <template>
 <footer>
-  <div style="font-size: 12px; background: url('/img/Hive.svg') right bottom no-repeat; background-size: cover" class="bg-black text-white py-5 my-padding mt-5">
+  <div id="contact" style="font-size: 12px; background: url('/img/Hive.svg') right bottom no-repeat; background-size: cover" class="bg-black text-white py-5 my-padding mt-5">
     <p>شبکه های اجتماعی</p>
 
     <div class="d-flex justify-content-around mb-4">

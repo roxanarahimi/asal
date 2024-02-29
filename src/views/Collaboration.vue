@@ -1,6 +1,5 @@
 <template>
-  <div class="w-100 px-4 text-light"
-       style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
+  <div class="w-100 px-4 text-light">
 
     <div>
       <h3 class="my-font my-color mt-3">شرکای عسل لذیذ</h3>

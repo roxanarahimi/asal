@@ -11,17 +11,17 @@
 
 
     <div class="d-flex justify-content-between">
-      <div class="d-flex justify-content-start">
+      <div class="ms-4 d-flex justify-content-start">
         <div class="me-3 check-box" @click="setMsgType('question')">
           <i class="bi bi-check-lg msgQ d-none"></i>
         </div>
-        <p @click="setMsgType('question')">سوال</p>
+        <p  @click="setMsgType('question')">سوال</p>
       </div>
       <div class="d-flex justify-content-start">
         <div class="me-3 check-box" @click="setMsgType('compliment')">
           <i class="bi bi-check-lg msgC"></i>
         </div>
-        <p  @click="setMsgType('compliment')">انتقاد و پیشنهاد</p>
+        <p class="me-4"  @click="setMsgType('compliment')">انتقاد و پیشنهاد</p>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
       <div class="accordion bg-transparent mb-3 " id="accordionExample" >
         <div class="accordion-item bg-transparent my-border  rounded-0">
           <h2 class="accordion-header justify-content-start">
-            <button style="" class=" accordion-button  bg-transparent  collapsed"
+            <button style="" class=" text-primary accordion-button  bg-transparent  collapsed"
                     type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne">
               سری ساخت چیست؟
@@ -136,5 +136,8 @@ export default {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 
   margin: 0 5px !important;
+}
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d6efd'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 </style>

@@ -25,20 +25,25 @@
 
 
       <div style="display: grid; height: calc(100vh - 50px);">
-        <ul style="list-style: none; align-self: center" class="mt-5">
-          <li :id="item.name" v-for="item in links" style="font-size: 18px !important"
-              class="d-flex my-font fw-bolder mb-4">
-            <div class="text-start" style="width: 15px; height: 15px; ">
-              <img v-if="$route.name == item.name" src="/img/dotBlack.png" style="" alt="">
-            </div>
-            <router-link @click="menuToggle" :to="item.link">{{ item.title }}</router-link>
-          </li>
-        </ul>
+       <div style="align-self: center">
+         <ul style="list-style: none; " class="mt-5 mb-0">
+           <li :id="item.name" v-for="item in links" style="font-size: 18px !important"
+               class="d-flex my-font fw-bolder mb-4">
+             <div class="text-start " style="width: 15px; height: 15px;padding-right: 1px ; margin-left: 2px">
+               <img v-if="$route.name == item.name" src="/img/dotB.png" class="" style="width: 80%" alt="">
+             </div>
+             <router-link @click="menuToggle" :to="item.link">{{ item.title }}</router-link>
+           </li>
+         </ul>
+         <div @click="menuToggle('contact')" style="font-size: 18px !important; padding-right:calc( 2rem + 15px); cursor: pointer" >ارتباط با ما</div>
+
+       </div>
 
         <div style="font-size: 18px !important; align-self: end" class="d-flex my-font fw-bolder mb-5 mx-auto">
           <div class="text-start" style="width: 15px; height: 15px; ">
-            <img v-if="$route.name == 'register'" src="/img/dotBlack.png" style="" alt="">
+            <img v-if="$route.name == 'register'" src="/img/dotB.png" style="" alt="">
           </div>
+
           <router-link @click="menuToggle" to="register">ایجاد حساب کاربری</router-link>
         </div>
       </div>
@@ -72,9 +77,10 @@ export default {
         {title: 'درباره ما', link: '/about', name: 'about'},
         {title: 'شرکای ما', link: '/collaboration', name: 'collaboration'},
         {title: 'سوالات متداول', link: '/faq', name: 'faq'},
-        {title: 'حساب کاربری', link: '/login', name: 'login'},
-        {title: 'سفارشات', link: '/orders', name: 'orders'},
+        // {title: 'حساب کاربری', link: '/login', name: 'login'},
+        // {title: 'سفارشات', link: '/orders', name: 'orders'},
         // {title: 'خروج', link: '/', name: 'logout'},
+        // {title: 'ارتباط با ما', link: '/contact', name: 'contact'},
       ];
 
     });
@@ -86,15 +92,26 @@ export default {
       // }
     })
 
-    const menuToggle = () => {
+    const menuToggle = (param) => {
       if (flag.value) {
         document.querySelector('#menuContent').style.right = '-100%';
         document.querySelector('#menuContent').style.opacity = '0';
         flag.value = 0;
+        document.querySelector('body').style.height = 'auto';
+        document.querySelector('body').style.overflowY = 'scroll';
       } else {
         document.querySelector('#menuContent').style.right = '0';
         document.querySelector('#menuContent').style.opacity = '1';
         flag.value = 1;
+
+        document.querySelector('body').style.height = '100vh';
+        document.querySelector('body').style.overflowY = 'hidden';
+      }
+      if (param == 'contact'){
+        document.querySelector('#contact').scrollIntoView();
+      }else{
+        document.querySelector('#app').scrollIntoView();
+
       }
     }
 
