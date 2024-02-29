@@ -28,7 +28,7 @@
     <div class=" " style="border-radius: 250px 250px 0 0; padding-top: 100px; background-color: #D9D6D2">
       <div class="product-section text-center pt-3" style="">
 
-        <img src="/img/p2.png" width="150px" alt="">
+        <img src="/img/p2.png" width="180px" alt="">
       </div>
       <div class="p-4 px-5">
         <div class="" style="background: url('/img/frame.png') center center no-repeat; background-size: 100%">
