@@ -3,7 +3,7 @@
     <div class="bg-black text-white">
       <div class="my-padding">
         <h1 class=" mt-5 mb-2  main_title my-color mb-0">
-          <img src="/img/Beelogo.png" class="mt-1 mb-0" width="125px" alt="">
+          <img src="/img/Beelogo.png" class="mt-4 mb-0" width="125px" alt="">
           ، آپی</h1>
         <h1 class=" main_title my-color mb-3"> پاستای ایرانی</h1>
 
@@ -18,11 +18,11 @@
         </div>
 
 
-        <div class="d-flex justify-content-end mb-5">
+        <div class="d-flex justify-content-end ">
           <router-link to="/about" class="btn-orange" style="padding-top: 12px">بیشتر بدانید</router-link>
         </div>
 
-        <div class="main-slider mb-3"></div>
+        <div class="main-slider mb-4"></div>
       </div>
     </div>
 
