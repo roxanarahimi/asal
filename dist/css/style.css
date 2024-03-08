@@ -1,5 +1,5 @@
 body, html {
-    max-width: 405px;
+    max-width: 420px;
     margin: 0 auto;
     font-family: IranSans !important;
     direction: rtl !important;
@@ -12,8 +12,8 @@ body, html {
 /*    font-family: 'MjAramcoLight' !important;*/
 /*}*/
 .main_title {
-    font-family: 'MjAramcoLight' !important;
-
+    font-family: 'MjFlowBold' !important;
+    font-size: 35px;
 }
 
 #app {

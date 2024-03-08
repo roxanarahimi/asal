@@ -2,26 +2,27 @@
   <div class="home">
     <div class="bg-black text-white">
       <div class="my-padding">
-        <h1 class="w-75 my-4 main_title my-color">
-          به عسل لذیذ
-          <br>
-          خوش آمدید
-        </h1>
+        <h1 class=" mt-5 mb-2  main_title my-color mb-0">
+          <img src="/img/Beelogo.png" class="mt-1 mb-0" width="125px" alt="">
+          ، آپی</h1>
+        <h1 class=" main_title my-color mb-3"> پاستای ایرانی</h1>
 
-        <div class="py-5" style="background: url('/img/s1bg.png') center center no-repeat; background-size: cover;">
-          <p class="col-8 font-size-12" >
-            عسل لذیذ با هدف تولید تغذیه کامل زنبور عسل مشابه نمونه محصول اسپانیایی و با چشم انداز ارتقای کیفیت محصولات
-            صنعت زنبورداری کشور ، همکاری خود را با تکیه بر تحقیقات علمی دانشگاه شهید بهشتی آغار نمود.
+        <div class="pb-5" style="background: url('/img/s1bg.png') center center no-repeat; background-size: cover;">
+          <p class="col-8 " style="font-size: 15px">
+            عسل لذیذ با هدف تولید تغذیه کامل زنبور عسل و
+            با چشم انداز ارتقای کیفیت محصولات صنعت
+            زنبور داری کشور همکاری خود را با شتابدهنده
+            اکتوتک و طرح تحقیقاتی، صنعتی تولید قضای کامل
+            زنبور عسل، مشابه نمونه محصول وارداتی در دستور کار خود قرار داد.
           </p>
         </div>
 
 
-
-        <div class="d-flex justify-content-end mb-3">
+        <div class="d-flex justify-content-end mb-5">
           <router-link to="/about" class="btn-orange" style="padding-top: 12px">بیشتر بدانید</router-link>
         </div>
 
-        <div class="main-slider"></div>
+        <div class="main-slider mb-3"></div>
       </div>
     </div>
 
@@ -97,7 +98,7 @@
                 <p>
                   زنبورهای عسل از طریق گرده افشانی، نقش مهمی در تامین منابع غذایی برای انسان ها، حیوانات و همچنین
                   گوناگونی زیستی در اکوسیستم های طبیعی و کشاورزی را برعهده دارند...
-                  <router-link to="/faq" class="text-primary" >ادامه</router-link>
+                  <router-link to="/faq" class="text-primary">ادامه</router-link>
                 </p>
               </div>
             </div>
@@ -115,7 +116,7 @@
                 <p>
                   خمیر شیرین کوپابی نسبت به شربت های دست ساز زنبورداران مزیت های زیر را دارا میباشد: خمیرشیرین در روند
                   تولید با کنترل رطوبت،دما ،اندازه ذره ای بلورها و مقدار شکر...
-                  <router-link to="/faq" class="text-primary" >ادامه</router-link>
+                  <router-link to="/faq" class="text-primary">ادامه</router-link>
 
                 </p>
               </div>
