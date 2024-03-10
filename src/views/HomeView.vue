@@ -3,17 +3,14 @@
     <div class="bg-black text-white">
       <div class="my-padding">
         <h1 class=" mt-5 mb-2  main_title my-color mb-0">
-          <img src="/img/Beelogo.png" class="mt-4 mb-0" width="125px" alt="">
+          <img src="/img/Beelogo.png" class="mb-0" width="125px" style="margin-top: 35px" alt="">
           ، آپی</h1>
         <h1 class=" main_title my-color mb-3"> پاستای ایرانی</h1>
 
         <div class="pb-5" style="background: url('/img/s1bg.png') center center no-repeat; background-size: cover;">
           <p class="col-8 " style="font-size: 15px">
-            عسل لذیذ با هدف تولید تغذیه کامل زنبور عسل و
-            با چشم انداز ارتقای کیفیت محصولات صنعت
-            زنبور داری کشور همکاری خود را با شتابدهنده
-            اکتوتک و طرح تحقیقاتی، صنعتی تولید قضای کامل
-            زنبور عسل، مشابه نمونه محصول وارداتی در دستور کار خود قرار داد.
+            عسل لذیذ با هدف تولید تغذیه کامل زنبور عسل مشابه نمونه محصول اسپانیایی و با چشم انداز ارتقای کیفیت محصولات
+            صنعت زنبورداری کشور ، همکاری خود را با تکیه بر تحقیقات علمی دانشگاه شهید بهشتی آغار نمود.
           </p>
         </div>
 
