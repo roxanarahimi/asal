@@ -193,7 +193,7 @@
     <div v-if="provinceBranches" v-for="item in provinceBranches" :key="item.id">
       <div  class="d-flex">
         <div>
-          <img class="mt-3 p-1" src="/img/dot.png" alt="">
+          <img class="mt-3 p-1" src="/img/dot.png" width="18px" alt="">
         </div>
         <p class="mt-3 text-light mb-1" style="font-size: 12px">
           {{ item.address }}

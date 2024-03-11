@@ -24,7 +24,7 @@
       </div>
 
 
-      <div style="display: grid; height: calc(100vh - 50px);">
+      <div style="display: grid; height: calc(100vh - 100px);">
        <div style="align-self: center">
          <ul style="list-style: none; " class="mt-5 mb-0">
            <li :id="item.name" v-for="item in links" style="font-size: 18px !important"
@@ -38,7 +38,6 @@
          <div @click="menuToggle('contact')" style="font-size: 18px !important; padding-right:calc( 2rem + 15px); cursor: pointer" >ارتباط با ما</div>
 
        </div>
-
         <div style="font-size: 18px !important; align-self: end" class="d-flex my-font fw-bolder mb-5 mx-auto">
           <div class="text-start" style="width: 15px; height: 15px; ">
             <img v-if="$route.name == 'register'" src="/img/dotB.png" style="" alt="">

@@ -1,7 +1,7 @@
 <template>
   <div class="py-5 my-padding" style="background-color: #F7941D; border-radius: 24px">
 
-    <h1 class="mb-4 my-font">با ما در ارتباط باشید</h1>
+    <h1 class="mb-4 my-font fw-bold">سوال،انتقاد و پیشنهاد</h1>
 
 
     <p>
