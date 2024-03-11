@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black text-white">
+  <div class="bg-black text-white container-fluid px-0">
 
     <div class="">
 
@@ -33,11 +33,10 @@
     <div class="my-padding">
 
     <h3 class="my-color mb-0"></h3>
-
+      <h2 class="my-font my-color mt-3">ویژگی های خمیر</h2>
       <div class="d-flex">
-        <h3 class="my-font my-color mt-3">ویژگی های  تغذیه کامل</h3>
-        <img class="align-self-center mx-2 mt-3" src="/img/Beelogo.png" width="100px" alt="">
-
+        <h3 class="my-font my-color ">تولید شده</h3>
+        <img class="align-self-center mx-2 " src="/img/Beelogo.png" width="100px" alt="">
       </div>
 
 

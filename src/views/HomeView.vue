@@ -34,7 +34,7 @@
 
 
             <div>
-              <img class="mt-3 p-2" src="/img/dot.png" width="15px" alt="">
+              <img class="mt-3" src="/img/dot.png" width="15px" style="padding: 2px" alt="">
             </div>
             <p class="mt-3" style="font-size: 12px">
               ما در کوپابی با در نظر گرفتن ژنوتیپ،آناتومی و مقدار مورد نیازبرای تیپیک غالب زنبورهای مناطق مختلف کشور و
@@ -127,7 +127,7 @@
 
     <div class="text-center">
       <div class="p-4 py-5" style="background: url('/img/bg3.png') center center no-repeat; background-size: cover; ">
-        <div class="py-5 rounded" style="backdrop-filter: blur(15px); font-size: 14px;">
+        <div class="py-5 mx-2 rounded" style="backdrop-filter: blur(15px); font-size: 14px;">
           <h3 class="mb-5 my-font fw-bold">شرکای عسل لذیذ</h3>
           <p style="font-weight: bolder ; font-size:12px; padding-right: 90px; padding-left: 90px">
             شرکت عسل لذیذ با تکیه به دانش فنی ،عملیاتی گروه معظم آماده لذیذ و نیز دانش تحقیقاتی ،علمی پژوهشکده گیاهان و
@@ -138,7 +138,7 @@
             برسانیم
           </p>
           <div class="text-center  mt-5">
-            <router-link to="/collaboration" class="btn-black my-font fw-bold" style="padding-top: 12px">شرکای ما
+            <router-link to="/collaboration" class="btn-black my-font fw-bold" style="padding-top: 14px">شرکای ما
             </router-link>
 
           </div>

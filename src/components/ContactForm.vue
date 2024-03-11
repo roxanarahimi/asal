@@ -10,8 +10,8 @@
     </p>
 
 
-    <div class="d-flex justify-content-between">
-      <div class="ms-4 d-flex justify-content-start">
+    <div class="d-flex ">
+      <div class="me-4 d-flex justify-content-start">
         <div class="me-3 check-box" @click="setMsgType('question')">
           <i class="bi bi-check-lg msgQ d-none"></i>
         </div>

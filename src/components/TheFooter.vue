@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-around mb-4">
 
       <a target="_blank" href="https://www.instagram.com/copabeefeed?igsh=OGQ5ZDc2ODk2ZA=="> <img src="/img/icon-i.png" width="48px" alt=""></a>
-      <a target="_blank" href="https://www.instagram.com/copabeefeed?igsh=OGQ5ZDc2ODk2ZA=="> <img src="/img/icon-t.png" width="48px" alt=""></a>
+      <a target="_blank" href="https://t.me/asallaziz"> <img src="/img/icon-t.png" width="48px" alt=""></a>
       <a target="_blank" href="https://wa.me/02128425205"> <img src="/img/icon-w.png" width="48px" alt=""></a>
     </div>
 

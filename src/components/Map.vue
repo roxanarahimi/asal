@@ -201,7 +201,7 @@
       </div>
       <div class="d-flex">
         <div>
-          <img class=" p-1" src="/img/TelePhone.png" alt="">
+          <img class=" p-1" src="/img/TelePhone.svg" alt="">
         </div>
         <p class="mt-1 text-light mb-0" style="font-size: 12px">
           {{ item.phone }}
@@ -209,7 +209,7 @@
       </div>
       <div  class="d-flex">
         <div>
-          <img class=" p-1" src="/img/Location.png" alt="">
+          <img class=" p-1" src="/img/Location.svg" alt="">
         </div>
         <p class="mt-1 text-light" style="font-size: 12px">
           مشاهده نقشه
