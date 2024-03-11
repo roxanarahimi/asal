@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black text-white container-fluid px-0">
+  <div class="bg-black text-white">
 
     <div class="">
 

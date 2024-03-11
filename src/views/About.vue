@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100  text-light" style="">
+  <div class="w-100  text-light  container-fluid px-0" style=" overflow-x: hidden">
 
     <div>
       <div class="px-4">
