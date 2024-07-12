@@ -10,91 +10,100 @@
     </p>
 
 
-    <div class="d-flex ">
-      <div class="me-4 d-flex justify-content-start">
-        <div class="me-3 check-box" @click="setMsgType('question')">
-          <i class="bi bi-check-lg msgQ d-none"></i>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="d-flex ">
+          <div class="me-4 d-flex justify-content-start">
+            <div class="me-3 check-box" @click="setMsgType('question')">
+              <i class="bi bi-check-lg msgQ d-none"></i>
+            </div>
+            <p  @click="setMsgType('question')">سوال</p>
+          </div>
+          <div class="d-flex justify-content-start">
+            <div class="me-3 check-box" @click="setMsgType('compliment')">
+              <i class="bi bi-check-lg msgC"></i>
+            </div>
+            <p class="me-4"  @click="setMsgType('compliment')">انتقاد و پیشنهاد</p>
+          </div>
         </div>
-        <p  @click="setMsgType('question')">سوال</p>
-      </div>
-      <div class="d-flex justify-content-start">
-        <div class="me-3 check-box" @click="setMsgType('compliment')">
-          <i class="bi bi-check-lg msgC"></i>
+
+        <div class="mb-3">
+          <label for="message">پیام</label>
+          <textarea id="message" class="form-control rounded-0 h-100"></textarea>
         </div>
-        <p class="me-4"  @click="setMsgType('compliment')">انتقاد و پیشنهاد</p>
       </div>
-    </div>
-
-    <div class="mb-3">
-      <label for="message">پیام</label>
-      <textarea id="message" class="form-control rounded-0"></textarea>
-    </div>
-
-    <div class="row" v-if="msgType == 'compliment'">
-      <div class="col-6">
-        <label for="seri">سری ساخت</label>
-        <input id="seri" type="text" class="form-control rounded-0">
-      </div>
-      <div class="col-6">
-        <label for="provinceQ">استان</label>
-        <select name="" id="provinceQ" class="form-select rounded-0">
-          <option value=""></option>
-        </select>
-      </div>
-      <div class="accordion bg-transparent mb-3 " id="accordionExample" >
-        <div class="accordion-item bg-transparent my-border  rounded-0">
-          <h2 class="accordion-header justify-content-start">
-            <button style="" class=" text-primary accordion-button  bg-transparent  collapsed"
-                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne">
-              سری ساخت چیست؟
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
-            <div class="accordion-body p-0 border border-black">
-              <img src="/img/sery.png" class="w-100" alt="">
-              <p class="p-2" style="font-size: 13px">
-                سری ساخت، کدی است که در پشت جلد محصول درج شده است
-              </p>
+      <div class="col-lg-6">
+        <div class="row" v-if="msgType == 'compliment'">
+          <div class="col-6">
+            <label for="seri">سری ساخت</label>
+            <input id="seri" type="text" class="form-control rounded-0">
+          </div>
+          <div class="col-6">
+            <label for="provinceQ">استان</label>
+            <select name="" id="provinceQ" class="form-select rounded-0">
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="accordion bg-transparent mb-3 " id="accordionExample" >
+            <div class="accordion-item bg-transparent my-border  rounded-0">
+              <h2 class="accordion-header justify-content-start">
+                <button style="" class=" text-primary accordion-button  bg-transparent  collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                  سری ساخت چیست؟
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                <div class="accordion-body p-0 border border-black">
+                  <img src="/img/sery.png" class="w-100" alt="">
+                  <p class="p-2" style="font-size: 13px">
+                    سری ساخت، کدی است که در پشت جلد محصول درج شده است
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div class="mb-3" v-else>
+          <label for="mailQ">ایمیل</label>
+          <input id="mailQ" type="text" class="form-control rounded-0">
+        </div>
+
+
+        <div class="d-flex justify-content-start">
+          <div class="me-3 check-box" @click="setSenderType()">
+            <i class="bi bi-check-lg " :class="{'d-none': !unknownSender}"></i>
+          </div>
+          <p @click="setSenderType()">ناشناس</p>
+
+        </div>
+        <div class="row" v-if="!unknownSender">
+          <div class="col-12 mb-3">
+            <label for="name">نام و نام خانوادگی</label>
+            <input type="text" id="name" class="form-control rounded-0">
+          </div>
+          <div class="col-6">
+            <label for="province_2">شهر</label>
+            <select id="province_2" class="form-select rounded-0">
+              <option>تهران</option>
+            </select>
+          </div>
+          <div class="col-6 mb-3">
+            <label for="phone">تلفن</label>
+            <input type="number" id="phone" class="form-control rounded-0">
+          </div>
+        </div>
+
       </div>
-    </div>
-    <div class="mb-3" v-else>
-      <label for="mailQ">ایمیل</label>
-      <input id="mailQ" type="text" class="form-control rounded-0">
+
+      <div class="text-center col-lg-12">
+        <button class="btn-black-rect">ثبت</button>
+      </div>
     </div>
 
 
-    <div class="d-flex justify-content-start">
-      <div class="me-3 check-box" @click="setSenderType()">
-        <i class="bi bi-check-lg " :class="{'d-none': !unknownSender}"></i>
-      </div>
-      <p @click="setSenderType()">ناشناس</p>
-
-    </div>
-    <div class="row" v-if="!unknownSender">
-      <div class="col-12 mb-3">
-        <label for="name">نام و نام خانوادگی</label>
-        <input type="text" id="name" class="form-control rounded-0">
-      </div>
-      <div class="col-6">
-        <label for="province_2">شهر</label>
-        <select id="province_2" class="form-select rounded-0">
-          <option>تهران</option>
-        </select>
-      </div>
-      <div class="col-6 mb-3">
-        <label for="phone">تلفن</label>
-        <input type="number" id="phone" class="form-control rounded-0">
-      </div>
-    </div>
 
 
-    <div class="text-center">
-      <button class="btn-black-rect">ثبت</button>
-    </div>
   </div>
 
 </template>
