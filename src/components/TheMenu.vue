@@ -72,7 +72,7 @@ export default {
       links.value = [
         {title: 'خانه', link: '/', name: 'home'},
         {title: 'محصول', link: '/product', name: 'product'},
-        {title: 'نمایندگی های فعال', link: '/subs', name: 'subs'},
+        // {title: 'نمایندگی های فعال', link: '/subs', name: 'subs'},
         {title: 'درباره ما', link: '/about', name: 'about'},
         {title: 'شرکای ما', link: '/collaboration', name: 'collaboration'},
         {title: 'سوالات متداول', link: '/faq', name: 'faq'},

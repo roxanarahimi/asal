@@ -59,6 +59,11 @@ const routes = [
     path: '/collaboration',
     name: 'collaboration',
     component: () => import(/* webpackChunkName: "collaboration" */ '../views/Collaboration.vue')
+  },
+  {
+    path: '/complane',
+    name: 'complane',
+    component: () => import(/* webpackChunkName: "complane" */ '../views/Complane.vue')
   }
 ]
 

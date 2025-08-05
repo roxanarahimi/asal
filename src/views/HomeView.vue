@@ -1,18 +1,19 @@
 <template>
   <div class="home">
-    <img src="/img/copabeeExport.png"  width="100%" height="auto" alt="">
+    <!--    <img src="/img/copabeeExport.png"  width="100%" height="auto" alt="">-->
 
-    <div class="bg-black text-white">
+    <div class="bg-black text-white pt-5">
       <div class="my-padding">
-        <h1 class=" mt-5 mb-2  main_title my-color mb-0">
-          <img src="/img/Beelogo.png" class="mb-0" width="125px" style="margin-top: 35px" alt="">
+        <h1 class="mt-5 mb-2  main_title my-color">
+          <img src="/img/Beelogo.png" class="mb-0" alt="">
           ، آپی</h1>
-        <h1 class=" main_title my-color mb-3"> پاستای ایرانی</h1>
+        <h1 class=" main_title my-color mb-3">پاستای ایرانی</h1>
 
         <div class="pb-5" style="background: url('/img/s1bg.png') center center no-repeat; background-size: cover;">
           <p class="col-8 " style="font-size: 15px">
-            عسل لذیذ با هدف تولید تغذیه کامل زنبور عسل مشابه نمونه محصول اسپانیایی و با چشم انداز ارتقای کیفیت محصولات
-            صنعت زنبورداری کشور ، همکاری خود را با تکیه بر تحقیقات علمی دانشگاه شهید بهشتی آغار نمود.
+            کوپابی با هدف تولید تغذیه کامل زنبور عسل، مشابه نمونه‌ وارداتی تأسیس شد. ما با تکیه بر دانش فنی گروه آماده
+            لذیذ و پشتوانه علمی پژوهشکده گیاهان و مواد اولیه دارویی دانشگاه شهید بهشتی، تولید نیمه‌صنعتی خود را آغاز
+            کردیم.
           </p>
         </div>
 
@@ -28,7 +29,8 @@
     <div class=" " style="border-radius: 250px 250px 0 0; padding-top: 100px; background-color: #D9D6D2">
       <div class="product-section text-center pt-3" style="">
 
-        <img src="/img/p2.png" width="180px" alt="">
+        <!--        <img src="/img/p2.png" width="180px" alt="">-->
+        <img src="/img/p22.png" width="180px" alt="">
       </div>
       <div class="p-4 px-5">
         <div class="" style="background: url('/img/frame.png') center center no-repeat; background-size: 100%">
@@ -39,8 +41,8 @@
               <img class="mt-3" src="/img/dot.png" width="15px" style="padding: 2px" alt="">
             </div>
             <p class="mt-3" style="font-size: 12px">
-              ما در کوپابی با در نظر گرفتن ژنوتیپ،آناتومی و مقدار مورد نیازبرای تیپیک غالب زنبورهای مناطق مختلف کشور و
-              دنیا به فرمولاسیون خاص و کاربردی رسیده ایم تا بهترین و با کیفیت ترین غذای زنبورعسل را ارائه کنیم.
+              کوپابی یک خوراک نیمه‌جامد آماده مصرف برای زنبور عسل است که با هدف تغذیه کمکی کلنی‌ها در فصل‌هایی با کمبود
+              منابع طبیعی تولید شده است.
             </p>
           </div>
         </div>
@@ -61,18 +63,18 @@
       </div>
     </div>
 
-    <div class="bg-black text-white pt-5 my-padding">
+    <!--    <div class="bg-black text-white pt-5 my-padding">-->
 
-      <h1 class="mb-4 my-font my-color">نمایندگی های فعال </h1>
-
-
-      <div class=" w-100">
-        <!--        <img src="/img/iran.png" class="img-fluid w-100" style="" alt="">-->
-        <iran-map/>
-      </div>
+    <!--      <h1 class="mb-4 my-font my-color">نمایندگی های فعال </h1>-->
 
 
-    </div>
+    <!--      <div class=" w-100">-->
+    <!--        &lt;!&ndash;        <img src="/img/iran.png" class="img-fluid w-100" style="" alt="">&ndash;&gt;-->
+    <!--        <iran-map/>-->
+    <!--      </div>-->
+
+
+    <!--    </div>-->
 
     <div class="bg-black ">
       <contact-form/>
@@ -130,14 +132,12 @@
     <div class="text-center">
       <div class="p-4 py-5" style="background: url('/img/bg3.png') center center no-repeat; background-size: cover; ">
         <div class="py-5 mx-2 rounded" style="backdrop-filter: blur(15px); font-size: 14px;">
-          <h3 class="mb-5 my-font fw-bold">شرکای عسل لذیذ</h3>
-          <p style="font-weight: bolder ; font-size:12px; padding-right: 90px; padding-left: 90px">
-            شرکت عسل لذیذ با تکیه به دانش فنی ،عملیاتی گروه معظم آماده لذیذ و نیز دانش تحقیقاتی ،علمی پژوهشکده گیاهان و
-            مواد اولیه دارویی دانشگاه شهید بهشتی کار تولید نیمه صنعتی خود را آغاز کرد.
-            در ادامه جهت دریافت بازخوردهای صحیح از محصولات تحقیقاتی ،بر آن شدیم تا با اتحادیه زنبورداران ایران زمین
-            تفاهم نامه همکاری امضا و سپس زنبورستان علمی تحقیقاتی عسل لذیذ در محل دانشگاه شهید بهشتی احداث گردید تا
-            بتوانیم پس از آن تمامی تولیدات نیمه صنعتی خود را با کمک هر دو بخش به بهترین نحو ممکن به دست زنبورداران
-            برسانیم
+          <h3 class="mb-5 my-font fw-bold">شرکای راهبردی کوپابی</h3>
+          <p style="font-weight: bold ; font-size:13px; padding-right: 50px; padding-left: 50px; text-align: justify;">
+            در مسیر توسعه تغذیه تخصصی زنبورعسل، کوپابی با همکاری مجموعه‌ای از معتبرترین نهادهای علمی، پژوهشی، صنعتی و
+            زنبورداری کشور، از جمله پژوهشکده گیاهان دارویی دانشگاه شهید بهشتی، شتاب‌دهنده دارویی و غذایی اکتوتک، نهاد
+            رسمی زنبورداری کشور (اتحادیه سراسری زنبورداران ایران) و گروه صنایع غذایی آماده لذیذ، زنجیره‌ای مطمئن از
+            دانش، تولید، توزیع و تجربه را شکل داده است.
           </p>
           <div class="text-center  mt-5">
             <router-link to="/collaboration" class="btn-black my-font fw-bold" style="padding-top: 14px">شرکای ما
@@ -160,9 +160,11 @@
 // @ is an alias to /src
 import iranMap from '../components/Map'
 import ContactForm from "@/components/ContactForm";
+import {ref} from "vue";
 
 export default {
   components: {ContactForm, iranMap},
   name: 'HomeView',
+
 }
 </script>

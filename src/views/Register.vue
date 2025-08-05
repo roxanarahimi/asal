@@ -28,11 +28,17 @@
           <div id="nameHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.name">{{ e }}</p>
         </div>
-        <div v-if="type=='real'" class="col-12">
+        <div v-if="type=='real'" class="col-6">
           <label>کد ملی</label>
           <input id="national_code" type="text" class="en form-control form-control-sm" required>
           <div id="national_codeHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.national_code">{{ e }}</p>
+        </div>
+        <div v-if="type=='real'" class="col-6">
+          <label>تاریخ تولد</label>
+          <input id="birth_date" type="text" class="en form-control form-control-sm" required>
+          <div id="birth_dateHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.birth_date">{{ e }}</p>
         </div>
 
         <div v-if="type=='legal'" class="col-12">

@@ -50,10 +50,10 @@ export default {
 </script>
 <style>
 
-body, html {
-  font-family: IranSans !important;
-}
-.main_title {
-  font-family: 'MjFlowBold' !important;
-}
+/*body, html {*/
+/*  font-family: IranSans !important;*/
+/*}*/
+/*.main_title {*/
+/*  font-family: 'MjFlowBold' !important;*/
+/*}*/
 </style>

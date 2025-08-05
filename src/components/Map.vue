@@ -1,7 +1,7 @@
 <template>
   <div class="row justify-content-lg-center  mb-3">
-    <div class="col-lg-10 row flex-row-reverse justify-content-lg-between">
-      <div class="col-lg-5">
+    <div class=" row flex-row-reverse justify-content-lg-between">
+      <div class="">
         <div class="row ">
           <div class="col-6">
             <label>استان</label>
