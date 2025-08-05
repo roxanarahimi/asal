@@ -12,19 +12,20 @@ body, html {
 /*    font-family: 'MjAramcoLight' !important;*/
 /*}*/
 .main_title {
-    font-family: 'MjFlowBold' !important;
-    font-size: 35px;
+    font-family: 'IranYekanExtraBold' !important;
+    font-size: 58px;
 }
 .main_title img{
-    width:125px;
-    margin-top: 35px
+    width:195px;
+    margin-top: 18px
 }
 .main_p{
     font-size: 15px;
 }
 .main-slider {
     min-height: 300px;
-    background: url('/img/bee.png') center center no-repeat;
+    /*background: url('/img/bee.png') center center no-repeat;*/
+    background: url('/img/header.jpg') center center no-repeat;
     background-size: 100%;
     border-radius: 90px;
     box-shadow: 0 0 30px 30px black inset;
@@ -34,7 +35,8 @@ body, html {
  }
 @media(min-width: 700px){
     .main_title {
-        font-family: 'MjFlowBold' !important;
+        font-family: 'IranYekanExtraBold' !important;
+        font-weight: bolder;
         font-size: 70px !important;
     }
     .main_title img{
@@ -48,7 +50,9 @@ body, html {
     }
     .main-slider {
         min-height: 330px;
-        background: url('/img/bee.png') center center no-repeat;
+        /*background: url('/img/bee.png') center center no-repeat;*/
+        background: url('/img/header.jpg') center center no-repeat;
+
         background-size: 100%;
         border-radius: 90px;
         box-shadow: 0 0 30px 30px black inset;
@@ -411,7 +415,8 @@ button, router-link {
     width: 20px;
     height: 20px;
     border-radius: 2px;
-    border: 1.5px solid black;
+    /*border: 1.5px solid black;*/
+    border: 1.5px solid white;
     cursor: pointer;
 }
 
@@ -473,4 +478,12 @@ button:focus {
 
 .accordion-button:not(.collapsed) {
     box-shadow: none !important;
+}
+.cursor-pointer{
+    cursor: pointer;
+
+}
+.en{
+    direction: ltr !important;
+    text-align: left !important;
 }

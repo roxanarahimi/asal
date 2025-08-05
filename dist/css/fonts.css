@@ -326,6 +326,20 @@
 
 
 
+@font-face {
+    font-family: 'IranYekan';
+    src:url('../fonts/IranYekan/QS_IRANYEKAN.TTF') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+@font-face {
+    font-family: 'IranYekanExtraBold';
+    src:url('../fonts/IranYekan/QS_IRANYEKAN EXTRABOLD.TTF') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+
+
+
+
 
 
 
