@@ -5,8 +5,25 @@
       <img src="/img/Beelogo.png" style="width: 160px" class="my-5" alt="">
     </div>
 
-    <h4 class="my-font my-color text-center mt-4">ثبت نام</h4>
+    <h4 class="my-font my-color text-center mt-4">ثبت نام در کوپابی</h4>
 
+    <div>
+      <p>
+        برای ثبت سفارش در سامانه کوپابی، لازم است ابتدا حساب کاربری ایجاد نمایید.
+      </p>
+      <p>
+        <i class="bi bi-pin-angle-fill text-danger"></i>
+        توجه:
+        ثبت مشخصات فردی و بارگذاری مدارک (مانند پروانه زنبورداری یا کارت ملی) به منظور تأیید هویت و تسهیل فرآیند خرید
+        انجام می‌گیرد.
+        پس از بررسی و تأیید اطلاعات توسط کارشناسان فروش کوپابی، امکان نهایی‌سازی و پیگیری سفارش‌ها برای شما فعال خواهد شد.
+
+      </p>
+      <p>
+        <i class="bi bi-check-square-fill text-success"></i>
+        با ثبت‌نام، از پشتیبانی تخصصی، اطلاع‌رسانی محصولات جدید و پیشنهادهای ویژه نیز بهره‌مند می‌شوید.
+      </p>
+    </div>
 
     <div class="d-flex justify-content-between mt-5">
       <div class="d-flex pe-4">
@@ -97,7 +114,7 @@
         </div>
 
 
-        <div  class="col-6">
+        <div class="col-6">
           <label>شهر</label>
           <Multiselect
               v-model="selectedCity"
@@ -126,12 +143,22 @@
         </div>
       </div>
 
-      <div v-if="type=='legal'" class="row">
-        <div class="col-12 mt-5">
-          <drop-zone id="dropZone1" :title="'تصویر آخرین روزنامه رسمی'" :index="1" :has-error="img1Error" required/>
-          <div></div>
+      <div>
+        <div v-if="type=='legal'" class="row">
+          <div class="col-12 mt-5">
+            <drop-zone id="dropZone1" :title="'تصویر آخرین روزنامه رسمی'" :index="1" :has-error="img1Error" required/>
+            <div></div>
+          </div>
+        </div>
+        <div v-else class="row">
+          <div class="col-12 mt-5">
+            <drop-zone id="dropZone1" :title="'تصویر کارت ملی یا شناسنامه زنبورداری'" :index="1" :has-error="img1Error"
+                       required/>
+            <div></div>
+          </div>
         </div>
       </div>
+
 
       <div class=" d-flex justify-content-center mt-4">
         <button @click.prevent="submit" class="btn-orange my-font">ثبت</button>
@@ -139,10 +166,11 @@
     </form>
   </div>
   <!-- Modal -->
-  <div class="modal fade"  id="register-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="register-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+       aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-<!--          <button type="button" class="btn-close m-2 me-auto" data-bs-dismiss="modal" aria-label="Close"></button>-->
+        <!--          <button type="button" class="btn-close m-2 me-auto" data-bs-dismiss="modal" aria-label="Close"></button>-->
         <div class="modal-body ">
 
           <p class="text-center">اطلاعات شما با موفقیت ثبت شد</p>
@@ -150,9 +178,11 @@
           <p class="text-center">فعال شدن حساب کاربری شما تا 24 ساعت آینده، از طریق پیامک اطلاع رسانی می شود</p>
         </div>
         <div class="d-flex justify-content-center">
-        <button type="button" class="btn-black-rect my-3" @click="reload" style="width: 100px; height:40px" data-bs-dismiss="modal">تائید</button>
+          <button type="button" class="btn-black-rect my-3" @click="reload" style="width: 100px; height:40px"
+                  data-bs-dismiss="modal">تائید
+          </button>
 
-      </div>
+        </div>
       </div>
 
     </div>
@@ -165,7 +195,6 @@ import {onMounted, ref} from "vue";
 import dropZone from "../components/DropZone";
 import {useStore} from "vuex";
 import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
-
 
 
 export default {
@@ -183,7 +212,7 @@ export default {
     const selectedProvince = ref({})
     const selectedCity = ref({})
     const typeToggle = (index) => {
-      errors.value= [];
+      errors.value = [];
       let req = document.querySelectorAll('[required]');
       req.forEach((element) => {
         element.classList.remove('hasError');
@@ -239,19 +268,19 @@ export default {
       errors.value['national_code'] = [];
       errors.value['postal_code'] = [];
 
-      if(document.querySelector('#national_code').value != ''){
-        let x , y ;
-      type.value == 'real'?  (x = 10, y='کد ملی') :  (x = 11, y='شناسه ملی');
+      if (document.querySelector('#national_code').value != '') {
+        let x, y;
+        type.value == 'real' ? (x = 10, y = 'کد ملی') : (x = 11, y = 'شناسه ملی');
         if (document.querySelector('#national_code').value.length != x) {
-          errors.value.national_code.push(y +' باید ' + x +' رقم باشد.');
+          errors.value.national_code.push(y + ' باید ' + x + ' رقم باشد.');
         }
       }
-      if(document.querySelector('#postal_code').value != ''){
+      if (document.querySelector('#postal_code').value != '') {
         if (document.querySelector('#postal_code').value.length != 10) {
           errors.value.postal_code.push('کد پستی باید 10 رقم باشد')
         }
       }
-      if(document.querySelector('#mobile').value != ''){
+      if (document.querySelector('#mobile').value != '') {
         if (!document.querySelector('#mobile').value.startsWith('09')) {
           errors.value.mobile.push('شماره موبایل باید با 09 شروع شود')
         }
@@ -259,7 +288,6 @@ export default {
           errors.value.mobile.push('شماره موبایل باید 11 رقم باشد')
         }
       }
-
 
 
       if (emptyFieldsCount === 0) {
@@ -284,17 +312,17 @@ export default {
 
         axios.post(store.state.panelUrl + '/api/user/register', info)
             .then((response) => {
-                let myModal = new bootstrap.Modal(document.getElementById('register-modal'))
-                myModal.show();
+              let myModal = new bootstrap.Modal(document.getElementById('register-modal'))
+              myModal.show();
             })
             .catch((error) => {
               errors.value['mobile'] = [];
 
-              if(error.response.status === 422){
-               errors.value['mobile'] = error.response.data.mobile;
-               errors.value['national_code'] = error.response.data.national_code;
-               errors.value['registration_number'] = error.response.data.registration_number;
-             }
+              if (error.response.status === 422) {
+                errors.value['mobile'] = error.response.data.mobile;
+                errors.value['national_code'] = error.response.data.national_code;
+                errors.value['registration_number'] = error.response.data.registration_number;
+              }
               console.error(error)
             });
 
@@ -310,14 +338,14 @@ export default {
       // getCities();
     })
 
-    const reload = ()=>{
+    const reload = () => {
       window.location.reload();
     }
-    const getProvinces = ()=>{
+    const getProvinces = () => {
       axios.get(store.state.panelUrl + '/api/province')
           .then((response) => {
             provinces.value = response.data;
-            provinces.value.forEach((element)=>{
+            provinces.value.forEach((element) => {
               element.value = {id: element.id, name: element.title, cities: element.cities};
               element.label = element.title;
             })
@@ -329,23 +357,23 @@ export default {
         console.error(error)
       })
     }
-    const getCities = ()=>{
-      setTimeout(()=>{
+    const getCities = () => {
+      setTimeout(() => {
         cities.value = [];
-        if (selectedProvince.value){
+        if (selectedProvince.value) {
           let x = selectedProvince.value.cities;
-          x.forEach((element)=>{
+          x.forEach((element) => {
             element.value = {id: element.id, name: element.title};
             element.label = element.title;
           })
           cities.value = x;
         }
-      },1000)
+      }, 1000)
 
     }
     return {
-      type, typeToggle, submit,errors, img1Error, img2Error, store, reload,
-      cities, provinces,selectedProvince,selectedCity, getCities, getProvinces,
+      type, typeToggle, submit, errors, img1Error, img2Error, store, reload,
+      cities, provinces, selectedProvince, selectedCity, getCities, getProvinces,
     }
   }
 
@@ -359,7 +387,8 @@ label {
   font-size: 13px;
   margin: 5px;
 }
-.modal-dialog{
+
+.modal-dialog {
   width: 350px !important;
   margin: 0 auto !important;
   text-align: center;

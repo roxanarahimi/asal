@@ -10,8 +10,10 @@
       <div :id="'dropArea'+$props.index" @click="clickLabel($event)" class="dropArea  text-center p-3 position-relative"
            :class="{'dropAreaHasError': hasError}">
         <img v-if="src" :src="src" class="src img-fluid " style="border-radius: 17px; width: 150px" alt="">
-        <div class="position-relative">
-          <div class="label my-font ">{{ $props.title }}
+        <div class="position-relative" >
+          <div class="label my-font ">
+            <div class="text-center mx-auto" style="width: calc(100% - 80px)"> {{ $props.title }}</div>
+
             <div style="position: absolute; right:5px; top:0px">
               <img v-if="src" src="/img/check1.png" alt="">
               <img v-else src="/img/upload.png" alt="">
