@@ -6,6 +6,7 @@ body, html {
     text-align: right !important;
     scroll-behavior: smooth;
     background-color: lightgray;
+    scroll-behavior: smooth !important;
 }
 
 /*h1,h2,h3,h4,h5,h6{*/
@@ -15,13 +16,16 @@ body, html {
     font-family: 'IranYekanExtraBold' !important;
     font-size: 58px;
 }
-.main_title img{
-    width:195px;
+
+.main_title img {
+    width: 195px;
     margin-top: 18px
 }
-.main_p{
+
+.main_p {
     font-size: 15px;
 }
+
 .main-slider {
     min-height: 300px;
     /*background: url('/img/bee.png') center center no-repeat;*/
@@ -30,24 +34,28 @@ body, html {
     border-radius: 90px;
     box-shadow: 0 0 30px 30px black inset;
 }
-.ttxxtt{
-     font-size: 14px !important;
- }
-@media(min-width: 700px){
+
+.ttxxtt {
+    font-size: 14px !important;
+}
+
+@media (min-width: 700px) {
     .main_title {
         font-family: 'IranYekanExtraBold' !important;
-        font-weight: bolder;
-        font-size: 70px !important;
+        font-size: 60px !important;
     }
-    .main_title img{
-        width:220px;
+
+    .main_title img {
+        width: 220px;
         margin-top: 20px
     }
-    .main_p{
+
+    .main_p {
         font-size: 20px;
         /*padding-bottom: 100px;*/
         padding-top: 30px;
     }
+
     .main-slider {
         min-height: 330px;
         /*background: url('/img/bee.png') center center no-repeat;*/
@@ -57,7 +65,8 @@ body, html {
         border-radius: 90px;
         box-shadow: 0 0 30px 30px black inset;
     }
-    .ttxxtt{
+
+    .ttxxtt {
         font-size: 18px !important;
 
     }
@@ -68,17 +77,20 @@ body, html {
     min-height: 100vh;
 }
 
-@media(max-width: 1190px){
-    .p4{
+@media (max-width: 1190px) {
+    .p4 {
         display: none;
     }
-    .p4,.p2{
-        cursor:pointer;
+
+    .p4, .p2 {
+        cursor: pointer;
     }
-    .product-section:hover .p2{
+
+    .product-section:hover .p2 {
         display: none;
     }
-    .product-section:hover .p4{
+
+    .product-section:hover .p4 {
         display: block;
     }
 
@@ -190,6 +202,7 @@ body {
     font-family: MjFlowBold !important;
 
 }
+
 .btn-black:hover, .btn-black-rect:hover {
     color: #F7941D;
 }
@@ -284,7 +297,6 @@ input[type=number] {
 }
 
 
-
 .product-section {
     background: url('/img/flybee.png') center center no-repeat;
     background-size: 100%;
@@ -371,6 +383,7 @@ a, a:hover {
     /*background-color: rgba(255, 181, 113, 0.71);*/
     border-radius: 16px
 }
+
 .label {
     /*color: #FFB571 !important;*/
     font-size: 18px;
@@ -378,6 +391,7 @@ a, a:hover {
     margin: 0px;
     color: #F7941D;
 }
+
 .dropAreaContainerHasError {
     border: 1px solid #ff7575;
 }
@@ -385,7 +399,8 @@ a, a:hover {
 .dropAreaHasError {
     background-color: rgba(240, 128, 128, 0.46);
 }
-.dropAreaHasError .label{
+
+.dropAreaHasError .label {
     color: #ff5858 !important;
 }
 
@@ -421,19 +436,22 @@ button, router-link {
 }
 
 
-.vpd-input-group label{
+.vpd-input-group label {
     display: none !important;
 }
-.vpd-input-group input{
+
+.vpd-input-group input {
     background-color: transparent !important;
-    border:none !important;
+    border: none !important;
 
 }
-.multiselect-search{
+
+.multiselect-search {
     border-radius: 5px !important;
 
 }
-.multiselect-wrapper{
+
+.multiselect-wrapper {
     border-radius: 7px !important;
     overflow: hidden !important;
     min-height: 31px !important;
@@ -445,19 +463,23 @@ button, router-link {
     color: black !important;
     font-size: 14px !important;
 }
+
 .multiselect-option.is-pointed {
     background: #FFB571 !important;
     color: black !important;
 }
-.multiselect{
-    border:none !important;
+
+.multiselect {
+    border: none !important;
     border-radius: 3px !important;
     min-height: 30px !important;
 }
-.multiselect-search{
+
+.multiselect-search {
     background: #F8F9FA !important;
 }
-.multiselect:focus, .multiselect-search:focus, .multiselect-wrapper:focus, select, input{
+
+.multiselect:focus, .multiselect-search:focus, .multiselect-wrapper:focus, select, input {
     outline-color: transparent !important;
     box-shadow: none !important;
 }
@@ -471,19 +493,35 @@ button:focus {
     box-shadow: none !important;
 }
 
-.img-footer:hover{
+.img-footer:hover {
     opacity: 0.8 !important;
-    transform: scale(1.1,1.1);
+    transform: scale(1.1, 1.1);
 }
 
 .accordion-button:not(.collapsed) {
     box-shadow: none !important;
 }
-.cursor-pointer{
+
+.cursor-pointer {
     cursor: pointer;
 
 }
-.en{
+
+.en {
     direction: ltr !important;
     text-align: left !important;
+}
+
+.h-0 {
+    height: 0 !important;
+    overflow-y: hidden;
+    margin: 0 !important;
+}
+
+.footer-icon {
+    width: 48px !important;
+}
+.footer-icon:hover {
+    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.9));
+    width: 48px !important;
 }

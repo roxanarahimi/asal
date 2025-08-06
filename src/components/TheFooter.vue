@@ -1,13 +1,22 @@
 <template>
 <footer>
   <div id="contact" style="font-size: 12px; background: url('/img/Hive.svg') right bottom no-repeat; background-size: cover" class="bg-black text-white py-5 my-padding mt-5">
-    <p>شبکه های اجتماعی</p>
 
-    <div class="d-flex justify-content-around mb-4">
+    <p class="text-center">راه های ارتباطی</p>
+    <div class="d-flex justify-content-between px-5 mb-3">
 
-      <a target="_blank" href="https://www.instagram.com/copabeefeed?igsh=OGQ5ZDc2ODk2ZA=="> <img src="/img/icon-i.png" width="48px" alt=""></a>
-      <a target="_blank" href="https://t.me/asallaziz"> <img src="/img/icon-t.png" width="48px" alt=""></a>
-      <a target="_blank" href="https://wa.me/02128425205"> <img src="/img/icon-w.png" width="48px" alt=""></a>
+      <a target="_blank" href="https://t.me/Copabee1"> <img class="footer-icon" src="/img/icon-t.png" alt=""></a>
+      <a target="_blank" href="https://wa.me/989125802203"> <img class="footer-icon" src="/img/icon-w.png" alt=""></a>
+      <a target="_blank" href="https://eitaa.com/Copabee"> <img class="footer-icon" src="/img/icon-e.png" alt=""></a>
+      <a target="_blank" href="https://ble.ir/copabee"> <img class="footer-icon" src="/img/icon-b.png" alt=""></a>
+    </div>
+    <p class="text-center">شبکه های اجتماعی</p>
+
+    <div class="d-flex justify-content-between px-5 mb-4">
+      <a target="_blank" href="https://www.instagram.com/copabeefeed"> <img  class="footer-icon" src="/img/icon-i.png" alt=""></a>
+      <a target="_blank" href="https://www.youtube.com/@copabee"> <img class="footer-icon" src="/img/icon-y.png" alt=""></a>
+      <a target="_blank" href="https://www.aparat.com/copabee.com"> <img class="footer-icon" src="/img/icon-a.png" alt=""></a>
+      <a target="_blank" href="https://rubika.ir/copabee"> <img class="footer-icon" src="/img/icon-r.png" alt=""></a>
     </div>
 
 
@@ -22,18 +31,20 @@
       </div>
       <div class="col-6">
         <b>واحد فروش</b>
-        <p><a href="tel:09103170950">09103170950</a></p>
+        <p class="mb-0"><a href="tel:09103170950">09103170950</a></p>
+        <p class="mb-0"><a href="tel:09125802203">09125802203</a></p>
       </div>
     </div>
 
 
-    <div class="d-flex justify-content-between mt-5">
-      <div class="d-grid img-footer"><a target="_blank" href="https://amadehlaziz.com"><img src="/img/f1.png" class="align-self-center" width="85px" alt=""></a></div>
-      <div class="d-grid img-footer"><a target="_blank" href="https://www.actotechaccelerator.com/"><img src="/img/f2.png" class="align-self-center" width="85px" alt=""></a></div>
-      <div class="d-grid img-footer"><a target="_blank" href="https://mpdri.sbu.ac.ir/"><img src="/img/f3.png" class="align-self-center" width="85px" alt=""></a></div>
-      <div class="d-grid img-footer"><a target="_blank" href="http://iranianbee.ir/"><img src="/img/f4.png" class="align-self-center" width="85px" alt=""></a></div>
-    </div>
 
+
+  </div>
+  <div class="d-flex justify-content-between px-0 pb-4 ">
+    <div class="d-grid img-footer"><a target="_blank" href="https://amadehlaziz.com"><img src="/img/f1.png" class="align-self-center w-100"  alt=""></a></div>
+    <div class="d-grid img-footer"><a target="_blank" href="https://www.actotechaccelerator.com/"><img src="/img/f2.png" class="align-self-center w-100"  alt=""></a></div>
+    <div class="d-grid img-footer"><a target="_blank" href="https://mpdri.sbu.ac.ir/"><img src="/img/f3.png" class="align-self-center w-100"  alt=""></a></div>
+    <div class="d-grid img-footer"><a target="_blank" href="http://iranianbee.ir/"><img src="/img/f4.png" class="align-self-center w-100"  alt=""></a></div>
   </div>
 </footer>
 </template>
