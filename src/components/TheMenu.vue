@@ -99,12 +99,13 @@ export default {
         },
         // {title: 'نمایندگی های فعال', link: '/subs', name: 'subs'},
         {title: 'درباره ما', link: '/about', name: 'about'},
-        {title: 'شرکای ما', link: '/collaboration', name: 'collaboration'},
+        {title: 'شرکای ما', link: '/participants', name: 'participants'},
         {title: 'سوالات متداول', link: '/faq', name: 'faq'},
 
-        {title: 'تازه های زنبورداری', link: '/faq', name: 'faq'},
-        {title: 'اخبار و رویدادها', link: '/faq', name: 'faq'},
-        {title: 'همکاری با زنبورداران', link: '/faq', name: 'faq'},
+        // {title: 'تازه های زنبورداری', link: '/faq', name: 'faq'},
+        // {title: 'اخبار و رویدادها', link: '/faq', name: 'faq'},
+        {title: 'همکاری با زنبورداران', link: '/collaboration', name: 'collaboration'},
+
         // {title: 'حساب کاربری', link: '/login', name: 'login'},
         // {title: 'سفارشات', link: '/orders', name: 'orders'},
         // {title: 'خروج', link: '/', name: 'logout'},
