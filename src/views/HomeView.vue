@@ -3,6 +3,7 @@
     <!--    <img src="/img/copabeeExport.png"  width="100%" height="auto" alt="">-->
 
     <div class="bg-black text-white pt-5">
+      <div class="main-banner mb-4"></div>
       <div class="my-padding">
         <h1 class="mt-5 mb-2  main_title my-color">
           <img src="/img/Beelogo.png" class="mb-0" alt="">

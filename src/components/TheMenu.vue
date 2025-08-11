@@ -93,8 +93,9 @@ export default {
             {title:'انواع خوراک زنبور عسل',id:'types'},
             {title:'معرفی کوپابی (Copabee)',id: 'copabee'},
             {title:' روش  مصرف',id:'usage'},
-            {title:'سبد محصولات کوپابی',id:'basket'},
-            {title:'مستندات علمی و آزمایشگاهی', id: 'documents'}
+            {title:'مستندات علمی و آزمایشگاهی', id: 'documents'} ,
+            {title:'سبد محصولات کوپابی',id:'basket'}
+
           ]
         },
         // {title: 'نمایندگی های فعال', link: '/subs', name: 'subs'},
@@ -137,7 +138,11 @@ export default {
         document.querySelector('body').style.overflowY = 'hidden';
       }
       if (param){
-        document.getElementById(param)?.scrollIntoView();
+        if(document.getElementById(param)){
+          document.getElementById(param).scrollIntoView();
+        }else{
+          localStorage.setItem('scroll',param);
+        }
       }else{
         document.querySelector('#app').scrollIntoView();
 

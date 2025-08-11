@@ -101,6 +101,12 @@
 
         </ul>
       </div>
+
+
+    </div>
+  </div>
+  <div class="d-none">
+    <div class="px-4 text-light">
       <div id="form">
         <h4 class="my-font my-color  mt-4">
           📝
@@ -109,90 +115,88 @@
 
 
       </div>
-
-
     </div>
-  </div>
-  <div class="main-bg border-radius w-100 p-4">
+    <div class="main-bg border-radius w-100 p-4">
 
-    <div class="row">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-12">
-            <label for="">نام و نام خانوادگی</label>
-            <input id="" type="text" class="form-control rounded-0 en">
-          </div>
-          <div class="col-12">
-            <label for="">شماره تلفن</label>
-            <input id="" type="text" class="form-control rounded-0 en">
-          </div>
-          <div class="col-6">
-            <label>استان</label>
-            <Multiselect
-                v-model="selectedProvince"
-                placeholder=""
-                dir="rtl"
-                :mode="'single'"
-                :options="provinces"
-                :searchable="true"
-                :create-option="true"
-            />
-            <!--          <div id="province_idHelp" class="form-text error"></div>-->
-            <!--          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>-->
-          </div>
-
-          <div class="col-6">
-            <label for="">شهر</label>
-            <input id="" type="text" class="form-control rounded-0 en">
-          </div>
-          <label for="">نوع همکاری</label>
-
-          <div class="d-flex flex-wrap justify-content-between">
-            <div class="d-flex justify-content-start cursor-pointer ">
-              <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-1')">تجاری</p>
-              <div id="ch-1" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-1')">
-                <i class="bi bi-check-lg opacity-0"></i>
-              </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-12">
+              <label for="">نام و نام خانوادگی</label>
+              <input id="" type="text" class="form-control rounded-0 en">
             </div>
-             <div class="d-flex justify-content-start cursor-pointer ">
-              <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-2')">علمی</p>
-              <div id="ch-2" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-2')">
-                <i class="bi bi-check-lg opacity-0"></i>
-              </div>
+            <div class="col-12">
+              <label for="">شماره تلفن</label>
+              <input id="" type="text" class="form-control rounded-0 en">
             </div>
-             <div class="d-flex justify-content-start cursor-pointer ">
-              <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-3')">تولید سفارشی</p>
-              <div id="ch-3" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-3')">
-                <i class="bi bi-check-lg opacity-0"></i>
-              </div>
-            </div>
-             <div class="d-flex justify-content-start cursor-pointer ">
-              <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-4')">هر سه</p>
-              <div id="ch-4" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-4')">
-                <i class="bi bi-check-lg opacity-0"></i>
-              </div>
+            <div class="col-6">
+              <label>استان</label>
+              <Multiselect
+                  v-model="selectedProvince"
+                  placeholder=""
+                  dir="rtl"
+                  :mode="'single'"
+                  :options="provinces"
+                  :searchable="true"
+                  :create-option="true"
+              />
+              <!--          <div id="province_idHelp" class="form-text error"></div>-->
+              <!--          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>-->
             </div>
 
+            <div class="col-6">
+              <label for="">شهر</label>
+              <input id="" type="text" class="form-control rounded-0 en">
+            </div>
+            <label for="">نوع همکاری</label>
+
+            <div class="d-flex flex-wrap justify-content-between">
+              <div class="d-flex justify-content-start cursor-pointer ">
+                <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-1')">تجاری</p>
+                <div id="ch-1" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-1')">
+                  <i class="bi bi-check-lg opacity-0"></i>
+                </div>
+              </div>
+              <div class="d-flex justify-content-start cursor-pointer ">
+                <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-2')">علمی</p>
+                <div id="ch-2" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-2')">
+                  <i class="bi bi-check-lg opacity-0"></i>
+                </div>
+              </div>
+              <div class="d-flex justify-content-start cursor-pointer ">
+                <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-3')">تولید سفارشی</p>
+                <div id="ch-3" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-3')">
+                  <i class="bi bi-check-lg opacity-0"></i>
+                </div>
+              </div>
+              <div class="d-flex justify-content-start cursor-pointer ">
+                <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-4')">هر سه</p>
+                <div id="ch-4" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-4')">
+                  <i class="bi bi-check-lg opacity-0"></i>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
+        <!--      گزینه های قابل ارائه:      عسل              گرده گل          بره‌موم         ژل رویال             زهر-->
 
-      </div>
-<!--      گزینه های قابل ارائه:      عسل              گرده گل          بره‌موم         ژل رویال             زهر-->
+        <div class="col-12">
+          <label for="">توضیحات تکمیلی</label>
+          <textarea id="" type="text" class="form-control rounded-0"></textarea>
+        </div>
 
-      <div class="col-12">
-        <label for="">توضیحات تکمیلی</label>
-        <textarea id="" type="text" class="form-control rounded-0"></textarea>
+        <!--      آپلود فایل مستندات (پروانه زنبورداری، تصویر کندو، محصول، گواهی ارگانیک ، سابقه کاری ،عکس محصول، گزارش آنالیز قبلی )-->
+        <div class="text-center col-lg-12 mt-3">
+          <!--        <button class="btn-black-rect">ثبت</button>-->
+          <router-link to="/complane" class="btn-black-rect" style="line-height: 50px!important">ادامه</router-link>
+        </div>
       </div>
 
-<!--      آپلود فایل مستندات (پروانه زنبورداری، تصویر کندو، محصول، گواهی ارگانیک ، سابقه کاری ،عکس محصول، گزارش آنالیز قبلی )-->
-      <div class="text-center col-lg-12 mt-3">
-        <!--        <button class="btn-black-rect">ثبت</button>-->
-        <router-link to="/complane" class="btn-black-rect" style="line-height: 50px!important">ادامه</router-link>
-      </div>
+
     </div>
-
-
   </div>
+
 </template>
 
 <script>

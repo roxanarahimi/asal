@@ -4,9 +4,8 @@ body, html {
     font-family: IranSans !important;
     direction: rtl !important;
     text-align: right !important;
-    scroll-behavior: smooth;
-    background-color: lightgray;
     scroll-behavior: smooth !important;
+    background-color: lightgray;
 }
 
 /*h1,h2,h3,h4,h5,h6{*/
@@ -33,6 +32,15 @@ body, html {
     background-size: 100%;
     border-radius: 90px;
     box-shadow: 0 0 30px 30px black inset;
+}
+
+.main-banner {
+    min-height: 600px;
+    /*background: url('/img/bee.png') center center no-repeat;*/
+    background: url('/img/banner.jpg') center center no-repeat;
+    background-size: 100%;
+    border-radius: 60px;
+    box-shadow: 0 0 20px 20px black inset;
 }
 
 .ttxxtt {
