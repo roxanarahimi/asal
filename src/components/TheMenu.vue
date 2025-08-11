@@ -24,7 +24,7 @@
       </div>
 
 
-      <div style="display: grid; height: calc(100vh - 70px);">
+      <div style="display: grid; height: calc(100vh - 145px);">
        <div style="align-self: start">
          <ul style="list-style: none; " class="mt-4 mb-0">
            <li :id="item.name" v-for="item in links" style="font-size: 18px !important" class="my-font fw-bolder mb-3">
@@ -55,7 +55,7 @@
        </div>
         <div style="font-size: 18px !important; align-self: end" class="my-font fw-bolder mx-auto">
           <div class="d-flex">
-            <div class="text-start" style="width: 15px; height: 15px; ">
+            <div class="text-start me-2" style="width: 15px; height: 15px; ">
               <img v-if="$route.name == 'register'" src="/img/dotB.png" class="w-100" alt="">
             </div>
             <router-link @click="menuToggle" to="register">ایجاد حساب کاربری</router-link>
