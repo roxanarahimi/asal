@@ -1,52 +1,108 @@
 <template>
-<footer>
-  <div id="contact" style="font-size: 12px; background: url('/img/Hive.svg') right bottom no-repeat; background-size: cover" class="bg-black text-white py-5 my-padding mt-5">
-
-    <p class="text-center">راه های ارتباطی</p>
-    <div class="d-flex justify-content-between px-5 mb-3">
-
-      <a target="_blank" href="https://t.me/Copabee1"> <img class="footer-icon" src="/img/icon-t.png" alt=""></a>
-      <a target="_blank" href="https://wa.me/989125802203"> <img class="footer-icon" src="/img/icon-w.png" alt=""></a>
-      <a target="_blank" href="https://eitaa.com/Copabee"> <img class="footer-icon" src="/img/icon-e.png" alt=""></a>
-      <a target="_blank" href="https://ble.ir/copabee"> <img class="footer-icon" src="/img/icon-b.png" alt=""></a>
-    </div>
-    <p class="text-center">شبکه های اجتماعی</p>
-
-    <div class="d-flex justify-content-between px-5 mb-4">
-      <a target="_blank" href="https://www.instagram.com/copabeefeed"> <img  class="footer-icon" src="/img/icon-i.png" alt=""></a>
-      <a target="_blank" href="https://www.youtube.com/@copabee"> <img class="footer-icon" src="/img/icon-y.png" alt=""></a>
-      <a target="_blank" href="https://www.aparat.com/copabee.com"> <img class="footer-icon" src="/img/icon-a.png" alt=""></a>
-      <a target="_blank" href="https://rubika.ir/copabee"> <img class="footer-icon" src="/img/icon-r.png" alt=""></a>
-    </div>
+  <footer>
+    <div id="contact"
+         style="font-size: 13px; background: url('/img/Hive.svg') right bottom no-repeat; background-size: cover"
+         class="bg-black text-white py-5">
 
 
-    <b>ایمیل ما</b>
-    <p>info@asallaziz.com</p>
-    <b>آدرس ما</b>
-    <p>ایران، تهران، گیشا، خیابان هشتم، پلاک 58</p>
-    <div class="row justify-content-between">
-      <div class="col-6">
-        <b>شماره تماس</b>
-        <p><a href="tel:02128425205">02128425205</a></p>
+      <div class="px-5 ">
+        <div id="chat" class="my-4">
+          <p class="text-center">راه های ارتباطی</p>
+          <div class="d-flex justify-content-between  mb-3">
+            <a target="_blank" href="https://t.me/Copabee1"> <img class="footer-icon" src="/img/icon-t.png" alt=""></a>
+            <a target="_blank" href="https://wa.me/989125802203"> <img class="footer-icon" src="/img/icon-w.png" alt=""></a>
+            <a target="_blank" href="https://eitaa.com/Copabee"> <img class="footer-icon" src="/img/icon-e.png" alt=""></a>
+            <a target="_blank" href="https://ble.ir/copabee"> <img class="footer-icon" src="/img/icon-b.png" alt=""></a>
+          </div>
+        </div>
+        <div id="btns-1" class="row justify-content-between m-0 p-0 mb-3 ">
+          <div class="col-6 px-1"><a target="_blank" class="btn btn-sm btn-outline-light d-block px-2"
+                                     href="https://wa.me/989125802203"><i class="bi bi-whatsapp  me-2 text-success"></i>ارسال
+            پیام فوری</a></div>
+          <div class="col-6 px-1"><a class="btn btn-sm btn-outline-light d-block px-2" href="tel:02128425205"><i
+              class="bi bi-telephone  me-2 text-primary"></i>021-28425205</a></div>
+        </div>
+        <div id="form" class="py-5 text-dark my-padding main-bg border-radius mb-3">
+
+          <p class="mb-4  fw-bold">در کمتر از 24 ساعت پاسخ سریع دریافت کنید</p>
+          <div class="row">
+
+            <div class="col-12 mb-2 px-1">
+              <label for="">پیام</label>
+              <textarea id="" class="form-control rounded-0 "></textarea>
+            </div>
+            <div class="col-12 mb-2 px-1">
+              <label for="">ایمیل</label>
+              <input id="" type="text" class="form-control rounded-0 en">
+            </div>
+            <div class="col-12 mb-2 px-1">
+              <label for="">نام و نام خانوادگی (اختیاری)</label>
+              <input id="" type="text" class="form-control rounded-0">
+            </div>
+            <div class="col-6 mb-2 px-1">
+              <label for="">شهر</label>
+              <input id="" type="text" class="form-control rounded-0">
+            </div>
+            <div class="col-6 mb-2 px-1">
+              <label for="">تلفن</label>
+              <input id="" type="text" class="form-control rounded-0 en">
+            </div>
+
+            <div class="text-center col-lg-12 mt-3">
+                    <button class="btn-black-rect">ثبت</button>
+<!--            <router-link to="/complane" class="btn-black-rect" style="line-height: 50px!important">ادامه</router-link>-->
+          </div>
+          </div>
+        </div>
+        <div id="info" class="px-2 py-3">
+          <p><i class="bi bi-envelope-fill me-2"></i>info@asallaziz.com</p>
+          <p><i class="bi bi-pin-map-fill me-2"></i>ایران، تهران، گیشا، خیابان هشتم، پلاک 58</p>
+          <p><i class="bi bi-clock-fill me-2"></i>شنبه تا پنج شنبه از ساعت 9 الی 18</p>
+        </div>
+        <div id="btns-2" class="row justify-content-between p-0 m-0 mb-3 ">
+          <div class="col-6 mb-2 px-1"><a class="btn btn-sm btn-outline-light d-block px-1" href="tel:09103170950">
+            <span class="text-nowrap">ارتباط با واحد پشتیبانی</span>
+            09103170950</a></div>
+          <div class="col-6 mb-2 px-1"><a class="btn btn-sm btn-outline-light d-block px-1" href="tel:09125802203">
+            <span class="text-nowrap">ارتباط با واحد فروش</span>
+            09125802203</a></div>
+          <div class="col-12 mb-2 px-1"><a class="btn btn-sm btn-outline-light d-block px-1" href="tel:09103170951">
+            <span class="text-nowrap">سوالات تخصصی زنبورداری</span>
+            <br>
+            09103170951
+          </a></div>
+        </div>
+        <div id="social" class="my-4">
+          <p class="text-center">شبکه های اجتماعی</p>
+          <div class="d-flex justify-content-between  mb-4">
+            <a target="_blank" href="https://www.instagram.com/copabeefeed"> <img class="footer-icon"
+                                                                                  src="/img/icon-i.png" alt=""></a>
+            <a target="_blank" href="https://www.youtube.com/@copabee"> <img class="footer-icon"
+                                                                             src="/img/icon-y.png" alt=""></a>
+            <a target="_blank" href="https://www.aparat.com/copabee.com"> <img class="footer-icon"
+                                                                               src="/img/icon-a.png" alt=""></a>
+            <a target="_blank" href="https://rubika.ir/copabee"> <img class="footer-icon" src="/img/icon-r.png"
+                                                                      alt=""></a>
+          </div>
+        </div>
       </div>
-      <div class="col-6">
-        <b>واحد فروش</b>
-        <p class="mb-0"><a href="tel:09103170950">09103170950</a></p>
-        <p class="mb-0"><a href="tel:09125802203">09125802203</a></p>
-      </div>
     </div>
 
 
-
-
-  </div>
-  <div class="d-flex justify-content-between px-0 pb-4 ">
-    <div class="d-grid img-footer"><a target="_blank" href="https://amadehlaziz.com"><img src="/img/f1.png" class="align-self-center w-100"  alt=""></a></div>
-    <div class="d-grid img-footer"><a target="_blank" href="https://www.actotechaccelerator.com/"><img src="/img/f2.png" class="align-self-center w-100"  alt=""></a></div>
-    <div class="d-grid img-footer"><a target="_blank" href="https://mpdri.sbu.ac.ir/"><img src="/img/f3.png" class="align-self-center w-100"  alt=""></a></div>
-    <div class="d-grid img-footer"><a target="_blank" href="http://iranianbee.ir/"><img src="/img/f4.png" class="align-self-center w-100"  alt=""></a></div>
-  </div>
-</footer>
+    <div id="logos" class="d-flex justify-content-between px-0 pb-4 ">
+      <div class="d-grid img-footer"><a target="_blank" href="https://amadehlaziz.com"><img src="/img/f1.png"
+                                                                                            class="align-self-center w-100"
+                                                                                            alt=""></a></div>
+      <div class="d-grid img-footer"><a target="_blank" href="https://www.actotechaccelerator.com/"><img
+          src="/img/f2.png" class="align-self-center w-100" alt=""></a></div>
+      <div class="d-grid img-footer"><a target="_blank" href="https://mpdri.sbu.ac.ir/"><img src="/img/f3.png"
+                                                                                             class="align-self-center w-100"
+                                                                                             alt=""></a></div>
+      <div class="d-grid img-footer"><a target="_blank" href="http://iranianbee.ir/"><img src="/img/f4.png"
+                                                                                          class="align-self-center w-100"
+                                                                                          alt=""></a></div>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -56,5 +112,11 @@ export default {
 </script>
 
 <style scoped>
+.btn-outline-light:not(:hover) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
 
+.btn-outline-light span {
+  font-size: 11px !important;
+}
 </style>

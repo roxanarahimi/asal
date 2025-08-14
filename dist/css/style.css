@@ -39,8 +39,17 @@ body, html {
     /*background: url('/img/bee.png') center center no-repeat;*/
     background: url('/img/banner.jpg') center center no-repeat;
     background-size: 100%;
-    border-radius: 60px;
-    box-shadow: 0 0 20px 20px black inset;
+    border-radius: 20px;
+    box-shadow: 0 0 7px 7px black inset;
+}
+
+.main-banner2 {
+    min-height: 305px;
+    /*background: url('/img/bee.png') center center no-repeat;*/
+    background: url('/img/banner2.jpg') center center no-repeat;
+    background-size: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 7px 7px black inset;
 }
 
 .ttxxtt {
