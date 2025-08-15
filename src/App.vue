@@ -1,6 +1,7 @@
 <template>
 
  <div class="bg-black">
+   <floating-btns />
    <the-menu />
   <div class="" style="min-height: 500px">
     <router-view/>
@@ -16,12 +17,13 @@
 
 <script>
 
+import FloatingBtns from '@/components/FloatingBtns.vue'
 import theMenu from '@/components/TheMenu.vue'
 import theFooter from "@/components/TheFooter";
 import {useStore} from "vuex";
 
 export default {
-  components: {theFooter, theMenu},
+  components: {theFooter, theMenu, FloatingBtns},
   updated() {
 
     let user = localStorage.getItem('user')

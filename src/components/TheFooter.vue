@@ -16,9 +16,9 @@
           </div>
         </div>
         <div id="btns-1" class="row justify-content-between m-0 p-0 mb-3 ">
-          <div class="col-6 px-1"><a target="_blank" class="btn btn-sm btn-outline-light d-block px-2"
-                                     href="https://wa.me/989125802203"><i class="bi bi-whatsapp  me-2 text-success"></i>ارسال
-            پیام فوری</a></div>
+          <div class="col-6 px-1">
+            <a target="_blank" class="btn btn-sm btn-outline-light d-block px-2" href="https://wa.me/989125802203">
+              <i class="bi bi-whatsapp  me-2 text-success"></i>ارسال پیام فوری</a></div>
           <div class="col-6 px-1"><a class="btn btn-sm btn-outline-light d-block px-2" href="tel:02128425205"><i
               class="bi bi-telephone  me-2 text-primary"></i>021-28425205</a></div>
         </div>
@@ -49,9 +49,9 @@
             </div>
 
             <div class="text-center col-lg-12 mt-3">
-                    <button class="btn-black-rect">ثبت</button>
-<!--            <router-link to="/complane" class="btn-black-rect" style="line-height: 50px!important">ادامه</router-link>-->
-          </div>
+              <button class="btn-black-rect">ثبت</button>
+              <!--            <router-link to="/complane" class="btn-black-rect" style="line-height: 50px!important">ادامه</router-link>-->
+            </div>
           </div>
         </div>
         <div id="info" class="px-2 py-3">
@@ -73,7 +73,7 @@
           </a></div>
         </div>
         <div id="social" class="my-4">
-          <p class="text-center">شبکه های اجتماعی</p>
+          <p class="text-center">ما را در شبکه های اجتماعی دنبال کنید</p>
           <div class="d-flex justify-content-between  mb-4">
             <a target="_blank" href="https://www.instagram.com/copabeefeed"> <img class="footer-icon"
                                                                                   src="/img/icon-i.png" alt=""></a>
@@ -89,18 +89,26 @@
     </div>
 
 
-    <div id="logos" class="d-flex justify-content-between px-0 pb-4 ">
-      <div class="d-grid img-footer"><a target="_blank" href="https://amadehlaziz.com"><img src="/img/f1.png"
-                                                                                            class="align-self-center w-100"
-                                                                                            alt=""></a></div>
-      <div class="d-grid img-footer"><a target="_blank" href="https://www.actotechaccelerator.com/"><img
-          src="/img/f2.png" class="align-self-center w-100" alt=""></a></div>
-      <div class="d-grid img-footer"><a target="_blank" href="https://mpdri.sbu.ac.ir/"><img src="/img/f3.png"
-                                                                                             class="align-self-center w-100"
-                                                                                             alt=""></a></div>
-      <div class="d-grid img-footer"><a target="_blank" href="http://iranianbee.ir/"><img src="/img/f4.png"
-                                                                                          class="align-self-center w-100"
-                                                                                          alt=""></a></div>
+    <div id="logos" class="d-flex justify-content-between px-2 pb-4 ">
+      <div class="d-grid img-footer">
+        <a target="_blank" href="https://amadehlaziz.com">
+          <img src="/img/f1.png" class="align-self-center w-100" alt="">
+        </a>
+      </div>
+      <div class="d-grid img-footer">
+        <a target="_blank" href="https://www.actotechaccelerator.com/">
+          <img src="/img/f2.png" class="align-self-center w-100" alt="">
+        </a>
+      </div>
+      <div class="d-grid img-footer"><a target="_blank" href="https://mpdri.sbu.ac.ir/">
+        <img src="/img/f3.png" class="align-self-center w-100" alt="">
+      </a>
+      </div>
+      <div class="d-grid img-footer">
+        <a target="_blank" href="http://iranianbee.ir/">
+          <img src="/img/f4.png" class="align-self-center w-100" alt="">
+        </a>
+      </div>
     </div>
   </footer>
 </template>

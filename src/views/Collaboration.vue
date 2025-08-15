@@ -105,7 +105,7 @@
 
     </div>
   </div>
-  <div class="d-none">
+  <div class="">
     <div class="px-4 text-light">
       <div id="form">
         <h4 class="my-font my-color  mt-4">
