@@ -122,16 +122,16 @@
       <div class="row">
         <div class="col-12">
           <div class="row">
-            <div class="col-12">
-              <label for="">نام و نام خانوادگی</label>
+            <div class="col-12 mb-2">
+              <label class="mb-2" for="">نام و نام خانوادگی</label>
               <input id="" type="text" class="form-control rounded-0 en">
             </div>
-            <div class="col-12">
-              <label for="">شماره تلفن</label>
+            <div class="col-12 mb-2">
+              <label class="mb-2" for="">شماره تلفن</label>
               <input id="" type="text" class="form-control rounded-0 en">
             </div>
-            <div class="col-6">
-              <label>استان</label>
+            <div class="col-6 mb-2">
+              <label class="mb-2">استان</label>
               <Multiselect
                   v-model="selectedProvince"
                   placeholder=""
@@ -145,52 +145,101 @@
               <!--          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>-->
             </div>
 
-            <div class="col-6">
-              <label for="">شهر</label>
+            <div class="col-6 mb-2">
+              <label class="mb-2" for="">شهر</label>
               <input id="" type="text" class="form-control rounded-0 en">
             </div>
-            <label for="">نوع همکاری</label>
 
-            <div class="d-flex flex-wrap justify-content-between">
-              <div class="d-flex justify-content-start cursor-pointer ">
-                <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-1')">تجاری</p>
-                <div id="ch-1" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-1')">
-                  <i class="bi bi-check-lg opacity-0"></i>
-                </div>
-              </div>
-              <div class="d-flex justify-content-start cursor-pointer ">
-                <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-2')">علمی</p>
-                <div id="ch-2" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-2')">
-                  <i class="bi bi-check-lg opacity-0"></i>
-                </div>
-              </div>
-              <div class="d-flex justify-content-start cursor-pointer ">
-                <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-3')">تولید سفارشی</p>
-                <div id="ch-3" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-3')">
-                  <i class="bi bi-check-lg opacity-0"></i>
-                </div>
-              </div>
-              <div class="d-flex justify-content-start cursor-pointer ">
-                <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-4')">هر سه</p>
-                <div id="ch-4" class="ms-1 check-box-dark" :check-box-checked="0"  @click="checkboxToggle('ch-4')">
-                  <i class="bi bi-check-lg opacity-0"></i>
-                </div>
-              </div>
-
-            </div>
           </div>
         </div>
-        <!--      گزینه های قابل ارائه:      عسل              گرده گل          بره‌موم         ژل رویال             زهر-->
+        <!--      گزینه های قابل ارائه:                                               زهر-->
 
         <div class="col-12">
-          <label for="">توضیحات تکمیلی</label>
-          <textarea id="" type="text" class="form-control rounded-0"></textarea>
+          <label class="mb-2" for="">نوع همکاری</label>
+
+          <div class="d-flex flex-wrap justify-content-between">
+            <div class="d-flex justify-content-start cursor-pointer ">
+              <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-1')">تجاری</p>
+              <div id="ch-1" class="ms-1 check-box-dark" :check-box-checked="0" @click="checkboxToggle('ch-1')">
+                <i class="bi bi-check-lg opacity-0"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start cursor-pointer ">
+              <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-2')">علمی</p>
+              <div id="ch-2" class="ms-1 check-box-dark" :check-box-checked="0" @click="checkboxToggle('ch-2')">
+                <i class="bi bi-check-lg opacity-0"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start cursor-pointer ">
+              <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-3')">تولید سفارشی</p>
+              <div id="ch-3" class="ms-1 check-box-dark" :check-box-checked="0" @click="checkboxToggle('ch-3')">
+                <i class="bi bi-check-lg opacity-0"></i>
+              </div>
+            </div>
+            <!--            <div class="d-flex justify-content-start cursor-pointer ">-->
+            <!--              <p class="text-nowrap checkbox-label" @click="checkboxToggle('ch-4')">هر سه</p>-->
+            <!--              <div id="ch-4" class="ms-1 check-box-dark" :check-box-checked="0" @click="checkboxToggle('ch-4')">-->
+            <!--                <i class="bi bi-check-lg opacity-0"></i>-->
+            <!--              </div>-->
+            <!--            </div>-->
+
+          </div>
         </div>
 
-        <!--      آپلود فایل مستندات (پروانه زنبورداری، تصویر کندو، محصول، گواهی ارگانیک ، سابقه کاری ،عکس محصول، گزارش آنالیز قبلی )-->
+        <div class="col-12 ">
+          <label class="mb-2" for="">گزینه های قابل ارائه</label>
+
+          <div class="d-flex flex-wrap justify-content-between">
+            <div class="d-flex justify-content-start cursor-pointer ">
+              <p class="text-nowrap checkbox-label" @click="checkboxToggle('g-1')">عسل</p>
+              <div id="g-1" class="ms-1 check-box-dark" :check-box-checked="0" @click="checkboxToggle('g-1')">
+                <i class="bi bi-check-lg opacity-0"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start cursor-pointer ">
+              <p class="text-nowrap checkbox-label" @click="checkboxToggle('g-2')"> گرده گل</p>
+              <div id="g-2" class="ms-1 check-box-dark" :check-box-checked="0" @click="checkboxToggle('g-2')">
+                <i class="bi bi-check-lg opacity-0"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start cursor-pointer ">
+              <p class="text-nowrap checkbox-label" @click="checkboxToggle('g-3')">بره‌موم</p>
+              <div id="g-3" class="ms-1 check-box-dark" :check-box-checked="0" @click="checkboxToggle('g-3')">
+                <i class="bi bi-check-lg opacity-0"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start cursor-pointer ">
+              <p class="text-nowrap checkbox-label" @click="checkboxToggle('g-4')"> ژل رویال </p>
+              <div id="g-4" class="ms-1 check-box-dark" :check-box-checked="0" @click="checkboxToggle('g-4')">
+                <i class="bi bi-check-lg opacity-0"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start cursor-pointer ">
+              <p class="text-nowrap checkbox-label" @click="checkboxToggle('g-5')">زهر</p>
+              <div id="g-5" class="ms-1 check-box-dark" :check-box-checked="0" @click="checkboxToggle('g-5')">
+                <i class="bi bi-check-lg opacity-0"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-12 mb-3">
+          <label class="mb-2" for="">توضیحات تکمیلی</label>
+          <textarea id="" type="text" class="form-control rounded-0"></textarea>
+        </div>
+        <div class="col-12">
+          <label class="mb-2" for="">آپلود فایل مستندات:
+            <br>
+            (پروانه زنبورداری، تصویر کندو، محصول، گواهی ارگانیک ، سابقه کاری
+            ،عکس محصول، گزارش آنالیز قبلی )</label>
+          <div class="bg-dark" style="border-radius: 16px">
+            <drop-zone id="dropZone1" :title="'مستندات'" :index="1" :has-error="img1Error" required/>
+          </div>
+
+        </div>
+
         <div class="text-center col-lg-12 mt-3">
-          <!--        <button class="btn-black-rect">ثبت</button>-->
-          <router-link to="/complane" class="btn-black-rect" style="line-height: 50px!important">ادامه</router-link>
+                  <button class="btn-black-rect">ثبت</button>
         </div>
       </div>
 
@@ -201,24 +250,56 @@
 </template>
 
 <script>
+import {onMounted, ref} from "vue";
+import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
+import {useStore} from "vuex";
+import dropZone from "../components/DropZone";
+
+
 export default {
   name: "Collaboration",
-  setup(){
-    const checkboxToggle = (id)=>{
+  components: {Multiselect, dropZone},
+  setup() {
+    const store = useStore();
+    const checkboxToggle = (id) => {
       let x = document.getElementById(id);
       let y;
-      if (x.getAttribute('check-box-checked')==0){
-        y=1;
+      if (x.getAttribute('check-box-checked') == 0) {
+        y = 1;
         x.firstChild.classList.remove('opacity-0');
-      }else{
-        y=0;
+      } else {
+        y = 0;
         x.firstChild.classList.add('opacity-0');
       }
       document.getElementById(id).setAttribute('check-box-checked', y);
     }
 
-    return{
-      checkboxToggle
+    const provinces = ref([])
+    const selectedProvince = ref([])
+
+    const getProvinces = () => {
+      axios.get(store.state.panelUrl + '/api/province')
+          .then((response) => {
+            provinces.value = response.data;
+            provinces.value.forEach((element) => {
+              element.value = {id: element.id, name: element.title, cities: element.cities};
+              element.label = element.title;
+            })
+
+            selectedProvince.value = provinces.value[0]
+          }).then(() => {
+        getCities();
+      }).catch((error) => {
+        console.error(error)
+      })
+    }
+
+    onMounted(() => {
+      getProvinces();
+    })
+
+    return {
+      checkboxToggle, provinces, selectedProvince, getProvinces, store
     }
   }
 }
@@ -227,5 +308,10 @@ export default {
 <style scoped>
 li p {
   font-size: 14px;
+}
+
+.multiselect {
+  border-radius: 0 !important;
+  height: 38px;
 }
 </style>
