@@ -1,11 +1,11 @@
 <template>
   <div class="w-100 px-4 text-light "
        style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
-    <div class="text-center">
-      <img src="/img/Beelogo.png" style="width: 160px" class="my-5" alt="">
-    </div>
+<!--    <div class="text-center">-->
+<!--      <img src="/img/Beelogo.png" style="width: 160px" class="my-5" alt="">-->
+<!--    </div>-->
 
-    <h4 class="my-font my-color text-center mt-4">ثبت نام در کوپابی</h4>
+    <h1 class="my-font my-color text-center fw-bold mt-4 mb-5">ثبت نام در کوپابی</h1>
 
     <div>
       <p>

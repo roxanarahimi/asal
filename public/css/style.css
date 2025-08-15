@@ -13,11 +13,11 @@ body, html {
 /*}*/
 .main_title {
     font-family: 'IranYekanExtraBold' !important;
-    font-size: 58px;
+    font-size: 50px;
 }
 
 .main_title img {
-    width: 195px;
+    width: 180px;
     margin-top: 18px
 }
 
@@ -59,11 +59,11 @@ body, html {
 @media (min-width: 700px) {
     .main_title {
         font-family: 'IranYekanExtraBold' !important;
-        font-size: 60px !important;
+        font-size: 50px !important;
     }
 
     .main_title img {
-        width: 220px;
+        width: 190px;
         margin-top: 20px
     }
 
@@ -579,6 +579,8 @@ overflow: hidden;
 
     border-radius: 0 50px 50px 0;
     cursor: pointer;
+    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.9));
+
 }
 
 .floating-buttons-inner {

@@ -9,7 +9,7 @@
         <h1 class="mt-5 mb-2  main_title my-color">
           <img src="/img/Beelogo.png" class="mb-0" alt="">
           ، آپی</h1>
-        <h1 class=" main_title my-color mb-3">پاستای ایرانی</h1>
+        <h1 class=" main_title my-color mb-3">پاســتای ایرانی</h1>
 
         <div class="pb-5" style="background: url('/img/s1bg.png') center center no-repeat; background-size: cover;">
           <p class="col-8 " style="font-size: 15px">
@@ -93,15 +93,18 @@
               <button style="font-size: 12px !important;" class="accordion-button  bg-transparent text-white collapsed"
                       type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                       aria-controls="collapseOne">
-                خمیر شیرین چیست؟
+                <!--                خمیر شیرین چیست؟-->
+                برخی از زنبورداران می‌گویند محصول شُل است؛ آیا این ایراد محسوب می‌شود؟
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <p>
-                  زنبورهای عسل از طریق گرده افشانی، نقش مهمی در تامین منابع غذایی برای انسان ها، حیوانات و همچنین
-                  گوناگونی زیستی در اکوسیستم های طبیعی و کشاورزی را برعهده دارند...
+                  <!--                  زنبورهای عسل از طریق گرده افشانی، نقش مهمی در تامین منابع غذایی برای انسان ها، حیوانات و همچنین-->
+                  <!--                  گوناگونی زیستی در اکوسیستم های طبیعی و کشاورزی را برعهده دارند...-->
+                  خیر. نیمه‌جامد بودن محصول یک مزیت فنی است، نه ایراد. این ویژگی باعث می‌شود...
                   <router-link to="/faq" class="text-primary">ادامه</router-link>
+
                 </p>
               </div>
             </div>
@@ -111,14 +114,17 @@
               <button style="font-size: 12px !important;" class="accordion-button bg-transparent text-white collapsed"
                       type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
                       aria-controls="collapseTwo">
-                چرا کوپابی را جیگزین شهد شیرین کنیم؟
+                <!--                چرا کوپابی را جیگزین شهد شیرین کنیم؟-->
+                تفاوت خوراک زنبور کوپابی با سایر برندهای بازار چیست؟
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <p>
-                  خمیر شیرین کوپابی نسبت به شربت های دست ساز زنبورداران مزیت های زیر را دارا میباشد: خمیرشیرین در روند
-                  تولید با کنترل رطوبت،دما ،اندازه ذره ای بلورها و مقدار شکر...
+                  <!--                  خمیر شیرین کوپابی نسبت به شربت های دست ساز زنبورداران مزیت های زیر را دارا میباشد: خمیرشیرین در روند-->
+                  <!--                  تولید با کنترل رطوبت،دما ،اندازه ذره ای بلورها و مقدار شکر...-->
+                  خوراک زنبور کوپابی برخلاف بسیاری از محصولات موجود در بازار که به‌صورت فوندانت (خمیر شکر) عرضه می‌شوند،
+                  به شکل نیمه‌جامد (Semi-solid) تولید شده است. این ویژگی چند مزیت کلیدی را به همراه دارد...
                   <router-link to="/faq" class="text-primary">ادامه</router-link>
 
                 </p>
@@ -142,7 +148,7 @@
             دانش، تولید، توزیع و تجربه را شکل داده است.
           </p>
           <div class="text-center  mt-5">
-            <router-link to="/collaboration" class="btn-black my-font fw-bold" style="padding-top: 14px">شرکای ما
+            <router-link to="/participants" class="btn-black my-font fw-bold" style="padding-top: 14px">شرکای ما
             </router-link>
 
           </div>
@@ -170,3 +176,8 @@ export default {
 
 }
 </script>
+<style>
+.accordion-header{
+  line-height: 20px;
+}
+</style>

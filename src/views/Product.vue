@@ -57,6 +57,25 @@
         </p>
       </div>
     </div>
+    <div class="d-flex my-padding font-size-12" style="background: url('/img/pback.svg')right top no-repeat;
+      background-size: 100%; margin-top: -16px; padding-top: 50px; padding-bottom: 100px" >
+      <div class=" text-center pt-3" style="width: 30% !important">
+        <img src="/img/vectorright.png" class="w-100 mb-3" alt="">
+        <p>بدون زحمت آماده سازی</p>
+      </div>
+      <div class="  text-center p-0 m-0"  style="width: 40% !important">
+        <img src="/img/p2.png" class="w-100" alt="">
+      </div>
+      <div class=" text-center p-0 m-0" style="width: 30% !important">
+        <div class="d-grid h-100 pb-3">
+          <div class="align-self-end" >
+            <p class="mb-2">عدم استفاده از مواد تراریخته در ترکیبات محصول</p>
+            <img src="/img/vectorleft.png"  class="w-100" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="copabee">
       <h3 class="my-font my-color mt-3 my-padding">🌿 معرفی محصول:</h3>
       <div class="my-padding">
@@ -149,14 +168,14 @@
         </p>
         <p>خوراک ساده زنبور عسل</p>
         <img class=" mx-auto w-100 my-3" src="/img/product10.jpg" alt="">
-        <p>
+        <p class="text-center">
           حجم 1000 گرم
           <br>
           مناسب کلنی های قوی و بیشتر از 5 قاب
         </p>
         <img class=" mx-auto w-100 my-3" src="/img/product11.jpg" alt="">
-        <p>
-          حجم 1000 گرمحجم 590 گرم
+        <p class="text-center">
+          حجم 590 گرم
           <br>
           مناسب برای کندوهای ضعیف ،بر گرفته شده و کمتر از 5 قاب
         </p>

@@ -2,7 +2,8 @@
   <div class="w-100 px-4 text-light">
 
     <div>
-      <h3 class="my-font my-color mt-3">شرکای عسل لذیذ</h3>
+      <h3 class="my-font my-color mt-3 mb-4">شرکای کوپابی</h3>
+      <img src="/img/logos.jpg" class="w-100" alt="">
 
       <div id="amadeh-laziz">
         <h4 class="my-font my-color  mt-4">گروه صنایع غذایی آماده لذیذ</h4>
@@ -186,12 +187,6 @@
 
       </div>
 
-
-      <!--      <img src="/img/collab1.png" class="w-100" alt="">-->
-      <!--      <img src="/img/collab2.png" class="w-100" alt="">-->
-      <!--      <img src="/img/collab3.png" class="w-100" alt="">-->
-      <!--    -->
-      <img src="/img/logos.jpg" class="w-100" alt="">
 
     </div>
   </div>
