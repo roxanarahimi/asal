@@ -13,11 +13,11 @@ body, html {
 /*}*/
 .main_title {
     font-family: 'IranYekanExtraBold' !important;
-    font-size: 50px;
+    font-size: 45px;
 }
 
 .main_title img {
-    width: 180px;
+    width: 165px;
     margin-top: 18px
 }
 
@@ -49,7 +49,7 @@ body, html {
     background: url('/img/banner2.jpg') center center no-repeat;
     background-size: 100%;
     border-radius: 20px;
-    box-shadow: 0 0 7px 7px black inset;
+    box-shadow: 0 0 5px 5px black inset;
 }
 
 .ttxxtt {
@@ -59,11 +59,11 @@ body, html {
 @media (min-width: 700px) {
     .main_title {
         font-family: 'IranYekanExtraBold' !important;
-        font-size: 50px !important;
+        font-size: 45px !important;
     }
 
     .main_title img {
-        width: 190px;
+        width: 165px;
         margin-top: 20px
     }
 

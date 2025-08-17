@@ -78,9 +78,11 @@
           <b>با حداقل میزان 450 کیلوگرم</b>
           انجام می‌پذیرد و در فرمولاسیون نهایی، نیاز واقعی کلنی‌ها،
           تجربه زنبوردار، و مشاوره تخصصی کوپابی لحاظ می‌گردد.
-          <br>
-          مزایا:
         </p>
+       <p>
+         <br>
+         مزایا:
+       </p>
         <ul class="px-2 " style="list-style: none; align-self: center">
           <li class="d-flex">
             <div class="dot_container"><img src="/img/dot.png" width="10px" alt=""></div>
