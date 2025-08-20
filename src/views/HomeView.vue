@@ -3,8 +3,7 @@
     <!--    <img src="/img/copabeeExport.png"  width="100%" height="auto" alt="">-->
 
     <div class="bg-black text-white pt-5">
-<!--      <div class="main-banner mt-5 mb-4"></div>-->
-      <div class="main-banner2 mt-5 mb-2"></div>
+      <main-carousel style="margin-top: 54px" />
       <div class="my-padding">
         <h1 class="mt-5 mb-2  main_title my-color">
           <img src="/img/Beelogo.png" class="mb-0" alt="">
@@ -65,18 +64,7 @@
       </div>
     </div>
 
-    <!--    <div class="bg-black text-white pt-5 my-padding">-->
 
-    <!--      <h1 class="mb-4 my-font my-color">نمایندگی های فعال </h1>-->
-
-
-    <!--      <div class=" w-100">-->
-    <!--        &lt;!&ndash;        <img src="/img/iran.png" class="img-fluid w-100" style="" alt="">&ndash;&gt;-->
-    <!--        <iran-map/>-->
-    <!--      </div>-->
-
-
-    <!--    </div>-->
 
     <div class="bg-black ">
       <contact-form/>
@@ -166,12 +154,12 @@
 
 <script>
 // @ is an alias to /src
-import iranMap from '../components/Map'
+import MainCarousel from '../components/MainCarousel'
 import ContactForm from "@/components/ContactForm";
 import {ref} from "vue";
 
 export default {
-  components: {ContactForm, iranMap},
+  components: {ContactForm, MainCarousel},
   name: 'HomeView',
 
 }
