@@ -3,9 +3,9 @@
     <!--    <img src="/img/copabeeExport.png"  width="100%" height="auto" alt="">-->
 
     <div class="bg-black text-white pt-5">
-      <main-carousel style="margin-top: 54px" />
+      <main-carousel style="margin-top: 65px" class="mb-3"/>
       <div class="my-padding">
-        <h1 class="mt-5 mb-2  main_title my-color">
+        <h1 class="mt-2 mb-0  main_title my-color">
           <img src="/img/Beelogo.png" class="mb-0" alt="">
           ، آپی</h1>
         <h1 class=" main_title my-color mb-3">پاســتای ایرانی</h1>

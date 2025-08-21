@@ -132,22 +132,27 @@
               <label class="mb-2" for="">شماره تلفن</label>
               <input id="" type="text" class="form-control rounded-0 en">
             </div>
-            <div class="col-6 mb-2">
-              <label class="mb-2">استان</label>
-              <Multiselect
-                  v-model="selectedProvince"
-                  placeholder=""
-                  dir="rtl"
-                  :mode="'single'"
-                  :options="provinces"
-                  :searchable="true"
-                  :create-option="true"
-              />
-              <!--          <div id="province_idHelp" class="form-text error"></div>-->
-              <!--          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>-->
-            </div>
+<!--            <div class="col-6 mb-2">-->
+<!--              <label class="mb-2">استان</label>-->
+<!--              <Multiselect-->
+<!--                  v-model="selectedProvince"-->
+<!--                  placeholder=""-->
+<!--                  dir="rtl"-->
+<!--                  :mode="'single'"-->
+<!--                  :options="provinces"-->
+<!--                  :searchable="true"-->
+<!--                  :create-option="true"-->
+<!--              />-->
+<!--              &lt;!&ndash;          <div id="province_idHelp" class="form-text error"></div>&ndash;&gt;-->
+<!--              &lt;!&ndash;          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>&ndash;&gt;-->
+<!--            </div>-->
 
             <div class="col-6 mb-2">
+              <label class="mb-2" for="">استان</label>
+              <input id="" type="text" class="form-control rounded-0 ">
+            </div>
+
+           <div class="col-6 mb-2">
               <label class="mb-2" for="">شهر</label>
               <input id="" type="text" class="form-control rounded-0 en">
             </div>

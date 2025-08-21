@@ -572,15 +572,33 @@ button:focus {
     border-radius: 24px;
 }
 
+.eye {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left:calc(50% - 15px);
+    top:calc(50% - 15px);
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 15px rgba(255, 255, 255, 1));
+    border-radius: 50px;
+    background-color: white;
+    text-align: center;
+    display: grid;
+    color: #2f2f2f;
+    opacity: 0;
+}
+.carousel-item:hover .eye{
+   opacity: 1;
+}
 .floating-buttons-wrapper {
     z-index: 2;
     margin: 0 auto;
     position: fixed;
-    top: 106px;
+    top: 110px;
 
     /*width: 100%;*/
     max-width: 420px;
-    left:calc(50% - 210px);
+    left:0px;
 overflow: hidden;
 
     border-radius: 0 50px 50px 0;
