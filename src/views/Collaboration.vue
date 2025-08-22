@@ -257,15 +257,15 @@
 </template>
 
 <script>
-import {onMounted, ref} from "vue";
-import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
+ import {onMounted, ref} from "vue";
+// import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
 import {useStore} from "vuex";
 import dropZone from "../components/DropZone";
 
 
 export default {
   name: "Collaboration",
-  components: {Multiselect, dropZone},
+  components: {dropZone, },//Multiselect
   setup() {
     const store = useStore();
     const checkboxToggle = (id) => {

@@ -127,13 +127,13 @@
 </template>
 
 <script>
-import {onMounted, ref} from "vue";
-import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
+ import {onMounted, ref} from "vue";
+// import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
 import {useStore} from "vuex";
 
 export default {
   name: "ContactForm",
-  components: {Multiselect},
+  // components: {Multiselect},
   setup() {
     const store = useStore();
     const msgType = ref('compliment')

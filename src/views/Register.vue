@@ -98,36 +98,47 @@
         </div>
 
 
+<!--        <div class="col-6">-->
+<!--          <label>استان</label>-->
+<!--          <Multiselect-->
+<!--              v-model="selectedProvince" @change="getCities"-->
+<!--              placeholder=""-->
+<!--              dir="rtl"-->
+<!--              :mode="'single'"-->
+<!--              :options="provinces"-->
+<!--              :searchable="true"-->
+<!--              :create-option="true"-->
+<!--          />-->
+<!--          <div id="province_idHelp" class="form-text error"></div>-->
+<!--          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>-->
+<!--        </div>-->
+
         <div class="col-6">
           <label>استان</label>
-          <Multiselect
-              v-model="selectedProvince" @change="getCities"
-              placeholder=""
-              dir="rtl"
-              :mode="'single'"
-              :options="provinces"
-              :searchable="true"
-              :create-option="true"
-          />
-          <div id="province_idHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>
+          <input id="province" type="number" class="form-control form-control-sm" required>
+          <div id="provinceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.province">{{ e }}</p>
         </div>
-
-
         <div class="col-6">
           <label>شهر</label>
-          <Multiselect
-              v-model="selectedCity"
-              placeholder=""
-              dir="rtl"
-              :mode="'single'"
-              :options="cities"
-              :searchable="true"
-              :create-option="true"
-          />
-          <div id="city_idHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
+          <input id="province" type="number" class="form-control form-control-sm" required>
+          <div id="provinceHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.province">{{ e }}</p>
         </div>
+<!--        <div class="col-6">-->
+<!--          <label>شهر</label>-->
+<!--          <Multiselect-->
+<!--              v-model="selectedCity"-->
+<!--              placeholder=""-->
+<!--              dir="rtl"-->
+<!--              :mode="'single'"-->
+<!--              :options="cities"-->
+<!--              :searchable="true"-->
+<!--              :create-option="true"-->
+<!--          />-->
+<!--          <div id="city_idHelp" class="form-text error"></div>-->
+<!--          <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>-->
+<!--        </div>-->
 
         <div class="col-12">
           <label>آدرس</label>
@@ -194,12 +205,12 @@
 import {onMounted, ref} from "vue";
 import dropZone from "../components/DropZone";
 import {useStore} from "vuex";
-import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
+// import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
 
 
 export default {
   name: "Profile",
-  components: {dropZone, Multiselect},
+  components: {dropZone, },//Multiselect
   setup() {
 
     const store = useStore()
