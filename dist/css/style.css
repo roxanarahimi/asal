@@ -51,6 +51,7 @@ body, html {
     border-radius: 20px;
     box-shadow: 0 0 5px 5px black inset;
 }
+
 .main-banner3 {
 
     width: 100%;
@@ -94,7 +95,19 @@ body, html {
 
     }
 }
+.mt50{
 
+}
+.main-carousel{
+    width: 100%;
+    margin-top: -60px;
+}
+@media(max-width: 700px){
+    .main-carousel{
+        /*margin-top: 50px;*/
+        width: 100%;
+    }
+}
 #app {
     background-color: white;
     min-height: 100vh;
@@ -287,7 +300,7 @@ p {
 
 .accordion-button:not(.collapsed)::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F7941D'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-    transform: rotate(-180deg);
+    transform: rotate(--180deg);
 }
 
 .pointer {
@@ -323,11 +336,6 @@ input[type=number] {
 .product-section {
     background: url('/img/flybee.png') center center no-repeat;
     background-size: 100%;
-}
-
-.en {
-    direction: ltr;
-    text-align: left;
 }
 
 a, a:hover {
@@ -526,6 +534,12 @@ button:focus {
     box-shadow: none !important;
 }
 
+#contact {
+    font-size: 13px;
+    background: url('/img/Hive.svg') right bottom no-repeat;
+    background-size: cover
+}
+
 .img-footer {
     margin: 5px;
 }
@@ -576,8 +590,8 @@ button:focus {
     position: absolute;
     width: 30px;
     height: 30px;
-    left:calc(50% - 15px);
-    top:calc(50% - 15px);
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
     cursor: pointer;
     filter: drop-shadow(5px 5px 15px rgba(255, 255, 255, 1));
     border-radius: 50px;
@@ -587,9 +601,11 @@ button:focus {
     color: #2f2f2f;
     opacity: 0;
 }
-.carousel-item:hover .eye{
-   opacity: 1;
+
+.carousel-item:hover .eye {
+    opacity: 1;
 }
+
 .floating-buttons-wrapper {
     z-index: 2;
     margin: 0 auto;
@@ -598,12 +614,13 @@ button:focus {
 
     /*width: 100%;*/
     max-width: 420px;
-    left:0px;
-overflow: hidden;
+    left: 0px;
+    overflow: hidden;
 
     border-radius: 0 50px 50px 0;
     cursor: pointer;
     filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.9));
+    /*-webkit-animation: fly 5s infinite linear;*/
 
 }
 
@@ -619,6 +636,7 @@ overflow: hidden;
     background-color: #F7941D;
     border-radius: 0 50px 50px 0;
     cursor: pointer;
+
 }
 
 .floating-buttons-inner:not(.c1):hover, .floating-buttons-inner:not(.c1):focus {
@@ -640,4 +658,65 @@ overflow: hidden;
 .circle a {
     display: block;
     align-self: center;
+}
+
+.loader-wrapper {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    transition: all 3s ease;
+    /*background:#000000;*/
+    background: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 50%, transparent 100%);
+}
+.loader-inner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    transition: all 3s ease;
+    background: url('/img/Hive.svg') center bottom repeat;
+    background-size: cover
+}
+
+.loader-center {
+    position: fixed;
+    top: 0;
+    left:calc(50vw - 75px);
+    filter: drop-shadow(1px 1px 12px rgba(255, 255, 255, 0.5));
+    transition: all 5s ease;
+}
+.loader {
+    width: 150px;
+    height: 38px;
+    margin-top: 45vh;
+    filter: drop-shadow(1px 1px 12px rgba(255, 255, 255, 0.5));
+    -webkit-animation: circle 3s infinite linear;
+    transition: all 5s ease;
+}
+
+.stop-scrolling {
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+@-webkit-keyframes circle {
+    0% {
+        transform: translate(-5px, -100%) rotate(0deg); /* Moves to left side */
+    }
+    50% {
+        transform: translate(-5px, -50%) rotate(180deg) scale(1.5, 1.5); /* Moves to right side */
+    }
+    100% {
+        transform: translate(-5px, -100%) rotate(360deg); /* Returns to start */
+    }
+
+}
+
+@keyframes fly {
+    50% {
+        transform: translateY(-3.12em);
+    }
 }

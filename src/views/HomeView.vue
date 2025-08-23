@@ -2,8 +2,9 @@
   <div class="home">
     <!--    <img src="/img/copabeeExport.png"  width="100%" height="auto" alt="">-->
 
+
     <div class="bg-black text-white pt-5">
-      <main-carousel style="margin-top: 65px" class="mb-3"/>
+      <main-carousel  class="mb-3 w-100"/>
       <div class="my-padding">
         <h1 class="mt-2 mb-0  main_title my-color">
           <img src="/img/Beelogo.png" class="mb-0" alt="">
@@ -61,6 +62,15 @@
           مقدار شکر و نیز غلظت قندها ،محصولی عاری از سم های مضر ،آلودگی های شیمیایی،میکروبی و فیزیکی مختلف تولید اشاره
           کرد.
         </p>
+      </div>
+    </div>
+
+    <div>
+      <div class="bg-black d-none">
+        <h1 class="my-title my-color my-3 text-center fw-bold my-font">تازه های زنبور داری</h1>
+        <contents-carousel category="news"/><!-- or  events -->
+        <h1 class="my-title my-color my-3 text-center fw-bold my-font">اخبار و رویدادها</h1>
+        <contents-carousel category="events"/><!-- or  events -->
       </div>
     </div>
 
@@ -155,12 +165,13 @@
 <script>
 // @ is an alias to /src
 import MainCarousel from '../components/MainCarousel'
+import ContentsCarousel from "@/components/ContentsCarousel";
 import ContactForm from "@/components/ContactForm";
-import {ref} from "vue";
 
 export default {
-  components: {ContactForm, MainCarousel},
+  components: {ContactForm, MainCarousel,ContentsCarousel},
   name: 'HomeView',
+
 
 }
 </script>

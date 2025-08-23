@@ -1,14 +1,18 @@
 <template>
-  <div class="my-font fw-bold " style="position: relative; font-size: 16px !important">
-    <nav class="d-flex justify-content-between" style="height: 50px;position: relative; color: #F7941D">
-      <div @click="menuToggle" class="pointer"><img src="/img/Burgerbutton.png" class="m-3" style="width: 46px" alt="">
-      </div>
-      <img
-          v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'"
-          src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">
-      <img v-else src="/img/logo.svg" style="width: 110px ; position: absolute; left: 0; top: 0;" alt="">
+  <div class="my-font fw-bold w-100 bg-transparent" style="position: absolute;top:0;left:0; font-size: 16px !important; z-index:10000">
+   <div class="d-flex justify-content-between w-100">
+     <nav class="d-flex justify-content-between" style="height: 50px; color: #F7941D">
+       <div @click="menuToggle" class="pointer"><img src="/img/Burgerbutton.png" class="m-3" style="width: 46px" alt="">
+       </div>
 
-    </nav>
+     </nav>
+     <div>
+       <img
+           v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'"
+           src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">
+       <img v-else src="/img/logo.svg" style="width: 110px ; position: absolute; left: 0; top: 0;" alt="">
+     </div>
+   </div>
 
     <div id="menuContent" class="w-100 vh-100 p-3 pb-0"
          style="z-index: 2000; background: url('/img/menub.svg')center center no-repeat; background-size: 100%; background-color:  #F7941D; color: black; position: absolute;opacity: 0; right: -100%; top:0; transition: 1s ease">

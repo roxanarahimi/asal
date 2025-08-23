@@ -1,7 +1,7 @@
 <template>
   <div class="py-5 my-padding main-bg"><!--  border-radius: 24px-->
 
-    <h2 class="mb-4 my-font fw-bold">ثبت پیشنهاد یا گزارش مشکل</h2>
+    <h2 class="mb-4 my-font fw-bold text-center">ثبت پیشنهاد یا گزارش مشکل</h2>
 
 
     <p>

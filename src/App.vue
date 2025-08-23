@@ -1,13 +1,14 @@
 <template>
 
- <div class="bg-black">
-   <floating-btns />
-   <the-menu />
-  <div class="" style="min-height: 500px">
-    <router-view/>
+  <div class="d-block">
+    <loader v-if="isLoading"/>
+    <floating-btns/>
+    <the-menu/>
+    <div class="bg-black" style="min-height: 500px; padding-top:60px ">
+      <router-view/>
+    </div>
+    <the-footer/>
   </div>
-   <the-footer />
- </div>
 </template>
 
 <style>
@@ -21,10 +22,36 @@ import FloatingBtns from '@/components/FloatingBtns.vue'
 import theMenu from '@/components/TheMenu.vue'
 import theFooter from "@/components/TheFooter";
 import {useStore} from "vuex";
+import Loader from "@/components/Loader";
+
 
 export default {
-  components: {theFooter, theMenu, FloatingBtns},
+  components: {theFooter, theMenu, FloatingBtns, Loader},
+  data() {
+    return {
+      isLoading: true,
+    };
+  },
+  mounted() {
+    this.isLoading = true;
+    document.getElementById('body').classList.add('stop-scrolling');
+
+    document.querySelector('.loader-wrapper')?.classList.add('opacity-1')
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        setTimeout(() => {
+          document.querySelector('.loader-wrapper')?.classList.add('opacity-0')
+          document.getElementById('body').classList.remove('stop-scrolling');
+          this.isLoading = false;
+        }, 3000)
+      }
+    };
+  },
+  unmounted() {
+    document.querySelector('.loader-wrapper')?.classList.add('opacity-0')
+  },
   updated() {
+
 
     let user = localStorage.getItem('user')
     // if(!user){
@@ -39,12 +66,12 @@ export default {
     //   document.getElementById('logout').classList.remove('d-none')
     // }
   },
-  setup(){
+  setup() {
 
     const store = useStore();
     const url = store.state.panelUrl;
 
-    return{
+    return {
       store, url
     }
   }

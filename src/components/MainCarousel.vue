@@ -1,13 +1,13 @@
 <template>
-  <div id="carouselExampleAutoplaying" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="5000">
+  <div id="carouselExampleAutoplaying" class="carousel carousel-dark slide main-carousel" data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-inner">
-      <div class="carousel-item active" >
+      <div class="carousel-item active w-100" >
         <a href="/img/banner3.jpg" class="position-relative">
           <img src="/img/banner3.jpg" class="d-block w-100" alt="copabee">
           <div class="eye"><i class="bi bi-eye-fill align-self-center"></i></div>
         </a>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item w-100">
         <a href="/img/banner2.jpg" class="position-relative">
           <img src="/img/banner2.jpg" class="d-block w-100" alt="copabee">
           <div class="eye"><i class="bi bi-eye-fill align-self-center"></i></div>

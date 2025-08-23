@@ -1,8 +1,6 @@
 <template>
-  <footer>
-    <div id="contact"
-         style="font-size: 13px; background: url('/img/Hive.svg') right bottom no-repeat; background-size: cover"
-         class="bg-black text-white py-5">
+  <footer class="bg-black">
+    <div id="contact" class=" text-white py-5">
 
 
       <div class="px-5 ">
