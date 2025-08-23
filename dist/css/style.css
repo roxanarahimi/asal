@@ -666,19 +666,20 @@ button:focus {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
+    z-index: 100000;
     transition: all 3s ease;
-    /*background:#000000;*/
-    background: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 50%, transparent 100%);
+    background:#000000;
+    /*background: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.90) 70%, transparent 100%);*/
 }
 .loader-inner {
-    position: relative;
+    /*position: relative;*/
     width: 100vw;
     height: 100vh;
     z-index: 1000;
     transition: all 3s ease;
-    background: url('/img/Hive.svg') center bottom repeat;
-    background-size: cover
+    background: url('/img/Hive.svg') center bottom no-repeat;
+    background-size: cover;
+    opacity: 0.6;
 }
 
 .loader-center {

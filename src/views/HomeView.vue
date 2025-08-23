@@ -66,7 +66,7 @@
     </div>
 
     <div>
-      <div class="bg-black d-none">
+      <div class="bg-black ">
         <h1 class="my-title my-color my-3 text-center fw-bold my-font">تازه های زنبور داری</h1>
         <contents-carousel category="news"/><!-- or  events -->
         <h1 class="my-title my-color my-3 text-center fw-bold my-font">اخبار و رویدادها</h1>
