@@ -10,7 +10,7 @@
        <img
            v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'"
            src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">
-       <img v-else src="/img/logo.svg" style="width: 110px ; position: absolute; left: 0; top: 0;" alt="">
+       <img v-else src="/img/logo.svg" style="width: 109px ; position: absolute; left: 0; top: 0;" alt="">
      </div>
    </div>
 

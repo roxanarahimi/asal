@@ -4,7 +4,7 @@
     <loader v-if="isLoading"/>
     <floating-btns/>
     <the-menu/>
-    <div class="bg-black w-100" style="min-height: 500px; padding-top:60px;">
+    <div class="bg-black w-100" style="min-height: 500px; padding-top:74px;">
       <router-view/>
     </div>
     <the-footer/>
@@ -20,7 +20,7 @@
 
 import FloatingBtns from '@/components/FloatingBtns.vue'
 import theMenu from '@/components/TheMenu.vue'
-import theFooter from "@/components/Thefooter2";
+import theFooter from "@/components/Footer";
 import {useStore} from "vuex";
 import Loader from "@/components/Loader";
 

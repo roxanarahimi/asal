@@ -191,7 +191,6 @@
 
 <script>
 export default {
-  name: "TheFooter2"
 }
 </script>
 

@@ -24,8 +24,9 @@
 <line x1="0.125" y1="34.5328" x2="106.921" y2="96.1915" stroke="#7B7C81" stroke-opacity="0.61" stroke-width="0.5"/>
 <line x1="0.125" y1="39.0124" x2="106.921" y2="100.671" stroke="#7B7C81" stroke-opacity="0.61" stroke-width="0.5"/>
 <rect x="30.3488" y="8.89612" width="44" height="52.0796" fill="url(#pattern0)"/>
-
-
+<rect x="30.1378" y="57.0465" width="5.58905" height="2.63161" transform="rotate(30 30.1378 57.0465)" fill="#16140D"/>
+<rect x="30.1821" y="52.8589" width="12.5411" height="2.78357" transform="rotate(30 30.1821 52.8589)" fill="#16140D"/>
+<path d="M37.9179 61.0547L38.4375 61.0547L38.468 60.846L37.8554 60.4929L37.9179 61.0547Z" fill="#525356"/>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_456_175" transform="scale(0.00221239 0.00186916)"/>
