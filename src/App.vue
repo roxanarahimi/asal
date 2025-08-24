@@ -20,7 +20,7 @@
 
 import FloatingBtns from '@/components/FloatingBtns.vue'
 import theMenu from '@/components/TheMenu.vue'
-import theFooter from "@/components/TheFooter";
+import theFooter from "@/components/Thefooter2";
 import {useStore} from "vuex";
 import Loader from "@/components/Loader";
 

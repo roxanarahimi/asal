@@ -5,37 +5,40 @@
 
     <div class="bg-black text-white pt-5">
       <main-carousel  class="mb-3 w-100"/>
-      <div class="my-padding">
-        <h1 class="mt-2 mb-0  main_title my-color">
-          <img src="/img/Beelogo.png" class="mb-0" alt="">
-          ، آپی</h1>
-        <h1 class=" main_title my-color mb-3">پاســتای ایرانی</h1>
-
-        <div class="pb-5" style="background: url('/img/s1bg.png') center center no-repeat; background-size: cover;">
-          <p class="col-8 " style="font-size: 15px">
-            کوپابی با هدف تولید تغذیه کامل زنبور عسل، مشابه نمونه‌ وارداتی تأسیس شد. ما با تکیه بر دانش فنی گروه آماده
-            لذیذ و پشتوانه علمی پژوهشکده گیاهان و مواد اولیه دارویی دانشگاه شهید بهشتی، تولید نیمه‌صنعتی خود را آغاز
-            کردیم.
-          </p>
+      <div class="my-padding row justify-content-around">
+        <div class="col-lg-4 d-lg-grid">
+          <div class="align-self-lg-center">
+            <h1 class="mt-2 mb-0  main_title my-color">
+              <img src="/img/Beelogo.png" class="mb-0" alt="">
+              ، آپی</h1>
+            <h1 class=" main_title my-color mb-3">پاســتای ایرانی</h1>
+            <div class="pb-5" style="background: url('/img/s1bg.png') center center no-repeat; background-size: cover;">
+              <p class="col-8 " style="font-size: 15px">
+                کوپابی با هدف تولید تغذیه کامل زنبور عسل، مشابه نمونه‌ وارداتی تأسیس شد. ما با تکیه بر دانش فنی گروه آماده
+                لذیذ و پشتوانه علمی پژوهشکده گیاهان و مواد اولیه دارویی دانشگاه شهید بهشتی، تولید نیمه‌صنعتی خود را آغاز
+                کردیم.
+              </p>
+              <div class="d-flex justify-content-end ">
+                <router-link to="/about" class="btn-orange" style="padding-top: 12px">بیشتر بدانید</router-link>
+              </div>
+            </div>
+          </div>
         </div>
 
-
-        <div class="d-flex justify-content-end ">
-          <router-link to="/about" class="btn-orange" style="padding-top: 12px">بیشتر بدانید</router-link>
+        <div class="col-lg-6">
+          <div class="hero mb-4">
+            <img src="/img/header.jpg" class="w-100 opacity-0" alt="">
+          </div>
         </div>
-
-        <div class="main-slider mb-4"></div>
       </div>
-    </div>
-
-    <div class=" " style="border-radius: 250px 250px 0 0; padding-top: 100px; background-color: #D9D6D2">
-      <div class="product-section text-center pt-3" style="">
-
-        <!--        <img src="/img/p2.png" width="180px" alt="">-->
-        <img src="/img/p22.png" width="180px" alt="">
       </div>
-      <div class="p-4 px-5">
-        <div class="" style="background: url('/img/frame.png') center center no-repeat; background-size: 100%">
+
+    <div class="row justify-content-lg-center" style="border-radius: 250px 250px 0 0; padding-top: 100px; background-color: #D9D6D2">
+      <div class="col-lg-5 product-section text-center pt-3 mb-lg-5" style="">
+        <img src="/img/p22.png" width="45%" alt="">
+      </div>
+      <div class="col-lg-3 p-4 px-5 d-lg-grid">
+        <div class="align-self-lg-center" style="background: url('/img/frame.png') center center no-repeat; background-size: 100%">
           <div class="d-flex p-4">
 
 
@@ -76,56 +79,59 @@
 
 
 
-    <div class="bg-black ">
-      <contact-form/>
+
+    <div class="bg-black row justify-content-center">
+      <contact-form class="col-lg-12"/>
     </div>
 
-    <div class="bg-black text-white py-5 px-4">
+    <div class="bg-black row justify-content-lg-center text-white py-5 px-4">
 
-      <h2 class="mb-4 my-color my-font">سوالات متداول شما</h2>
-      <div style="font-size: 12px !important; color: white" class="mb-3">
+      <div class=" col-lg-7 my-lg-5">
+        <h2 class="mb-4 my-color my-font text-lg-center">سوالات متداول شما</h2>
+        <div style="font-size: 12px !important; color: white" class="mb-3">
 
-        <div class="accordion bg-transparent" id="accordionExample">
-          <div class="accordion-item bg-transparent my-border text-white rounded-0">
-            <h2 class="accordion-header ">
-              <button style="font-size: 12px !important;" class="accordion-button  bg-transparent text-white collapsed"
-                      type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                      aria-controls="collapseOne">
-                <!--                خمیر شیرین چیست؟-->
-                برخی از زنبورداران می‌گویند محصول شُل است؛ آیا این ایراد محسوب می‌شود؟
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>
-                  <!--                  زنبورهای عسل از طریق گرده افشانی، نقش مهمی در تامین منابع غذایی برای انسان ها، حیوانات و همچنین-->
-                  <!--                  گوناگونی زیستی در اکوسیستم های طبیعی و کشاورزی را برعهده دارند...-->
-                  خیر. نیمه‌جامد بودن محصول یک مزیت فنی است، نه ایراد. این ویژگی باعث می‌شود...
-                  <router-link to="/faq" class="text-primary">ادامه</router-link>
+          <div class="accordion bg-transparent" id="accordionExample">
+            <div class="accordion-item bg-transparent my-border text-white rounded-0">
+              <h2 class="accordion-header ">
+                <button style="font-size: 12px !important;" class="accordion-button  bg-transparent text-white collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                  <!--                خمیر شیرین چیست؟-->
+                  برخی از زنبورداران می‌گویند محصول شُل است؛ آیا این ایراد محسوب می‌شود؟
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>
+                    <!--                  زنبورهای عسل از طریق گرده افشانی، نقش مهمی در تامین منابع غذایی برای انسان ها، حیوانات و همچنین-->
+                    <!--                  گوناگونی زیستی در اکوسیستم های طبیعی و کشاورزی را برعهده دارند...-->
+                    خیر. نیمه‌جامد بودن محصول یک مزیت فنی است، نه ایراد. این ویژگی باعث می‌شود...
+                    <router-link to="/faq" class="text-primary">ادامه</router-link>
 
-                </p>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item bg-transparent my-border text-white rounded-0">
-            <h2 class="accordion-header">
-              <button style="font-size: 12px !important;" class="accordion-button bg-transparent text-white collapsed"
-                      type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                      aria-controls="collapseTwo">
-                <!--                چرا کوپابی را جیگزین شهد شیرین کنیم؟-->
-                تفاوت خوراک زنبور کوپابی با سایر برندهای بازار چیست؟
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>
-                  <!--                  خمیر شیرین کوپابی نسبت به شربت های دست ساز زنبورداران مزیت های زیر را دارا میباشد: خمیرشیرین در روند-->
-                  <!--                  تولید با کنترل رطوبت،دما ،اندازه ذره ای بلورها و مقدار شکر...-->
-                  خوراک زنبور کوپابی برخلاف بسیاری از محصولات موجود در بازار که به‌صورت فوندانت (خمیر شکر) عرضه می‌شوند،
-                  به شکل نیمه‌جامد (Semi-solid) تولید شده است. این ویژگی چند مزیت کلیدی را به همراه دارد...
-                  <router-link to="/faq" class="text-primary">ادامه</router-link>
+            <div class="accordion-item bg-transparent my-border text-white rounded-0">
+              <h2 class="accordion-header">
+                <button style="font-size: 12px !important;" class="accordion-button bg-transparent text-white collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                  <!--                چرا کوپابی را جیگزین شهد شیرین کنیم؟-->
+                  تفاوت خوراک زنبور کوپابی با سایر برندهای بازار چیست؟
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>
+                    <!--                  خمیر شیرین کوپابی نسبت به شربت های دست ساز زنبورداران مزیت های زیر را دارا میباشد: خمیرشیرین در روند-->
+                    <!--                  تولید با کنترل رطوبت،دما ،اندازه ذره ای بلورها و مقدار شکر...-->
+                    خوراک زنبور کوپابی برخلاف بسیاری از محصولات موجود در بازار که به‌صورت فوندانت (خمیر شکر) عرضه می‌شوند،
+                    به شکل نیمه‌جامد (Semi-solid) تولید شده است. این ویژگی چند مزیت کلیدی را به همراه دارد...
+                    <router-link to="/faq" class="text-primary">ادامه</router-link>
 
-                </p>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -133,11 +139,12 @@
       </div>
 
 
+
     </div>
 
     <div class="text-center">
-      <div class="p-4 py-5" style="background: url('/img/bg3.png') center center no-repeat; background-size: cover; ">
-        <div class="py-5 mx-2 rounded" style="backdrop-filter: blur(15px); font-size: 14px;">
+      <div class="p-4 py-5 row justify-content-lg-center" style="background: url('/img/bg3.png') center center no-repeat; background-size: cover; ">
+        <div class="py-5 mx-2 rounded col-lg-7 px-lg-5" style="backdrop-filter: blur(15px); font-size: 14px;">
           <h3 class="mb-5 my-font fw-bold">شرکای راهبردی کوپابی</h3>
           <p style="font-weight: bold ; font-size:13px; padding-right: 50px; padding-left: 50px; text-align: justify;">
             در مسیر توسعه تغذیه تخصصی زنبورعسل، کوپابی با همکاری مجموعه‌ای از معتبرترین نهادهای علمی، پژوهشی، صنعتی و

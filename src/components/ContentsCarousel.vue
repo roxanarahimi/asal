@@ -1,51 +1,75 @@
 <template>
-  <div class="px-5 mx-auto mt-5 contents-carousel" >
-    <!--    <div class="d-none d-lg-block mb-5">-->
-    <!--      <Carousel class="" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'" :transition="500">-->
-    <!--        <slide v-for="(item,index) in contents" :key="index">-->
-    <!--          <router-link class="p-2" :to="'/content/'+item.title2">-->
-    <!--            <div class="w-100 h-100" style="margin: 1px">-->
-    <!--              <div class="card bg-light">-->
-    <!--                <div class="card-body">-->
-    <!--                  <img :src="item.image" alt="" class="card-img">-->
-    <!--                  <h3 class="mt-3 text-start">{{item.title}}</h3>-->
-    <!--                  <small class="d-block text-end">1404/05/03</small>-->
-    <!--                </div>-->
-    <!--              </div>-->
-    <!--            </div>-->
+  <div class="px-5 mx-auto mt-5 contents-carousel">
+    <div class="d-none d-lg-block mb-5">
+      <Carousel class="" :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
+                :transition="500">
+        <slide v-for="(item,index) in contents" :key="index">
+          <router-link class="p-2" :to="'/content/'+item.title2">
+            <div class="w-100 h-100" style="margin: 1px">
+              <div class="card bg-light">
+                <div class="card-body">
+                  <img :src="item.image" alt="" class="card-img">
+                  <h3 class="mt-3 text-start">{{ item.title }}</h3>
+                  <small class="d-block text-end">1404/05/03</small>
+                </div>
+              </div>
+            </div>
 
-    <!--          </router-link>-->
-    <!--        </slide>-->
-    <!--        <template #addons>-->
-    <!--          <navigation/>-->
-    <!--          &lt;!&ndash;          <pagination />&ndash;&gt;-->
-    <!--        </template>-->
-    <!--      </carousel>-->
-    <!--    </div>-->
-    <!--    <div class="d-none d-md-block d-lg-none mb-5">-->
-    <!--      <Carousel class="" :itemsToShow="2.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'" :transition="500">-->
-    <!--        <slide v-for="(item,index) in contents" :key="index">-->
-    <!--          <router-link class="p-1" :to="'/content/'+item.title2">-->
-    <!--            <div class="w-100 h-100" style="margin: 1px">-->
-    <!--              <div class="card bg-light">-->
-    <!--                <div class="card-body">-->
-    <!--                  <img :src="item.image" alt="" class="card-img">-->
-    <!--                  <h3 class="mt-3 text-start">{{item.title}}</h3>-->
-    <!--                  <small class="d-block text-end">1404/05/03</small>-->
-    <!--                </div>-->
-    <!--              </div>-->
-    <!--            </div>-->
+          </router-link>
+        </slide>
+        <template #addons>
+          <navigation/>
+          <!--          <pagination />-->
+        </template>
+      </carousel>
+    </div>
+    <div class="d-none d-md-block d-lg-none mb-5">
+      <Carousel class="" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
+                :transition="500">
+        <slide v-for="(item,index) in contents" :key="index">
+          <router-link class="p-1" :to="'/content/'+item.title2">
+            <div class="w-100 h-100" style="margin: 1px">
+              <div class="card bg-light">
+                <div class="card-body">
+                  <img :src="item.image" alt="" class="card-img">
+                  <h3 class="mt-3 text-start">{{ item.title }}</h3>
+                  <small class="d-block text-end">1404/05/03</small>
+                </div>
+              </div>
+            </div>
 
-    <!--          </router-link>-->
-    <!--        </slide>-->
-    <!--        <template #addons>-->
-    <!--          <navigation/>-->
-    <!--          &lt;!&ndash;          <pagination />&ndash;&gt;-->
-    <!--        </template>-->
-    <!--      </carousel>-->
+          </router-link>
+        </slide>
+        <template #addons>
+          <navigation/>
+          <!--          <pagination />-->
+        </template>
+      </carousel>
+    </div>
+    <div class="d-none d-sm-block d-md-none mb-5">
+      <Carousel class="" :itemsToShow="2.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
+                :transition="500">
+        <slide v-for="(item,index) in contents" :key="index">
+          <router-link class="p-1" :to="'/content/'+item.title2">
+            <div class="w-100 h-100" style="margin: 1px">
+              <div class="card bg-light">
+                <div class="card-body">
+                  <img :src="item.image" alt="" class="card-img">
+                  <h3 class="mt-3 text-start">{{ item.title }}</h3>
+                  <small class="d-block text-end">1404/05/03</small>
+                </div>
+              </div>
+            </div>
 
-    <!--    </div>-->
-    <div class="   mb-5">
+          </router-link>
+        </slide>
+        <template #addons>
+          <navigation/>
+          <!--          <pagination />-->
+        </template>
+      </carousel>
+    </div>
+    <div class="d-sm-none   mb-5">
       <Carousel class="" :itemsToShow="1" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'" :transition="500">
         <slide v-for="(item,index) in contents" :key="index">
           <router-link class="" :to="'/content/'+item.title2">
@@ -74,7 +98,7 @@
         </template>
       </carousel>
 
-    </div><!--d-md-none -->
+    </div><!-- -->
   </div>
 
 </template>
