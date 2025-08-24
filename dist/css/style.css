@@ -1,5 +1,5 @@
 body, html {
-    max-width: 420px;
+    /*max-width: 420px;*/
     margin: 0 auto;
     font-family: IranSans !important;
     direction: rtl !important;
@@ -25,8 +25,8 @@ body, html {
     font-size: 15px;
 }
 
-.main-slider {
-    min-height: 300px;
+.hero {
+    /*min-height: 300px;*/
     /*background: url('/img/bee.png') center center no-repeat;*/
     background: url('/img/header.jpg') center center no-repeat;
     background-size: 100%;
@@ -63,38 +63,6 @@ body, html {
     font-size: 14px !important;
 }
 
-@media (min-width: 700px) {
-    .main_title {
-        font-family: 'IranYekanExtraBold' !important;
-        font-size: 45px !important;
-    }
-
-    .main_title img {
-        width: 165px;
-        margin-top: 20px
-    }
-
-    .main_p {
-        font-size: 20px;
-        /*padding-bottom: 100px;*/
-        padding-top: 30px;
-    }
-
-    .main-slider {
-        min-height: 330px;
-        /*background: url('/img/bee.png') center center no-repeat;*/
-        background: url('/img/header.jpg') center center no-repeat;
-
-        background-size: 100%;
-        border-radius: 90px;
-        box-shadow: 0 0 30px 30px black inset;
-    }
-
-    .ttxxtt {
-        font-size: 18px !important;
-
-    }
-}
 .mt50{
 
 }
@@ -102,35 +70,12 @@ body, html {
     width: 100%;
     margin-top: -60px;
 }
-@media(max-width: 700px){
-    .main-carousel{
-        /*margin-top: 50px;*/
-        width: 100%;
-    }
-}
+
 #app {
     background-color: white;
     min-height: 100vh;
 }
 
-@media (max-width: 1190px) {
-    .p4 {
-        display: none;
-    }
-
-    .p4, .p2 {
-        cursor: pointer;
-    }
-
-    .product-section:hover .p2 {
-        display: none;
-    }
-
-    .product-section:hover .p4 {
-        display: block;
-    }
-
-}
 
 * {
     transition: all 0.3s ease !important;
@@ -679,7 +624,7 @@ button:focus {
     transition: all 3s ease;
     background: url('/img/Hive.svg') center bottom no-repeat;
     background-size: cover;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 .loader-center {
@@ -703,6 +648,72 @@ button:focus {
     overflow: hidden !important;
 }
 
+.img-link{
+    cursor: zoom-in !important;
+}
+.about-img-456{
+    height: 500px !important
+}
+@media (min-width: 700px) {
+    .main_title {
+        font-family: 'IranYekanExtraBold' !important;
+        font-size: 45px !important;
+    }
+
+    .main_title img {
+        width: 165px;
+        margin-top: 20px
+    }
+
+    .main_p {
+        font-size: 20px;
+        /*padding-bottom: 100px;*/
+        padding-top: 30px;
+    }
+
+    .hero {
+        /*min-height:600px;*/
+        /*background: url('/img/bee.png') center center no-repeat;*/
+        background: url('/img/header.jpg') center center no-repeat;
+
+        background-size: 100%;
+        border-radius: 90px;
+        box-shadow: 0 0 30px 30px black inset;
+    }
+
+    .ttxxtt {
+        font-size: 18px !important;
+
+    }
+}
+@media(max-width: 700px){
+    .main-carousel{
+        /*margin-top: 50px;*/
+        width: 100%;
+    }
+    .about-img-456{
+        height: 190px !important;
+        overflow-x: hidden;
+    }
+}
+@media (max-width: 1190px) {
+    .p4 {
+        display: none;
+    }
+
+    .p4, .p2 {
+        cursor: pointer;
+    }
+
+    .product-section:hover .p2 {
+        display: none;
+    }
+
+    .product-section:hover .p4 {
+        display: block;
+    }
+
+}
 @-webkit-keyframes circle {
     0% {
         transform: translate(-5px, -100%) rotate(0deg); /* Moves to left side */
@@ -720,4 +731,5 @@ button:focus {
     50% {
         transform: translateY(-3.12em);
     }
+
 }

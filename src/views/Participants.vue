@@ -1,10 +1,11 @@
 <template>
-  <div class="w-100 px-4 text-light">
+  <div class=" w-100 px-4 px-lg-5 pb-5 text-light">
 
     <div>
       <h3 class="my-font my-color mt-3 mb-4">شرکای کوپابی</h3>
-      <img src="/img/logos.jpg" class="w-100" alt="">
-
+      <div class="img-section row justify-content-lg-center px-lg-4">
+        <img class="col-12 col-lg-4 mx-auto my-3 " src="/img/logos.jpg" alt="">
+      </div>
       <div id="amadeh-laziz">
         <h4 class="my-font my-color  mt-4">گروه صنایع غذایی آماده لذیذ</h4>
         <h6 class="my-font my-color">شریک راهبردی کوپابی</h6>

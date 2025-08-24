@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 px-4 text-light">
+  <div class="w-100 px-4 text-light px-lg-5">
 
     <div>
       <h3 class="my-font my-color mt-3">همکاری با زنبورداران</h3>
@@ -107,28 +107,31 @@
 
 
     </div>
+    <div class="text-white">
+      <h4 class="my-font my-color  mt-4">
+        📝
+        ثبت درخواست همکاری</h4>
+      <p>لطفاً اطلاعات زیر را تکمیل کنید تا در سریع‌ترین زمان با شما تماس بگیریم:</p>
+
+
+    </div>
   </div>
-  <div class="">
+  <div class="row justify-content-lg-center">
+
+    <div class="col-lg-6">
     <div class="px-4 text-light">
-      <div id="form">
-        <h4 class="my-font my-color  mt-4">
-          📝
-          ثبت درخواست همکاری</h4>
-        <p>لطفاً اطلاعات زیر را تکمیل کنید تا در سریع‌ترین زمان با شما تماس بگیریم:</p>
 
-
-      </div>
     </div>
     <div class="main-bg border-radius w-100 p-4">
 
-      <div class="row">
+      <div class="row p-lg-3">
         <div class="col-12">
           <div class="row">
-            <div class="col-12 mb-2">
+            <div class="col-12 col-lg-6 mb-2">
               <label class="mb-2" for="">نام و نام خانوادگی</label>
               <input id="" type="text" class="form-control rounded-0 en">
             </div>
-            <div class="col-12 mb-2">
+            <div class="col-12 col-lg-6 mb-2">
               <label class="mb-2" for="">شماره تلفن</label>
               <input id="" type="text" class="form-control rounded-0 en">
             </div>
@@ -252,6 +255,7 @@
 
 
     </div>
+  </div>
   </div>
 
 </template>

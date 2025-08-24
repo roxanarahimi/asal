@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-black text-white">
+  <div class="bg-black  px-lg-5 text-white">
     <div class="my-padding">
       <h3 class="my-font my-color mt-3 mb-4">سوالات متداول</h3>
 
       <div>
         <h3 class="my-font my-color mt-5 mb-3">1.تفاوت خوراک زنبور کوپابی با سایر برندهای بازار چیست؟</h3>
-        <div class="text-center">
-          <img src="/img/faq1.png" class="w-100" alt="">
+        <div class="img-section row justify-content-center">
+          <img class="col-12 col-lg-5 mx-auto my-3 " src="/img/faq1.png" alt="">
         </div>
 
         <p>
@@ -52,8 +52,8 @@
           <!--        <li>کیفیت و عملکرد قابل‌مقایسه با نمونه‌های مطرح خارجی مانند Apipasta اسپانیایی</li>-->
         </ul>
 
-        <div class="text-center">
-          <img src="/img/faq2.png" class="w-100" alt="">
+        <div class="img-section row justify-content-center">
+          <img class="col-12 col-lg-6 mx-auto my-3 " src="/img/faq2.png" alt="">
         </div>
       </div>
       <div>
@@ -141,8 +141,8 @@
           مشخصات کامل ترکیبات در پشت بسته‌بندی محصول درج شده است:
 
         </p>
-        <div class="text-center">
-          <img src="/img/faq3.png" class="w-100" alt="">
+        <div class="img-section row justify-content-center">
+          <img class="col-12 col-lg-4 mx-auto my-3 " src="/img/faq3.png" alt="">
         </div>
       </div>
       <div>
@@ -161,10 +161,11 @@
           <br>
           مناسب برای استفاده در فصول حساس و دوره‌های بحرانی کلنی
         </p>
-        <div class="d-flex text-center">
-          <img src="/img/faq4.png" class="w-50" alt="">
-          <img src="/img/faq5.jpg" class="w-50" alt="">
+        <div class="img-section row justify-content-center">
+          <img class="col-6 col-lg-3 my-3 " src="/img/faq4.png" alt="">
+          <img class="col-6 col-lg-3 my-3 " src="/img/faq5.jpg" alt="">
         </div>
+
       </div>
 
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 px-4 text-light "
+  <div class="w-100 px-4 px-lg-5 text-light "
        style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
 <!--    <div class="text-center">-->
 <!--      <img src="/img/Beelogo.png" style="width: 160px" class="my-5" alt="">-->
@@ -25,7 +25,7 @@
       </p>
     </div>
 
-    <div class="d-flex justify-content-between mt-5">
+    <div class="d-flex justify-content-between justify-content-lg-start mt-5">
       <div class="d-flex pe-4">
         <div @click="typeToggle(1)" id="real" class="me-2 registerRadio activeRegisterRadio"></div>
         <p @click="typeToggle(1)" class="pointer">شخص حقیقی</p>
@@ -39,63 +39,63 @@
 
     <form>
       <div class="row">
-        <div v-if="type=='real'" class="col-12">
+        <div v-if="type=='real'" class="col-12 col-lg-3">
           <label>نام و نام خانوادگی</label>
           <input id="name" type="text" class="form-control form-control-sm" required>
           <div id="nameHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.name">{{ e }}</p>
         </div>
-        <div v-if="type=='real'" class="col-6">
+        <div v-if="type=='real'" class="col-6 col-lg-3">
           <label>کد ملی</label>
           <input id="national_code" type="text" class="en form-control form-control-sm" required>
           <div id="national_codeHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.national_code">{{ e }}</p>
         </div>
-        <div v-if="type=='real'" class="col-6">
+        <div v-if="type=='real'" class="col-6 col-lg-3">
           <label>تاریخ تولد</label>
           <input id="birth_date" type="text" class="en form-control form-control-sm" required>
           <div id="birth_dateHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.birth_date">{{ e }}</p>
         </div>
 
-        <div v-if="type=='legal'" class="col-12">
+        <div v-if="type=='legal'" class="col-12 col-lg-3">
           <label>نام شرکت</label>
           <input id="name" type="text" class="form-control form-control-sm" required>
           <div id="nameHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.name">{{ e }}</p>
         </div>
-        <div id="operator" v-if="type=='legal'" class="col-12">
+        <div id="operator" v-if="type=='legal'" class="col-12 col-lg-3">
           <label>نام و نام خانوادگی نماینده</label>
           <input type="text" class="form-control form-control-sm" required>
           <div id="operatorHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.operator">{{ e }}</p>
         </div>
-        <div v-if="type=='legal'" class="col-6">
+        <div v-if="type=='legal'" class="col-6 col-lg-3">
           <label>شناسه ملی</label>
           <input id="national_code" type="text" class="en form-control form-control-sm" required>
           <div id="national_codeHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.national_code">{{ e }}</p>
         </div>
-        <div v-if="type=='legal'" class="col-6">
+        <div v-if="type=='legal'" class="col-6 col-lg-3">
           <label>شماره ثبت</label>
           <input id="registration_number" type="text" class="en form-control form-control-sm" required>
           <div id="registration_numberHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.registration_number">{{ e }}</p>
         </div>
 
-
-        <div class="col-6">
-          <label>شماره تلفن</label>
-          <input id="phone" type="text" class="en form-control form-control-sm" required>
-          <div id="phoneHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.phone">{{ e }}</p>
-        </div>
-        <div class="col-6">
+        <div class="col-6 col-lg-3">
           <label>شماره موبایل</label>
           <input id="mobile" type="number" class="form-control form-control-sm en" maxLength="11" required>
           <div id="mobileHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.mobile">{{ e }}</p>
         </div>
+        <div class="col-6 col-lg-3">
+          <label>شماره تلفن</label>
+          <input id="phone" type="text" class="en form-control form-control-sm" required>
+          <div id="phoneHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.phone">{{ e }}</p>
+        </div>
+
 
 
 <!--        <div class="col-6">-->
@@ -113,13 +113,13 @@
 <!--          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>-->
 <!--        </div>-->
 
-        <div class="col-6">
+        <div class="col-6 col-lg-3">
           <label>استان</label>
           <input id="province" type="number" class="form-control form-control-sm" required>
           <div id="provinceHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.province">{{ e }}</p>
         </div>
-        <div class="col-6">
+        <div class="col-6 col-lg-3">
           <label>شهر</label>
           <input id="province" type="number" class="form-control form-control-sm" required>
           <div id="provinceHelp" class="form-text error"></div>
@@ -140,29 +140,30 @@
 <!--          <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>-->
 <!--        </div>-->
 
-        <div class="col-12">
-          <label>آدرس</label>
-          <input id="address" type="text" class="form-control form-control-sm" required>
-          <div id="addressHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.address">{{ e }}</p>
-        </div>
-        <div class="col-12">
+        <div class="col-12 col-lg-3">
           <label>کد پستی</label>
           <input id="postal_code" type="text" class="en form-control form-control-sm" required>
           <div id="postal_codeHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.postal_code">{{ e }}</p>
         </div>
+        <div class="col-12" :class="{'col-lg-9': type=='legal'}">
+          <label>آدرس</label>
+          <input id="address" type="text" class="form-control form-control-sm" required>
+          <div id="addressHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.address">{{ e }}</p>
+        </div>
+
       </div>
 
       <div>
-        <div v-if="type=='legal'" class="row">
-          <div class="col-12 mt-5">
+        <div v-if="type=='legal'" class="row justify-content-lg-center">
+          <div class="col-12 col-lg-5 mt-5">
             <drop-zone id="dropZone1" :title="'تصویر آخرین روزنامه رسمی'" :index="1" :has-error="img1Error" required/>
             <div></div>
           </div>
         </div>
-        <div v-else class="row">
-          <div class="col-12 mt-5">
+        <div v-else class="row justify-content-lg-center">
+          <div class="col-12 col-lg-5 mt-5">
             <drop-zone id="dropZone1" :title="'تصویر کارت ملی یا شناسنامه زنبورداری'" :index="1" :has-error="img1Error"
                        required/>
             <div></div>

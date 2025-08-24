@@ -1,6 +1,5 @@
 <template>
-  <div class="w-100  text-light  container-fluid px-0" style=" overflow-x: hidden">
-
+  <div class="w-100  text-light  container-fluid px-0 px-lg-5" style=" overflow-x: hidden">
     <div>
       <div class="px-4">
         <h3 class="my-font my-color mt-3">درباره ما</h3>
@@ -17,7 +16,9 @@
           هزار متر مربع در استان البرز، با اتکا به بیش از 2100 نیروی متخصص فعالیت دارند.
         </p>
       </div>
-      <img src="/img/about1.jpg" class="w-100" alt="">
+      <div class="img-section px-lg-4">
+        <img class="col-12 col-lg-6 mx-auto my-3 " src="/img/about1.jpg" alt="">
+      </div>
       <div class="px-4 mt-4">
         <p class="">
           همکاری استراتژیک ما با پژوهشکده گیاهان و مواد اولیه دارویی دانشگاه شهید بهشتی، با بهره‌مندی از جدیدترین
@@ -35,8 +36,10 @@
         </p>
 
       </div>
-      <img src="/img/about2.jpg" class="w-100 mb-3" alt="">
-      <img src="/img/about3.jpg" class="w-100" alt="">
+      <div class="img-section row justify-content-lg-between">
+        <img class="col-12 col-lg-5 mx-auto my-3 " src="/img/about2.jpg" alt="">
+        <img class="col-12 col-lg-5 mx-auto my-3 " src="/img/about3.jpg" alt="">
+      </div>
 
 
       <div class="px-4">
@@ -58,11 +61,11 @@
 
         </p>
       </div>
-      <div class="d-flex" style="height: 187px">
-        <img src="/img/about4.jpg" class="p-1" height="100%" alt="">
-        <img src="/img/about5.jpg" class="p-1" height="100%" alt="">
-        <img src="/img/about6.jpg" class="p-1" height="100%" alt="">
-      </div>
+       <div class="d-flex justify-content-lg-center my-3 about-img-456" style="">
+           <img src="/img/about4.jpg" class="h-100"  alt="">
+           <img src="/img/about5.jpg" class="h-100"  >
+           <img src="/img/about6.jpg" class="h-100" alt="">
+       </div>
       <div class="px-4">
         <p>
           در این زنبورستان، پژوهشگران، اساتید، تیم‌های علمی و فنی ما، و زنبورداران باسابقه، به‌صورت روزانه و مستمر، اثر
@@ -94,8 +97,9 @@
           روشن‌تر برای این صنعت مهم اما کمتر دیده‌شده ساخت.
         </p>
       </div>
-      <img src="/img/about7.jpg" class="w-100" alt="">
-
+      <div class="img-section px-lg-4">
+        <img class="col-12 col-lg-4 mx-auto my-3 " src="/img/about7.jpg" alt="">
+      </div>
     </div>
   </div>
 </template>

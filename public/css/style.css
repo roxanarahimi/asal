@@ -651,6 +651,9 @@ button:focus {
 .img-link{
     cursor: zoom-in !important;
 }
+.about-img-456{
+    height: 500px !important
+}
 @media (min-width: 700px) {
     .main_title {
         font-family: 'IranYekanExtraBold' !important;
@@ -687,6 +690,10 @@ button:focus {
     .main-carousel{
         /*margin-top: 50px;*/
         width: 100%;
+    }
+    .about-img-456{
+        height: 190px !important;
+        overflow-x: hidden;
     }
 }
 @media (max-width: 1190px) {
