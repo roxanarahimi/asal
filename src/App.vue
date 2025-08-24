@@ -4,7 +4,7 @@
     <loader v-if="isLoading"/>
     <floating-btns/>
     <the-menu/>
-    <div class="bg-black" style="min-height: 500px; padding-top:60px ">
+    <div class="bg-black" style="min-height: 500px; padding-top:60px; overflow-x: hidden ">
       <router-view/>
     </div>
     <the-footer/>

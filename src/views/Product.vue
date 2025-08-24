@@ -62,14 +62,14 @@
         </p>
       </div>
     </div>
-    <div class="row justify-content-lg-center">
+    <div class="row p-0 m-0 justify-content-lg-center">
       <div class="col-lg-6 d-flex my-padding font-size-12" style="background: url('/img/pback.svg')right top no-repeat;
       background-size: 100%; margin-top: -16px; padding-top: 50px; padding-bottom: 100px">
         <div class=" text-center pt-3" style="width: 30% !important">
           <img src="/img/vectorright.png" class="w-100 mb-3" alt="">
           <p>بدون زحمت آماده سازی</p>
         </div>
-        <div class="  text-center p-0 m-0" style="width: 40% !important">
+        <div class=" text-center p-0 m-0" style="width: 40% !important">
           <img src="/img/p2.png" class="w-100" alt="">
         </div>
         <div class=" text-center p-0 m-0" style="width: 30% !important">
