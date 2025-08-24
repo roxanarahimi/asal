@@ -1,5 +1,5 @@
 body, html {
-    /*max-width: 420px;*/
+    width: 100%;
     margin: 0 auto;
     font-family: IranSans !important;
     direction: rtl !important;
@@ -88,9 +88,9 @@ body, html {
 /*}*/
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 3px;
     cursor: pointer !important;
-    background-color: gray !important;
+    background-color: black !important;
 }
 
 
@@ -104,7 +104,7 @@ body, html {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: dimgray;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer !important;
 
 }
@@ -733,4 +733,7 @@ button:focus {
         transform: translateY(-3.12em);
     }
 
+}
+.image-section{
+    overflow-x: hidden !important;
 }

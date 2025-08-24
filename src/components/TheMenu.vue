@@ -131,15 +131,17 @@ export default {
         document.querySelector('#menuContent').style.right = '-100%';
         document.querySelector('#menuContent').style.opacity = '0';
         flag.value = 0;
-        document.querySelector('body').style.height = 'auto';
-        document.querySelector('body').style.overflowY = 'scroll';
+        document.querySelector('body').classList.add('h-auto');
+        document.querySelector('body').classList.remove('vh-100');
+        document.querySelector('body').classList.remove('overflow-y-hidden');
       } else {
         document.querySelector('#menuContent').style.right = '0';
         document.querySelector('#menuContent').style.opacity = '1';
         flag.value = 1;
 
-        document.querySelector('body').style.height = '100vh';
-        document.querySelector('body').style.overflowY = 'hidden';
+        document.querySelector('body').classList.remove('h-auto');
+        document.querySelector('body').classList.add('vh-100');
+        document.querySelector('body').classList.add('overflow-y-hidden');
       }
       if (param){
         if(document.getElementById(param)){

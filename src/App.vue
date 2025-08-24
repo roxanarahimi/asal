@@ -1,10 +1,10 @@
 <template>
 
-  <div class="d-block">
+  <div class="d-block overflow-x-hidden">
     <loader v-if="isLoading"/>
     <floating-btns/>
     <the-menu/>
-    <div class="bg-black" style="min-height: 500px; padding-top:60px; overflow-x: hidden ">
+    <div class="bg-black w-100" style="min-height: 500px; padding-top:60px;">
       <router-view/>
     </div>
     <the-footer/>
