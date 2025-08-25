@@ -52,7 +52,7 @@
       </div>
 
       <div class="d-flex justify-content-center">
-        <router-link to="/product" class="btn-orange mb-5 font-size-12" >بیشتر بدانید</router-link>
+        <router-link to="/product" class="btn-orange mb-5 "  style="padding-top: 12px" >بیشتر بدانید</router-link>
       </div>
     </div>
 
