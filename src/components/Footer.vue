@@ -195,11 +195,5 @@ export default {
 </script>
 
 <style scoped>
-.btn-outline-light:not(:hover) {
-  background-color: rgba(255, 255, 255, 0.15);
-}
 
-.btn-outline-light span {
-  font-size: 11px !important;
-}
 </style>

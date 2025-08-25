@@ -64,10 +64,11 @@ body, html {
     font-size: 14px !important;
 }
 
-.mt50{
+.mt50 {
 
 }
-.main-carousel{
+
+.main-carousel {
     width: 100%;
     margin-top: -60px;
 }
@@ -272,10 +273,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=number] {
     -moz-appearance: textfield !important;
-}
-
-.font-size-12 {
-    font-size: 12px
 }
 
 
@@ -614,9 +611,10 @@ button:focus {
     height: 100vh;
     z-index: 100000;
     transition: all 3s ease;
-    background:#000000;
+    background: #000000;
     /*background: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.90) 70%, transparent 100%);*/
 }
+
 .loader-inner {
     /*position: relative;*/
     width: 100vw;
@@ -625,16 +623,17 @@ button:focus {
     transition: all 3s ease;
     background: url('/img/Hive.svg') center bottom no-repeat;
     background-size: cover;
-    opacity: 0.4;
+    opacity: 0.2;
 }
 
 .loader-center {
     position: fixed;
     top: 0;
-    left:calc(50vw - 75px);
+    left: calc(50vw - 75px);
     filter: drop-shadow(1px 1px 12px rgba(255, 255, 255, 0.5));
     transition: all 5s ease;
 }
+
 .loader {
     width: 150px;
     height: 38px;
@@ -649,12 +648,42 @@ button:focus {
     overflow: hidden !important;
 }
 
-.img-link{
+.img-link {
     cursor: zoom-in !important;
 }
-.about-img-456{
+
+.about-img-456 {
     height: 500px !important
 }
+
+.home-colabs-wrapper {
+    background: url('/img/bg3.png') center center no-repeat;
+    background-size: cover;
+}
+
+.home-colabs-inner {
+    backdrop-filter: blur(15px);
+    /*font-size: 14px;*/
+}
+
+.home-colabs-p {
+    font-weight: bold;
+    /*font-size: 13px;*/
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: justify;
+}
+.font-size-12 {
+    /*font-size: 16px;*/
+}
+.font-size-14 {
+    /*font-size: 16px;*/
+}
+
+.btn-outline-light:not(:hover) {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
 @media (min-width: 700px) {
     .main_title {
         font-family: 'IranYekanExtraBold' !important;
@@ -687,12 +716,41 @@ button:focus {
 
     }
 }
-@media(max-width: 700px){
-    .main-carousel{
+
+@media (max-width: 700px) {
+
+    .btn-outline-light span {
+        font-size: 11px !important;
+    }
+    .font-size-12 {
+        font-size: 12px;
+    }
+.font-size-13 {
+        font-size: 13px;
+    }
+
+    .font-size-14 {
+        font-size: 14px;
+    }
+    .font-size-14 {
+        font-size: 15px;
+    }
+    .home-colabs-inner {
+        font-size: 14px;
+    }
+
+    .home-colabs-p {
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+
+    .main-carousel {
         /*margin-top: 50px;*/
         width: 100%;
     }
-    .about-img-456{
+
+    .about-img-456 {
         height: 190px !important;
         overflow-x: hidden;
     }
@@ -715,6 +773,7 @@ button:focus {
     }
 
 }
+
 @-webkit-keyframes circle {
     0% {
         transform: translate(-5px, -100%) rotate(0deg); /* Moves to left side */
@@ -734,6 +793,7 @@ button:focus {
     }
 
 }
-.image-section{
+
+.image-section {
     overflow-x: hidden !important;
 }
