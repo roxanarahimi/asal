@@ -14,7 +14,7 @@ body, html {
 /*}*/
 .main_title {
     font-family: 'IranYekanExtraBold' !important;
-    font-size: 45px;
+    font-size: 22px;
 }
 
 .main_title img {
@@ -673,9 +673,11 @@ button:focus {
     padding-left: 50px;
     text-align: justify;
 }
+
 .font-size-12 {
     /*font-size: 16px;*/
 }
+
 .font-size-14 {
     /*font-size: 16px;*/
 }
@@ -687,7 +689,7 @@ button:focus {
 @media (min-width: 700px) {
     .main_title {
         font-family: 'IranYekanExtraBold' !important;
-        font-size: 45px !important;
+        font-size: 22px !important;
     }
 
     .main_title img {
@@ -722,19 +724,23 @@ button:focus {
     .btn-outline-light span {
         font-size: 11px !important;
     }
+
     .font-size-12 {
         font-size: 12px;
     }
-.font-size-13 {
+
+    .font-size-13 {
         font-size: 13px;
     }
 
     .font-size-14 {
         font-size: 14px;
     }
+
     .font-size-14 {
         font-size: 15px;
     }
+
     .home-colabs-inner {
         font-size: 14px;
     }
@@ -755,6 +761,7 @@ button:focus {
         overflow-x: hidden;
     }
 }
+
 @media (max-width: 1190px) {
     .p4 {
         display: none;
@@ -794,6 +801,11 @@ button:focus {
 
 }
 
-.image-section {
+.img-section {
     overflow-x: hidden !important;
+    text-align: center !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
 }

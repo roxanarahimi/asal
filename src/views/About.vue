@@ -16,7 +16,7 @@
           هزار متر مربع در استان البرز، با اتکا به بیش از 2100 نیروی متخصص فعالیت دارند.
         </p>
       </div>
-      <div class="img-section px-lg-4">
+      <div class="img-section px-lg-4 ">
         <img class="col-12 col-lg-6 mx-auto my-3 " src="/img/about1.jpg" alt="">
       </div>
       <div class="px-4 mt-4">
@@ -36,9 +36,9 @@
         </p>
 
       </div>
-      <div class="img-section row justify-content-lg-between">
-        <img class="col-12 col-lg-5 mx-auto my-3 " src="/img/about2.jpg" alt="">
-        <img class="col-12 col-lg-5 mx-auto my-3 " src="/img/about3.jpg" alt="">
+      <div class="img-section row justify-content-lg-center">
+        <img class="col-12 col-lg-6 mx-auto my-3 " src="/img/about2.jpg" alt="">
+        <img class="col-12 col-lg-6 mx-auto my-3 " src="/img/about3.jpg" alt="">
       </div>
 
 

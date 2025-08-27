@@ -137,7 +137,8 @@
           2_ محصول را بر روی قاب های کندو قرار دهید.
         </p>
         <div class="img-section">
-          <img class="col-12 col-lg-6 mx-auto my-3 " src="/img/product4.jpg" alt="">
+          <img class="col-12 col-lg-3 mx-auto my-3 " src="/img/product4.png"
+               style="background-color: white; border: 8px solid gold; overflow: hidden; border-radius: 20px" alt="">
         </div>
         <p> به وسیله دوربین گوشی همراه خود ، QR کد را اسکن و کلیپ نحوه صحیح مصرف محصول را مشاهده نمائید .</p>
         <div class="img-section">
@@ -203,7 +204,7 @@
       </div>
       <div class="row text-lg-center justify-content-lg-center">
         <p class="text-lg-center mt-lg-3">خوراک ساده زنبور عسل</p>
-        <div class="col-12 col-lg-3 img-section ">
+        <div class="col-12 col-lg-3  ">
           <img class=" mx-auto my-3 " src="/img/product10.jpg" alt="">
           <p class="text-center">
             حجم 1000 گرم
@@ -211,7 +212,7 @@
             مناسب کلنی های قوی و بیشتر از 5 قاب
           </p>
         </div>
-        <div class="col-12 col-lg-3 img-section">
+        <div class="col-12 col-lg-3 ">
           <img class="mx-auto my-3 " src="/img/product11.jpg" alt="">
           <p class="text-center">
             حجم 590 گرم
@@ -288,9 +289,10 @@
         <br>
 
 
-        <a class="text-info" href="/faq">سوال ندارید؟ از ما بپرسید</a>
+        <a class="text-info" @click="scroll('contact')">سوال دارید؟ از ما بپرسید</a>
         <br>
         در ادامه بخوانید
+        <br>
         <a class="text-info" href="/faq">سوالات متداول</a>
         زنبورداران از کوپابی چیست؟
 

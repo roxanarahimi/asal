@@ -8,10 +8,8 @@
       <div class="my-padding row justify-content-around">
         <div class="col-lg-4 d-lg-grid">
           <div class="align-self-lg-center">
-            <h1 class="mt-2 mb-0  main_title my-color">
-              <img src="/img/Beelogo.png" class="mb-0" alt="">
-              ، آپی</h1>
-            <h1 class=" main_title my-color mb-3">پاســتای ایرانی</h1>
+            <h1 class="mt-2 mb-0  main_title my-color"><img src="/img/Beelogo.png" class="mb-0" alt=""></h1>
+            <h1 class=" main_title my-color mb-3">آپی پاستای ایرانی</h1>
             <div class="pb-5" style="background: url('/img/s1bg.png') center center no-repeat; background-size: cover;">
               <p class="col-8 font-size-15">
                 کوپابی با هدف تولید تغذیه کامل زنبور عسل، مشابه نمونه‌ وارداتی تأسیس شد. ما با تکیه بر دانش فنی گروه آماده

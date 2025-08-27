@@ -34,7 +34,7 @@
                 <div class="row">
 
                   <div class="col-12 mb-2 px-1">
-                    <label for="">پیام</label>
+                    <label for="">پیام یا سوال</label>
                     <textarea id="" class="form-control rounded-0 "></textarea>
                   </div>
                   <div class="col-12 mb-2 px-1">
@@ -50,7 +50,7 @@
                     <input id="" type="text" class="form-control rounded-0">
                   </div>
                   <div class="col-6 mb-2 px-1">
-                    <label for="">تلفن</label>
+                    <label for="">تلفن همراه</label>
                     <input id="" type="text" class="form-control rounded-0 en">
                   </div>
 
