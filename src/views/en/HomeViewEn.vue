@@ -174,7 +174,7 @@ import { useHead } from '@vueuse/head'
 
 export default {
   components: {ContactForm, MainCarousel,ContentsCarousel},
-  name: 'HomeView',
+  name: 'HomeViewEn',
 
 
 }

@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@vueform/multiselect": "^2.6.6",
+    "@vueuse/head": "^2.0.0",
     "axios": "^1.6.2",
     "core-js": "^3.8.3",
     "jquery": "^3.7.1",

@@ -210,7 +210,7 @@ import {useStore} from "vuex";
 
 
 export default {
-  name: "Register",
+  name: "RegisterEn",
   components: {dropZone, },//Multiselect
   setup() {
 

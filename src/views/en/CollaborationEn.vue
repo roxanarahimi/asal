@@ -274,7 +274,7 @@ import dropZone from "@/components/DropZone";
 
 
 export default {
-  name: "Collaboration",
+  name: "CollaborationEn",
   components: {dropZone,},//Multiselect
   setup() {
     const store = useStore();

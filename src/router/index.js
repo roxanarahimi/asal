@@ -1,18 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
+
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
@@ -26,34 +23,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "faq" */ '../views/Faq.vue')
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
-  },
-  {
-    path: '/profile',
-    name: 'profile',
-    component: () => import(/* webpackChunkName: "profile" */ '../views/Profile.vue')
-  },
-  {
-    path: '/products',
-    name: 'products',
-    component: () => import(/* webpackChunkName: "products" */ '../views/Products.vue')
-  },
-  {
-    path: '/cart',
-    name: 'cart',
-    component: () => import(/* webpackChunkName: "cart" */ '../views/Cart.vue')
-  },
-  {
     path: '/register',
     name: 'register',
     component: () => import(/* webpackChunkName: "register" */ '../views/Register.vue')
-  },
-  {
-    path: '/orders',
-    name: 'orders',
-    component: () => import(/* webpackChunkName: "orders" */ '../views/Orders.vue')
   },
   {
     path: '/participants',
@@ -68,6 +40,48 @@ const routes = [
     path: '/complane',
     name: 'complane',
     component: () => import(/* webpackChunkName: "complane" */ '../views/Complane.vue')
+  },
+
+
+    //*************************************English*Version********************************************/
+  {
+    path: '/en/',
+    name: 'homeEn',
+    component: () => import(/* webpackChunkName: "homeEn" */ '../views/en/HomeViewEn.vue')
+  },
+  {
+    path: '/en/about',
+    name: 'aboutEn',
+    component: () => import(/* webpackChunkName: "aboutEn" */ '../views/en/AboutEn.vue')
+  },
+  {
+    path: '/en/product',
+    name: 'productEn',
+    component: () => import(/* webpackChunkName: "productEn" */ '../views/en/ProductEn.vue')
+  },
+  {
+    path: '/en/faq',
+    name: 'faqEn',
+    component: () => import(/* webpackChunkName: "faqEn" */ '../views/en/FaqEn.vue')
+  },
+  {
+    path: '/en/register',
+    name: 'register',
+    component: () => import(/* webpackChunkName: "registerEn" */ '../views/en/RegisterEn.vue')
+  },
+  {
+    path: '/en/participants',
+    name: 'participantsEn',
+    component: () => import(/* webpackChunkName: "participantsEn" */ '../views/en/ParticipantsEn.vue')
+  }, {
+    path: '/en/collaboration',
+    name: 'collaborationEn',
+    component: () => import(/* webpackChunkName: "collaborationEn" */ '../views/en/CollaborationEn.vue')
+  },
+  {
+    path: '/en/complane',
+    name: 'complaneEn',
+    component: () => import(/* webpackChunkName: "complaneEn" */ '../views/en/ComplaneEn.vue')
   }
 ]
 

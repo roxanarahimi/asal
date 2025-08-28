@@ -106,7 +106,7 @@ export default {
     }
 
     onMounted(() => {
-      getProvinces();
+      // getProvinces();
     })
 
     return {

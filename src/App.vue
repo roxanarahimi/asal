@@ -10,12 +10,6 @@
     <the-footer/>
   </div>
 </template>
-
-<style>
-
-
-</style>
-
 <script>
 
 import FloatingBtns from '@/components/FloatingBtns.vue'
@@ -23,6 +17,7 @@ import theMenu from '@/components/TheMenu.vue'
 import theFooter from "@/components/Footer";
 import {useStore} from "vuex";
 import Loader from "@/components/Loader";
+import {useRoute} from "vue-router/dist/vue-router";
 
 
 export default {
@@ -67,22 +62,18 @@ export default {
     // }
   },
   setup() {
+    const route = useRoute();
 
     const store = useStore();
     const url = store.state.panelUrl;
 
     return {
-      store, url
+      store, url, route
     }
   }
 }
 </script>
 <style>
 
-/*body, html {*/
-/*  font-family: IranSans !important;*/
-/*}*/
-/*.main_title {*/
-/*  font-family: 'MjFlowBold' !important;*/
-/*}*/
+
 </style>
