@@ -1,14 +1,19 @@
 <template>
-  <div id="carouselExampleAutoplaying" class="carousel carousel-dark slide main-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+  <div id="carouselExampleAutoplaying" class="carousel carousel-light slide main-carousel " data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-inner">
-      <div class="carousel-item active w-100" >
-        <a href="/img/banner3.jpg" class="img-link">
-          <img src="/img/banner3.jpg" class="d-block w-100" alt="copabee">
+      <div class="carousel-item active" >
+        <a href="/img/banner1.png" class="img-link">
+          <img src="/img/banner1.png" class="" alt="copabee">
         </a>
       </div>
-      <div class="carousel-item w-100">
-        <a href="/img/banner2.jpg" class="img-link">
-          <img src="/img/banner2.jpg" class="d-block w-100" alt="copabee">
+     <div class="carousel-item" >
+        <a href="/img/banner3.jpg" class="img-link">
+          <img src="/img/banner3.jpg" class="" alt="copabee">
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="/img/banner2.jpg" class="vh-100">
+          <img src="/img/banner2.jpg" class="" alt="copabee">
         </a>
       </div>
     </div>
@@ -30,5 +35,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

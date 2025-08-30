@@ -544,9 +544,6 @@ button:focus {
     opacity: 0;
 }
 
-.carousel-item:hover .eye {
-    opacity: 1;
-}
 
 .floating-buttons-wrapper {
     z-index: 2;
@@ -717,8 +714,23 @@ button:focus {
 
     }
 }
+.carousel-item {
+    height: calc(100vh - 70px);
+    overflow: hidden;
+}
+.carousel-item > a > img {
+    height: calc(100vh - 70px);
+    margin: 0 auto;
+
+}
 
 @media (max-width: 700px) {
+    .carousel-item , .carousel-item > a > img{
+        width: 100% ;
+        height:auto;
+
+    }
+
 
     .btn-outline-light span {
         font-size: 11px !important;
@@ -808,3 +820,4 @@ button:focus {
     flex-wrap: wrap !important;
     justify-content: center !important;
 }
+

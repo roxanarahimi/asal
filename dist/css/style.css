@@ -544,9 +544,6 @@ button:focus {
     opacity: 0;
 }
 
-.carousel-item:hover .eye {
-    opacity: 1;
-}
 
 .floating-buttons-wrapper {
     z-index: 2;
@@ -807,4 +804,14 @@ button:focus {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
+}
+
+.carousel-item {
+    height: calc(100vh - 70px);
+    overflow: hidden;
+}
+.carousel-item > a > img {
+    height: calc(100vh - 70px);
+    margin: 0 auto;
+
 }
