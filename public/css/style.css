@@ -544,6 +544,9 @@ button:focus {
     opacity: 0;
 }
 
+.bg-gray{
+    background-color: #3a3a3a;
+}
 
 .floating-buttons-wrapper {
     z-index: 2;

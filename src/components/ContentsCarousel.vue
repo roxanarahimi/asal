@@ -1,106 +1,109 @@
 <template>
-  <div class="px-5 mx-auto mt-5 contents-carousel">
-    <div class="d-none d-lg-block mb-5">
-      <Carousel class="" :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
-                :transition="500">
-        <slide v-for="(item,index) in contents" :key="index">
-          <router-link class="p-2" :to="'/content/'+item.title2">
-            <div class="w-100 h-100" style="margin: 1px">
-              <div class="card bg-light">
-                <div class="card-body">
-                  <img :src="item.image" alt="" class="card-img">
-                  <h3 class="mt-3 text-start">{{ item.title }}</h3>
-                  <small class="d-block text-end">1404/05/03</small>
-                </div>
-              </div>
-            </div>
-
-          </router-link>
-        </slide>
-        <template #addons>
-          <navigation/>
-          <!--          <pagination />-->
-        </template>
-      </carousel>
-    </div>
-    <div class="d-none d-md-block d-lg-none mb-5">
-      <Carousel class="" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
-                :transition="500">
-        <slide v-for="(item,index) in contents" :key="index">
-          <router-link class="p-1" :to="'/content/'+item.title2">
-            <div class="w-100 h-100" style="margin: 1px">
-              <div class="card bg-light">
-                <div class="card-body">
-                  <img :src="item.image" alt="" class="card-img">
-                  <h3 class="mt-3 text-start">{{ item.title }}</h3>
-                  <small class="d-block text-end">1404/05/03</small>
-                </div>
-              </div>
-            </div>
-
-          </router-link>
-        </slide>
-        <template #addons>
-          <navigation/>
-          <!--          <pagination />-->
-        </template>
-      </carousel>
-    </div>
-    <div class="d-none d-sm-block d-md-none mb-5">
-      <Carousel class="" :itemsToShow="2.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
-                :transition="500">
-        <slide v-for="(item,index) in contents" :key="index">
-          <router-link class="p-1" :to="'/content/'+item.title2">
-            <div class="w-100 h-100" style="margin: 1px">
-              <div class="card bg-light">
-                <div class="card-body">
-                  <img :src="item.image" alt="" class="card-img">
-                  <h3 class="mt-3 text-start">{{ item.title }}</h3>
-                  <small class="d-block text-end">1404/05/03</small>
-                </div>
-              </div>
-            </div>
-
-          </router-link>
-        </slide>
-        <template #addons>
-          <navigation/>
-          <!--          <pagination />-->
-        </template>
-      </carousel>
-    </div>
-    <div class="d-sm-none   mb-5">
-      <Carousel class="" :itemsToShow="1" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'" :transition="500">
-        <slide v-for="(item,index) in contents" :key="index">
-          <router-link class="" :to="'/content/'+item.title2">
-            <div class="w-100 h-100" style="margin: 1px">
-              <div class="card border-0 bg-light ms-1">
-                <div class="card-body">
-                  <img :src="item.image" alt="" class="card-img">
-                  <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
-                  <div class="d-flex justify-content-between text-black-50" style="font-size: 13px">
+  <div v-if="data?.length" :class="{'bg-black':category==1,'bg-gray py-3': category==2}">
+    <h1 class="my-title my-4 text-center fw-bold my-font my-color" >{{ title}}</h1>
+    <div class="px-5 mx-auto mt-5 contents-carousel">
+      <div class="d-none d-lg-block mb-5">
+        <Carousel class="" :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
+                  :transition="500">
+          <slide v-for="(item,index) in data" :key="index">
+            <router-link class="p-2" :to="'/content/'+item.slug">
+              <div class="w-100 h-100" style="margin: 1px">
+                <div class="card bg-light">
+                  <div class="card-body">
+                    <img :src="panelUrl+item.image" alt="" class="card-img">
+                    <h3 class="mt-3 text-start">{{ item.title }}</h3>
                     <small class="d-block text-end">1404/05/03</small>
-                    <div class="d-flex" dir="rtl">
-                      <small class="d-block me-2"><i class="bi bi-hand-thumbs-up-fill"></i> 181</small>
-                      <small class="d-block"><i class="bi bi-eye-fill"></i> 325</small>
-                    </div>
-
                   </div>
                 </div>
               </div>
-            </div>
 
-          </router-link>
-        </slide>
-        <template #addons>
-          <navigation/>
-          <!--          <pagination />-->
-        </template>
-      </carousel>
+            </router-link>
+          </slide>
+          <template #addons>
+            <navigation/>
+            <!--          <pagination />-->
+          </template>
+        </carousel>
+      </div>
+      <div class="d-none d-md-block d-lg-none mb-5">
+        <Carousel class="" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
+                  :transition="500">
+          <slide v-for="(item,index) in contents" :key="index">
+            <router-link class="p-1" :to="'/content/'+item.slug">
+              <div class="w-100 h-100" style="margin: 1px">
+                <div class="card bg-light">
+                  <div class="card-body">
+                    <img :src="item.image" alt="" class="card-img">
+                    <h3 class="mt-3 text-start">{{ item.title }}</h3>
+                    <small class="d-block text-end">1404/05/03</small>
+                  </div>
+                </div>
+              </div>
 
-    </div><!-- -->
+            </router-link>
+          </slide>
+          <template #addons>
+            <navigation/>
+            <!--          <pagination />-->
+          </template>
+        </carousel>
+      </div>
+      <div class="d-none d-sm-block d-md-none mb-5">
+        <Carousel class="" :itemsToShow="2.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
+                  :transition="500">
+          <slide v-for="(item,index) in contents" :key="index">
+            <router-link class="p-1" :to="'/content/'+item.slug">
+              <div class="w-100 h-100" style="margin: 1px">
+                <div class="card bg-light">
+                  <div class="card-body">
+                    <img :src="item.image" alt="" class="card-img">
+                    <h3 class="mt-3 text-start">{{ item.title }}</h3>
+                    <small class="d-block text-end">1404/05/03</small>
+                  </div>
+                </div>
+              </div>
+
+            </router-link>
+          </slide>
+          <template #addons>
+            <navigation/>
+            <!--          <pagination />-->
+          </template>
+        </carousel>
+      </div>
+      <div class="d-sm-none   mb-5">
+        <Carousel class="" :itemsToShow="1" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'" :transition="500">
+          <slide v-for="(item,index) in contents" :key="index">
+            <router-link class="" :to="'/content/'+item.slug">
+              <div class="w-100 h-100" style="margin: 1px">
+                <div class="card border-0 bg-light ms-1">
+                  <div class="card-body">
+                    <img :src="item.image" alt="" class="card-img">
+                    <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
+                    <div class="d-flex justify-content-between text-black-50" style="font-size: 13px">
+                      <small class="d-block text-end">1404/05/03</small>
+                      <div class="d-flex" dir="rtl">
+                        <small class="d-block me-2"><i class="bi bi-hand-thumbs-up-fill"></i> 181</small>
+                        <small class="d-block"><i class="bi bi-eye-fill"></i> 325</small>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </router-link>
+          </slide>
+          <template #addons>
+            <navigation/>
+            <!--          <pagination />-->
+          </template>
+        </carousel>
+
+      </div><!-- -->
+    </div>
+
   </div>
-
 </template>
 
 <script>
@@ -117,33 +120,24 @@ export default {
     Pagination,
     Navigation,
   },
-  props: ['name'],
+  props: ['title','category'],
   setup(_props) {
 
     // const data = ref([]);
     const store = useStore();
     // const panelUrl = store.state.panelUrl;
-    const panelUrl = '';
-    const contents = [
-      {id: 1, image: '/img/product3.jpg', title: 'اخبار شماره یک', title2: 'اخبار_شماره_یک'},
-      {id: 1, image: '/img/product3.jpg', title: 'اخبار شماره دو', title2: 'اخبار_شماره_یک'},
-      {id: 1, image: '/img/product3.jpg', title: 'اخبار شماره سه', title2: 'اخبار_شماره_یک'},
-      {id: 1, image: '/img/product3.jpg', title: 'اخبار شماره چهار', title2: 'اخبار_شماره_یک'},
-      {id: 1, image: '/img/product3.jpg', title: 'اخبار شماره پنج', title2: 'اخبار_شماره_یک'},
-      {id: 1, image: '/img/product3.jpg', title: 'اخبار شماره شش', title2: 'اخبار_شماره_یک'},
-
-    ] // =ref([]);
+    const panelUrl = 'http://localhost:8000/storage/';
+    const contents = ref([]);
     const getContents = () => {
-      // _props.name
-      //axios...
+      store.commit('getContents',_props.category);
     }
 
     onMounted(() => {
       getContents();
     });
     return {
+      data: computed(()=>store.state.contents),
       store, panelUrl, contents, getContents,
-      // data: computed(()=>store.state.Contents),
     }
   }
 }
@@ -220,10 +214,14 @@ export default {
 :deep(.carousel__prev),
 :deep(.carousel__next) {
   cursor: pointer;
-  background-color: #F7941D !important;
+  /*background-color: #8f8f8f;*/
+  background-color: #F7941D;
   color: white !important;
   border-radius: 50% !important;
+  /*filter: drop-shadow(1px 1px 10px rgba(255, 255, 255, 1));*/
+
 }
+
 
 :deep(.carousel__prev) {
   left: -30px !important;

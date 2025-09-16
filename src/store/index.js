@@ -12,40 +12,32 @@ export default createStore({
     // modules: {
     // }
     state: {
-        panelUrl: 'https://panel.asal.webagent.ir',
-        productsCats: null,
-        products: null,
-        product: null,
+        panelUrl: 'http://localhost:8000',
+        // panelUrl: 'https://dev-amadeh.ir:8084',
+        contents: null,
+        content: null,
     },
     mutations: {
-        getProductCats(state) {
-            axios.get(state.panelUrl + '/api/category/product')
+        getContents(state,id) {
+            axios.get(state.panelUrl + '/api/get/contents/'+id)
                 .then((response) => {
-                    state.productsCats = response.data;
+                    state.contents = response.data;
                 }).catch();
         },
-        getProducts(state, id) {
-            axios.get(state.panelUrl + '/api/product?cat=' + id)
+        getContent(state, slug) {
+            axios.get(state.panelUrl + '/api/get/content/' + slug)
                 .then((response) => {
-                    state.products = response.data;
+                    state.content = response.data;
                 }).catch();
         },
-        getProduct(state, id) {
-            axios.get(state.panelUrl + '/api/product/' + id)
-                .then((response) => {
-                    state.product = response.data.product;
-                }).catch();
-        }
+
     },
     actions: {
-        getProductCats(context) {
-            context.commit('getProductCats');
+        getContents(context) {
+            context.commit('getContents');
         },
-        getProducts(context) {
-            context.commit('getProducts');
-        },
-        getProduct(context) {
-            context.commit('getProduct');
+        getContent(context) {
+            context.commit('getContent');
         },
     }
 })

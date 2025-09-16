@@ -41,6 +41,17 @@ const routes = [
     name: 'complane',
     component: () => import(/* webpackChunkName: "complane" */ '../views/Complane.vue')
   },
+  {
+    path: '/contents',
+    name: 'contents',
+    component: () => import(/* webpackChunkName: "contents" */ '../views/Contents.vue')
+  },
+  {
+    path: '/content/:slug',
+    name: 'content',
+    params: true,
+    component: () => import(/* webpackChunkName: "content" */ '../views/Content.vue')
+  },
 
 
     //*************************************English*Version********************************************/
