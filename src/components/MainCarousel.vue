@@ -1,8 +1,8 @@
 <template>
   <div id="carouselExampleAutoplaying" class="carousel carousel-light slide main-carousel " data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-inner">
-      <div v-for="(slide,index) in data" :key="index" class="carousel-item">
-        <a :href="slide.src" class="vh-100">
+      <div v-for="(slide,index) in data" class="carousel-item" :class="{'active':index===0}" >
+        <a :href="slide.src" class="img-link">
           <img :src="slide.src" class="" alt="copabee">
         </a>
       </div>
@@ -27,9 +27,10 @@ export default {
       {src:"/img/banner1.png"},
       {src:"/img/banner3.jpg"},
       {src:"/img/banner2.jpg"},
-    ]
-
-    return{ data}
+    ];
+    return {
+      data
+    }
   }
 }
 </script>

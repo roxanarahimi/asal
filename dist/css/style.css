@@ -544,6 +544,9 @@ button:focus {
     opacity: 0;
 }
 
+.bg-gray{
+    background-color: #3a3a3a;
+}
 
 .floating-buttons-wrapper {
     z-index: 2;
@@ -714,8 +717,23 @@ button:focus {
 
     }
 }
+.carousel-item {
+    height: calc(100vh - 70px);
+    overflow: hidden;
+}
+.carousel-item > a > img {
+    height: calc(100vh - 70px);
+    margin: 0 auto;
+
+}
 
 @media (max-width: 700px) {
+    .carousel-item , .carousel-item > a > img{
+        width: 100% ;
+        height:auto;
+
+    }
+
 
     .btn-outline-light span {
         font-size: 11px !important;
@@ -806,12 +824,3 @@ button:focus {
     justify-content: center !important;
 }
 
-.carousel-item {
-    height: calc(100vh - 70px);
-    overflow: hidden;
-}
-.carousel-item > a > img {
-    height: calc(100vh - 70px);
-    margin: 0 auto;
-
-}
