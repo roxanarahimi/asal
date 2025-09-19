@@ -1,19 +1,9 @@
 <template>
   <div id="carouselExampleAutoplaying" class="carousel carousel-light slide main-carousel " data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-inner">
-      <div class="carousel-item active" >
-        <a href="/img/banner1.png" class="img-link">
-          <img src="/img/banner1.png" class="" alt="copabee">
-        </a>
-      </div>
-     <div class="carousel-item" >
-        <a href="/img/banner3.jpg" class="img-link">
-          <img src="/img/banner3.jpg" class="" alt="copabee">
-        </a>
-      </div>
-      <div class="carousel-item">
-        <a href="/img/banner2.jpg" class="vh-100">
-          <img src="/img/banner2.jpg" class="" alt="copabee">
+      <div v-for="(slide,index) in data" :key="index" class="carousel-item">
+        <a :href="slide.src" class="vh-100">
+          <img :src="slide.src" class="" alt="copabee">
         </a>
       </div>
     </div>
@@ -30,7 +20,17 @@
 
 <script>
 export default {
-  name: "MainCarousel"
+  name: "MainCarousel",
+  setup(){
+    const data = [
+      {src:"/img/s5.jpg"},
+      {src:"/img/banner1.png"},
+      {src:"/img/banner3.jpg"},
+      {src:"/img/banner2.jpg"},
+    ]
+
+    return{ data}
+  }
 }
 </script>
 

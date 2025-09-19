@@ -133,7 +133,7 @@ export default {
     }
 
     onMounted(() => {
-      getContents();
+      // getContents();
     });
     return {
       data: computed(()=>store.state.contents),
