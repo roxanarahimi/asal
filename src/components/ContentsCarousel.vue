@@ -1,5 +1,5 @@
 <template>
-  <div v-if="data?.length" :class="{'bg-black':category==1,'bg-gray py-3': category==2}">
+  <div v-if="data?.length && data?.length>4" :class="{'bg-black':category==1,'bg-gray py-3': category==2}">
     <h1 class="my-title my-4 text-center fw-bold my-font my-color" >{{ title}}</h1>
     <div class="px-5 mx-auto mt-5 contents-carousel">
       <div class="d-none d-lg-block mb-5">
@@ -102,7 +102,6 @@
 
       </div><!-- -->
     </div>
-
   </div>
 </template>
 
@@ -279,4 +278,5 @@ export default {
   width: 100% !important;
   height: 100% !important;
 }
+
 </style>

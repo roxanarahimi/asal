@@ -42,7 +42,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "complane" */ '../views/Complane.vue')
   },
   {
-    path: '/contents',
+    path: '/contents/:id',
     name: 'contents',
     component: () => import(/* webpackChunkName: "contents" */ '../views/Contents.vue')
   },
