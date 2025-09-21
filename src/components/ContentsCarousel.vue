@@ -10,7 +10,7 @@
               <div class="w-100 h-100" style="margin: 1px">
                 <div class="card bg-light">
                   <div class="card-body">
-                    <img :src="panelUrl+item.image" alt="" class="card-img">
+                    <img :src="serverUrl+item.image" alt="" class="card-img">
                     <h3 class="mt-3 text-start">{{ item.title }}</h3>
                     <small class="d-block text-end">1404/05/03</small>
                   </div>
@@ -122,12 +122,9 @@ export default {
   },
   props: ['title','category'],
   setup(_props) {
-
-    // const data = ref([]);
     const store = useStore();
-    // const panelUrl = store.state.panelUrl;
-    const panelUrl = 'http://localhost:8000/storage/';
-    const contents = ref([]);
+    const serverUrl = store.state.serverUrl;
+    const storageUrl = store.state.storageUrl;
     const getContents = () => {
       store.commit('getContents',_props.category);
     }
@@ -137,7 +134,7 @@ export default {
     });
     return {
       data: computed(()=>store.state.contents),
-      store, panelUrl, contents, getContents,
+      store, storageUrl, serverUrl, getContents,
     }
   }
 }
