@@ -86,7 +86,7 @@ export default createStore({
             const headers = await this.dispatch('setFetchHeaders');
 
             try {
-                const response = await fetch(state.serverUrl + '/api/get/banners/', {
+                const response = await fetch(state.serverUrl + '/api/get/banners', {
                     method: 'GET',
                     headers: headers,
                 });
