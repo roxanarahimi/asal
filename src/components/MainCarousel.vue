@@ -51,8 +51,15 @@ export default {
     const store = useStore();
     const serverUrl = store.state.serverUrl;
     const storageUrl = store.state.storageUrl;
-    const getBanners = () => {
-      store.commit('getBanners');
+    const getBanners = async () => {
+      // await store.commit('getBanners');
+
+        try {
+          await store.dispatch('getBanners');
+        } catch (error) {
+          console.error('API call failed:', error);
+        }
+
     }
 
     onMounted(() => {

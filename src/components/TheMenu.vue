@@ -2,23 +2,25 @@
   <div class="d-none d-lg-block my-font fw-bold w-100 bg-transparent text-light"
        style="position: absolute;top:0;left:0; font-size: 16px !important; z-index:1000">
     <div class="d-flex justify-content-between w-100">
-      <nav class="navbar navbar-expand-sm bg-transparent w-100 px-5">
-        <div class="container-fluid px-5  my-color">
-          <a class="navbar-brand" href="#">کوپابی</a>
+      <nav class="navbar navbar-expand-sm bg-transparent w-100 pe-5 ps-3">
+        <div class="container-fluid pe-5 ps-3  my-color">
+          <router-link to="/" class="navbar-brand mb-1" >کوپابی</router-link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                   aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse my-2" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2">
-              <li v-for="(item,index) in links" :key="item" class="nav-item px-4 " :class="{'dropdown': item.subsets}">
+            <ul class="navbar-nav me-auto ">
+              <li v-for="(item,index) in links" :key="item" class="nav-item px-1 px-xl-3" :class="{'dropdown': item.subsets}">
                 <router-link :to="item.link" class="nav-link my-font text-white"
                    :class="{'active-lg': $route.name === item.name,'dropdown-toggle': item.subsets}"
                    aria-current="page">{{ item.title }}</router-link>
                 <ul class="dropdown-m my-border rounded bg-black w-auto px-4 py-2 text-start " v-if="item.subsets"
                     style="list-style: none !important; position: absolute !important; font-size: 14px">
-                  <li v-for="sub in item.subsets"><a class="dropdown-item mb-2 text-white" href="#">{{ sub.title }}</a></li>
+                  <li v-for="sub in item.subsets">
+                    <a class="dropdown-item mb-2 text-white" >{{ sub.title }}</a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -76,6 +78,7 @@
                 <div class="d-flex">
                   <div class="text-start " style="width: 15px; height: 15px;padding-right: 1px ; margin-left: 2px">
                     <img v-if="$route.name == item.name" src="/img/dotB.png" class="" style="width: 80%" alt="">
+                    <img :data-name="$route.params.id" v-else-if="$route.name+'-'+$route.params.id === item.name" src="/img/dotB.png" class="" style="width: 80%" alt="">
                   </div>
                   <p :id="item.name+'submenu'" class="m-0 cursor-pointer" data-flag="0"
                      @click="subMenuToggle(item.name+'submenu')">{{ item.title }}</p>
@@ -261,7 +264,9 @@ export default {
 .navbar-brand {
   color: inherit !important;
 }
-
+a{
+  white-space: nowrap;
+}
 .dropdown-m {
   opacity: 0;
   transition: 1s ease;

@@ -44,6 +44,7 @@ const routes = [
   {
     path: '/contents/:id',
     name: 'contents',
+    params:true,
     component: () => import(/* webpackChunkName: "contents" */ '../views/Contents.vue')
   },
   {
