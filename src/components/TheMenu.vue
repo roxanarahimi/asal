@@ -4,14 +4,14 @@
     <div class="d-flex justify-content-between w-100">
       <nav class="navbar navbar-expand-sm bg-transparent w-100 pe-5 ps-3">
         <div class="container-fluid pe-5 ps-3  my-color">
-          <router-link to="/" class="navbar-brand mb-1" >کوپابی</router-link>
+          <router-link to="/" class="navbar-brand" >کوپابی</router-link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                   aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse my-2" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto ">
+          <div class="collapse navbar-collapse mb-0" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mt-1">
               <li v-for="(item,index) in links" :key="item" class="nav-item px-1 px-xl-3" :class="{'dropdown': item.subsets}">
                 <router-link :to="item.link" class="nav-link my-font text-white"
                    :class="{'active-lg': $route.name === item.name,'dropdown-toggle': item.subsets}"

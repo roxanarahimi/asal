@@ -717,14 +717,13 @@ button:focus {
 
     }
 }
-.carousel-item {
-    height: calc(100vh - 70px);
+.carousel-item, .banner {
+    height: calc(100vh - 72px);
     overflow: hidden;
 }
-.carousel-item > a > img {
-    height: calc(100vh - 70px);
+.carousel-item > a > img,.banner > a > img {
+    height: calc(100vh - 72px);
     margin: 0 auto;
-
 }
 
 @media (max-width: 700px) {

@@ -2,9 +2,9 @@
   <div class="home">
     <!--    <img src="/img/copabeeExport.png"  width="100%" height="auto" alt="">-->
 
+    <main-carousel class="mb-3 w-100"/>
 
     <div class="bg-black text-white pt-5">
-      <main-carousel class="mb-3 w-100"/>
       <div class="my-padding row justify-content-around">
         <div class="col-lg-4 d-lg-grid">
           <div class="align-self-lg-center">
