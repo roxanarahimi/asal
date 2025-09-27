@@ -2,13 +2,13 @@
   <h1 class="fw-bold my-font my-color ms-4 mt-5" v-if="id == 1">تازه های زنبور داری</h1>
   <h1 class="fw-bold my-font my-color ms-4 mt-5" v-if="id == 2">اخبار و رویداد ها</h1>
   <div class="row p-5">
-    <div v-for="(item, index) in data" :key="index" class="col-6 col-md-4 col-xl-3 mb-3">
+    <div v-for="(item, index) in data" :key="index" class="col-sm-6 col-md-4 col-xl-3 mb-3">
       <router-link :to="'/content/'+item.slug" class="h-100">
         <div class="card bg-transparent my-border rounded h-100">
-          <img :src="storageUrl+item.image" class="w-100 rounded-top-2 border border-white mb-3" alt="">
-          <div class="card-body text-white">
-            <p>{{ item.title }}</p>
-            <div class="d-flex justify-content-between">
+          <div class="card-body text-white d-grid">
+            <img :src="storageUrl+item.image" class="w-100 rounded-top-2 border border-white mb-3" alt="">
+            <p class="align-self-start">{{ item.title }}</p>
+            <div class="align-self-end d-flex justify-content-end">
               <small>{{ item.created_at }}</small>
             </div>
           </div>

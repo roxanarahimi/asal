@@ -726,7 +726,11 @@ button:focus {
 }
 
 @media (max-width: 700px) {
-    .carousel--img,.banner--img{
+    .carousel{
+        width: 100% ;
+        height:auto;
+    }
+  .carousel--img,.banner--img{
         width: 100% ;
         height:auto;
 

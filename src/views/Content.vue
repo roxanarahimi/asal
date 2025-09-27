@@ -1,9 +1,9 @@
 <template>
-<div v-if="data" class="my-padding">
+<div v-if="data" class="content my-padding">
   <h2 class="my-color my-5 fw-bold">{{ data.title }}</h2>
   <img :src="storageUrl+data.image" style="max-width: 500px" alt="">
 
-  <div v-html="data.text" class="text-white p-3 fs-5"></div>
+  <div v-html="data.text" class="text-white p-3"></div>
 </div>
 </template>
 
@@ -40,5 +40,7 @@ export default {
 </script>
 
 <style scoped>
+:deep(*){ font-family: IranSans !important}
+:deep(a){ color:deepskyblue; cursor: pointer}
 
 </style>
