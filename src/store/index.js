@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import {useRoute} from "vue-router/dist/vue-router";
 
 export default createStore({
     state: {
@@ -7,6 +8,7 @@ export default createStore({
         contents: null,
         content: null,
         banners: null,
+        id: useRoute()?.params.id,
         userToken: null, // This will hold the user token (for Authorization headers)
     },
     mutations: {
@@ -40,11 +42,11 @@ export default createStore({
         },
 
         // Fetch contents from the API
-        async getContents({ commit, state }) {
-            const headers = await this.dispatch('setFetchHeaders');
+        async getContents({ commit, dispatch, state }, id) {
+            const headers = await dispatch('setFetchHeaders');
 
             try {
-                const response = await fetch(state.serverUrl + '/api/get/contents/' + state.contents, {
+                const response = await fetch(`${state.serverUrl}/api/get/contents/${id}`, {
                     method: 'GET',
                     headers: headers,
                 });
@@ -54,30 +56,29 @@ export default createStore({
                 }
 
                 const data = await response.json();
-                commit('setContents', data);  // Commit the data to the state
+                commit('setContents', data);
             } catch (error) {
                 console.error('Error fetching contents:', error);
             }
         },
-
         // Fetch a specific content using slug
-        async getContent({ commit, state }) {
-            const headers = await this.dispatch('setFetchHeaders');
+        async getContent({ commit, dispatch, state }, slug) {
+            const headers = await dispatch('setFetchHeaders');
 
             try {
-                const response = await fetch(state.serverUrl + '/api/get/content/' + state.content, {
+                const response = await fetch(`${state.serverUrl}/api/get/content/${slug}`, {
                     method: 'GET',
                     headers: headers,
                 });
 
                 if (!response.ok) {
-                    throw new Error('Error fetching content');
+                    throw new Error('Error fetching contents');
                 }
 
                 const data = await response.json();
-                commit('setContent', data);  // Commit the data to the state
+                commit('setContent', data);
             } catch (error) {
-                console.error('Error fetching content:', error);
+                console.error('Error fetching contents:', error);
             }
         },
 

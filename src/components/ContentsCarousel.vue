@@ -1,17 +1,17 @@
 <template>
   <div v-if="data?.length && data?.length>4" :class="{'bg-black':category==1,'bg-gray py-3': category==2}">
     <h1 class="my-title my-4 text-center fw-bold my-font my-color" >{{ title}}</h1>
-    <div class="px-5 mx-auto mt-5 contents-carousel">
-      <div class="d-none d-lg-block mb-5">
-        <Carousel class="" :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
-                  :transition="500">
-          <slide v-for="(item,index) in data" :key="index">
-            <router-link class="p-2" :to="'/content/'+item.slug">
+    <div class="px-5 mx-auto mt-5 contents-carousel ">
+      <div class="d-none d-lg-block mb-5 h-100">
+        <Carousel class="h-100" :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'" :transition="500">
+          <slide v-for="(item,index) in data" :key="index" class="h-100">
+
+            <router-link class="p-2 h-100" :to="'/content/'+item.slug" :title="item.title">
               <div class="w-100 h-100" style="margin: 1px">
-                <div class="card bg-light">
+                <div class="card bg-light h-100">
                   <div class="card-body">
-                    <img :src="serverUrl+item.image" alt="" class="card-img">
-                    <h3 class="mt-3 text-start">{{ item.title }}</h3>
+                    <img :src="storageUrl+item.image" alt="" class="card-img">
+                    <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
                     <small class="d-block text-end">1404/05/03</small>
                   </div>
                 </div>
@@ -26,15 +26,16 @@
         </carousel>
       </div>
       <div class="d-none d-md-block d-lg-none mb-5">
-        <Carousel class="" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
+        <Carousel class="h-100" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
                   :transition="500">
-          <slide v-for="(item,index) in contents" :key="index">
-            <router-link class="p-1" :to="'/content/'+item.slug">
+          <slide v-for="(item,index) in data" :key="index" class="h-100">
+
+            <router-link class="p-1 h-100" :to="'/content/'+item.slug" :title="item.title">
               <div class="w-100 h-100" style="margin: 1px">
-                <div class="card bg-light">
+                <div class="card bg-light h-100">
                   <div class="card-body">
-                    <img :src="item.image" alt="" class="card-img">
-                    <h3 class="mt-3 text-start">{{ item.title }}</h3>
+                    <img :src="storageUrl+item.image" alt="" class="card-img">
+                    <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
                     <small class="d-block text-end">1404/05/03</small>
                   </div>
                 </div>
@@ -49,15 +50,16 @@
         </carousel>
       </div>
       <div class="d-none d-sm-block d-md-none mb-5">
-        <Carousel class="" :itemsToShow="2.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
+        <Carousel class="h-100" :itemsToShow="2.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'"
                   :transition="500">
-          <slide v-for="(item,index) in contents" :key="index">
-            <router-link class="p-1" :to="'/content/'+item.slug">
+          <slide v-for="(item,index) in data" :key="index" class="h-100">
+
+            <router-link class="p-1 h-100" :to="'/content/'+item.slug" :title="item.title">
               <div class="w-100 h-100" style="margin: 1px">
-                <div class="card bg-light">
+                <div class="card bg-light h-100">
                   <div class="card-body">
-                    <img :src="item.image" alt="" class="card-img">
-                    <h3 class="mt-3 text-start">{{ item.title }}</h3>
+                    <img :src="storageUrl+item.image" alt="" class="card-img">
+                    <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
                     <small class="d-block text-end">1404/05/03</small>
                   </div>
                 </div>
@@ -72,13 +74,14 @@
         </carousel>
       </div>
       <div class="d-sm-none   mb-5">
-        <Carousel class="" :itemsToShow="1" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'" :transition="500">
-          <slide v-for="(item,index) in contents" :key="index">
-            <router-link class="" :to="'/content/'+item.slug">
+        <Carousel class="h-100" :itemsToShow="1" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'" :transition="500">
+          <slide v-for="(item,index) in data" :key="index" class="h-100">
+
+            <router-link class="" :to="'/content/'+item.slug" :title="item.title">
               <div class="w-100 h-100" style="margin: 1px">
                 <div class="card border-0 bg-light ms-1">
                   <div class="card-body">
-                    <img :src="item.image" alt="" class="card-img">
+                    <img :src="storageUrl+item.image" alt="" class="card-img">
                     <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
                     <div class="d-flex justify-content-between text-black-50" style="font-size: 13px">
                       <small class="d-block text-end">1404/05/03</small>
@@ -110,6 +113,7 @@ import 'vue3-carousel/dist/carousel.css';
 import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel';
 import {computed, onMounted, ref} from "vue";
 import {useStore} from 'vuex'
+import {useRoute} from "vue-router/dist/vue-router";
 
 export default {
   name: 'ContentsCarousel',
@@ -122,18 +126,22 @@ export default {
   props: ['title','category'],
   setup(_props) {
     const store = useStore();
+    const route = useRoute();
     const serverUrl = store.state.serverUrl;
     const storageUrl = store.state.storageUrl;
-    const getContents = () => {
-      store.commit('getContents',_props.category);
+    const getContents = async () => {
+      try {
+        await store.dispatch('getContents', _props.category);
+      } catch (error) {
+        console.error('API call failed:', error);
+      }
     }
-
     onMounted(() => {
-      // getContents();
+      getContents();
     });
     return {
-      data: computed(()=>store.state.contents),
-      store, storageUrl, serverUrl, getContents,
+      data: computed(() => store.state.contents),
+      store, storageUrl, serverUrl, getContents, route
     }
   }
 }
@@ -276,6 +284,10 @@ export default {
   background-color: whitesmoke;
   margin: 2px;
   width: 100% !important;
+  height: 100% !important;
+}
+
+:deep(ol,li > a) {
   height: 100% !important;
 }
 

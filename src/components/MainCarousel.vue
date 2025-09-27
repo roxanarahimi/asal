@@ -1,14 +1,15 @@
 <template>
+<div>
   <div v-if="data?.length === 1" class="bg-black banner text-center">
     <a :href="storageUrl+data[0]?.image" class="img-link h-100">
-      <img :src="storageUrl+data[0]?.image" class="" alt="copabee">
+      <img :src="storageUrl+data[0]?.image" class="banner--img" alt="copabee">
     </a>
   </div>
-  <div v-if="data?.length > 1" id="carouselExampleAutoplaying" class="carousel carousel-light slide main-carousel " data-bs-ride="carousel" data-bs-interval="5000">
-    <div class="carousel-inner">
-      <div v-for="(slide,index) in data" class="carousel-item" :class="{'active':index===0}" >
-        <a :href="storageUrl+slide.image" class="img-link">
-          <img :src="storageUrl+slide.image" class="" alt="copabee">
+  <div v-if="data?.length > 1" id="carouselExampleAutoplaying"  class="mt-2 carousel carousel-light slide main-carousel " data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner h-100">
+      <div v-for="(slide,index) in data" class="carousel-item h-100" :class="{'active':index===0}" >
+        <a :href="storageUrl+slide.image" class="img-link h-100">
+          <img :src="storageUrl+slide.image" class="carousel--img" alt="copabee">
         </a>
       </div>
     </div>
@@ -21,7 +22,7 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
+</div>
 </template>
 
 <script>
@@ -31,18 +32,10 @@ import {computed, onMounted} from "vue";
 export default {
   name: "MainCarousel",
   setup(){
-    const data2 = [
-      {src:"/img/s5.jpg"},
-      {src:"/img/banner1.png"},
-      {src:"/img/banner3.jpg"},
-      {src:"/img/banner2.jpg"},
-    ];
     const store = useStore();
     const serverUrl = store.state.serverUrl;
     const storageUrl = store.state.storageUrl;
     const getBanners = async () => {
-      // await store.commit('getBanners');
-
         try {
           await store.dispatch('getBanners');
         } catch (error) {
@@ -57,7 +50,6 @@ export default {
     return {
       data: computed(()=>store.state.banners),
       store, storageUrl, serverUrl, getBanners,
-      data2
     }
   }
 }
