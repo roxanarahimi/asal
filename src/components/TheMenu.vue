@@ -1,10 +1,9 @@
 <template>
-  <div class="d-none d-lg-block my-font fw-bold w-100 bg-transparent text-light"
-       style="position: absolute;top:0;left:0; font-size: 16px !important; z-index:1000">
+  <div class="d-none d-lg-block my-font fw-bold w-100 bg-black text-light" style="position: fixed;top:0;left:0; font-size: 16px !important; z-index:1000">
     <div class="d-flex justify-content-between w-100">
       <nav class="navbar navbar-expand-sm bg-transparent w-100 pe-5 ps-3">
         <div class="container-fluid pe-5 ps-3  my-color">
-          <router-link to="/" class="navbar-brand" >کوپابی</router-link>
+          <a href="/" class="navbar-brand" >کوپابی</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                   aria-label="Toggle navigation">
@@ -13,13 +12,16 @@
           <div class="collapse navbar-collapse mb-0" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mt-1">
               <li v-for="(item,index) in links" :key="item" class="nav-item px-1 px-xl-3" :class="{'dropdown': item.subsets}">
-                <router-link :to="item.link" class="nav-link my-font text-white"
-                   :class="{'active-lg': $route.name === item.name,'dropdown-toggle': item.subsets}"
-                   aria-current="page">{{ item.title }}</router-link>
+                <a :href="item.link" class="nav-link my-font text-white"
+                   :class="{'active-lg': $route.name === item.name || $route.name+'-'+$route.params.id == item.name,'dropdown-toggle': item.subsets}"
+                   aria-current="page">{{ item.title }}</a>
                 <ul class="dropdown-m my-border rounded bg-black w-auto px-4 py-2 text-start " v-if="item.subsets"
                     style="list-style: none !important; position: absolute !important; font-size: 14px">
-                  <li v-for="sub in item.subsets">
-                    <a class="dropdown-item mb-2 text-white" >{{ sub.title }}</a>
+                  <li v-for="section in item.subsets">
+<!--                    <a class="dropdown-item mb-2 text-white" >{{ section.title }}</a>-->
+                    <router-link :to="item.link" class="dropdown-item mb-2 text-white"
+                                 @click="menuToggle(section.id),subMenuToggle(item.name+'submenu')">{{ section.title }}
+                    </router-link>
                   </li>
                 </ul>
               </li>
@@ -32,9 +34,7 @@
         </div>
       </nav>
       <div>
-        <img
-            v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'"
-            src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">
+        <img v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'" src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">
         <img v-else src="/img/logo.svg" style="width: 109px ; position: absolute; left: 0; top: 0;" alt="">
       </div>
     </div>
@@ -78,15 +78,14 @@
                 <div class="d-flex">
                   <div class="text-start " style="width: 15px; height: 15px;padding-right: 1px ; margin-left: 2px">
                     <img v-if="$route.name == item.name" src="/img/dotB.png" class="" style="width: 80%" alt="">
-                    <img :data-name="$route.params.id" v-else-if="$route.name+'-'+$route.params.id === item.name" src="/img/dotB.png" class="" style="width: 80%" alt="">
                   </div>
                   <p :id="item.name+'submenu'" class="m-0 cursor-pointer" data-flag="0"
-                     @click="subMenuToggle(item.name+'submenu')">{{ item.title }}</p>
+                     @click="subMenuToggle(item.name+'submenu')">{{ item.title}}</p>
                 </div>
                 <ul :id="item.name+'submenu-ul'" style="list-style: none;" class="mt-2 ms-5 mb-0 h-0">
                   <li :id="item.name" v-for="section in item.subsets" class="cursor-pointer mb-2"
                       style="font-size: 15px !important">
-                    <router-link class="a" :to="item.link"
+                    <router-link :to="item.link" class="a"
                                  @click="menuToggle(section.id),subMenuToggle(item.name+'submenu')">{{ section.title }}
                     </router-link>
                   </li>
@@ -96,8 +95,10 @@
               <div v-else class="d-flex">
                 <div class="text-start " style="width: 15px; height: 15px;padding-right: 1px ; margin-left: 2px">
                   <img v-if="$route.name == item.name" src="/img/dotB.png" class="" style="width: 80%" alt="">
+                  <img v-if="$route.name+'-'+$route.params.id == item.name" src="/img/dotB.png" class="" style="width: 80%" alt="">
+
                 </div>
-                <router-link class="a" @click="menuToggle" :to="item.link">{{ item.title }}</router-link>
+                <a :href="item.link" class="a" @click="menuToggle" >{{ item.title }}</a>
               </div>
             </li>
           </ul>
@@ -111,7 +112,7 @@
             <div class="text-start me-2" style="width: 15px; height: 15px; ">
               <img v-if="$route.name == 'register'" src="/img/dotB.png" class="w-100" alt="">
             </div>
-            <router-link class="a" @click="menuToggle" to="register">ایجاد حساب کاربری</router-link>
+            <a href="register" class="a" @click="menuToggle">ایجاد حساب کاربری</a>
           </div>
         </div>
       </div>
@@ -155,8 +156,8 @@ export default {
         {title: 'شرکای ما', link: '/participants', name: 'participants'},
         {title: 'سوالات متداول', link: '/faq', name: 'faq'},
 
-        {title: 'تازه های زنبورداری', link: '/contents/1', name: 'contents'},
-        {title: 'اخبار و رویدادها', link: '/contents/2', name: 'contents'},
+        {title: 'تازه های زنبورداری', link: '/contents/1', name: 'contents-1'},
+        {title: 'اخبار و رویدادها', link: '/contents/2', name: 'contents-2'},
         {title: 'همکاری با زنبورداران', link: '/collaboration', name: 'collaboration'},
 
         // {title: 'حساب کاربری', link: '/login', name: 'login'},

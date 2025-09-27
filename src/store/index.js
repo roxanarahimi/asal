@@ -9,6 +9,7 @@ export default createStore({
         content: null,
         banners: null,
         id: useRoute()?.params.id,
+        slug: useRoute()?.params.slug,
         userToken: null, // This will hold the user token (for Authorization headers)
     },
     mutations: {

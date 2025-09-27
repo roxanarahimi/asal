@@ -1,11 +1,9 @@
 <template>
-<div v-if="data?.id">
-  <h3 class="my-color">{{ data.title }}</h3>
-  <img :src="storageUrl+data.image" alt="">
+<div v-if="data" class="my-padding">
+  <h2 class="my-color my-5 fw-bold">{{ data.title }}</h2>
+  <img :src="storageUrl+data.image" style="max-width: 500px" alt="">
 
-  <div>
-    { !! data.text !!}
-  </div>
+  <div v-html="data.text" class="text-white p-3 fs-5"></div>
 </div>
 </template>
 
