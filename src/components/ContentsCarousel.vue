@@ -1,5 +1,5 @@
 <template>
-  <div v-if="data?.length && data?.length>4" :class="{'bg-black':category==1,'bg-gray py-3': category==2}">
+  <div v-if="data?.length" :class="{'bg-black':category==1,'bg-gray py-3': category==2}">
     <h1 class="my-title my-4 text-center fw-bold my-font my-color" >{{ title}}</h1>
     <div class="px-5 mx-auto mt-5 contents-carousel ">
       <div class="d-none d-lg-block mb-5 h-100">
@@ -129,9 +129,11 @@ export default {
     const route = useRoute();
     const serverUrl = store.state.serverUrl;
     const storageUrl = store.state.storageUrl;
+    const data = ref([]);
     const getContents = async () => {
       try {
         await store.dispatch('getContents', _props.category);
+        data.value = store.state.contents;
       } catch (error) {
         console.error('API call failed:', error);
       }
@@ -140,7 +142,8 @@ export default {
       getContents();
     });
     return {
-      data: computed(() => store.state.contents),
+      data,
+      // data: computed(() => store.state.contents),
       store, storageUrl, serverUrl, getContents, route
     }
   }
