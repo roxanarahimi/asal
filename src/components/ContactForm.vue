@@ -21,14 +21,10 @@
             <label for="seri">سری ساخت</label>
             <input id="seri" type="text" class="form-control rounded-0 en">
           </div>
-          <div class="col-6 col-lg-12">
-            <label for="province">استان</label>
-            <input id="province" type="text" class="form-control rounded-0">
-          </div>
           <div class="accordion bg-transparent mb-3 col-lg-12 " id="accordionExample">
             <div class="accordion-item bg-transparent my-border  rounded-0">
               <h2 class="accordion-header justify-content-start">
-                <button style="" class=" text-primary accordion-button  bg-transparent  collapsed"
+                <button style="" class="px-0 text-primary accordion-button  bg-transparent  collapsed"
                         type="button" data-bs-toggle="collapse" data-bs-target="#collapseSerial" aria-expanded="true"
                         aria-controls="collapseSerial">
                   سری ساخت چیست؟
@@ -43,6 +39,10 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="col-6 col-lg-12">
+            <label for="province">استان</label>
+            <input id="province" type="text" class="form-control rounded-0">
           </div>
         </div>
       </div>

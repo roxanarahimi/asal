@@ -8,6 +8,7 @@ export default createStore({
         contents: null,
         content: null,
         banners: null,
+        searchResult: null,
         id: useRoute()?.params.id,
         slug: useRoute()?.params.slug,
         userToken: null, // This will hold the user token (for Authorization headers)
@@ -21,6 +22,9 @@ export default createStore({
         },
         setBanners(state, banners) {
             state.banners = banners;
+        },
+        setSearchResult(state, searchResult) {
+            state.searchResult = searchResult;
         },
         setUserToken(state, token) {
             state.userToken = token;
@@ -101,6 +105,26 @@ export default createStore({
                 commit('setBanners', data);  // Commit the data to the state
             } catch (error) {
                 console.error('Error fetching banners:', error);
+            }
+        },
+  // Fetch search result from the API
+        async getSearchResult({ commit, dispatch, state }, term) {
+            const headers = await this.dispatch('setFetchHeaders');
+
+            try {
+                const response = await fetch(`${state.serverUrl}/api/search?term=${term}`, {
+                    method: 'GET',
+                    headers: headers,
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error fetching search result');
+                }
+
+                const data = await response.json();
+                commit('setSearchResult', data);  // Commit the data to the state
+            } catch (error) {
+                console.error('Error fetching search result:', error);
             }
         },
 

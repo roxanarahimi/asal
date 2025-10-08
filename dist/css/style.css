@@ -496,7 +496,7 @@ button:focus {
 }
 
 .cursor-pointer {
-    cursor: pointer;
+    cursor: pointer !important;
 
 }
 
@@ -549,7 +549,7 @@ button:focus {
 }
 
 .floating-buttons-wrapper {
-    z-index: 2;
+    z-index: 101;
     margin: 0 auto;
     position: fixed;
     top: 110px;
@@ -594,7 +594,7 @@ button:focus {
     background-color: white;
     text-align: center;
     display: grid;
-    margin: 3px;
+    margin: 4px;
 }
 
 .circle a {

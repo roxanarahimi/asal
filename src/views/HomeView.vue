@@ -167,8 +167,6 @@
 import MainCarousel from '@/components/MainCarousel'
 import ContentsCarousel from "@/components/ContentsCarousel";
 import ContactForm from "@/components/ContactForm";
-import {useHead} from '@vueuse/head'
-
 
 export default {
   components: {ContactForm, MainCarousel, ContentsCarousel},

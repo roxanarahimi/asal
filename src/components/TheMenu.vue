@@ -1,5 +1,5 @@
 <template>
-  <div class="d-none d-lg-block my-font fw-bold w-100 bg-black text-light" style="position: fixed;top:0;left:0; font-size: 16px !important; z-index:1000">
+  <div class="d-none d-lg-block my-font fw-bold w-100 bg-black text-light" style="position: fixed;top:0;left:0; font-size: 16px !important; z-index:100">
     <div class="d-flex justify-content-between w-100">
       <nav class="navbar navbar-expand-sm bg-transparent w-100 pe-5 ps-3">
         <div class="container-fluid pe-5 ps-3  my-color">

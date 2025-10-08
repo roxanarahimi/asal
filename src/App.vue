@@ -9,9 +9,12 @@
     </div>
     <the-footer/>
   </div>
+  <search-modal />
 </template>
-<script>
 
+<script>
+// @ is an alias to /src
+import SearchModal from "@/components/SearchModal";
 import FloatingBtns from '@/components/FloatingBtns.vue'
 import theMenu from '@/components/TheMenu.vue'
 import theFooter from "@/components/Footer";
@@ -21,7 +24,7 @@ import {useRoute} from "vue-router/dist/vue-router";
 
 
 export default {
-  components: {theFooter, theMenu, FloatingBtns, Loader},
+  components: {theFooter, theMenu, FloatingBtns, Loader, SearchModal},
   data() {
     return {
       isLoading: true,

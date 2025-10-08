@@ -12,7 +12,7 @@
                   <div class="card-body">
                     <img :src="storageUrl+item.image" alt="" class="card-img">
                     <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
-                    <small class="d-block text-end">1404/05/03</small>
+                    <small class="d-block text-end">{{ item.created_at}}</small>
                   </div>
                 </div>
               </div>
