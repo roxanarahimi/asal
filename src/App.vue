@@ -37,11 +37,9 @@ export default {
     document.querySelector('.loader-wrapper')?.classList.add('opacity-1')
     document.onreadystatechange = () => {
       if (document.readyState === 'complete') {
-        setTimeout(() => {
-          document.querySelector('.loader-wrapper')?.classList.add('opacity-0')
-          document.getElementById('body').classList.remove('stop-scrolling');
           this.isLoading = false;
-        }, 3000)
+        document.getElementById('body').classList.remove('stop-scrolling');
+
       }
     };
   },
@@ -50,6 +48,20 @@ export default {
   },
   updated() {
 
+    // alert(localStorage.getItem('searchScroll'))
+    let tag = document.querySelectorAll('h3')?.forEach((element)=>{
+      if (element.innerHTML?.match(localStorage.getItem('searchScroll'))){
+        // el.scroll();
+        // const element = document.querySelector('#my-element'); // your target element
+        const offset = 100; // pixels above the element
+
+        const elementPosition = element.getBoundingClientRect().top;
+        const scrollToPosition = elementPosition - offset;
+
+        window.scrollTo({top: scrollToPosition});
+        localStorage.removeItem('searchScroll');
+      }
+    });
 
     let user = localStorage.getItem('user')
     // if(!user){

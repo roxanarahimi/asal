@@ -13,9 +13,9 @@
               <input id="search" @input="search" type="text" autocomplete="off" v-model="term" class="form-control  bg-dark text-light my-border" >
               <span class="input-group-text my-bg my-border" id="basic-addon2"><i class="bi bi-search"></i></span>
             </div>
-            <ul class="px-3 my-color" v-if="searchResult?.length">
-              <li v-for="(item, index) in searchResult" :key="index">
-                <a :href="item.link" class="fw-bold">{{item.title}}</a>
+            <ul class="px-3 my-color" v-if="data?.length">
+              <li v-for="(item, index) in data" :key="index">
+                <a :href="item.link" class="fw-bold" @click="setScroll(item.page,item.title)">{{item.title}}</a>
               </li>
             </ul>
 
@@ -35,6 +35,9 @@
 import {computed, onMounted, ref} from "vue";
 import Loader from '@/components/Loader2.vue'
 import {useStore} from "vuex";
+import { h, render } from 'vue';
+import ProductPage from '@/views/Product.vue';
+import FaqPage from '@/views/Faq.vue';
 
 export default {
   components:{Loader,},
@@ -42,27 +45,53 @@ export default {
     const isLoading = ref(false);
     const notFund = ref(false);
     const term = ref();
+    const pagesSearchResult = ref([]);
+    const data = ref([]);
     const store = useStore();
     const serverUrl = store.state.serverUrl;
     const storageUrl = store.state.storageUrl;
-    const searchResult = ref();
+    const searchResult = ref([])//computed(() => store.state.searchResult);
+    const searchPages = async () => {
+      pagesSearchResult.value = [];
+      const container = document.createElement('div'); // off-DOM
+      document.body.appendChild(container);
+      let pages = [[ProductPage,'/product'], [FaqPage,'/faq']]
+      pages.forEach((page)=>{
+        render(h(page[0]), container);
+        const titles = Array.from(container.querySelectorAll('h3')).map(el => el.textContent);
+        let x = [];
+            titles.forEach((el)=>{
+          if(el.match(term.value)){
+            x.push({title: el, link:page[1], page:true}) ;
+          }
+        });
+        pagesSearchResult.value = pagesSearchResult.value.concat(x);
+      })
+    }
     const getSearchResult = async () => {
+
       try {
+        await searchPages();
         await store.dispatch('getSearchResult',term.value);
         searchResult.value = store.state.searchResult;
+        data.value = searchResult.value.concat(pagesSearchResult.value);
+
         isLoading.value = false;
         if(searchResult?.value.length===0){
           notFund.value = true;
         }
+        console.log('ssssssss',searchResult.value);
       } catch (error) {
         console.error('API call failed:', error);
       }
 
     }
-
-
+    const setScroll=(page,title)=>{
+      if (page){
+        localStorage.setItem('searchScroll', title);
+      }
+    }
     const search = ()=>{
-      //axios => term.value
       searchResult.value = [];
       isLoading.value = true;
       notFund.value = false;
@@ -76,7 +105,7 @@ export default {
     return{
       searchResult,
       store, storageUrl, serverUrl, getSearchResult,
-      isLoading,notFund,search, term
+      isLoading,notFund,search, term, data,pagesSearchResult,setScroll
     }
   }
 }
