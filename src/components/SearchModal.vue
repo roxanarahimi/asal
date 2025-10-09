@@ -60,7 +60,7 @@ export default {
       let pages = [[ProductPage,'/product'], [FaqPage,'/faq'],[CollaborationPage,'/collaboration'], [ParticipantsPage,'/participants']]
       pages.forEach((page)=>{
         render(h(page[0]), container);
-        const titles = Array.from(container.querySelectorAll('h3')).map(el => el.textContent);
+        const titles = Array.from(container.querySelectorAll('h3,h4')).map(el => el.textContent);
         let x = [];
             titles.forEach((el)=>{
           if(el.match(term.value)){

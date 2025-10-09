@@ -49,12 +49,10 @@ export default {
   updated() {
 
     // alert(localStorage.getItem('searchScroll'))
-    let tag = document.querySelectorAll('h3')?.forEach((element)=>{
-      if (element.innerHTML?.match(localStorage.getItem('searchScroll'))){
-        // el.scroll();
-        // const element = document.querySelector('#my-element'); // your target element
-        const offset = 100; // pixels above the element
-
+    let tag = document.querySelectorAll('h3,h4')?.forEach((element)=>{
+      if (element.innerHTML.match(localStorage.getItem('searchScroll'))){
+        console.log('ee',element);
+        const offset = 100;
         const elementPosition = element.getBoundingClientRect().top;
         const scrollToPosition = elementPosition - offset;
 
