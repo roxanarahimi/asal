@@ -38,6 +38,8 @@ import {useStore} from "vuex";
 import { h, render } from 'vue';
 import ProductPage from '@/views/Product.vue';
 import FaqPage from '@/views/Faq.vue';
+import CollaborationPage from '@/views/Collaboration.vue';
+import ParticipantsPage from '@/views/Participants.vue';
 
 export default {
   components:{Loader,},
@@ -55,7 +57,7 @@ export default {
       pagesSearchResult.value = [];
       const container = document.createElement('div'); // off-DOM
       document.body.appendChild(container);
-      let pages = [[ProductPage,'/product'], [FaqPage,'/faq']]
+      let pages = [[ProductPage,'/product'], [FaqPage,'/faq'],[CollaborationPage,'/collaboration'], [ParticipantsPage,'/participants']]
       pages.forEach((page)=>{
         render(h(page[0]), container);
         const titles = Array.from(container.querySelectorAll('h3')).map(el => el.textContent);
