@@ -11,7 +11,7 @@
           </button>
           <div class="collapse navbar-collapse mb-0" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mt-1">
-              <li v-for="(item,index) in links" :key="item" class="nav-item px-1 px-xl-3" :class="{'dropdown': item.subsets}">
+              <li v-for="(item,index) in links" :key="item" class="nav-item px-1 px-xxl-3" :class="{'dropdown': item.subsets}">
                 <a :href="item.link" class="nav-link my-font text-white"
                    :class="{'active-lg': $route.name === item.name || $route.name+'-'+$route.params.id == item.name,'dropdown-toggle': item.subsets}"
                    aria-current="page">{{ item.title }}</a>
@@ -30,29 +30,31 @@
             <!--             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>-->
             <!--             <button class="btn btn-outline-success" type="submit">Search</button>-->
             <!--           </form>-->
+            <div>
+              <a href="/register"  @click="menuToggle">ایجاد حساب کاربری</a>
+            </div>
           </div>
         </div>
       </nav>
-      <div>
-        <img v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'" src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">
-        <img v-else src="/img/logo.svg" style="width: 109px ; position: absolute; left: 0; top: 0;" alt="">
-      </div>
+<!--      <div>-->
+<!--        <img v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'" src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">-->
+        <img src="/img/logo.svg" style="width: 109px ; position: absolute; left: 0; top: 0;" alt="">
+<!--      </div>-->
     </div>
   </div>
-  <div class="d-lg-none my-font fw-bold w-100 bg-transparent"
-       style="position: absolute;top:0;left:0; font-size: 16px !important; z-index:10000">
+  <div class="d-lg-none my-font fw-bold w-100 bg-transparent" style="position: absolute;top:0;left:0; font-size: 16px !important; z-index:100">
     <div class="d-flex justify-content-between w-100">
       <nav class="d-flex justify-content-between" style="height: 50px; color: #F7941D">
-        <div @click="menuToggle" class="pointer"><img src="/img/Burgerbutton.png" class="m-3" style="width: 46px"
-                                                      alt="">
+        <div @click="menuToggle" class="pointer">
+          <img src="/img/Burgerbutton.png" class="m-3" style="width: 46px" alt="">
         </div>
 
       </nav>
       <div>
-        <img
-            v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'"
-            src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">
-        <img v-else src="/img/logo.svg" style="width: 109px ; position: absolute; left: 0; top: 0;" alt="">
+<!--        <img-->
+<!--            v-if="$route.name == 'register' || $route.name == 'login' || $route.name == 'profile' || $route.name == 'products' || $route.name == 'cart' || $route.name == 'orders'"-->
+<!--            src="/img/Beelogo.png" class="m-3" width="56px" height="18px" alt="">-->
+        <img  src="/img/logo.svg" style="width: 109px ; position: absolute; left: 0; top: 0;" alt="">
       </div>
     </div>
 

@@ -44,7 +44,7 @@ body, html {
 }
 
 .main-banner2 {
-    min-height: 305px;
+    /*min-height: 305px;*/
     /*background: url('/img/bee.png') center center no-repeat;*/
     background: url('/img/banner2.jpg') center center no-repeat;
     background-size: 100%;
@@ -717,25 +717,9 @@ button:focus {
 
     }
 }
-.carousel, .banner {
-    height: calc(100vh - 70px);
-    overflow: hidden;
-}
-.carousel--img,.banner--img {
-    height: calc(100vh - 70px);
-}
+
 
 @media (max-width: 700px) {
-    .carousel{
-        width: 100% ;
-        height:auto;
-    }
-  .carousel--img,.banner--img{
-        width: 100% ;
-        height:auto;
-
-    }
-
 
     .btn-outline-light span {
         font-size: 11px !important;

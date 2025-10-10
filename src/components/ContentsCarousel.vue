@@ -1,18 +1,18 @@
 <template>
   <div v-if="data?.length" :class="{'bg-black':category==1,'bg-gray py-3': category==2}">
     <h1 class="my-title my-4 text-center fw-bold my-font my-color" >{{ title}}</h1>
-    <div class="px-5 mx-auto mt-5 contents-carousel ">
+    <div class="px-5 mx-auto mt-5 contents-carousel h-100">
       <div class="d-none d-lg-block mb-5 h-100">
         <Carousel class="h-100" :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'" :transition="500">
           <slide v-for="(item,index) in data" :key="index" class="h-100">
 
-            <router-link class="p-2 h-100" :to="'/content/'+item.slug" :title="item.title">
+            <router-link class="d-block p-2 h-100" :to="'/content/'+item.slug" :title="item.title">
               <div class="w-100 h-100" style="margin: 1px">
                 <div class="card bg-light h-100">
-                  <div class="card-body">
-                    <img :src="storageUrl+item.image" alt="" class="card-img">
-                    <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
-                    <small class="d-block text-end">{{ item.created_at}}</small>
+                  <img :src="storageUrl+item.image" alt="" class="card-img p-3 pb-0">
+                  <div class="card-body d-grid">
+                  <b class="d-block mb-2 text-start align-self-start">{{ item.title }}</b>
+                   <small class="d-block text-end  align-self-end">{{ item.created_at}}</small>
                   </div>
                 </div>
               </div>
@@ -33,10 +33,10 @@
             <router-link class="p-1 h-100" :to="'/content/'+item.slug" :title="item.title">
               <div class="w-100 h-100" style="margin: 1px">
                 <div class="card bg-light h-100">
-                  <div class="card-body">
-                    <img :src="storageUrl+item.image" alt="" class="card-img">
-                    <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
-                    <small class="d-block text-end">1404/05/03</small>
+                  <img :src="storageUrl+item.image" alt="" class="card-img p-3 pb-0">
+                  <div class="card-body d-grid">
+                  <b class="d-block mb-2 text-start align-self-start">{{ item.title }}</b>
+                    <small class="d-block text-end  align-self-end">{{ item.created_at}}</small>
                   </div>
                 </div>
               </div>
@@ -57,10 +57,10 @@
             <router-link class="p-1 h-100" :to="'/content/'+item.slug" :title="item.title">
               <div class="w-100 h-100" style="margin: 1px">
                 <div class="card bg-light h-100">
-                  <div class="card-body">
-                    <img :src="storageUrl+item.image" alt="" class="card-img">
-                    <b class="d-block mt-3 mb-2 text-start">{{ item.title }}</b>
-                    <small class="d-block text-end">1404/05/03</small>
+                  <img :src="storageUrl+item.image" alt="" class="card-img p-3 pb-0">
+                  <div class="card-body d-grid">
+                    <b class="d-block mb-2 text-start align-self-start">{{ item.title }}</b>
+                    <small class="d-block text-end  align-self-end">{{ item.created_at}}</small>
                   </div>
                 </div>
               </div>
@@ -153,7 +153,9 @@ export default {
 </script>
 
 <style scoped>
-
+.card-body{
+  min-height: 150px !important;
+}
 :deep(.page-numbers) {
   display: block;
   padding: 5px 15px !important;
@@ -180,11 +182,10 @@ export default {
 }
 
 :deep(.carousel__viewport) {
-  max-height: 700px !important;
+  height: 100% !important;
 }
 
 :deep(.carousel__slide) {
-  /*height: 350px !important;*/
   transition: 0.5s ease;
 
 }
@@ -247,7 +248,6 @@ export default {
   bottom: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.45);
-  height: 80px;
   display: grid;
   /*opacity: 0;*/
   transition: 0.5s ease;
