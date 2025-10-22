@@ -41,7 +41,7 @@
 <script>
 import {onMounted, ref} from "vue";
 import {useStore} from "vuex";
-import App from "@/App";
+import App from "@/App.vue";
 
 export default {
   name: "Profile",

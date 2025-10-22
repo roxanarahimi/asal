@@ -31,7 +31,9 @@
             <!--             <button class="btn btn-outline-success" type="submit">Search</button>-->
             <!--           </form>-->
             <div>
-              <a href="/register"  @click="menuToggle">ایجاد حساب کاربری</a>
+              <a v-if="user && $route.name === 'profile'" href="/" @click="logout">خروج</a>
+              <a v-if="user && $route.name !== 'profile'" href="/profile" >پروفایل من</a>
+              <a v-if="!user" href="/register" >ایجاد حساب کاربری</a>
             </div>
           </div>
         </div>
@@ -110,11 +112,17 @@
 
         </div>
         <div style="font-size: 18px !important; align-self: end" class="my-font fw-bolder mx-auto">
-          <div class="d-flex">
+          <div v-if="user" class="d-flex">
+            <div class="text-start me-2" style="width: 15px; height: 15px; ">
+              <img v-if="$route.name == 'profile'" src="/img/dotB.png" class="w-100" alt="">
+            </div>
+            <a href="/profile" class="a" @click="menuToggle">ایجاد حساب کاربری</a>
+          </div>
+          <div v-else class="d-flex">
             <div class="text-start me-2" style="width: 15px; height: 15px; ">
               <img v-if="$route.name == 'register'" src="/img/dotB.png" class="w-100" alt="">
             </div>
-            <a href="register" class="a" @click="menuToggle">ایجاد حساب کاربری</a>
+            <a href="/register" class="a" @click="menuToggle">ایجاد حساب کاربری</a>
           </div>
         </div>
       </div>
@@ -133,12 +141,16 @@ export default {
   components: {App},
   updated() {
     console.log('updated')
-    this.checkUser()
+    // this.checkUser();
+
   },
   setup() {
     const flag = ref(0);
     const links = ref([])
+    const user = ref({})
     onBeforeMount(() => {
+      user.value = JSON.parse(localStorage.getItem('user'));
+      console.log(user.value);
       links.value = [
         {title: 'خانه', link: '/', name: 'home'},
         {
@@ -220,14 +232,11 @@ export default {
       localStorage.removeItem('user');
       localStorage.removeItem('expire');
       localStorage.removeItem('token');
-      console.log('logged out:', localStorage)
-      window.location = '/login'
-
     }
 
 
     return {
-      links, flag, menuToggle, logout, subMenuToggle
+      links, flag, menuToggle, logout, subMenuToggle,user
     }
   },
   methods: {

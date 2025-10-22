@@ -28,7 +28,7 @@ export default {
     const notFund = ref(false);
     const getContent = async () => {
       try {
-        await store.dispatch('getContent', slug+'ff');
+        await store.dispatch('getContent', slug);
         if(!store.state.content){
           notFund.value = true;
         }

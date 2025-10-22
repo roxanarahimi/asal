@@ -10,6 +10,7 @@
     <the-footer/>
   </div>
   <search-modal />
+  <authorize-modal />
 </template>
 
 <script>
@@ -21,10 +22,10 @@ import theFooter from "@/components/Footer";
 import {useStore} from "vuex";
 import Loader from "@/components/Loader";
 import {useRoute} from "vue-router/dist/vue-router";
-
+import AuthorizeModal from '@/components/AuthorizeModal.vue';
 
 export default {
-  components: {theFooter, theMenu, FloatingBtns, Loader, SearchModal},
+  components: {theFooter, theMenu, FloatingBtns, Loader, SearchModal,AuthorizeModal},
   data() {
     return {
       isLoading: true,

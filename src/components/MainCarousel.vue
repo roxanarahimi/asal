@@ -1,23 +1,23 @@
 <template>
-<div>
-  <div v-if="data?.length === 1" class="bg-black banner text-center">
-    <a :href="data[0]?.link || storageUrl+data[0]?.image" class="img-link h-100">
-      <img :src="storageUrl+data[0]?.image" class="banner--img" alt="copabee">
+<div class="container-fluid p-0 m-0 banners">
+  <div v-if="data?.length === 1" class="bg-black  text-center">
+    <a :href="data[0]?.link || storageUrl+data[0]?.image" class="img-link">
+      <img :src="storageUrl+data[0]?.image" :height="height" :width="width" alt="copabee">
     </a>
   </div>
-  <div v-if="data?.length > 1" id="carouselExampleAutoplaying"  class="mt-2 carousel carousel-light slide main-carousel " data-bs-ride="carousel" data-bs-interval="5000">
-    <div class="carousel-inner h-100">
-      <div v-for="(slide,index) in data" class="carousel-item h-100" :class="{'active':index===0}" >
-        <a :href="slide.link || storageUrl+slide.image" class="img-link h-100">
-          <img :src="storageUrl+slide.image" class="carousel--img" alt="copabee">
+  <div v-if="data?.length > 1" id="myc"  class="mt-2 carousel carousel-light slide " data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+      <div v-for="(slide,index) in data" class="carousel-item banners" :class="{'active':index===0}" >
+        <a :href="slide.link || storageUrl+slide.image" class="img-link">
+          <img :src="storageUrl+slide.image" :height="height" :width="width" alt="copabee">
         </a>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#myc" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#myc" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
@@ -35,6 +35,8 @@ export default {
     const store = useStore();
     const serverUrl = store.state.serverUrl;
     const storageUrl = store.state.storageUrl;
+    const width = computed(()=>window.innerWidth>=700? 'auto': '100%');
+    const height = computed(()=>window.innerWidth>=700? '100%': 'auto');
     const getBanners = async () => {
         try {
           await store.dispatch('getBanners');
@@ -49,7 +51,7 @@ export default {
     });
     return {
       data: computed(()=>store.state.banners),
-      store, storageUrl, serverUrl, getBanners,
+      store, storageUrl, serverUrl, getBanners,width,height
     }
   }
 }

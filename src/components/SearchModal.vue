@@ -14,8 +14,9 @@
               <span class="input-group-text my-bg my-border" id="basic-addon2"><i class="bi bi-search"></i></span>
             </div>
             <ul class="px-3 my-color" v-if="data?.length">
-              <li v-for="(item, index) in data" :key="index">
-                <a :href="item.link" class="fw-bold" @click="setScroll(item.page,item.title)">{{item.title}}</a>
+              <li v-for="(item, index) in data" class="results-wrapper" :key="index">
+                <a :href="item.link" class="fw-bold results" @click="setScroll(item.page,item.title)" :title="item.title">{{item.title}}</a>
+                <span v-if="item.title.length>45">...</span>
               </li>
             </ul>
 
@@ -79,10 +80,9 @@ export default {
         data.value = searchResult.value.concat(pagesSearchResult.value);
 
         isLoading.value = false;
-        if(searchResult?.value.length===0){
+        if(data?.value.length===0){
           notFund.value = true;
         }
-        console.log('ssssssss',searchResult.value);
       } catch (error) {
         console.error('API call failed:', error);
       }
@@ -117,5 +117,17 @@ export default {
 
 .modal-content{
   height: 400px !important;
+}
+:deep(.results-wrapper) {
+  width: 48ch;
+  text-align: start !important;
+}
+
+:deep(.results) {
+  width: 45ch;
+  text-align: start !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: fade;
 }
 </style>

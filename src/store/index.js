@@ -1,5 +1,4 @@
 import { createStore } from 'vuex'
-import {useRoute} from "vue-router/dist/vue-router";
 
 export default createStore({
     state: {
@@ -9,11 +8,15 @@ export default createStore({
         content: null,
         banners: null,
         searchResult: null,
-        id: useRoute()?.params.id,
-        slug: useRoute()?.params.slug,
+        id: null,
+        slug: null,
         userToken: null, // This will hold the user token (for Authorization headers)
     },
     mutations: {
+        setRouteParams(state, { id, slug }) {
+            state.id = id;
+            state.slug = slug;
+        },
         setContents(state, contents) {
             state.contents = contents;
         },

@@ -34,37 +34,41 @@
                 <div class="row">
 
                   <div class="col-12 mb-2 px-1">
-                    <label for="">پیام یا سوال</label>
-                    <textarea id="" class="form-control rounded-0 "></textarea>
+                    <label for="message">پیام یا سوال</label>
+                    <textarea v-model="message" id="message"
+                              class="form-control rounded-0 messageForm required"></textarea>
                   </div>
                   <div class="col-12 mb-2 px-1">
-                    <label for="">ایمیل</label>
-                    <input id="" type="text" class="form-control rounded-0 en">
+                    <label for="messageEmail">ایمیل</label>
+                    <input v-model="email" id="messageEmail" type="email" class="form-control messageForm rounded-0 en">
                   </div>
                   <div class="col-12 mb-2 px-1">
-                    <label for="">نام و نام خانوادگی (اختیاری)</label>
-                    <input id="" type="text" class="form-control rounded-0">
+                    <label for="messageName">نام و نام خانوادگی (اختیاری)</label>
+                    <input v-model="name" id="messageName" type="text" class="form-control rounded-0 messageForm">
                   </div>
                   <div class="col-6 mb-2 px-1">
-                    <label for="">شهر</label>
-                    <input id="" type="text" class="form-control rounded-0">
+                    <label for="messageCiyId">شهر</label>
+                    <input v-model="city_id" id="messageCiyId" type="text" class="form-control rounded-0 messageForm">
                   </div>
                   <div class="col-6 mb-2 px-1">
-                    <label for="">تلفن همراه</label>
-                    <input id="" type="text" class="form-control rounded-0 en">
+                    <label for="messageMobile">تلفن همراه</label>
+                    <input v-model="mobile" id="messageMobile" type="text"
+                           class="form-control rounded-0 en messageForm required">
+                    <div v-if="errors?.mobile?.length" class="text-danger mt-2 fw-bold">
+                      <ul>
+                        <li v-for="error in errors['mobile']"><small>{{ error }}</small></li>
+                      </ul>
+                    </div>
+
                   </div>
 
                   <div class="text-center col-lg-12 mt-3">
-                    <button class="btn-black-rect">ثبت</button>
-                    <!--            <router-link to="/complane" class="btn-black-rect" style="line-height: 50px!important">ادامه</router-link>-->
+                    <button v-if="user" class="btn-black-rect" @click="storeMessage">ثبت</button>
+                    <button v-else class="btn-black-rect" @click="setForm('message')">ثبت</button>
                   </div>
                 </div>
               </div>
-              <!--            </div>-->
-              <!--&lt;!&ndash;          </div>&ndash;&gt;-->
 
-              <!--&lt;!&ndash;          <div class="col-lg-3 d-lg-grid h-100">&ndash;&gt;-->
-              <!--            <div class="align-self-lg-end">-->
               <div id="info" class="px-2 py-3">
                 <p><i class="bi bi-envelope-fill me-2"></i>info@asallaziz.com</p>
                 <p><i class="bi bi-pin-map-fill me-2"></i>ایران، تهران، گیشا، خیابان هشتم، پلاک 58</p>
@@ -106,32 +110,41 @@
             <div id="form" class="align-self-lg-end py-5 text-dark my-padding main-bg border-radius mb-3">
 
               <p class="mb-4  fw-bold">در کمتر از 24 ساعت پاسخ سریع دریافت کنید</p>
+              <p class="mb-4 fw-bold text-success d-none" id="msgSuccess">پیام شما با موفقیت ثبت شد. کارشناسان ما در اسرع وقت با شما ارتباط میگیرند.</p>
+              <p class="mb-4 fw-bold text-success d-none" id="msgFail">در ارسال پیام خطایی رخ داد. لطفا دوباره تلاش کنید.</p>
               <div class="row">
 
                 <div class="col-12 mb-2 px-1">
-                  <label for="">پیام یا سوال</label>
-                  <textarea id="" class="form-control rounded-0 "></textarea>
+                  <label for="message">پیام یا سوال</label>
+                  <textarea v-model="message" id="message"
+                            class="form-control rounded-0 messageForm required"></textarea>
                 </div>
                 <div class="col-12 mb-2 px-1">
-                  <label for="">ایمیل</label>
-                  <input id="" type="text" class="form-control rounded-0 en">
+                  <label for="messageEmail">ایمیل</label>
+                  <input id="messageEmail" type="text" class="form-control rounded-0 en messageForm">
                 </div>
                 <div class="col-12 mb-2 px-1">
-                  <label for="">نام و نام خانوادگی (اختیاری)</label>
-                  <input id="" type="text" class="form-control rounded-0">
+                  <label for="messageName">نام و نام خانوادگی (اختیاری)</label>
+                  <input v-model="name" id="messageName" type="text" class="form-control rounded-0 messageForm">
                 </div>
                 <div class="col-6 mb-2 px-1">
-                  <label for="">شهر</label>
-                  <input id="" type="text" class="form-control rounded-0">
+                  <label for="messageCiyId">شهر</label>
+                  <input v-model="city_id" id="messageCiyId" type="text" class="form-control rounded-0 messageForm">
                 </div>
                 <div class="col-6 mb-2 px-1">
-                  <label for="">تلفن همراه</label>
-                  <input id="" type="text" class="form-control rounded-0 en">
+                  <label for="messageMobile">تلفن همراه</label>
+                  <input id="messageMobile" v-model="mobile" value="user?.mobile" type="text"
+                         class="form-control rounded-0 en messageForm required">
+                  <div v-if="errors?.mobile?.length" class="text-danger mt-2 fw-bold">
+                    <ul>
+                      <li v-for="error in errors['mobile']"><small>{{ error }}</small></li>
+                    </ul>
+                  </div>
                 </div>
 
                 <div class="text-center col-lg-12 mt-3">
-                  <button class="btn-black-rect">ثبت</button>
-                  <!--            <router-link to="/complane" class="btn-black-rect" style="line-height: 50px!important">ادامه</router-link>-->
+                  <button v-if="user" class="btn-black-rect" @click="storeMessage">ثبت</button>
+                  <button v-if="!user" class="btn-black-rect" @click="setForm('message')">ثبت</button>
                 </div>
               </div>
             </div>
@@ -186,11 +199,117 @@
         </div>
       </div>
     </div>
+    <button data-bs-toggle="modal" class="d-none" id="modal-btn-h" data-bs-target="#AuthorizeModal"></button>
   </footer>
 </template>
 
 <script>
+import {useStore} from "vuex";
+import {computed, onMounted, ref} from "vue";
+import Loader from "@/components/Loader2.vue"
+
+
 export default {
+  name: "Footer",
+  components: {Loader},
+  setup() {
+    const store = useStore();
+    const serverUrl = store.state.serverUrl;
+    const isLoading = ref(false);
+    const errors = ref([]);
+    const user = computed(() => JSON.parse(localStorage.getItem('user'))) || null;
+    const mobile = ref();
+    const message = ref();
+    const name = ref();
+    const email = ref();
+    const city_id = ref();
+    const emptyFieldsCount = ref(null);
+
+
+    const validate = () => {
+      errors.value = [];
+      errors.value['mobile'] = [];
+      emptyFieldsCount.value = 0;
+      let req = document.querySelectorAll('.required');
+
+      req.forEach((element) => {
+        if (element.value === "") {
+          element.classList.add('hasError');
+          // element.nextSibling.innerHTML = "فیلد اجباری";
+          emptyFieldsCount.value++;
+        } else {
+          element.classList.remove('hasError');
+          // element.nextSibling.innerHTML = "";
+        }
+      });
+      if (mobile.value && mobile.value?.length !== 11) {
+        errors.value['mobile'].push('شماره موبایل باید 11 رقم باشد');
+        document.getElementById('messageMobile').classList.add('hasError');
+        emptyFieldsCount.value++;
+      }
+      if (mobile.value && !mobile.value?.startsWith('09')) {
+        errors.value['mobile'].push('شماره موبایل باید با 09 شروع شود');
+        document.getElementById('messageMobile').classList.add('hasError');
+        emptyFieldsCount.value++;
+      }
+      if (!localStorage.getItem('user') && emptyFieldsCount.value === 0) {
+        document.getElementById('modal-btn-h').click();
+      }
+    }
+    const setForm = async (form) => {
+      localStorage.setItem('form', form);
+      validate();
+    }
+    const storeMessage = async () => {
+      try {
+        document.getElementById('msgFail').classList.add('d-none');
+        document.getElementById('msgSuccess').classList.add('d-none');
+
+
+        fetch(serverUrl + '/api/message/store', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json',},
+          body: JSON.stringify({
+            user_id: JSON.parse(localStorage.getItem('user'))?.id,
+            message: document.getElementById('message').value
+          }),
+        })
+            .then(async (response) => {
+              if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+              } else {
+                const data = await response.json();
+                document.getElementById('msgSuccess').classList.remove('d-none');
+              }
+            })
+            .catch((error) => {
+              message.value = error.message;
+            });
+      } catch (error) {
+        console.error('API call failed:', error);
+        document.getElementById('msgFail').classList.remove('d-none');
+
+      }
+    }
+
+    return {
+      store,
+      serverUrl,
+      isLoading,
+      errors,
+      setForm,
+      user,
+      mobile,
+      message,
+      name,
+      email,
+      city_id,
+      storeMessage,
+      validate,
+      emptyFieldsCount
+    }
+  }
 }
 </script>
 
