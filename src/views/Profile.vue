@@ -1,40 +1,7 @@
 <template>
-  <div v-if="user" class="w-100 px-4 text-light pt-5"
-       style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
-
-    <p v-if="user.typeEn == 'legal'" class="mb-0 mt-5"> نام شرکت: {{user.name}}</p>
-    <p v-if="user.typeEn == 'real'" class="mb-0"> کاربر گرامی: {{ user.name }}</p>
-    <p v-if="user.typeEn == 'legal'" class="mb-0"> اوپراتور گرامی: {{ user.operator }}</p>
-    <p class="mb-5"> کد مشتری:  </p>
-
-    <div class="d-flex justify-content-between">
-      <p class="mb-0 my-color">استعلام اعتبار خرید: </p>
-      <div class="d-flex">
-        <div class="px-2"><img src="/img/radioGreen.png" width="18px" alt=""></div>
-        <p>بیش از 50% اعتبار</p>
-      </div>
-      <!--      <div class="d-flex">-->
-      <!--        <div class="px-2"><img src="/img/radioOrange.png" width="18px" alt=""></div>-->
-      <!--        <p>کمتر از 50% اعتبار</p>-->
-      <!--      </div>-->
-
-    </div>
-
-    <div class="d-flex justify-content-between mb-3">
-      <p class="mb-0 my-color">مانده اعتبار ریالی: </p>
-
-      <p>1.000.000.000 ریال</p>
-
-    </div>
-
-
-    <div class="d-flex justify-content-between">
-      <router-link to="/orders" class="btn-orange2 text-black pt-3">سفارش ها</router-link>
-      <router-link to="/products" class="btn-black2 text-black pt-3 my-color">ثبت سفارش</router-link>
-    </div>
-
-
-  </div>
+ <div class="p-5 m-5 text-light">
+   <h5>کاربر گرامی خوش آمدید</h5>
+ </div>
 </template>
 
 
@@ -48,9 +15,11 @@ export default {
   setup() {
     const user = ref();
     onMounted(() => {
-      console.log(localStorage);
-      updateUserInfo();
       user.value = JSON.parse(localStorage.getItem('user'))
+      if(!user.id){
+        window.location='/';
+      }
+      updateUserInfo();
     })
     const updateUserInfo = () => {
       if (localStorage.getItem('user')) {
