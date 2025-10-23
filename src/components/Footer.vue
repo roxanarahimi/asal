@@ -31,6 +31,8 @@
               <div id="form" class="d-lg-none py-5 text-dark my-padding main-bg border-radius mb-3">
 
                 <p class="mb-4  fw-bold">در کمتر از 24 ساعت پاسخ سریع دریافت کنید</p>
+                <p class="mb-4 fw-bold text-success d-none" id="msgSuccess">پیام شما با موفقیت ثبت شد. کارشناسان ما در اسرع وقت با شما ارتباط میگیرند.</p>
+                <p class="mb-4 fw-bold text-success d-none" id="msgFail">در ارسال پیام خطایی رخ داد. لطفا دوباره تلاش کنید.</p>
                 <div class="row">
 
                   <div class="col-12 mb-2 px-1">
@@ -64,7 +66,7 @@
 
                   <div class="text-center col-lg-12 mt-3">
                     <button v-if="user" class="btn-black-rect" @click="storeMessage">ثبت</button>
-                    <button v-else class="btn-black-rect" @click="setForm('message')">ثبت</button>
+                    <button v-if="!user" class="btn-black-rect" @click="setForm('message')">ثبت</button>
                   </div>
                 </div>
               </div>
