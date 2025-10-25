@@ -290,9 +290,11 @@ a{
 
 .dropdown-item {
   text-align: start;
+  height: 0;
 }
 
 .dropdown-item:hover {
+  height: auto;
   text-align: start;
   font-weight: bolder;
   font-size: 15px;

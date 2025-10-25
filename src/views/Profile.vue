@@ -16,7 +16,7 @@ export default {
     const user = ref();
     onMounted(() => {
       user.value = JSON.parse(localStorage.getItem('user'))
-      if(!user.id){
+      if(!user){
         window.location='/';
       }
       updateUserInfo();

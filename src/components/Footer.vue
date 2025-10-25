@@ -28,49 +28,7 @@
                 <div class="col-6 px-1"><a class="btn btn-sm btn-outline-light d-block px-2" href="tel:02128425205"><i
                     class="bi bi-telephone  me-2 text-primary"></i>021-28425205</a></div>
               </div>
-              <div id="form" class="d-lg-none py-5 text-dark my-padding main-bg border-radius mb-3">
-
-                <p class="mb-4  fw-bold">در کمتر از 24 ساعت پاسخ سریع دریافت کنید</p>
-                <p class="mb-4 fw-bold text-success d-none" id="msgSuccess">پیام شما با موفقیت ثبت شد. کارشناسان ما در اسرع وقت با شما ارتباط میگیرند.</p>
-                <p class="mb-4 fw-bold text-success d-none" id="msgFail">در ارسال پیام خطایی رخ داد. لطفا دوباره تلاش کنید.</p>
-                <div class="row">
-
-                  <div class="col-12 mb-2 px-1">
-                    <label for="message">پیام یا سوال</label>
-                    <textarea v-model="message" id="message"
-                              class="form-control rounded-0 messageForm required"></textarea>
-                  </div>
-                  <div class="col-12 mb-2 px-1">
-                    <label for="messageEmail">ایمیل</label>
-                    <input v-model="email" id="messageEmail" type="email" class="form-control messageForm rounded-0 en">
-                  </div>
-                  <div class="col-12 mb-2 px-1">
-                    <label for="messageName">نام و نام خانوادگی (اختیاری)</label>
-                    <input v-model="name" id="messageName" type="text" class="form-control rounded-0 messageForm">
-                  </div>
-                  <div class="col-6 mb-2 px-1">
-                    <label for="messageCiyId">شهر</label>
-                    <input v-model="city_id" id="messageCiyId" type="text" class="form-control rounded-0 messageForm">
-                  </div>
-                  <div class="col-6 mb-2 px-1">
-                    <label for="messageMobile">تلفن همراه</label>
-                    <input v-model="mobile" id="messageMobile" type="text"
-                           class="form-control rounded-0 en messageForm required">
-                    <div v-if="errors?.mobile?.length" class="text-danger mt-2 fw-bold">
-                      <ul>
-                        <li v-for="error in errors['mobile']"><small>{{ error }}</small></li>
-                      </ul>
-                    </div>
-
-                  </div>
-
-                  <div class="text-center col-lg-12 mt-3">
-                    <button v-if="user" class="btn-black-rect" @click="storeMessage">ثبت</button>
-                    <button v-if="!user" class="btn-black-rect" @click="setForm('message')">ثبت</button>
-                  </div>
-                </div>
-              </div>
-
+              <message-form v-if="innerWidth<992"/>
               <div id="info" class="px-2 py-3">
                 <p><i class="bi bi-envelope-fill me-2"></i>info@asallaziz.com</p>
                 <p><i class="bi bi-pin-map-fill me-2"></i>ایران، تهران، گیشا، خیابان هشتم، پلاک 58</p>
@@ -108,48 +66,8 @@
               </div>
             </div>
           </div>
-          <div class="d-none d-lg-grid col-lg-5 pb-3">
-            <div id="form" class="align-self-lg-end py-5 text-dark my-padding main-bg border-radius mb-3">
-
-              <p class="mb-4  fw-bold">در کمتر از 24 ساعت پاسخ سریع دریافت کنید</p>
-              <p class="mb-4 fw-bold text-success d-none" id="msgSuccess">پیام شما با موفقیت ثبت شد. کارشناسان ما در اسرع وقت با شما ارتباط میگیرند.</p>
-              <p class="mb-4 fw-bold text-success d-none" id="msgFail">در ارسال پیام خطایی رخ داد. لطفا دوباره تلاش کنید.</p>
-              <div class="row">
-
-                <div class="col-12 mb-2 px-1">
-                  <label for="message">پیام یا سوال</label>
-                  <textarea v-model="message" id="message"
-                            class="form-control rounded-0 messageForm required"></textarea>
-                </div>
-                <div class="col-12 mb-2 px-1">
-                  <label for="messageEmail">ایمیل</label>
-                  <input id="messageEmail" type="text" class="form-control rounded-0 en messageForm">
-                </div>
-                <div class="col-12 mb-2 px-1">
-                  <label for="messageName">نام و نام خانوادگی (اختیاری)</label>
-                  <input v-model="name" id="messageName" type="text" class="form-control rounded-0 messageForm">
-                </div>
-                <div class="col-6 mb-2 px-1">
-                  <label for="messageCiyId">شهر</label>
-                  <input v-model="city_id" id="messageCiyId" type="text" class="form-control rounded-0 messageForm">
-                </div>
-                <div class="col-6 mb-2 px-1">
-                  <label for="messageMobile">تلفن همراه</label>
-                  <input id="messageMobile" v-model="mobile" value="user?.mobile" type="text"
-                         class="form-control rounded-0 en messageForm required">
-                  <div v-if="errors?.mobile?.length" class="text-danger mt-2 fw-bold">
-                    <ul>
-                      <li v-for="error in errors['mobile']"><small>{{ error }}</small></li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="text-center col-lg-12 mt-3">
-                  <button v-if="user" class="btn-black-rect" @click="storeMessage">ثبت</button>
-                  <button v-if="!user" class="btn-black-rect" @click="setForm('message')">ثبت</button>
-                </div>
-              </div>
-            </div>
+          <div v-if="innerWidth>= 992" class="col-lg-5 pb-3">
+            <message-form />
           </div>
           <div id="logos" class="d-grid px-2 pb-4 col-lg-1 d-none d-lg-flex">
             <div class="d-flex justify-content-between d-lg-block align-self-lg-end">
@@ -201,115 +119,32 @@
         </div>
       </div>
     </div>
-    <button data-bs-toggle="modal" class="d-none" id="modal-btn-h" data-bs-target="#AuthorizeModal"></button>
   </footer>
 </template>
 
 <script>
-import {useStore} from "vuex";
-import {computed, onMounted, ref} from "vue";
+
 import Loader from "@/components/Loader2.vue"
+import MessageForm from "@/components/MessageForm.vue"
+import {onMounted, onUnmounted, ref, watch} from "vue";
 
 
 export default {
   name: "Footer",
-  components: {Loader},
+  components: {Loader,MessageForm},
   setup() {
-    const store = useStore();
-    const serverUrl = store.state.serverUrl;
-    const isLoading = ref(false);
-    const errors = ref([]);
-    const user = computed(() => JSON.parse(localStorage.getItem('user'))) || null;
-    const mobile = ref();
-    const message = ref();
-    const name = ref();
-    const email = ref();
-    const city_id = ref();
-    const emptyFieldsCount = ref(null);
+    const innerWidth = ref(window.innerWidth)
 
-
-    const validate = () => {
-      errors.value = [];
-      errors.value['mobile'] = [];
-      emptyFieldsCount.value = 0;
-      let req = document.querySelectorAll('.required');
-
-      req.forEach((element) => {
-        if (element.value === "") {
-          element.classList.add('hasError');
-          // element.nextSibling.innerHTML = "فیلد اجباری";
-          emptyFieldsCount.value++;
-        } else {
-          element.classList.remove('hasError');
-          // element.nextSibling.innerHTML = "";
-        }
-      });
-      if (mobile.value && mobile.value?.length !== 11) {
-        errors.value['mobile'].push('شماره موبایل باید 11 رقم باشد');
-        document.getElementById('messageMobile').classList.add('hasError');
-        emptyFieldsCount.value++;
-      }
-      if (mobile.value && !mobile.value?.startsWith('09')) {
-        errors.value['mobile'].push('شماره موبایل باید با 09 شروع شود');
-        document.getElementById('messageMobile').classList.add('hasError');
-        emptyFieldsCount.value++;
-      }
-      if (!localStorage.getItem('user') && emptyFieldsCount.value === 0) {
-        document.getElementById('modal-btn-h').click();
-      }
-    }
-    const setForm = async (form) => {
-      localStorage.setItem('form', form);
-      validate();
-    }
-    const storeMessage = async () => {
-      try {
-        document.getElementById('msgFail').classList.add('d-none');
-        document.getElementById('msgSuccess').classList.add('d-none');
-
-
-        fetch(serverUrl + '/api/message/store', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json',},
-          body: JSON.stringify({
-            user_id: JSON.parse(localStorage.getItem('user'))?.id,
-            message: document.getElementById('message').value
-          }),
-        })
-            .then(async (response) => {
-              if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
-              } else {
-                const data = await response.json();
-                document.getElementById('msgSuccess').classList.remove('d-none');
-              }
-            })
-            .catch((error) => {
-              message.value = error.message;
-            });
-      } catch (error) {
-        console.error('API call failed:', error);
-        document.getElementById('msgFail').classList.remove('d-none');
-
-      }
+    function updateWidth() {
+      innerWidth.value = window.innerWidth
     }
 
+    onMounted(() => window.addEventListener('resize', updateWidth))
+    onUnmounted(() => window.removeEventListener('resize', updateWidth))
+
+    // watch(innerWidth, (newWidth, oldWidth)=>{console.log('...')});
     return {
-      store,
-      serverUrl,
-      isLoading,
-      errors,
-      setForm,
-      user,
-      mobile,
-      message,
-      name,
-      email,
-      city_id,
-      storeMessage,
-      validate,
-      emptyFieldsCount
+      innerWidth,
     }
   }
 }
