@@ -126,7 +126,7 @@
 
 import Loader from "@/components/Loader2.vue"
 import MessageForm from "@/components/MessageForm.vue"
-import {onMounted, onUnmounted, ref, watch} from "vue";
+import {onMounted, onUnmounted, ref} from "vue";
 
 
 export default {

@@ -23,38 +23,38 @@ export default {
     })
     const updateUserInfo = () => {
       if (localStorage.getItem('user')) {
-        axios.get(App.setup().url + '/api/user/' + JSON.parse(localStorage.getItem('user')).id)
-            .then(async (response) => {
-
-              if (response.status === 200 && response.data.scope === 'user') {
-                await localStorage.setItem('user', JSON.stringify(response.data));
-                user.value = response.data;
-
-              }
-            })
-            .then(() => {
-              // if(this.user?.cart?.items?.length) {
-              // document.getElementById('cart_count').classList.remove('d-none')
-              if (this.user?.cart?.items?.length === undefined || this.user?.cart?.items?.length === 0) {
-                document.getElementById('cart_count').innerHTML = '';
-              } else {
-                document.getElementById('cart_count').innerHTML = this.user?.cart?.items?.length;
-
-              }
-              // }  // }else{
-              //     document.getElementById('cart_count').classList.add('d-none')
-              // }
-              // if (this.user){
-              //     console.log(this.user);
-              //     console.log(this.user.cart);
-              //     console.log(this.user.cart.items);
-              //     console.log(this.user.cart.items?.length);
-              //     console.log(this.user.cart-items-count);
-              // }
-            })
-            .catch((error) => {
-              console.log(error);
-            })
+        // axios.get(App.setup().url + '/api/user/' + JSON.parse(localStorage.getItem('user')).id)
+        //     .then(async (response) => {
+        //
+        //       if (response.status === 200 && response.data.scope === 'user') {
+        //         await localStorage.setItem('user', JSON.stringify(response.data));
+        //         user.value = response.data;
+        //
+        //       }
+        //     })
+        //     .then(() => {
+        //       // if(this.user?.cart?.items?.length) {
+        //       // document.getElementById('cart_count').classList.remove('d-none')
+        //       if (this.user?.cart?.items?.length === undefined || this.user?.cart?.items?.length === 0) {
+        //         document.getElementById('cart_count').innerHTML = '';
+        //       } else {
+        //         document.getElementById('cart_count').innerHTML = this.user?.cart?.items?.length;
+        //
+        //       }
+        //       // }  // }else{
+        //       //     document.getElementById('cart_count').classList.add('d-none')
+        //       // }
+        //       // if (this.user){
+        //       //     console.log(this.user);
+        //       //     console.log(this.user.cart);
+        //       //     console.log(this.user.cart.items);
+        //       //     console.log(this.user.cart.items?.length);
+        //       //     console.log(this.user.cart-items-count);
+        //       // }
+        //     })
+        //     .catch((error) => {
+        //       console.log(error);
+        //     })
       }
 
     }

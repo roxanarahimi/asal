@@ -206,12 +206,11 @@
 import {onMounted, ref} from "vue";
 import dropZone from "@/components/DropZone";
 import {useStore} from "vuex";
-// import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
 
 
 export default {
   name: "RegisterEn",
-  components: {dropZone, },//Multiselect
+  components: {dropZone, },
   setup() {
 
     const store = useStore()
@@ -391,7 +390,6 @@ export default {
 
 }
 </script>
-<style src="@vueform/multiselect/themes/default.css"></style>
 
 <style scoped>
 label {

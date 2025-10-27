@@ -268,7 +268,6 @@
 
 <script>
 import {onMounted, ref} from "vue";
-// import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
 import {useStore} from "vuex";
 import dropZone from "@/components/DropZone";
 

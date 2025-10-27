@@ -203,7 +203,6 @@
 import {onMounted, ref} from "vue";
 import dropZone from "@/components/DropZone";
 import {useStore} from "vuex";
-// import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
 
 
 export default {
@@ -388,7 +387,6 @@ export default {
 
 }
 </script>
-<style src="@vueform/multiselect/themes/default.css"></style>
 
 <style scoped>
 label {

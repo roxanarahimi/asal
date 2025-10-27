@@ -33,7 +33,7 @@
   </div>
 </template>
 <script>
-import {computed, onMounted, ref} from "vue";
+import { ref} from "vue";
 import Loader from '@/components/Loader2.vue'
 import {useStore} from "vuex";
 import { h, render } from 'vue';

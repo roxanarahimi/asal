@@ -62,7 +62,7 @@ export default {
       }
     });
 
-    let user = localStorage.getItem('user')
+    // let user = localStorage.getItem('user')
     // if(!user){
     //   document.getElementById('login').classList.remove('d-none')
     //   document.getElementById('cart').classList.add('d-none')
@@ -79,7 +79,7 @@ export default {
     const route = useRoute();
 
     const store = useStore();
-    const url = store.state.panelUrl;
+    const url = store.state.serverUrl;
 
     return {
       store, url, route

@@ -10,6 +10,8 @@ export default createStore({
         searchResult: null,
         id: null,
         slug: null,
+        provinces: null,
+        cities: null,
         userToken: null, // This will hold the user token (for Authorization headers)
     },
     mutations: {
@@ -29,6 +31,13 @@ export default createStore({
         setSearchResult(state, searchResult) {
             state.searchResult = searchResult;
         },
+        setProvinces(state, provinces) {
+            state.provinces = provinces;
+        },
+        setCities(state, cities) {
+            state.cities = cities;
+        },
+
         setUserToken(state, token) {
             state.userToken = token;
         }
@@ -108,6 +117,46 @@ export default createStore({
                 commit('setBanners', data);  // Commit the data to the state
             } catch (error) {
                 console.error('Error fetching banners:', error);
+            }
+        },
+        async getCities({ commit, dispatch, state }, id) {
+            const headers = await dispatch('setFetchHeaders');
+
+            try {
+                const response = await fetch(`${state.serverUrl}/api/get/cities?province_id=${id}`, {
+                    method: 'GET',
+                    headers: headers,
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error fetching cities');
+                }
+
+                const data = await response.json();
+                commit('setCities', data);
+            } catch (error) {
+                console.error('Error fetching cities:', error);
+            }
+        },
+
+        // Fetch banners from the API
+        async getProvinces({ commit, state }) {
+            const headers = await this.dispatch('setFetchHeaders');
+
+            try {
+                const response = await fetch(state.serverUrl + '/api/get/provinces', {
+                    method: 'GET',
+                    headers: headers,
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error fetching provinces');
+                }
+
+                const data = await response.json();
+                commit('setProvinces', data);  // Commit the data to the state
+            } catch (error) {
+                console.error('Error fetching provinces:', error);
             }
         },
   // Fetch search result from the API

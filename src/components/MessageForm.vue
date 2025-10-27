@@ -10,24 +10,44 @@
 
       <div class="col-12 mb-2 px-1">
         <label for="message">پیام یا سوال</label>
-        <textarea v-model="message" id="message"
-                  class="form-control rounded-0  required"></textarea>
+        <textarea v-model="message" id="message" class="form-control rounded-0  required"></textarea>
       </div>
       <div class="col-12 mb-2 px-1">
         <label for="messageEmail">ایمیل</label>
-        <input v-model="email" id="messageEmail" type="email" class="form-control  rounded-0 en">
+        <input id="messageEmail" type="email" :value="user?.email" class="form-control  rounded-0 en">
       </div>
       <div class="col-12 mb-2 px-1">
         <label for="messageName">نام و نام خانوادگی (اختیاری)</label>
-        <input v-model="name" id="messageName" type="text" class="form-control rounded-0 ">
+        <input id="messageName" type="text" :value="user?.name" class="form-control rounded-0 ">
       </div>
+      <!--      <div class="col-6 mb-2 px-1">-->
+      <!--        <label for="messageCiyId">شهر</label>-->
+      <!--        <input  id="messageCiyId" type="text" :value="user?.city_id" class="form-control rounded-0 ">-->
+      <!--      </div>-->
+
       <div class="col-6 mb-2 px-1">
-        <label for="messageCiyId">شهر</label>
-        <input v-model="city_id" id="messageCiyId" type="text" class="form-control rounded-0 ">
+        <label>شهر</label>
+        <div class="required" >
+          <Multiselect
+                       v-model="selectedCity"
+                       :options="cities"
+                       label="name"
+                       mode="single"
+                       value-prop="id"
+                       track-by="name"
+                       placeholder="نام شهر را جستجو کنید..."
+                       :searchable="true"
+                       :close-on-select="true"
+          />
+        </div>
+        <input type="hidden" id="messageCiyId" v-model="selectedCity">
+        <div id="city_idHelp" class="form-text error"></div>
+        <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
       </div>
+
       <div class="col-6 mb-2 px-1">
         <label for="messageMobile">تلفن همراه</label>
-        <input v-if="user"  type="text" disabled :value="user.mobile" class="form-control rounded-0 en ">
+        <input v-if="user" type="text" disabled :value="user.mobile" class="form-control rounded-0 en ">
         <input v-else v-model="mobile" id="messageMobile" type="text"
                class="form-control rounded-0 en  required">
         <div v-if="errors?.mobile?.length" class="text-danger mt-2 fw-bold">
@@ -49,13 +69,15 @@
 </template>
 <script>
 import {useStore} from "vuex";
-import {computed, onMounted, ref} from "vue";
+import {computed, onMounted, ref, watch} from "vue";
 import Loader from "@/components/Loader2.vue"
+import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
+import '@vueform/multiselect/themes/default.css'
 
 
 export default {
   name: "Footer",
-  components: {Loader},
+  components: {Loader, Multiselect},//
   setup() {
     const store = useStore();
     const serverUrl = store.state.serverUrl;
@@ -69,10 +91,14 @@ export default {
     const city_id = ref();
     const emptyFieldsCount = ref();
     const validated = ref(false);
+    const selectedCity = ref(null);
 
-    onMounted(()=>{
+    onMounted(() => {
+      document.querySelector('.multiselect-search')?.setAttribute('autocomplete', 'off');
       user.value = JSON.parse(localStorage.getItem('user'));
+      getCities();
     })
+
     const setForm = async (form) => {
       localStorage.setItem('form', form);
       validate();
@@ -137,7 +163,6 @@ export default {
       } catch (error) {
         console.error('API call failed:', error);
         document.getElementById('msgFail').classList.remove('d-none');
-
       }
     }
     const showModal = async (type) => {
@@ -147,8 +172,25 @@ export default {
         document.getElementById('modal-btn-h').click();
       }
     }
-
+    const getCities = async () => {
+      try {
+        await store.dispatch('getCities', '');
+        // if(!store.state.contents.length){
+        //   notFund.value = true;
+        // }
+        // isLoading.value = false;
+        console.log(store.state.cities)
+      } catch (error) {
+        console.error('API call failed:', error);
+      }
+    };
+    watch(selectedCity.value, (newWidth, oldWidth) => {
+      console.log(`Width changed from ${oldWidth} → ${newWidth}`)
+    })
     return {
+      cities: computed(() => store.state.cities),
+      getCities,
+      selectedCity,
       store,
       serverUrl,
       isLoading,
@@ -167,10 +209,28 @@ export default {
       showModal
     }
 
-  }
+  },
 }
 </script>
-
 <style scoped>
+:deep(.multiselect-search) {
+  width: 100% !important;
+  height: 37.6px !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
 
+:deep(.multiselect,.multiselect-wrapper) {
+  width: 100% !important;
+  border-radius: 0 !important;
+  height: 37.6px !important;
+  padding-left: 10px !important;
+
+}
+:deep(.multiselect-single-label) {
+  width: 100% !important;
+  right: 0 !important;
+  left:unset !important;
+  height: 100% !important;
+}
 </style>
