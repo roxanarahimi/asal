@@ -56,14 +56,20 @@
   </div>
 </template>
 <script>
-import {computed, onBeforeMount, ref} from "vue";
+import {computed, onBeforeMount, onMounted, ref} from "vue";
 import {useStore} from "vuex";
 
 export default {
   setup() {
+    const store = useStore();
     const mobile = ref();
     const message = ref();
     const form = ref(localStorage.getItem('form'))
+    const serverUrl = store.state.serverUrl;
+    const isLoading = ref(false);
+    const errors = ref([]);
+    const user = computed(() => JSON.parse(localStorage.getItem('user')));
+    const level = ref(1);
     const setFirstMessage = () => {
       switch (form.value) {
         case 'message': {
@@ -87,39 +93,34 @@ export default {
     onBeforeMount(() => {
       setFirstMessage();
     });
-    const store = useStore();
-    const serverUrl = store.state.serverUrl;
-    const isLoading = ref(false);
-    const errors = ref([]);
-    const user = computed(() => JSON.parse(localStorage.getItem('user')));
-    const level = ref(1);
+   onMounted(()=>{
+   })
     const sendOtp = async () => {
       try {
-        // axios.post(serverUrl + '/api/user/otp', {
-        //   mobile: document.getElementById('messageMobile').value,
-        //   type: 'person',
-        //   name: document.getElementById('messageName').value,
-        //   email: document.getElementById('messageEmail').value,
-        //   city_id: document.getElementById('messageCiyId').value,
-        // }).then((response) => {
-        //   level.value = 2;
-        //   message.value = 'کد تایید برای شماره ' + document.getElementById('messageMobile').value + ' ارسال شد. لطفا آنرا وارد کنید'
-        // }).catch((error) => {
-        //   message.value = error.response.data.message || error.message;
-        // });
+        let info;
+        if(form.value==='message') {
+          info = {
+            mobile: document.getElementById('messageMobile').value,
+            type: 'person',
+            name: document.getElementById('messageName').value,
+            email: document.getElementById('messageEmail').value,
+            city_id: document.getElementById('messageCiyId').value,
+          }
+        }else{
+           info = {
+            mobile: document.getElementById('mobile')?.value,
+            type: 'person',
+            name: document.getElementById('name')?.value,
+            city_id: document.getElementById('city_id')?.value,
+          }
+        }
 
         fetch(serverUrl + '/api/user/otp', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            mobile: document.getElementById('messageMobile').value,
-            type: 'person',
-            name: document.getElementById('messageName').value,
-            email: document.getElementById('messageEmail').value,
-            city_id: document.getElementById('messageCiyId').value,
-          }),
+          body: JSON.stringify(info),
         })
             .then(async (response) => {
               if (!response.ok) {
@@ -145,14 +146,22 @@ export default {
             + document.getElementById('code2').value
             + document.getElementById('code3').value
             + document.getElementById('code4').value;
-
+        let info;
+        if(form.value==='message') {
+          info = {
+            mobile: document.getElementById('messageMobile').value,
+            code: code
+          }
+        }else{
+          info = {
+            mobile: document.getElementById('mobile')?.value,
+            code: code
+          }
+        }
         fetch(serverUrl + '/api/user/verify', {
           method: 'POST',
           headers: {'Content-Type': 'application/json',},
-          body: JSON.stringify({
-            mobile: document.getElementById('messageMobile').value,
-            code: code
-          }),
+          body: JSON.stringify(info),
         })
             .then(async (response) => {
               if (!response.ok) {
@@ -184,7 +193,7 @@ export default {
       document.getElementById('closeAuthorizeModal').click();
     }
     const clean = () => {
-      message.value = 'کد تایید برای شماره ' + document.getElementById('messageMobile').value + ' ارسال شد. لطفا آنرا وارد کنید'
+      message.value = 'کد تایید برای شماره ' + document.getElementById('messageMobile')?.value || document.getElementById('mobile')?.value + ' ارسال شد. لطفا آنرا وارد کنید'
       document.getElementById('code1').value = '';
       document.getElementById('code2').value = '';
       document.getElementById('code3').value = '';

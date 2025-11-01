@@ -24,12 +24,17 @@
     </div>
     <input style="display:none !important" @change="fileChanged" :id="'dr'+$props.index" type="file">
     <input :id="'img'+index" type="hidden" v-model="src" required>
-    <div id="image1Help" class="form-text error"></div>
+    <div id="image1Help" class="form-text error">
+      <div v-if="errorMsg" class="form-text text-danger mt-2">{{ errorMsg }}</div>
+    </div>
   </div>
 </template>
 
 <script>
 import {computed, onMounted, ref, watch} from "vue";
+const mx = 600;//kB
+const MAX_SIZE = mx * 1024; // to Bytes
+const ALLOWED_TYPES = ['image/jpeg', 'image/png'];
 
 export default {
   name: "DropZone",
@@ -43,6 +48,7 @@ export default {
     }
 
     const src = ref();
+    const errorMsg = ref('');
     const hasError = computed(() => _props.hasError);
 
     onMounted(() => {
@@ -51,14 +57,25 @@ export default {
 
 
     const fileChanged = (e, type) => {
+
       if (type == 'drop') {
         var file = e.dataTransfer.files[0];
       } else {
         var file = document.querySelector('#dr' + _props.index).files[0];
       }
+      errorMsg.value = ''; // clear previous errors
       if (file) {
         document.querySelector('#dropAreaContainer' + _props.index).classList.remove('dropAreaContainerHasError')
         document.querySelector('#dropArea' + _props.index).classList.remove('dropAreaHasError')
+        // Validation
+        if (!ALLOWED_TYPES.includes(file.type)) {
+          errorMsg.value = 'فرمت تصویر باید jpg یا png باشد.';
+          return;
+        }
+        if (file.size > MAX_SIZE) {
+          errorMsg.value = 'حجم تصویر باید کمتر از '+mx+' KB باشد.';
+          return;
+        }
         var reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function () {
@@ -81,7 +98,7 @@ export default {
       }
     }
     return {
-      clickLabel, fileChanged, src, clearImg, hasError
+      clickLabel, fileChanged, src, clearImg, hasError,errorMsg
     }
   },
 

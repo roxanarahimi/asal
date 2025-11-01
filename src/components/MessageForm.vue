@@ -29,8 +29,8 @@
         <label>شهر</label>
         <div class="required" >
           <Multiselect
-                       v-model="selectedCity"
-                       :options="cities"
+                       v-model="selectedMessageCity"
+                       :options="messageCities"
                        label="name"
                        mode="single"
                        value-prop="id"
@@ -40,9 +40,7 @@
                        :close-on-select="true"
           />
         </div>
-        <input type="hidden" id="messageCiyId" v-model="selectedCity">
-        <div id="city_idHelp" class="form-text error"></div>
-        <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
+        <input type="hidden" id="messageCiyId" v-model="selectedMessageCity">
       </div>
 
       <div class="col-6 mb-2 px-1">
@@ -64,7 +62,6 @@
       </div>
     </div>
   </div>
-  <button data-bs-toggle="modal" class="d-none" id="modal-btn-h" data-bs-target="#AuthorizeModal"></button>
 
 </template>
 <script>
@@ -91,12 +88,13 @@ export default {
     const city_id = ref();
     const emptyFieldsCount = ref();
     const validated = ref(false);
-    const selectedCity = ref(null);
+    const selectedMessageCity = ref(null);
+    const messageCities = ref();
 
     onMounted(() => {
       document.querySelector('.multiselect-search')?.setAttribute('autocomplete', 'off');
       user.value = JSON.parse(localStorage.getItem('user'));
-      getCities();
+      getMCities();
     })
 
     const setForm = async (form) => {
@@ -172,9 +170,10 @@ export default {
         document.getElementById('modal-btn-h').click();
       }
     }
-    const getCities = async () => {
+    const getMCities = async () => {
       try {
-        await store.dispatch('getCities', '');
+        await store.dispatch('getCities','');
+        messageCities.value = store.state.cities
         // if(!store.state.contents.length){
         //   notFund.value = true;
         // }
@@ -184,13 +183,13 @@ export default {
         console.error('API call failed:', error);
       }
     };
-    watch(selectedCity.value, (newWidth, oldWidth) => {
+    watch(selectedMessageCity.value, (newWidth, oldWidth) => {
       console.log(`Width changed from ${oldWidth} → ${newWidth}`)
     })
     return {
-      cities: computed(() => store.state.cities),
-      getCities,
-      selectedCity,
+      messageCities,
+      getMCities,
+      selectedMessageCity,
       store,
       serverUrl,
       isLoading,

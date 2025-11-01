@@ -11,6 +11,8 @@
   </div>
   <search-modal />
   <authorize-modal />
+  <button data-bs-toggle="modal" class="d-none" id="modal-btn-h" data-bs-target="#AuthorizeModal"></button>
+
 </template>
 
 <script>

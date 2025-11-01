@@ -40,10 +40,10 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-lg-12">
-            <label for="province">استان</label>
-            <input id="province" type="text" class="form-control rounded-0">
-          </div>
+<!--          <div class="col-6 col-lg-12">-->
+<!--            <label for="province">استان</label>-->
+<!--            <input id="province" type="text" class="form-control rounded-0">-->
+<!--          </div>-->
         </div>
       </div>
 
