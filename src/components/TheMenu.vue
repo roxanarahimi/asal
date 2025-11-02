@@ -31,10 +31,10 @@
             <!--             <button class="btn btn-outline-success" type="submit">Search</button>-->
             <!--           </form>-->
             <div>
-              <a v-if="user?.id" class="text-white"  :class="{'my-color':  $route.name == 'profile'}" href="/profile" >پروفایل من</a>
-              <a v-if="user?.id"  class="text-white cursor-pointer ms-2 ms-xl-5" @click="logout">خروج</a>
-<!--              <a v-if="!user?.id" class="text-white" data-bs-toggle="modal" data-bs-target="#AuthorizeModal" >ورود</a>-->
-              <a v-if="!user?.id" class="text-white ms-2 ms-lg-5" :class="{'my-color':  $route.name == 'register'}" href="/register" >ایجاد حساب کاربری</a>
+              <a v-if="user" class="text-white"  :class="{'my-color':  $route.name == 'profile'}" href="/profile" >پروفایل من</a>
+              <a v-if="user"  class="text-white cursor-pointer ms-2 ms-xl-5" @click="logout">خروج</a>
+<!--              <a v-if="!user" class="text-white" data-bs-toggle="modal" data-bs-target="#AuthorizeModal" >ورود</a>-->
+              <a v-if="!user" class="text-white ms-2 ms-lg-5" :class="{'my-color':  $route.name == 'register'}" href="/register" >ایجاد حساب کاربری</a>
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@
 
         </div>
         <div style="font-size: 18px !important; align-self: end" class="my-font fw-bolder mx-auto">
-          <div v-if="user?.id" class="d-flex">
+          <div v-if="user" class="d-flex">
             <div class="text-start me-2" style="width: 15px; height: 15px; ">
               <img v-if="$route.name == 'profile'" src="/img/dotB.png" class="w-100" alt="">
             </div>
@@ -151,7 +151,7 @@ export default {
     const links = ref([])
     const user = ref({})
     onBeforeMount(() => {
-      user.value = computed(()=>JSON.parse(localStorage.getItem('user')));
+      user.value = JSON.parse(localStorage.getItem('user'));
       console.log(user.value);
       links.value = [
         {title: 'خانه', link: '/', name: 'home'},
