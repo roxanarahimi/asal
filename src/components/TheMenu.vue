@@ -1,5 +1,5 @@
 <template>
-  <div class="d-none d-lg-block my-font fw-bold w-100 bg-black text-light" style="position: fixed;top:0;left:0; font-size: 16px !important; z-index:100">
+  <div class="d-none d-xl-block my-font fw-bold w-100 bg-black text-light" style="position: fixed;top:0;left:0; font-size: 16px !important; z-index:100">
     <div class="d-flex justify-content-between w-100">
       <nav class="navbar navbar-expand-sm bg-transparent w-100 pe-5 ps-3">
         <div class="container-fluid pe-5 ps-3  my-color">
@@ -31,9 +31,10 @@
             <!--             <button class="btn btn-outline-success" type="submit">Search</button>-->
             <!--           </form>-->
             <div>
-              <a v-if="user && $route.name === 'profile'" href="/" @click="logout">خروج</a>
-              <a v-if="user && $route.name !== 'profile'" href="/profile" >پروفایل من</a>
-              <a v-if="!user" href="/register" >ایجاد حساب کاربری</a>
+              <a v-if="user?.id" class="text-white"  :class="{'my-color':  $route.name == 'profile'}" href="/profile" >پروفایل من</a>
+              <a v-if="user?.id"  class="text-white cursor-pointer ms-2 ms-xl-5" @click="logout">خروج</a>
+<!--              <a v-if="!user?.id" class="text-white" data-bs-toggle="modal" data-bs-target="#AuthorizeModal" >ورود</a>-->
+              <a v-if="!user?.id" class="text-white ms-2 ms-lg-5" :class="{'my-color':  $route.name == 'register'}" href="/register" >ایجاد حساب کاربری</a>
             </div>
           </div>
         </div>
@@ -44,7 +45,7 @@
 <!--      </div>-->
     </div>
   </div>
-  <div class="d-lg-none my-font fw-bold w-100 bg-transparent" style="position: absolute;top:0;left:0; font-size: 16px !important; z-index:100">
+  <div class="d-xl-none my-font fw-bold w-100 bg-transparent" style="position: absolute;top:0;left:0; font-size: 16px !important; z-index:100">
     <div class="d-flex justify-content-between w-100">
       <nav class="d-flex justify-content-between" style="height: 50px; color: #F7941D">
         <div @click="menuToggle" class="pointer">
@@ -112,11 +113,12 @@
 
         </div>
         <div style="font-size: 18px !important; align-self: end" class="my-font fw-bolder mx-auto">
-          <div v-if="user" class="d-flex">
+          <div v-if="user?.id" class="d-flex">
             <div class="text-start me-2" style="width: 15px; height: 15px; ">
               <img v-if="$route.name == 'profile'" src="/img/dotB.png" class="w-100" alt="">
             </div>
-            <a href="/profile" class="a" @click="menuToggle">ایجاد حساب کاربری</a>
+            <a  href="/profile" class="a me-5 pe-5 " @click="menuToggle">پروفایل</a>
+            <a  class="a cursor-pointer" @click="logout">خروج</a>
           </div>
           <div v-else class="d-flex">
             <div class="text-start me-2" style="width: 15px; height: 15px; ">
@@ -132,7 +134,7 @@
 </template>
 
 <script>
-import {onBeforeMount, onMounted, ref} from "vue";
+import {computed, onBeforeMount, onMounted, ref} from "vue";
 import App from "@/App";
 
 export default {
@@ -149,7 +151,7 @@ export default {
     const links = ref([])
     const user = ref({})
     onBeforeMount(() => {
-      user.value = JSON.parse(localStorage.getItem('user'));
+      user.value = computed(()=>JSON.parse(localStorage.getItem('user')));
       console.log(user.value);
       links.value = [
         {title: 'خانه', link: '/', name: 'home'},
@@ -230,8 +232,9 @@ export default {
 
     const logout = () => {
       localStorage.removeItem('user');
-      localStorage.removeItem('expire');
-      localStorage.removeItem('token');
+      window.location = '/';
+      // localStorage.removeItem('expire');
+      // localStorage.removeItem('token');
     }
 
 
