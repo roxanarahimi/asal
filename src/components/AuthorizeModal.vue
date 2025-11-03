@@ -104,13 +104,13 @@ export default {
     const sendOtp = async () => {
       try {
         let info;
-        if(form.value==='message') {
+        if(form.value==='register') {
           info = {
-            mobile: document.getElementById('authMobile').value,
+            mobile: document.getElementById('mobile')?.value,
           }
         }else{
            info = {
-            mobile: document.getElementById('mobile')?.value,
+             mobile: document.getElementById('authMobile').value,
           }
         }
 

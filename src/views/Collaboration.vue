@@ -472,6 +472,7 @@ export default {
 
     const checkUser = ()=>{
       if (!localStorage.getItem('user')) {
+        setForm('collaboration');
         document.getElementById('modal-btn-h').click();
       }
     }
