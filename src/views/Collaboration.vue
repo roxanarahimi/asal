@@ -339,7 +339,7 @@ export default {
     const validate = () => {
       mobile.value = document.getElementById('mobile').value;
       errors.value = [];
-      // errors.value['mobile'] = [];
+      errors.value['mobile'] = [];
       emptyFieldsCount.value = 0;
       let req = document.querySelectorAll('[required]');
       req.forEach((element) => {

@@ -112,17 +112,46 @@
 
         <div class="col-6 col-lg-3">
           <label>استان</label>
-          <input id="province" type="number" class="form-control form-control-sm" required>
-          <div id="provinceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.province">{{ e }}</p>
-        </div>
+            <div>
+              <Multiselect
+                  v-model="selectedProvince"
+                  :options="provinces"
+                  :is-selected="user?.city_id"
+                  label="name"
+                  mode="single"
+                  value-prop="id"
+                  track-by="name"
+                  placeholder="نام استان را جستجو کنید..."
+                  :searchable="true"
+                  :close-on-select="true"
+              />
+            </div>
+            <input type="hidden" id="province_id" @change="" v-model="selectedProvince">
+            <div id="city_idHelp" class="form-text error"></div>
+            <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
+          </div>
+
         <div class="col-6 col-lg-3">
           <label>شهر</label>
-          <input id="province" type="number" class="form-control form-control-sm" required>
-          <div id="provinceHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.province">{{ e }}</p>
-        </div>
-<!--        <div class="col-6">-->
+            <div>
+              <Multiselect
+                  v-model="selectedCity"
+                  :options="cities"
+                  label="name"
+                  mode="single"
+                  value-prop="id"
+                  track-by="name"
+                  placeholder="نام شهر را جستجو کنید..."
+                  :searchable="true"
+                  :close-on-select="true"
+              />
+            </div>
+            <input type="hidden" id="city_id" v-model="selectedCity">
+            <div id="city_idHelp" class="form-text error"></div>
+            <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
+          </div>
+
+          <!--        <div class="col-6">-->
 <!--          <label>شهر</label>-->
 <!--          <Multiselect-->
 <!--              v-model="selectedCity"-->
@@ -200,25 +229,39 @@
 
 
 <script>
-import {onMounted, ref} from "vue";
+import {computed, onMounted, ref, watch} from "vue";
 import dropZone from "@/components/DropZone";
 import {useStore} from "vuex";
+import Multiselect from "@vueform/multiselect";
+import Loader from "@/components/Loader2.vue";
 
 
 export default {
   name: "Register",
-  components: {dropZone, },//Multiselect
+  components: {dropZone, Multiselect, Loader},
   setup() {
+    const store = useStore();
+    const serverUrl = store.state.serverUrl;
+    const isLoading = ref(false);
+    const errors = ref([]);
+    const user = computed(() => JSON.parse(localStorage.getItem('user')));
+    const mobile = ref();
+    const message = ref();
+    const name = ref();
+    const email = ref();
+    const city_id = ref();
+    const emptyFieldsCount = ref();
+    const validated = ref(false);
+    const provinces = ref([]);
+    const cities = ref([]);
+    const selectedCity = ref();
+    const selectedProvince = ref()
+    const selectedFiles = ref([])
 
-    const store = useStore()
-    const errors = ref([])
     const type = ref();
     const img1Error = ref(false)
     const img2Error = ref(false)
-    const cities = ref([])
-    const provinces = ref([])
-    const selectedProvince = ref({})
-    const selectedCity = ref({})
+
     const typeToggle = (index) => {
       errors.value = [];
       let req = document.querySelectorAll('[required]');
@@ -340,48 +383,177 @@ export default {
     }
 
 
-    onMounted(() => {
-      type.value = 'real';
-      getProvinces();
-      // getCities();
-    })
-
     const reload = () => {
       window.location.reload();
     }
-    const getProvinces = () => {
-      axios.get(store.state.panelUrl + '/api/province')
-          .then((response) => {
-            provinces.value = response.data;
-            provinces.value.forEach((element) => {
-              element.value = {id: element.id, name: element.title, cities: element.cities};
-              element.label = element.title;
-            })
 
-            selectedProvince.value = provinces.value[0]
-          }).then(() => {
-        getCities();
-      }).catch((error) => {
-        console.error(error)
-      })
+    const setForm = async (form) => {
+      localStorage.setItem('form', form);
+      validate();
     }
-    const getCities = () => {
-      setTimeout(() => {
-        cities.value = [];
-        if (selectedProvince.value) {
-          let x = selectedProvince.value.cities;
-          x.forEach((element) => {
-            element.value = {id: element.id, name: element.title};
-            element.label = element.title;
-          })
-          cities.value = x;
+    const validate = () => {
+      mobile.value = document.getElementById('mobile').value;
+      errors.value = [];
+      errors.value['mobile'] = [];
+      emptyFieldsCount.value = 0;
+      let req = document.querySelectorAll('[required]');
+      req.forEach((element) => {
+        if (element.value === "") {
+          element.classList.add('hasError');
+          // element.nextSibling.innerHTML = "فیلد اجباری";
+          emptyFieldsCount.value++;
+        } else {
+          element.classList.remove('hasError');
+          // element.nextSibling.innerHTML = "";
         }
-      }, 1000)
+      });
+      if (document.querySelector('#img1')?.classList.contains('hasError')) {
+        img1Error.value = true;
+      } else {
+        img1Error.value = false;
+      }
+      if (mobile.value && mobile.value?.length !== 11) {
+        errors.value['mobile'].push('شماره موبایل باید 11 رقم باشد');
+        document.getElementById('messageMobile').classList.add('hasError');
+        emptyFieldsCount.value++;
+      }
+      if (mobile.value && !mobile.value?.startsWith('09')) {
+        errors.value['mobile'].push('شماره موبایل باید با 09 شروع شود');
+        document.getElementById('messageMobile').classList.add('hasError');
+        emptyFieldsCount.value++;
+      }
+      if (!localStorage.getItem('user') && emptyFieldsCount.value === 0) {
+        document.getElementById('modal-btn-h').click();
+      }
+    }
+    const showModal = async (type) => {
+      await setForm(type);
+      validate();
+      if (emptyFieldsCount.value === 0) {
+        document.getElementById('modal-btn-h').click();
+      }
+    }
+    const getProvinces = async () => {
+      try {
+        await store.dispatch('getProvinces');
+        provinces.value = store.state.provinces;
 
+      } catch (error) {
+        console.error('API call failed:', error);
+      }
+    };
+    const getCities = async (id) => {
+      try {
+        await store.dispatch('getCities', id);
+        cities.value = store.state.cities;
+      } catch (error) {
+        console.error('API call failed:', error);
+      }
+    };
+
+    const checkboxToggle = (id) => {
+      let x = document.getElementById(id);
+      let y = x.getAttribute('check-box-checked') == 0 ? 1 : 0;
+      if (y === 1) {
+        x.firstChild.classList.remove('opacity-0');
+      } else {
+        x.firstChild.classList.add('opacity-0');
+      }
+      document.getElementById(id).setAttribute('check-box-checked', y);
+    }
+    const storeRequest = async () => {
+      try {
+        document.getElementById('sendSuccess')?.classList.add('d-none');
+        document.getElementById('sendFail')?.classList.add('d-none');
+        validate();
+        if (user.value && emptyFieldsCount.value === 0) {
+          if (!selectedFiles.value.length) {
+            alert('Please upload at least one image.')
+            return
+          }
+
+          const formData = new FormData()
+
+          // ✅ Append each file
+          selectedFiles.value.forEach((file, i) => {
+            formData.append('images[]', file)
+          })
+
+          formData.append('user_id', user.value.id);
+          formData.append('commercial', document.getElementById('commercial').getAttribute('check-box-checked'));
+          formData.append('scientific', document.getElementById('scientific').getAttribute('check-box-checked'));
+          formData.append('custom_production', document.getElementById('custom_production').getAttribute('check-box-checked'));
+          formData.append('honey', document.getElementById('honey').getAttribute('check-box-checked'));
+          formData.append('pollen', document.getElementById('pollen').getAttribute('check-box-checked'));
+          formData.append('propolis', document.getElementById('propolis').getAttribute('check-box-checked'));
+          formData.append('royal_jelly', document.getElementById('royal_jelly').getAttribute('check-box-checked'));
+          formData.append('bee_venom', document.getElementById('bee_venom').getAttribute('check-box-checked'));
+          formData.append('description', document.getElementById('description').getAttribute('check-box-checked'));
+
+          await fetch(serverUrl + '/api/collab/store', {
+            method: 'POST',
+            body: formData,
+          })
+              .then(async (response) => {
+                if (response.status === 201) {
+                  document.getElementById('sendSuccess')?.classList.remove('d-none');
+                } else {
+                  document.getElementById('sendFail')?.classList.remove('d-none');
+                  const errorData = await response.json().catch(() => ({}));
+                  throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+                }
+              })
+              .catch((error) => {
+                console.error(error.message);
+              });
+        }
+      } catch (error) {
+        console.error('API call failed:', error);
+        document.getElementById('sendFail').classList.remove('d-none');
+      }
+    }
+
+    onMounted(() => {
+      type.value = 'real';
+      getProvinces();
+      document.querySelectorAll('.multiselect-search')?.forEach((e) => {
+        e.setAttribute('autocomplete', 'off');
+      })
+    })
+    watch(selectedProvince, (newValue, oldValue) => {
+      getCities(newValue);
+    })
+
+    const checkUser = ()=>{
+      if (!localStorage.getItem('user')) {
+        setForm('collaboration');
+        document.getElementById('modal-btn-h').click();
+      }
     }
     return {
-      type, typeToggle, submit, errors, img1Error, img2Error, store, reload,
-      cities, provinces, selectedProvince, selectedCity, getCities, getProvinces,
+      checkUser,
+      storeRequest,
+      checkboxToggle, selectedProvince, getProvinces,
+      provinces,
+      cities, selectedCity,
+      getCities,
+      store,
+      serverUrl,
+      isLoading,
+      errors,
+      setForm,
+      user,
+      mobile,
+      message,
+      name,
+      email,
+      city_id,
+      validate,
+      validated,
+      emptyFieldsCount,
+      showModal,selectedFiles,
+
+      type, typeToggle, submit, img1Error, img2Error, reload,
     }
   }
 
@@ -401,5 +573,22 @@ label {
   text-align: center;
 }
 
+:deep(.multiselect-search) {
+  width: 100% !important;
+  border-radius: 0 !important;
+}
+
+:deep(.multiselect,.multiselect-wrapper) {
+  width: 100% !important;
+  padding-left: 10px !important;
+
+}
+
+:deep(.multiselect-single-label) {
+  width: 100% !important;
+  right: 0 !important;
+  left: unset !important;
+  height: 100% !important;
+}
 
 </style>
