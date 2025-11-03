@@ -134,7 +134,7 @@
 </template>
 
 <script>
-import {computed, onBeforeMount, onMounted, ref} from "vue";
+import {computed, onBeforeMount, onMounted, ref, watch} from "vue";
 import App from "@/App";
 
 export default {
@@ -149,10 +149,10 @@ export default {
   setup() {
     const flag = ref(0);
     const links = ref([])
-    const user = ref({})
+    const user = JSON.parse(localStorage.getItem('user'));
     onBeforeMount(() => {
-      user.value = JSON.parse(localStorage.getItem('user'));
-      console.log(user.value);
+      // user.value = JSON.parse(localStorage.getItem('user'));
+      // console.log(user.value);
       links.value = [
         {title: 'خانه', link: '/', name: 'home'},
         {
@@ -237,6 +237,10 @@ export default {
       // localStorage.removeItem('token');
     }
 
+    watch(JSON.parse(localStorage.getItem('user')), (newVal, oldVal) => {
+      console.log(`Width changed from ${oldVal} → ${newVal}`)
+      user.value = newVal;
+    });
 
     return {
       links, flag, menuToggle, logout, subMenuToggle,user
@@ -295,7 +299,6 @@ a{
   text-align: start;
   height: 0;
 }
-
 .dropdown-item:hover {
   height: auto;
   text-align: start;

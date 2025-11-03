@@ -139,13 +139,13 @@
                 کنید.</p>
               <div class="col-12 col-lg-6 mb-2">
                 <label class="mb-2" for="name">نام و نام خانوادگی</label>
-                <input id="name" type="text" class="form-control rounded-0" :value="user?.name" required>
+                <input id="name" v-if="user" type="text" class="form-control rounded-0" :value="user.name" required>
+                <input id="name" @input="checkUser" v-else type="text" class="form-control rounded-0" required>
               </div>
               <div class="col-12 col-lg-6 mb-2">
                 <label class="mb-2" for="mobile">شماره موبایل</label>
-                <input v-if="user" id="mobile" type="text" class="form-control rounded-0 en" :value="user?.mobile"
-                       disabled>
-                <input v-else id="mobile" type="text" class="form-control rounded-0 en" :value="user?.mobile" required>
+                <input v-if="user" id="mobile" type="text" class="form-control rounded-0 en" :value="user?.mobile" disabled>
+                <input v-else id="mobile" @input="checkUser" type="text" class="form-control rounded-0 en"  required>
               </div>
               <div class="col-6 mb-2 ">
                 <label class="mb-2">استان</label>
@@ -270,7 +270,7 @@
           </div>
           <div class="col-12 mb-3">
             <label class="mb-2" for="description">توضیحات تکمیلی</label>
-            <textarea id="description" type="text" class="form-control rounded-0"></textarea>
+            <textarea @input="checkUser"  id="description" type="text" class="form-control rounded-0"></textarea>
           </div>
           <div class="col-12">
             <label class="mb-2" for="">آپلود فایل مستندات:
@@ -287,8 +287,8 @@
 
           <div class="text-center col-lg-12 mt-3">
             <!--            <button class="btn-black-rect">ثبت</button>-->
-            <button v-if="user" class="btn-black-rect" @click="storeRequest">ثبت</button>
-            <button v-if="!user" class="btn-black-rect" @click="showModal('collaboration')">ثبت</button>
+            <button class="btn-black-rect" @click="storeRequest">ثبت</button>
+<!--            <button v-if="!user?.id" class="btn-black-rect" @click="showModal('collaboration')">modal</button>-->
           </div>
         </div>
 
@@ -302,7 +302,7 @@
 <script>
 import {useStore} from "vuex";
 import dropZone from "@/components/DropZone2";
-import {onMounted, ref, watch} from "vue";
+import {computed, onMounted, ref, watch} from "vue";
 import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
 import '@vueform/multiselect/themes/default.css'
 import Loader from "@/components/Loader2.vue"
@@ -317,7 +317,7 @@ export default {
     const img1Error = ref(false);
     const isLoading = ref(false);
     const errors = ref([]);
-    const user = ref();
+    const user = computed(() => JSON.parse(localStorage.getItem('user')));
     const mobile = ref();
     const message = ref();
     const name = ref();
@@ -339,7 +339,7 @@ export default {
     const validate = () => {
       mobile.value = document.getElementById('mobile').value;
       errors.value = [];
-      errors.value['mobile'] = [];
+      // errors.value['mobile'] = [];
       emptyFieldsCount.value = 0;
       let req = document.querySelectorAll('[required]');
       req.forEach((element) => {
@@ -460,7 +460,6 @@ export default {
 
     onMounted(() => {
       // localStorage.removeItem('user');
-      user.value = JSON.parse(localStorage.getItem('user'));
       console.log(user.value)
       getProvinces();
       document.querySelectorAll('.multiselect-search')?.forEach((e) => {
@@ -471,8 +470,13 @@ export default {
       getCities(newValue);
     })
 
-
+    const checkUser = ()=>{
+      if (!localStorage.getItem('user')) {
+        document.getElementById('modal-btn-h').click();
+      }
+    }
     return {
+      checkUser,
       storeRequest,
       checkboxToggle, selectedProvince, getProvinces,
       provinces,

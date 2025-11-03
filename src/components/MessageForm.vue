@@ -10,21 +10,16 @@
 
       <div class="col-12 mb-2 px-1">
         <label for="message">پیام یا سوال</label>
-        <textarea v-model="message" id="message" class="form-control rounded-0  required"></textarea>
+        <textarea @input="checkUser" v-model="message" id="message" class="form-control rounded-0  required"></textarea>
       </div>
       <div class="col-12 mb-2 px-1">
         <label for="messageEmail">ایمیل</label>
-        <input id="messageEmail" type="email" :value="user?.email" class="form-control  rounded-0 en">
+        <input @input="checkUser" id="messageEmail" type="email" :value="user?.email" class="form-control  rounded-0 en">
       </div>
       <div class="col-12 mb-2 px-1">
         <label for="messageName">نام و نام خانوادگی (اختیاری)</label>
-        <input id="messageName" type="text" :value="user?.name" class="form-control rounded-0 ">
+        <input @input="checkUser" id="messageName" type="text" :value="user?.name" class="form-control rounded-0 ">
       </div>
-      <!--      <div class="col-6 mb-2 px-1">-->
-      <!--        <label for="messageCiyId">شهر</label>-->
-      <!--        <input  id="messageCiyId" type="text" :value="user?.city_id" class="form-control rounded-0 ">-->
-      <!--      </div>-->
-
       <div class="col-6 mb-2 px-1">
         <label>شهر</label>
         <div class="required" >
@@ -46,7 +41,7 @@
       <div class="col-6 mb-2 px-1">
         <label for="messageMobile">تلفن همراه</label>
         <input v-if="user" type="text" disabled :value="user.mobile" class="form-control rounded-0 en ">
-        <input v-else v-model="mobile" id="messageMobile" type="text"
+        <input @input="checkUser" v-else v-model="mobile" id="messageMobile" type="text"
                class="form-control rounded-0 en  required">
         <div v-if="errors?.mobile?.length" class="text-danger mt-2 fw-bold">
           <ul>
@@ -57,8 +52,8 @@
       </div>
 
       <div class="text-center col-lg-12 mt-3">
-        <button v-if="user" class="btn-black-rect" @click="storeMessage">ثبت</button>
-        <button v-if="!user" class="btn-black-rect" @click="showModal('message')">ثبت</button>
+        <button class="btn-black-rect" @click="storeMessage">ثبت</button>
+<!--        <button v-if="!user" class="btn-black-rect" @click="showModal('message')">ثبت</button>-->
       </div>
     </div>
   </div>
@@ -66,7 +61,7 @@
 </template>
 <script>
 import {useStore} from "vuex";
-import {computed, onMounted, ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import Loader from "@/components/Loader2.vue"
 import Multiselect from '@vueform/multiselect'  //npm install @vueform/multiselect
 import '@vueform/multiselect/themes/default.css'
@@ -80,7 +75,7 @@ export default {
     const serverUrl = store.state.serverUrl;
     const isLoading = ref(false);
     const errors = ref([]);
-    const user = ref();
+    const user = ref(JSON.parse(localStorage.getItem('user')));
     const mobile = ref();
     const message = ref();
     const name = ref();
@@ -93,7 +88,6 @@ export default {
 
     onMounted(() => {
       document.querySelector('.multiselect-search')?.setAttribute('autocomplete', 'off');
-      user.value = JSON.parse(localStorage.getItem('user'));
       getMCities();
     })
 
@@ -183,10 +177,14 @@ export default {
         console.error('API call failed:', error);
       }
     };
-    watch(selectedMessageCity.value, (newWidth, oldWidth) => {
-      console.log(`Width changed from ${oldWidth} → ${newWidth}`)
-    })
+
+   const checkUser = ()=>{
+     if (!localStorage.getItem('user')) {
+       document.getElementById('modal-btn-h').click();
+     }
+   }
     return {
+     checkUser,
       messageCities,
       getMCities,
       selectedMessageCity,

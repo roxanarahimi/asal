@@ -11,27 +11,31 @@
           <div class="text-light cursor-pointer" data-bs-dismiss="modal" id="closeAuthorizeModal" @click="reset"><i
               class="bi bi-x-lg"></i></div>
         </div>
-        <div class="modal-body" style="height: 110px">
+        <div class="modal-body" style="height: 140px">
           <p class="mb-4 ms-3">{{ message }}</p>
-          <div class="mx-auto" style="max-width: 250px">
+          <input type="hidden" id="authForm" v-model="form">
+         <div class="mx-auto" style="max-width: 250px">
             <div class="code-section row" dir="ltr">
-              <div class="col-3">
-                <input v-if="level === 2" class="text-center col-3 my-border bg-transparent text-light form-control"
+              <label :class="{'d-none': level!==1}" for="">شماره موبایل</label>
+              <input :class="{'d-none': level!==1}" type="text" id="authMobile" class="form-control my-border bg-transparent en text-white" v-model="mobile">
+
+              <div v-if="level === 2" class="col-3">
+                <input  class="text-center col-3 my-border bg-transparent text-light form-control"
                        @input="autoTab($event)" minLength="1" maxLength="1" min="0" max="9" type="text" id="code1"
                        autocomplete="off">
               </div>
-              <div class="col-3">
-                <input v-if="level === 2" class="text-center col-3 my-border bg-transparent text-light form-control"
+              <div v-if="level === 2" class="col-3">
+                <input  class="text-center col-3 my-border bg-transparent text-light form-control"
                        @input="autoTab($event)" minLength="1" maxLength="1" min="0" max="9" type="text" id="code2"
                        autocomplete="off">
               </div>
-              <div class="col-3">
-                <input v-if="level === 2" class="text-center col-3 my-border bg-transparent text-light form-control"
+              <div v-if="level === 2" class="col-3">
+                <input class="text-center col-3 my-border bg-transparent text-light form-control"
                        @input="autoTab($event)" minLength="1" maxLength="1" min="0" max="9" type="text" id="code3"
                        autocomplete="off">
               </div>
-              <div class="col-3">
-                <input v-if="level === 2" class="text-center col-3 my-border bg-transparent text-light form-control"
+              <div v-if="level === 2" class="col-3">
+                <input class="text-center col-3 my-border bg-transparent text-light form-control"
                        @input="autoTab($event)" minLength="1" maxLength="1" min="0" max="9" type="text" id="code4"
                        autocomplete="off">
               </div>
@@ -58,13 +62,15 @@
 <script>
 import {computed, onBeforeMount, onMounted, ref} from "vue";
 import {useStore} from "vuex";
+import App from "@/App.vue";
 
 export default {
+  components:{App},
   setup() {
     const store = useStore();
-    const mobile = ref();
     const message = ref();
-    const form = ref(localStorage.getItem('form'))
+    const form = ref(localStorage.getItem('form'));
+    const mobile = ref();
     const serverUrl = store.state.serverUrl;
     const isLoading = ref(false);
     const errors = ref([]);
@@ -100,18 +106,11 @@ export default {
         let info;
         if(form.value==='message') {
           info = {
-            mobile: document.getElementById('messageMobile').value,
-            type: 'person',
-            name: document.getElementById('messageName').value,
-            email: document.getElementById('messageEmail').value,
-            city_id: document.getElementById('messageCiyId').value,
+            mobile: document.getElementById('authMobile').value,
           }
         }else{
            info = {
             mobile: document.getElementById('mobile')?.value,
-            type: 'person',
-            name: document.getElementById('name')?.value,
-            city_id: document.getElementById('city_id')?.value,
           }
         }
 
@@ -132,6 +131,9 @@ export default {
             .then((data) => {
               level.value = 2;
               message.value = 'کد تایید برای شماره ' + document.getElementById('messageMobile').value + ' ارسال شد. لطفا آنرا وارد کنید';
+              setTimeout(()=>{
+                document.getElementById('code1')?.focus();
+              },300)
             })
             .catch((error) => {
               message.value = error.message;
@@ -146,22 +148,19 @@ export default {
             + document.getElementById('code2').value
             + document.getElementById('code3').value
             + document.getElementById('code4').value;
-        let info;
-        if(form.value==='message') {
-          info = {
-            mobile: document.getElementById('messageMobile').value,
+
+            let info = {
+            mobile: document.getElementById('authMobile').value,
             code: code
           }
-        }else{
-          info = {
-            mobile: document.getElementById('mobile')?.value,
-            code: code
-          }
-        }
+
         fetch(serverUrl + '/api/user/verify', {
           method: 'POST',
           headers: {'Content-Type': 'application/json',},
-          body: JSON.stringify(info),
+          body: JSON.stringify({
+            mobile: document.getElementById('authMobile').value,
+            code: code
+          }),
         })
             .then(async (response) => {
               if (!response.ok) {
@@ -169,11 +168,13 @@ export default {
                 throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
               } else {
                 const data = await response.json();
-                console.log('uuu', data.user);
                 localStorage.setItem('user', JSON.stringify(data.user))
               }
             })
             .then((data) => {
+              user.value = {}
+              user.value = computed(()=>JSON.parse(localStorage.getItem('user')))
+              // this.$parent.setup().user.value = computed(()=>JSON.parse(localStorage.getItem('user')))
               level.value = 3;
               message.value = 'شما با موفقیت وارد شدید.';
             })
@@ -191,6 +192,7 @@ export default {
       level.value = 1;
       setFirstMessage();
       document.getElementById('closeAuthorizeModal').click();
+      window.location.reload();
     }
     const clean = () => {
       message.value = 'کد تایید برای شماره ' + document.getElementById('messageMobile')?.value || document.getElementById('mobile')?.value + ' ارسال شد. لطفا آنرا وارد کنید'
@@ -199,7 +201,6 @@ export default {
       document.getElementById('code3').value = '';
       document.getElementById('code4').value = '';
       document.getElementById('code1').focus();
-
     }
     const counter = () => {
 
@@ -252,7 +253,7 @@ export default {
       setFirstMessage,
       clean,
       autoTab,
-      counter
+      counter,
     }
   }
 }
