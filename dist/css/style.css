@@ -700,7 +700,7 @@ button:focus {
 }
 .banners{
     /*height: 100% !important;*/
-    /*width: auto !important;*/
+    width: 100% !important;
     /*margin: 0 auto !important;*/
 }
 
