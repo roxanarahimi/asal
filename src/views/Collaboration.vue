@@ -471,8 +471,8 @@ export default {
     })
 
     const checkUser = ()=>{
+      setForm('collaboration');
       if (!localStorage.getItem('user')) {
-        setForm('collaboration');
         document.getElementById('modal-btn-h').click();
       }
     }

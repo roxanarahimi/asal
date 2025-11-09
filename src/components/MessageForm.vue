@@ -179,8 +179,8 @@ export default {
     };
 
    const checkUser = ()=>{
+     setForm('message');
      if (!localStorage.getItem('user')) {
-       setForm('message');
        document.getElementById('modal-btn-h').click();
      }
    }
