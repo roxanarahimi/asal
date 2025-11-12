@@ -3,21 +3,21 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="AuthorizeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  <div class="modal fade" id="AuthorizeModal"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
        aria-labelledby="AuthorizeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-black my-border  text-light">
         <div class="d-flex justify-content-start p-2 ">
-          <div class="text-light cursor-pointer" data-bs-dismiss="modal" id="closeAuthorizeModal" @click="reset"><i
-              class="bi bi-x-lg"></i></div>
+<!--          <div class="text-light cursor-pointer" data-bs-dismiss="modal" id="closeAuthorizeModal" @click="reset"><i-->
+<!--              class="bi bi-x-lg"></i></div>-->
         </div>
-        <div class="modal-body" style="height: 140px">
+        <div class="modal-body" style="height: 150px">
           <p class="mb-4 ms-3">{{ message }}</p>
           <input type="hidden" id="authForm" v-model="form">
-         <div class="mx-auto" style="max-width: 250px">
+         <div class="mx-auto px-4" >
             <div class="code-section row" dir="ltr">
-              <label :class="{'d-none': level!==1}" for="">شماره موبایل</label>
-              <input :class="{'d-none': level!==1}" type="text" id="authMobile" class="form-control my-border bg-transparent en text-white" v-model="mobile">
+              <label :class="{'d-none': level!==1}" class="mb-2" for="">شماره موبایل</label>
+              <input :class="{'d-none': level!==1}" type="text" id="authMobile" class="form-control w-100 my-border bg-transparent en text-white" v-model="mobile">
 
               <div v-if="level === 2" class="col-3">
                 <input  class="text-center col-3 my-border bg-transparent text-light form-control"
@@ -53,7 +53,7 @@
           <button v-if="level === 2" type="button" class="btn btn-orange-rect my-border" @click="clean">پاک کن</button>
           <button v-if="level === 2" type="button" class="btn btn-orange-rect my-border" @click="verifyMobile">تایید
           </button>
-          <button v-if="level === 3" type="button" class="btn btn-orange-rect my-border" @click="reset">ادامه</button>
+          <button v-if="level === 3" type="button" class="btn btn-orange-rect my-border" data-bs-dismiss="modal" @click="reset">ادامه</button>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@ export default {
         }
           break;
         case 'register': {
-          message.value = 'برای ثبت نام در سایت، لطفا شماره موبایل خود را با ارسال کد، تایید کنید'
+          message.value = 'برای ثبت نام، لطفا شماره موبایل خود را با ارسال کد، تایید کنید'
         }
           break;
       }
@@ -191,7 +191,7 @@ export default {
     const reset = () => {
       level.value = 1;
       setFirstMessage();
-      document.getElementById('closeAuthorizeModal').click();
+      // document.getElementById('closeAuthorizeModal').click();
       if (form.value !=='register'){
         window.location.reload();
       }

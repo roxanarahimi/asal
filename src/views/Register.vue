@@ -168,7 +168,7 @@
 
 
       <div class=" d-flex justify-content-center mt-4">
-        <button v-if="!validated" @click.prevent="validate" class="btn-orange my-font">validate</button>
+        <button v-if="!validated" @click.prevent="validate" class="btn-orange my-font">ثبت</button>
         <button v-if="validated" @click.prevent="submit" class="btn-orange my-font">ثبت</button>
 <!--        <button @click.prevent="submit" class="btn-orange my-font">ثبت</button>-->
       </div>
@@ -368,6 +368,7 @@ export default {
           })
               .then(async (response) => {
                 if (response.status === 201 || response.status === 200) {
+                  window.location.reload();
                   document.getElementById('sendSuccess')?.classList.remove('d-none');
                 } else {
                   document.getElementById('sendFail')?.classList.remove('d-none');
