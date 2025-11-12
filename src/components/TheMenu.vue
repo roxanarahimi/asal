@@ -12,7 +12,7 @@
           <div class="collapse navbar-collapse mb-0" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mt-1">
               <li v-for="(item,index) in links" :key="item" class="nav-item px-1 px-xxl-3" :class="{'dropdown': item.subsets}">
-                <a :href="item.link" class="nav-link my-font text-white"
+                <a :href="item.link" class="nav-link my-font text-white dr_link"
                    :class="{'active-lg': $route.name === item.name || $route.name+'-'+$route.params.id == item.name,'dropdown-toggle': item.subsets}"
                    aria-current="page">{{ item.title }}</a>
                 <ul class="dropdown-m my-border rounded bg-black w-auto px-4 py-2 text-start " v-if="item.subsets"
@@ -286,21 +286,37 @@ export default {
 a{
   white-space: nowrap;
 }
-.dropdown-m {
-  opacity: 0;
-  transition: 1s ease;
-}
-
-.dropdown:hover .dropdown-m {
-  opacity: 1;
+.dropdown{
+  position: relative;
+  /*overflow: hidden;*/
 }
 
 .dropdown-item {
   text-align: start;
-  height: 0;
+  height: 0 !important;
 }
-.dropdown-item:hover {
-  height: auto;
+.dropdown-m {
+  position: absolute;
+  top: 40px;
+  right:0;
+  opacity: 0;
+  display: none;
+  transition: 1s ease;
+}
+
+.dropdown:hover .dropdown {
+  /*overflow: visible;*/
+}
+.dropdown:hover .dropdown-m {
+  opacity: 1;
+  display: block;
+
+  height: 200px !important;
+}
+
+
+.dropdown:hover .dropdown-item {
+  height: auto !important;
   text-align: start;
   font-weight: bolder;
   font-size: 15px;

@@ -1,9 +1,9 @@
 <template>
   <div class="w-100 px-4 px-lg-5 text-light "
        style="background: url('/img/loginBack.svg') top center no-repeat; background-size: cover">
-<!--    <div class="text-center">-->
-<!--      <img src="/img/Beelogo.png" style="width: 160px" class="my-5" alt="">-->
-<!--    </div>-->
+    <!--    <div class="text-center">-->
+    <!--      <img src="/img/Beelogo.png" style="width: 160px" class="my-5" alt="">-->
+    <!--    </div>-->
 
     <h1 class="my-font my-color text-center fw-bold mt-4 mb-5">ثبت نام در کوپابی</h1>
 
@@ -13,8 +13,10 @@
       </p>
       <p>
         📌 توجه:
-        ثبت مشخصات فردی و بارگذاری مدارک (مانند پروانه زنبورداری یا کارت ملی) به منظور تأیید هویت و تسهیل فرآیند خرید انجام می‌گیرد.
-        پس از بررسی و تأیید اطلاعات توسط کارشناسان فروش کوپابی، امکان نهایی‌سازی و پیگیری سفارش‌ها برای شما فعال خواهد شد.
+        ثبت مشخصات فردی و بارگذاری مدارک (مانند پروانه زنبورداری یا کارت ملی) به منظور تأیید هویت و تسهیل فرآیند خرید
+        انجام می‌گیرد.
+        پس از بررسی و تأیید اطلاعات توسط کارشناسان فروش کوپابی، امکان نهایی‌سازی و پیگیری سفارش‌ها برای شما فعال خواهد
+        شد.
       </p>
       <p>
         <i class="bi bi-check-square-fill text-success"></i>
@@ -24,11 +26,11 @@
 
     <div class="d-flex justify-content-between justify-content-lg-start mt-5">
       <div class="d-flex pe-4">
-        <div @click="typeToggle(1)" id="real" class="me-2 registerRadio activeRegisterRadio"></div>
+        <div @click="typeToggle(1)" id="person" class="me-2 registerRadio activeRegisterRadio"></div>
         <p @click="typeToggle(1)" class="pointer">شخص حقیقی</p>
       </div>
       <div class="d-flex ">
-        <div @click="typeToggle(2)" id="legal" class="me-2 registerRadio "></div>
+        <div @click="typeToggle(2)" id="company" class="me-2 registerRadio "></div>
         <p @click="typeToggle(2)" class="pointer">شخص حقوقی</p>
       </div>
     </div>
@@ -36,48 +38,54 @@
 
     <form>
       <div class="row">
-        <div v-if="type=='real'" class="col-12 col-lg-3">
-          <label>نام و نام خانوادگی</label>
+        <div class="col-12 col-lg-3">
+          <label v-if="type==='person'">نام و نام خانوادگی</label>
+          <label v-else>نام شرکت</label>
           <input id="name" type="text" class="form-control form-control-sm" required>
           <div id="nameHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.name">{{ e }}</p>
         </div>
-        <div v-if="type=='real'" class="col-6 col-lg-3">
+        <div v-if="type=='person'" class="col-6 col-lg-3">
           <label>کد ملی</label>
-          <input id="national_code" type="text" class="en form-control form-control-sm" required>
-          <div id="national_codeHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.national_code">{{ e }}</p>
+          <input id="national_id" type="text" class="en form-control form-control-sm" required>
+          <div id="national_idHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.national_id">{{ e }}</p>
         </div>
-        <div v-if="type=='real'" class="col-6 col-lg-3">
+
+        <div v-if="type=='person'" class="col-6 col-lg-3">
           <label>تاریخ تولد</label>
-          <input id="birth_date" type="text" class="en form-control form-control-sm" required>
-          <div id="birth_dateHelp" class="form-text error"></div>
+          <date-picker v-model="date" :locale-config="{
+    fa: {
+      displayFormat: 'jYYYY/jMM/jDD',
+      lang: { label: 'شمسی' }
+    },
+    en: {
+      displayFormat: 'YYYY/MM/DD',
+      lang: { label: 'Gregorian' }
+    }
+  }" locale="fa,en"/>
+          <!--          <input id="birth_date" type="text" class="en form-control form-control-sm" required>-->
+          <!--          <div id="birth_dateHelp" class="form-text error"></div>-->
           <p class="form-text error m-0" v-for="e in errors.birth_date">{{ e }}</p>
         </div>
 
-        <div v-if="type=='legal'" class="col-12 col-lg-3">
-          <label>نام شرکت</label>
-          <input id="name" type="text" class="form-control form-control-sm" required>
-          <div id="nameHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.name">{{ e }}</p>
-        </div>
-        <div id="operator" v-if="type=='legal'" class="col-12 col-lg-3">
+        <div id="contact_person" v-if="type==='company'" class="col-12 col-lg-3">
           <label>نام و نام خانوادگی نماینده</label>
           <input type="text" class="form-control form-control-sm" required>
-          <div id="operatorHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.operator">{{ e }}</p>
+          <div id="contact_personHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.contact_person">{{ e }}</p>
         </div>
-        <div v-if="type=='legal'" class="col-6 col-lg-3">
+        <div v-if="type==='company'" class="col-6 col-lg-3">
           <label>شناسه ملی</label>
-          <input id="national_code" type="text" class="en form-control form-control-sm" required>
-          <div id="national_codeHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.national_code">{{ e }}</p>
+          <input id="national_id" type="text" class="en form-control form-control-sm" required>
+          <div id="national_idHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.national_id">{{ e }}</p>
         </div>
-        <div v-if="type=='legal'" class="col-6 col-lg-3">
+        <div v-if="type=='company'" class="col-6 col-lg-3">
           <label>شماره ثبت</label>
-          <input id="registration_number" type="text" class="en form-control form-control-sm" required>
-          <div id="registration_numberHelp" class="form-text error"></div>
-          <p class="form-text error m-0" v-for="e in errors.registration_number">{{ e }}</p>
+          <input id="publish_code" type="text" class="en form-control form-control-sm" required>
+          <div id="publish_codeHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.publish_code">{{ e }}</p>
         </div>
 
         <div class="col-6 col-lg-3">
@@ -93,78 +101,46 @@
           <p class="form-text error m-0" v-for="e in errors.phone">{{ e }}</p>
         </div>
 
-
-
-<!--        <div class="col-6">-->
-<!--          <label>استان</label>-->
-<!--          <Multiselect-->
-<!--              v-model="selectedProvince" @change="getCities"-->
-<!--              placeholder=""-->
-<!--              dir="rtl"-->
-<!--              :mode="'single'"-->
-<!--              :options="provinces"-->
-<!--              :searchable="true"-->
-<!--              :create-option="true"-->
-<!--          />-->
-<!--          <div id="province_idHelp" class="form-text error"></div>-->
-<!--          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>-->
-<!--        </div>-->
-
         <div class="col-6 col-lg-3">
           <label>استان</label>
-            <div>
-              <Multiselect
-                  v-model="selectedProvince"
-                  :options="provinces"
-                  :is-selected="user?.city_id"
-                  label="name"
-                  mode="single"
-                  value-prop="id"
-                  track-by="name"
-                  placeholder="نام استان را جستجو کنید..."
-                  :searchable="true"
-                  :close-on-select="true"
-              />
-            </div>
-            <input type="hidden" id="province_id" @change="" v-model="selectedProvince">
-            <div id="city_idHelp" class="form-text error"></div>
-            <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
+          <div>
+            <Multiselect
+                v-model="selectedProvince"
+                :options="provinces"
+                :is-selected="user?.city?.province_id"
+                label="name"
+                mode="single"
+                value-prop="id"
+                track-by="name"
+                placeholder="نام استان را جستجو کنید..."
+                :searchable="true"
+                :close-on-select="true"
+            />
           </div>
+          <input type="hidden" id="province_id" @change="" v-model="selectedProvince">
+          <div id="province_idHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.province_id">{{ e }}</p>
+        </div>
 
         <div class="col-6 col-lg-3">
           <label>شهر</label>
-            <div>
-              <Multiselect
-                  v-model="selectedCity"
-                  :options="cities"
-                  label="name"
-                  mode="single"
-                  value-prop="id"
-                  track-by="name"
-                  placeholder="نام شهر را جستجو کنید..."
-                  :searchable="true"
-                  :close-on-select="true"
-              />
-            </div>
-            <input type="hidden" id="city_id" v-model="selectedCity">
-            <div id="city_idHelp" class="form-text error"></div>
-            <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
+          <div>
+            <Multiselect
+                v-model="selectedCity"
+                :options="cities"
+                label="name"
+                mode="single"
+                value-prop="id"
+                track-by="name"
+                placeholder="نام شهر را جستجو کنید..."
+                :searchable="true"
+                :close-on-select="true"
+            />
           </div>
-
-          <!--        <div class="col-6">-->
-<!--          <label>شهر</label>-->
-<!--          <Multiselect-->
-<!--              v-model="selectedCity"-->
-<!--              placeholder=""-->
-<!--              dir="rtl"-->
-<!--              :mode="'single'"-->
-<!--              :options="cities"-->
-<!--              :searchable="true"-->
-<!--              :create-option="true"-->
-<!--          />-->
-<!--          <div id="city_idHelp" class="form-text error"></div>-->
-<!--          <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>-->
-<!--        </div>-->
+          <input type="hidden" id="city_id" v-model="selectedCity">
+          <div id="city_idHelp" class="form-text error"></div>
+          <p class="form-text error m-0" v-for="e in errors.city_id">{{ e }}</p>
+        </div>
 
         <div class="col-12 col-lg-3">
           <label>کد پستی</label>
@@ -172,7 +148,7 @@
           <div id="postal_codeHelp" class="form-text error"></div>
           <p class="form-text error m-0" v-for="e in errors.postal_code">{{ e }}</p>
         </div>
-        <div class="col-12" :class="{'col-lg-9': type=='legal'}">
+        <div class="col-12" :class="{'col-lg-9': type==='company'}">
           <label>آدرس</label>
           <input id="address" type="text" class="form-control form-control-sm" required>
           <div id="addressHelp" class="form-text error"></div>
@@ -182,16 +158,9 @@
       </div>
 
       <div>
-        <div v-if="type=='legal'" class="row justify-content-lg-center">
+        <div class="row justify-content-lg-center">
           <div class="col-12 col-lg-5 mt-5">
-            <drop-zone id="dropZone1" :title="'تصویر آخرین روزنامه رسمی'" :index="1" :has-error="img1Error" required/>
-            <div></div>
-          </div>
-        </div>
-        <div v-else class="row justify-content-lg-center">
-          <div class="col-12 col-lg-5 mt-5">
-            <drop-zone id="dropZone1" :title="'تصویر کارت ملی یا شناسنامه زنبورداری'" :index="1" :has-error="img1Error"
-                       required/>
+            <drop-zone id="dropZone1" :title="title" v-model:files="selectedFiles" :index="1" :has-error="img1Error"/>
             <div></div>
           </div>
         </div>
@@ -199,7 +168,9 @@
 
 
       <div class=" d-flex justify-content-center mt-4">
-        <button @click.prevent="submit" class="btn-orange my-font">ثبت</button>
+        <button v-if="!validated" @click.prevent="validate" class="btn-orange my-font">validate</button>
+        <button v-if="validated" @click.prevent="submit" class="btn-orange my-font">ثبت</button>
+<!--        <button @click.prevent="submit" class="btn-orange my-font">ثبت</button>-->
       </div>
     </form>
   </div>
@@ -233,12 +204,13 @@ import {computed, onMounted, ref, watch} from "vue";
 import dropZone from "@/components/DropZone";
 import {useStore} from "vuex";
 import Multiselect from "@vueform/multiselect";
-import Loader from "@/components/Loader2.vue";
+import Loader from "@/components/Loader.vue";
+import DatePicker from 'vue3-persian-datetime-picker'
 
 
 export default {
   name: "Register",
-  components: {dropZone, Multiselect, Loader},
+  components: {dropZone, Multiselect, Loader, DatePicker},
   setup() {
     const store = useStore();
     const serverUrl = store.state.serverUrl;
@@ -251,137 +223,46 @@ export default {
     const email = ref();
     const city_id = ref();
     const emptyFieldsCount = ref();
-    const validated = ref(false);
     const provinces = ref([]);
     const cities = ref([]);
     const selectedCity = ref();
     const selectedProvince = ref()
     const selectedFiles = ref([])
+    const file = ref([])
+    const title = ref('تصویر کارت ملی یا شناسنامه زنبورداری')
 
     const type = ref();
     const img1Error = ref(false)
-    const img2Error = ref(false)
+    const date = ref()
+    const validated = ref(false)
 
     const typeToggle = (index) => {
       errors.value = [];
-      let req = document.querySelectorAll('[required]');
+      let req = document.querySelectorAll('input');
       req.forEach((element) => {
-        element.classList.remove('hasError');
+        element.classList?.remove('hasError');
         element.value = ""
         // element.nextSibling.innerHTML = "";
         img1Error.value = false;
-        img2Error.value = false;
       })
-      if (type.value == 'real' && index == 2) {
+      if (type.value === 'person' && index === 2) {
         document.querySelectorAll('.registerRadio').forEach((element) => {
-          element.classList.remove('activeRegisterRadio');
+          element.classList?.remove('activeRegisterRadio');
         })
-        document.querySelector('#legal').classList.add('activeRegisterRadio');
-        type.value = 'legal'
-      } else if (type.value == 'legal' && index == 1) {
+        document.querySelector('#company').classList.add('activeRegisterRadio');
+        title.value ='تصویر آخرین روزنامه رسمی';
+        type.value = 'company'
+      } else if (type.value === 'company' && index === 1) {
         document.querySelectorAll('.registerRadio').forEach((element) => {
-          element.classList.remove('activeRegisterRadio');
+          element.classList?.remove('activeRegisterRadio');
         })
-        document.querySelector('#real').classList.add('activeRegisterRadio');
-        type.value = 'real'
+        document.querySelector('#person').classList.add('activeRegisterRadio');
+        title.value ='تصویر کارت ملی یا شناسنامه زنبورداری';
+        type.value = 'person'
 
       }
 
     }
-    const submit = () => {
-      errors.value = [];
-      let emptyFieldsCount = 0;
-      let req = document.querySelectorAll('[required]');
-      req.forEach((element) => {
-        if (element.value === "") {
-          element.classList.add('hasError');
-          // element.nextSibling.innerHTML = "فیلد اجباری";
-          emptyFieldsCount++;
-        } else {
-          element.classList.remove('hasError');
-          // element.nextSibling.innerHTML = "";
-        }
-
-        if (document.querySelector('#img1')?.classList.contains('hasError')) {
-          img1Error.value = true;
-        } else {
-          img1Error.value = false;
-
-        }
-        if (document.querySelector('#img2')?.classList.contains('hasError')) {
-          img2Error.value = true;
-        } else {
-          img2Error.value = false;
-
-        }
-      });
-      errors.value['mobile'] = [];
-      errors.value['national_code'] = [];
-      errors.value['postal_code'] = [];
-
-      if (document.querySelector('#national_code').value != '') {
-        let x, y;
-        type.value == 'real' ? (x = 10, y = 'کد ملی') : (x = 11, y = 'شناسه ملی');
-        if (document.querySelector('#national_code').value.length != x) {
-          errors.value.national_code.push(y + ' باید ' + x + ' رقم باشد.');
-        }
-      }
-      if (document.querySelector('#postal_code').value != '') {
-        if (document.querySelector('#postal_code').value.length != 10) {
-          errors.value.postal_code.push('کد پستی باید 10 رقم باشد')
-        }
-      }
-      if (document.querySelector('#mobile').value != '') {
-        if (!document.querySelector('#mobile').value.startsWith('09')) {
-          errors.value.mobile.push('شماره موبایل باید با 09 شروع شود')
-        }
-        if (document.querySelector('#mobile').value.length != 11) {
-          errors.value.mobile.push('شماره موبایل باید 11 رقم باشد')
-        }
-      }
-
-
-      if (emptyFieldsCount === 0) {
-
-        let info = {
-          name: document.querySelector('#name').value,
-          national_code: document.querySelector('#national_code').value,
-          phone: document.querySelector('#phone').value,
-          mobile: document.querySelector('#mobile').value,
-          city_id: selectedCity.value.id,
-          address: document.querySelector('#address').value,
-          postal_code: document.querySelector('#postal_code').value,
-          scope: 'user',
-          type: type.value,
-        };
-        if (type.value == 'legal') {
-          info['registration_number'] = document.querySelector('#registration_number').value;
-          info['operator'] = document.querySelector('#operator').value;
-          info['img1'] = document.querySelector('#img1').value;
-          // info['img2'] = document.querySelector('#img2').value;
-        }
-
-        axios.post(store.state.panelUrl + '/api/user/register', info)
-            .then((response) => {
-              let myModal = new bootstrap.Modal(document.getElementById('register-modal'))
-              myModal.show();
-            })
-            .catch((error) => {
-              errors.value['mobile'] = [];
-
-              if (error.response.status === 422) {
-                errors.value['mobile'] = error.response.data.mobile;
-                errors.value['national_code'] = error.response.data.national_code;
-                errors.value['registration_number'] = error.response.data.registration_number;
-              }
-              console.error(error)
-            });
-
-      }
-
-
-    }
-
 
     const reload = () => {
       window.location.reload();
@@ -389,9 +270,9 @@ export default {
 
     const setForm = async (form) => {
       localStorage.setItem('form', form);
-      validate();
     }
     const validate = () => {
+      validated.value = false;
       mobile.value = document.getElementById('mobile').value;
       errors.value = [];
       errors.value['mobile'] = [];
@@ -407,11 +288,9 @@ export default {
           // element.nextSibling.innerHTML = "";
         }
       });
-      if (document.querySelector('#img1')?.classList.contains('hasError')) {
-        img1Error.value = true;
-      } else {
-        img1Error.value = false;
-      }
+      // if (document.querySelector('#img')?.classList.contains('hasError')) {
+      //   img1Error.value = true;
+      // }
       if (mobile.value && mobile.value?.length !== 11) {
         errors.value['mobile'].push('شماره موبایل باید 11 رقم باشد');
         document.getElementById('messageMobile').classList.add('hasError');
@@ -422,16 +301,11 @@ export default {
         document.getElementById('messageMobile').classList.add('hasError');
         emptyFieldsCount.value++;
       }
-      if (!localStorage.getItem('user') && emptyFieldsCount.value === 0) {
-        document.getElementById('modal-btn-h').click();
-      }
+      if(emptyFieldsCount.value===0){validated.value = true; showModal();}
+
     }
-    const showModal = async (type) => {
-      await setForm(type);
-      validate();
-      if (emptyFieldsCount.value === 0) {
-        document.getElementById('modal-btn-h').click();
-      }
+    const showModal = async () => {
+      document.getElementById('modal-btn-h').click();
     }
     const getProvinces = async () => {
       try {
@@ -455,47 +329,45 @@ export default {
       let x = document.getElementById(id);
       let y = x.getAttribute('check-box-checked') == 0 ? 1 : 0;
       if (y === 1) {
-        x.firstChild.classList.remove('opacity-0');
+        x.firstChild.classList?.remove('opacity-0');
       } else {
         x.firstChild.classList.add('opacity-0');
       }
       document.getElementById(id).setAttribute('check-box-checked', y);
     }
-    const storeRequest = async () => {
+    const submit = async () => {
       try {
         document.getElementById('sendSuccess')?.classList.add('d-none');
         document.getElementById('sendFail')?.classList.add('d-none');
-        validate();
-        if (user.value && emptyFieldsCount.value === 0) {
-          if (!selectedFiles.value.length) {
-            alert('Please upload at least one image.')
-            return
-          }
+        // if (emptyFieldsCount.value === 0) {
+          // if (!file.value.length) {
+          //   alert('Please upload at least one image.')
+          //   return
+          // }
 
-          const formData = new FormData()
+          const formData = new FormData();
+        selectedFiles.value.forEach((file, i) => {
+          formData.append('images[]', file)
+        });
+        formData.append('name', document.getElementById('name').value);
+          formData.append('national_id', document.getElementById('national_id').value);
+          formData.append('birth_date', document.querySelector('.persian_date_picker_input').value);
+          formData.append('mobile', document.getElementById('mobile').value);
+          formData.append('phone', document.getElementById('phone').value);
+          formData.append('city_id', selectedCity.value);
+          formData.append('postal_code', document.getElementById('postal_code').value);
+          formData.append('address', document.getElementById('address').value);
+          formData.append('contact_person', document.getElementById('contact_person')?.value);
+          formData.append('type', type.value);
 
-          // ✅ Append each file
-          selectedFiles.value.forEach((file, i) => {
-            formData.append('images[]', file)
-          })
+          console.log('fd', formData);
 
-          formData.append('user_id', user.value.id);
-          formData.append('commercial', document.getElementById('commercial').getAttribute('check-box-checked'));
-          formData.append('scientific', document.getElementById('scientific').getAttribute('check-box-checked'));
-          formData.append('custom_production', document.getElementById('custom_production').getAttribute('check-box-checked'));
-          formData.append('honey', document.getElementById('honey').getAttribute('check-box-checked'));
-          formData.append('pollen', document.getElementById('pollen').getAttribute('check-box-checked'));
-          formData.append('propolis', document.getElementById('propolis').getAttribute('check-box-checked'));
-          formData.append('royal_jelly', document.getElementById('royal_jelly').getAttribute('check-box-checked'));
-          formData.append('bee_venom', document.getElementById('bee_venom').getAttribute('check-box-checked'));
-          formData.append('description', document.getElementById('description').getAttribute('check-box-checked'));
-
-          await fetch(serverUrl + '/api/collab/store', {
+          await fetch(serverUrl + '/api/user/store', {
             method: 'POST',
             body: formData,
           })
               .then(async (response) => {
-                if (response.status === 201) {
+                if (response.status === 201 || response.status === 200) {
                   document.getElementById('sendSuccess')?.classList.remove('d-none');
                 } else {
                   document.getElementById('sendFail')?.classList.remove('d-none');
@@ -506,54 +378,39 @@ export default {
               .catch((error) => {
                 console.error(error.message);
               });
-        }
+        // }
       } catch (error) {
         console.error('API call failed:', error);
-        document.getElementById('sendFail').classList.remove('d-none');
+        document.getElementById('sendFail')?.classList.remove('d-none');
       }
     }
 
     onMounted(() => {
-      type.value = 'real';
+      type.value = 'person';
+      checkUser();
       getProvinces();
-      document.querySelectorAll('.multiselect-search')?.forEach((e) => {
-        e.setAttribute('autocomplete', 'off');
-      })
+      // document.querySelectorAll('.multiselect-search')?.forEach((e) => {
+      //   e.setAttribute('autocomplete', 'off');
+      // })
     })
-    watch(selectedProvince, (newValue, oldValue) => {
+    watch(selectedProvince, (newValue) => {
       getCities(newValue);
     })
 
-    const checkUser = ()=>{
+    const checkUser = () => {
       if (!localStorage.getItem('user')) {
-        setForm('collaboration');
-        document.getElementById('modal-btn-h').click();
+        setForm('register');
+        // document.getElementById('modal-btn-h').click();
+      }else{
+        window.location = '/profile';
       }
     }
     return {
-      checkUser,
-      storeRequest,
-      checkboxToggle, selectedProvince, getProvinces,
-      provinces,
-      cities, selectedCity,
-      getCities,
-      store,
-      serverUrl,
-      isLoading,
-      errors,
-      setForm,
-      user,
-      mobile,
-      message,
-      name,
-      email,
-      city_id,
-      validate,
-      validated,
-      emptyFieldsCount,
-      showModal,selectedFiles,
+      checkUser,  submit, checkboxToggle, selectedProvince, getProvinces, provinces, cities, selectedCity,
+      getCities, store, serverUrl, isLoading, errors, setForm, user, mobile, message, name, email, city_id,
+      validate,validated, emptyFieldsCount, showModal, date, selectedFiles,title, type, typeToggle, img1Error,
+      reload,file,
 
-      type, typeToggle, submit, img1Error, img2Error, reload,
     }
   }
 

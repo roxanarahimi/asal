@@ -324,7 +324,6 @@ export default {
     const email = ref();
     const city_id = ref();
     const emptyFieldsCount = ref();
-    const validated = ref(false);
     const provinces = ref([]);
     const cities = ref([]);
     const selectedCity = ref();
@@ -495,7 +494,6 @@ export default {
       email,
       city_id,
       validate,
-      validated,
       emptyFieldsCount,
       showModal, img1Error,selectedFiles
     }

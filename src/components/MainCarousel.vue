@@ -5,7 +5,7 @@
       <img :src="storageUrl+data[0]?.image" :height="height" :width="width" alt="copabee">
     </a>
   </div>
-  <div v-if="data?.length > 1" id="myc"  class="mt-2 carousel carousel-light slide " data-bs-ride="carousel" data-bs-interval="5000">
+  <div v-if="data?.length > 1" id="myc"  class="mt-2 carousel carousel-light slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
     <div class="carousel-inner">
       <div v-for="(slide,index) in data" class="carousel-item banners" :class="{'active':index===0}" >
         <a :href="slide.link || storageUrl+slide.image" class="img-link">
@@ -49,6 +49,7 @@ export default {
     onMounted(() => {
       getBanners();
     });
+
     return {
       data: computed(()=>store.state.banners),
       store, storageUrl, serverUrl, getBanners,width,height

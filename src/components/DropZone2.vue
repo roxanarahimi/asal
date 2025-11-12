@@ -73,8 +73,8 @@
     />
 
     <!-- Hidden model -->
-    <input :id="'img' + index" type="hidden" v-model="fileValues" required />
-
+    <input :id="'img' + index" type="hidden" v-model="fileValues"  />
+<!--    required-->
 
   </div>
   <!-- Error message -->

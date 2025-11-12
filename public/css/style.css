@@ -799,3 +799,11 @@ button:focus {
     justify-content: center !important;
 }
 
+
+.vpd-input-group{
+    background: white;
+    border-radius: 3px;
+}
+.vpd-body{
+    background: #212121;
+}

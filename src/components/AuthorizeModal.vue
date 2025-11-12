@@ -192,7 +192,9 @@ export default {
       level.value = 1;
       setFirstMessage();
       document.getElementById('closeAuthorizeModal').click();
-      window.location.reload();
+      if (form.value !=='register'){
+        window.location.reload();
+      }
     }
     const clean = () => {
       message.value = 'کد تایید برای شماره ' + document.getElementById('messageMobile')?.value || document.getElementById('mobile')?.value + ' ارسال شد. لطفا آنرا وارد کنید'
