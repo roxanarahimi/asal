@@ -1,7 +1,7 @@
 <template>
 <div v-if="data" class="content my-padding">
   <h2 class="my-color my-5 fw-bold">{{ data.title }}</h2>
-  <img :src="storageUrl+data.image" style="max-width: 500px" alt="">
+  <img :src="storageUrl+data.image" class="w-100" alt="">
 
   <div v-html="data.text" class="text-white p-3"></div>
 </div>
@@ -54,5 +54,6 @@ export default {
 :deep(*){ font-family: IranSans !important}
 :deep(a){ color:deepskyblue; cursor: pointer}
 :deep(.loader-center){ margin-top: -100px}
+:deep(img){ width: 100%; max-width:700px;}
 
 </style>
