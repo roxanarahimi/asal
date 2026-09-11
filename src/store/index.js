@@ -2,8 +2,8 @@ import { createStore } from 'vuex'
 
 export default createStore({
     state: {
-        serverUrl: 'https://copabee.dev-amadeh.ir',
-        storageUrl: 'https://copabee.dev-amadeh.ir/storage/',
+        serverUrl: 'https://control.asallaziz.com',
+        storageUrl: 'https://control.asallaziz.com/storage/',
         contents: null,
         content: null,
         banners: null,
